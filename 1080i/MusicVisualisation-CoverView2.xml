@@ -334,7 +334,7 @@
 					<height>40</height>
 					<width>120</width>
 					<aspectratio>keep</aspectratio>
-					<texture background="true" colordiffuse="TitleTextColor">$VAR[AudioPlayerSourceFlagVar,flags/source/,.png]</texture>
+					<texture background="true" colordiffuse="TitleTextColor">$VAR[AudioPlayerSourceFlagVar,flags/audiosource/,.png]</texture>
 				</control>
 			</control>
 
