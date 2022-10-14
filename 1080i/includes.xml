@@ -1295,8 +1295,7 @@
 		<control type="label">
 			<height>50</height>
 			<label>$LOCALIZE[169]:$INFO[Player.Process(videowidth), ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA ,
-				AR]$INFO[Player.Process(videofps),$COMMA , FPS]
-			</label>
+				AR]$INFO[Player.Process(videofps),$COMMA , FPS]</label>
 			<visible>!String.IsEmpty(Player.Process(videowidth)) | !String.IsEmpty(Player.Process(videoheight)) | !String.IsEmpty(Player.Process(videodar))</visible>
 		</control>
 		<control type="label">
@@ -1350,8 +1349,7 @@
 			<textoffsetx>15</textoffsetx>
 			<textcolor>DisabledColor</textcolor>
 			<align>right</align>
-			<label>$INFO[Container($PARAM[ContainerID]).NumItems,, $LOCALIZE[31025] • ]$INFO[Container($PARAM[ContainerID]).CurrentPage]$INFO[Container($PARAM[ContainerID]).NumPages,/]
-			</label>
+			<label>$INFO[Container($PARAM[ContainerID]).NumItems,, $LOCALIZE[31025] • ]$INFO[Container($PARAM[ContainerID]).CurrentPage]$INFO[Container($PARAM[ContainerID]).NumPages,/]</label>
 			<visible>Integer.IsGreater(Container($PARAM[ContainerID]).NumItems,0) + [$PARAM[Visibility]]</visible>
 			<animation effect="fade" start="0" end="100" time="300" tween="sine" easing="inout" delay="300">Visible</animation>
 		</control>

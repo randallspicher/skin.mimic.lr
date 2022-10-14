@@ -262,8 +262,7 @@
 						<font>font14_textbox</font>
 						<scroll>true</scroll>
 						<shadowcolor>FF000000</shadowcolor>
-						<label>[COLOR=LabelTextColor]$LOCALIZE[19031]:[/COLOR] $INFO[MusicPlayer.offset(1).Artist,, - ]$INFO[MusicPlayer.offset(1).TrackNumber,, - ]$INFO[MusicPlayer.offset(1).Title]
-						</label>
+						<label>[COLOR=LabelTextColor]$LOCALIZE[19031]:[/COLOR] $INFO[MusicPlayer.offset(1).Artist,, - ]$INFO[MusicPlayer.offset(1).TrackNumber,, - ]$INFO[MusicPlayer.offset(1).Title]</label>
 					</control>
 
 
