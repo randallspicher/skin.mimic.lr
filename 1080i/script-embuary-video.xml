@@ -184,7 +184,7 @@
 						<label fallback="19055">$INFO[Container(10051).ListItem.Tagline,[B],[/B][CR][CR]]$INFO[Container(10051).ListItem.Plot]</label>
 						<font>font13</font>
 						<shadowcolor>50000000</shadowcolor>
-						<autoscroll delay="6000" time="3000" repeat="10000">true</autoscroll>
+<!-- 						<autoscroll delay="6000" time="3000" repeat="10000">true</autoscroll> -->
 						<visible>!String.IsEqual(Container(10051).ListItem.DBType,season)</visible>
 					</control>
 					<control type="textbox">
@@ -197,7 +197,7 @@
 						<label>$INFO[Container(10051).ListItem.Season,[B]$LOCALIZE[20373] ,[/B][CR][CR]]$INFO[Container(10051).ListItem.Plot]</label>
 						<font>font13</font>
 						<shadowcolor>50000000</shadowcolor>
-						<autoscroll delay="6000" time="3000" repeat="10000">true</autoscroll>
+<!-- 						<autoscroll delay="6000" time="3000" repeat="10000">true</autoscroll> -->
 						<visible>String.IsEqual(Container(10051).ListItem.DBType,season) + !String.IsEmpty(Container(10051).ListItem.Plot)</visible>
 					</control>
 					<control type="textbox">
@@ -210,7 +210,7 @@
 						<label>$INFO[Container(10051).ListItem.Season,[B]$LOCALIZE[20373] ,[/B][CR][CR]]$LOCALIZE[19055]</label>
 						<font>font13</font>
 						<shadowcolor>50000000</shadowcolor>
-						<autoscroll delay="6000" time="3000" repeat="10000">true</autoscroll>
+<!-- 						<autoscroll delay="6000" time="3000" repeat="10000">true</autoscroll> -->
 						<visible>String.IsEqual(Container(10051).ListItem.DBType,season) + String.IsEmpty(Container(10051).ListItem.Plot)</visible>
 					</control>
 					<!-- facts -->

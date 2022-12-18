@@ -164,7 +164,7 @@
 						<font>font13</font>
 						<!--<textcolor>ffffffff</textcolor>-->
 						<shadowcolor>50000000</shadowcolor>
-						<autoscroll delay="6000" time="3000" repeat="10000">true</autoscroll>
+<!-- 						<autoscroll delay="6000" time="3000" repeat="10000">true</autoscroll> -->
 					</control>
 					<!-- facts -->
 					<control type="image">
