@@ -1739,6 +1739,7 @@
 							<label>$INFO[ListItem.Label]</label>
 							<font>font12</font>
 							<align>center</align>
+							<scroll>false</scroll>
 						</control>
 						<control type="label">
 							<visible>String.IsEqual(ListItem.DBType,season)</visible>
@@ -1748,6 +1749,7 @@
 							<label>$LOCALIZE[20373] $INFO[ListItem.Season]</label>
 							<font>font12</font>
 							<align>center</align>
+							<scroll>false</scroll>
 						</control>
 						<control type="label">
 							<top>440</top>
@@ -1758,6 +1760,7 @@
 							<wrapmultiline>true</wrapmultiline>
 							<align>center</align>
 							<aligny>top</aligny>
+							<scroll>false</scroll>
 						</control>
 						<control type="label">
 							<visible>String.isEmpty(ListItem.Label2)</visible>
@@ -1768,6 +1771,7 @@
 							<font>font13</font>
 							<align>center</align>
 							<aligny>top</aligny>
+							<scroll>false</scroll>
 						</control>
 
 					</control>
@@ -1826,7 +1830,7 @@
 							<width>295</width>
 							<label>$INFO[ListItem.Label]</label>
 							<font>font12</font>
-							<scroll>true</scroll>
+<!-- 							<scroll>true</scroll> -->
 							<align>center</align>
 						</control>
 						<control type="label">
@@ -1836,7 +1840,7 @@
 							<width>295</width>
 							<label>$LOCALIZE[20373] $INFO[ListItem.Season]</label>
 							<font>font12</font>
-							<scroll>true</scroll>
+<!-- 							<scroll>true</scroll> -->
 							<align>center</align>
 						</control>
 						<control type="label">
@@ -1846,7 +1850,7 @@
 							<label>$INFO[ListItem.Label2]</label>
 							<font>font13</font>
 							<wrapmultiline>true</wrapmultiline>
-							<scroll>true</scroll>
+<!-- 							<scroll>true</scroll> -->
 							<align>center</align>
 							<aligny>top</aligny>
 						</control>
@@ -1857,7 +1861,7 @@
 							<height>50</height>
 							<label>$INFO[ListItem.year]</label>
 							<font>font13</font>
-							<scroll>true</scroll>
+<!-- 							<scroll>true</scroll> -->
 							<align>center</align>
 							<aligny>top</aligny>
 						</control>
@@ -1935,6 +1939,7 @@
 							<label>$INFO[ListItem.Label]</label>
 							<font>font12</font>
 							<align>center</align>
+							<scroll>false</scroll>
 						</control>
 						<control type="label">
 							<visible>String.IsEqual(ListItem.DBType,season)</visible>
@@ -1944,6 +1949,7 @@
 							<label>$LOCALIZE[20373] $INFO[ListItem.Season]</label>
 							<font>font12</font>
 							<align>center</align>
+							<scroll>false</scroll>
 						</control>
 						<control type="label">
 							<top>440</top>
@@ -1954,6 +1960,7 @@
 							<wrapmultiline>true</wrapmultiline>
 							<align>center</align>
 							<aligny>top</aligny>
+							<scroll>false</scroll>
 						</control>
 						<control type="label">
 							<visible>String.isEmpty(ListItem.Label2)</visible>
@@ -1964,6 +1971,7 @@
 							<font>font13</font>
 							<align>center</align>
 							<aligny>top</aligny>
+							<scroll>false</scroll>
 						</control>
 
 					</control>
@@ -2022,7 +2030,7 @@
 							<width>580</width>
 							<label>$INFO[ListItem.Label]</label>
 							<font>font12</font>
-							<scroll>true</scroll>
+<!-- 							<scroll>true</scroll> -->
 							<align>center</align>
 						</control>
 						<control type="label">
@@ -2032,7 +2040,7 @@
 							<width>580</width>
 							<label>$LOCALIZE[20373] $INFO[ListItem.Season]</label>
 							<font>font12</font>
-							<scroll>true</scroll>
+<!-- 							<scroll>true</scroll> -->
 							<align>center</align>
 						</control>
 						<control type="label">
@@ -2042,7 +2050,7 @@
 							<label>$INFO[ListItem.Label2]</label>
 							<font>font13</font>
 							<wrapmultiline>true</wrapmultiline>
-							<scroll>true</scroll>
+<!-- 							<scroll>true</scroll> -->
 							<align>center</align>
 							<aligny>top</aligny>
 						</control>
@@ -2053,7 +2061,7 @@
 							<height>50</height>
 							<label>$INFO[ListItem.year]</label>
 							<font>font13</font>
-							<scroll>true</scroll>
+<!-- 							<scroll>true</scroll> -->
 							<align>center</align>
 							<aligny>top</aligny>
 						</control>

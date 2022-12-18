@@ -881,6 +881,15 @@
 <!-- 						<onclick>noop</onclick> -->
 <!-- 						<visible>System.HasAddon(script.extendedinfo)</visible> -->
 <!-- 					</control> -->
+					<control type="button" id="209">
+                        <description>Extrainfo</description>
+                        <include>ButtonInfoDialogsCommonValues</include>
+                        <onclick>RunScript(script.extendedinfo,info=openinfodialog)</onclick>
+                        <label>Extra $LOCALIZE[31202]</label>
+                        <visible>System.hasAddon(script.extendedinfo) + [String.IsEqual(ListItem.DbType,movie) | String.IsEqual(ListItem.DbType,tvshow) | String.IsEqual(ListItem.DbType,season) | String.IsEqual(ListItem.DbType,episode)]</visible>
+                    </control>
+
+
 					<control type="button" id="208">
 						<description>TheMovieDB</description>
 						<include>ButtonInfoDialogsCommonValues</include>

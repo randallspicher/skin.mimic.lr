@@ -22,10 +22,10 @@
 		</control>
 		<!-- background -->
 		<control type="group">
-			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="300" condition="String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))">WindowClose</animation>
-			<animation effect="fade" start="100" end="0" time="0" condition="!String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))">WindowClose</animation>
-			<animation effect="fade" time="400">VisibleChange</animation>
+			<animation effect="fade" start="0" end="100" time="400" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="300"  condition="!Skin.HasSetting(Disable.Animations)+[String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))]">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="0"  condition="!Skin.HasSetting(Disable.Animations)+[!String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))]">WindowClose</animation>
+			<animation effect="fade" time="400" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
 			<control type="image">
 				<width>1920</width>
 				<height>1080</height>
@@ -33,7 +33,7 @@
 				<texture>colors/black.png</texture>
 			</control>
 			<control type="group">
-				<animation effect="fade" start="100" end="97" time="0" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="97" time="0"  condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 				<control type="image">
 					<width>1920</width>
 					<height>1080</height>
@@ -46,7 +46,7 @@
 				<height>1080</height>
 				<aspectratio>scale</aspectratio>
 				<fadetime>400</fadetime>
-				<animation effect="fade" time="400">VisibleChange</animation>
+				<animation effect="fade" time="400" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
 				<texture background="true">$INFO[Container(10051).ListItem.Art(fanart)]</texture>
 			</control>
 	        <control type="image">
@@ -71,9 +71,9 @@
 				<left>35</left>
 				<right>35</right>
 				<height>100</height>
-				<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="200" condition="String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))">WindowClose</animation>
-				<animation effect="fade" start="100" end="0" time="0" condition="!String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))">WindowClose</animation>
+				<animation effect="fade" start="0" end="100" time="300" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="200"  condition="!Skin.HasSetting(Disable.Animations)+[String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))]">WindowClose</animation>
+				<animation effect="fade" start="100" end="0" time="0"  condition="!Skin.HasSetting(Disable.Animations)+[!String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))]">WindowClose</animation>
 				<control type="label">
 					<left>220</left>
 					<right>150</right>
@@ -98,15 +98,15 @@
 		
 		<!-- infos -->
 		<control type="grouplist" id="50">
-			<animation type="WindowOpen">
+			<animation type="WindowOpen" condition="!Skin.HasSetting(Disable.Animations)">
 				<effect type="fade" start="0" end="100" time="300" tween="sine" easing="out" />
 				<effect type="slide" start="320" end="0" time="400" tween="cubic" easing="out" />
 			</animation>
-			<animation type="WindowCLose" condition="String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))">
+			<animation type="WindowCLose"  condition="!Skin.HasSetting(Disable.Animations)+[String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))]">
 				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="out" />
 				<effect type="slide" start="0" end="320" time="300" tween="cubic" easing="out" />
 			</animation>
-			<animation type="WindowCLose" condition="!String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))">
+			<animation type="WindowCLose"  condition="!Skin.HasSetting(Disable.Animations)+[!String.IsEmpty(Window(home).Property(script.embuary.info-nextcall))]">
 				<effect type="fade" start="100" end="0" time="0" tween="sine" easing="out" />
 			</animation>
 

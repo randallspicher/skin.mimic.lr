@@ -275,13 +275,13 @@
                             <onclick condition="System.HasAddon(script.embuary.info)">Addon.OpenSettings(script.embuary.info)</onclick>
                             <onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
                         </item>
-                        <item id="8">
-                            <icon>$INFO[System.AddonIcon(plugin.video.themoviedb.helper)]</icon>
-                            <label>31111</label>
-                            <label2>$INFO[System.AddonVersion(plugin.video.themoviedb.helper)]</label2>
-                            <onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">Addon.OpenSettings(plugin.video.themoviedb.helper)</onclick>
-                            <onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick>
-                        </item>
+<!--                         <item id="8"> -->
+<!--                             <icon>$INFO[System.AddonIcon(plugin.video.themoviedb.helper)]</icon> -->
+<!--                             <label>31111</label> -->
+<!--                             <label2>$INFO[System.AddonVersion(plugin.video.themoviedb.helper)]</label2> -->
+<!--                             <onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">Addon.OpenSettings(plugin.video.themoviedb.helper)</onclick> -->
+<!--                             <onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick> -->
+<!--                         </item> -->
                         <item id="9">
                             <icon>$INFO[System.AddonIcon(script.globalsearch)]</icon>
                             <label>31173</label>

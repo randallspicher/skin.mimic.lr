@@ -142,17 +142,16 @@
                         <onclick>Dialog.Close(1123)</onclick>
                         <onclick>RunScript(script.ratingupdate,Single=Movie)</onclick>
                     </item>
+                    
                     <item id="6">
                         <description>Extended Info</description>
-                        <visible>System.HasAddon(script.extendedinfo) + [String.IsEqual(Window(movieinformation).Property(Info.DBType),movie) | String.IsEqual(Window(movieinformation).Property(Info.DBType),tvshow)]</visible>
+                        <visible>System.hasAddon(script.extendedinfo) + [String.IsEqual(Window(movieinformation).Property(Info.DBType),movie) | String.IsEqual(Window(movieinformation).Property(Info.DBType),tvshow) | String.IsEqual(Window(movieinformation).Property(Info.DBType),season) | String.IsEqual(Window(movieinformation).Property(Info.DBType),episode)]</visible>
                         <icon>$INFO[System.AddonIcon(script.extendedinfo)]</icon>
                         <label>31202</label>
                         <label2>$INFO[System.AddonTitle(script.extendedinfo)]$INFO[System.AddonVersion(script.extendedinfo), (,)]</label2>
                         <onclick>Dialog.Close(1123)</onclick>
-                        <onclick condition="String.IsEqual(Window(movieinformation).Property(Info.DBType),movie)">RunScript(script.extendedinfo,info=extendedinfo,dbid=$INFO[Window(movieinformation).Property(Info.DBID)])</onclick>
-                        <onclick condition="String.IsEqual(Window(movieinformation).Property(Info.DBType),tvshow)">RunScript(script.extendedinfo,info=extendedtvinfo,dbid=$INFO[Window(movieinformation).Property(Info.DBID)])</onclick>
+                        <onclick>RunScript(script.extendedinfo,info=openinfodialog)</onclick>
                     </item>
-
 
 
                     <item id="7">
