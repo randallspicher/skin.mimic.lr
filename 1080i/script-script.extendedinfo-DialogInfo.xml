@@ -4,9 +4,9 @@
 	<controls>
 		<control type="group">
 			<!-- left side -->
-			<animation effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine">WindowOpen</animation>
-			<animation effect="slide" end="-1500,0" time="900" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
-			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
+			<animation condition="!Skin.HasSetting(Disable.Animations)" effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine">WindowOpen</animation>
+			<animation effect="slide" end="-1500,0" time="900" tween="sine" condition="!Skin.HasSetting(Disable.Animations) +[Control.HasFocus(132) | ControlGroup(5000).HasFocus]">WindowClose</animation>
+			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Skin.HasSetting(Disable.Animations) + !Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
 			<control type="image">
 				<width>729</width>
 				<height>1080</height>
@@ -38,10 +38,10 @@
 			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
 		</control>
 		<control type="group">
-			<animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine">WindowOpen</animation>
-			<animation effect="slide" end="1242,0" time="450" tween="sine" condition="Control.HasFocus(132) | ControlGroup(5000).HasFocus">WindowClose</animation>
-			<animation effect="slide" end="0,1080" time="450" tween="sine" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">WindowClose</animation>
-			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
+			<animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
+			<animation effect="slide" end="1242,0" time="450" tween="sine" condition="!Skin.HasSetting(Disable.Animations)+[Control.HasFocus(132) | ControlGroup(5000).HasFocus]">WindowClose</animation>
+			<animation effect="slide" end="0,1080" time="450" tween="sine" condition="!Skin.HasSetting(Disable.Animations)!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">WindowClose</animation>
+			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Skin.HasSetting(Disable.Animations)!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
 			<!-- right side -->
 			<control type="image">
 				<left>729</left>
@@ -53,7 +53,7 @@
 			<control type="image">
 				<left>729</left>
 				<width>1950</width>
-				<animation effect="fade" start="100" end="60" time="0" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 				<height>1080</height>
 				<aspectratio align="center">scale</aspectratio>
 				<texture colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/diffuseoverlay.jpg</texture>
@@ -62,7 +62,7 @@
 				<left>825</left>
 				<top>22</top>
 				<visible>!Control.HasFocus(132)</visible>
-				<animation effect="fade" time="250">VisibleChange</animation>
+				<animation effect="fade" time="250" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
 				<control type="image">
 					<left>990</left>
 					<top>-20</top>
@@ -99,11 +99,11 @@
 					<width>2000</width>
 					<itemgap>15</itemgap>
 					<height>1000</height>
-					<animation type="Conditional" condition="!String.IsEmpty(Window.Property(Bounce.Down))" reversible="false">
+					<animation type="Conditional" condition="!Skin.HasSetting(Disable.Animations)+!String.IsEmpty(Window.Property(Bounce.Down))" reversible="false">
 						<effect type="slide" end="0,20" time="60" tween="sine" />
 						<effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
 					</animation>
-					<animation type="Conditional" condition="!String.IsEmpty(Window.Property(Bounce.Up))" reversible="false">
+					<animation type="Conditional" condition="!Skin.HasSetting(Disable.Animations)+!String.IsEmpty(Window.Property(Bounce.Up))" reversible="false">
 						<effect type="slide" end="0,-20" time="60" tween="sine" />
 						<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
 					</animation>
@@ -215,7 +215,7 @@
 							<align>left</align>
 							<label fallback="19055">$INFO[Window.Property(Biography)]</label>
 							<font>font12</font>
-							<autoscroll delay="10000" time="2000" repeat="10000">true</autoscroll>
+<!-- 							<autoscroll delay="10000" time="2000" repeat="10000">true</autoscroll> -->
 						</control>
 					</control>
 					<control type="group" id="1500">
@@ -236,8 +236,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]" flipx="true">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(150).HasPrevious + Control.HasFocus(150)</visible>
 						</control>
 						<control type="image">
@@ -246,8 +246,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="-30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(150).HasNext + Control.HasFocus(150)</visible>
 						</control>
 						<control type="panel" id="150">
@@ -294,7 +294,7 @@
 											<width>63</width>
 											<height>25</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 											<visible>!String.IsEmpty(ListItem.Year)</visible>
 										</control>
@@ -313,8 +313,8 @@
 											<width>224</width>
 											<height>325</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(150)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(150)">Conditional</animation>
+											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 										</control>
 										<control type="textbox">
@@ -345,8 +345,8 @@
 										<width>280</width>
 										<height>380</height>
 										<texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/buttons/button-fo.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
-										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+										<animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(Disable.Animations)">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0" condition="!Skin.HasSetting(Disable.Animations)">UnFocus</animation>
 									</control>
 									<control type="group">
 										<left>77</left>
@@ -372,7 +372,7 @@
 											<width>63</width>
 											<height>25</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 											<visible>!String.IsEmpty(ListItem.Year)</visible>
 										</control>
@@ -419,8 +419,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]" flipx="true">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(250).HasPrevious + Control.HasFocus(250)</visible>
 						</control>
 						<control type="image">
@@ -429,8 +429,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="-30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(250).HasNext + Control.HasFocus(250)</visible>
 						</control>
 						<control type="panel" id="250">
@@ -477,7 +477,7 @@
 											<width>63</width>
 											<height>25</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 											<visible>!String.IsEmpty(ListItem.Year)</visible>
 										</control>
@@ -496,8 +496,8 @@
 											<width>224</width>
 											<height>325</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(250)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations) + !Control.HasFocus(250)">Conditional</animation>
+											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 										</control>
 										<control type="textbox">
@@ -528,8 +528,8 @@
 										<width>280</width>
 										<height>380</height>
 										<texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/buttons/button-fo.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
-										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+										<animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(Disable.Animations)">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0" condition="!Skin.HasSetting(Disable.Animations)">UnFocus</animation>
 									</control>
 									<control type="group">
 										<left>77</left>
@@ -555,7 +555,7 @@
 											<width>63</width>
 											<height>25</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 											<visible>!String.IsEmpty(ListItem.Year)</visible>
 										</control>
@@ -602,8 +602,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]" flipx="true">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(550).HasPrevious + Control.HasFocus(550)</visible>
 						</control>
 						<control type="image">
@@ -612,8 +612,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="-30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(550).HasNext + Control.HasFocus(550)</visible>
 						</control>
 						<control type="panel" id="550">
@@ -660,7 +660,7 @@
 											<width>63</width>
 											<height>25</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 											<visible>!String.IsEmpty(ListItem.Year)</visible>
 										</control>
@@ -679,8 +679,8 @@
 											<width>224</width>
 											<height>325</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(550)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" start="100" end="0" time="0" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(550)">Conditional</animation>
+											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 										</control>
 										<control type="textbox">
@@ -711,8 +711,8 @@
 										<width>280</width>
 										<height>380</height>
 										<texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/buttons/button-fo.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
-										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+										<animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(Disable.Animations)">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0" condition="!Skin.HasSetting(Disable.Animations)">UnFocus</animation>
 									</control>
 									<control type="group">
 										<left>77</left>
@@ -738,7 +738,7 @@
 											<width>63</width>
 											<height>25</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 											<visible>!String.IsEmpty(ListItem.Year)</visible>
 										</control>
@@ -785,8 +785,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]" flipx="true">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(650).HasPrevious + Control.HasFocus(650)</visible>
 						</control>
 						<control type="image">
@@ -795,8 +795,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="-30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(650).HasNext + Control.HasFocus(650)</visible>
 						</control>
 						<control type="panel" id="650">
@@ -843,7 +843,7 @@
 											<width>63</width>
 											<height>25</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 											<visible>!String.IsEmpty(ListItem.Year)</visible>
 										</control>
@@ -862,8 +862,8 @@
 											<width>224</width>
 											<height>325</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(650)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" start="100" end="0" time="0" condition="!Skin.HasSetting(Disable.Animations) + !Control.HasFocus(650)">Conditional</animation>
+											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 										</control>
 										<control type="textbox">
@@ -894,8 +894,8 @@
 										<width>280</width>
 										<height>380</height>
 										<texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/buttons/button-fo.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
-										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+										<animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(Disable.Animations)">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0" condition="!Skin.HasSetting(Disable.Animations)">UnFocus</animation>
 									</control>
 									<control type="group">
 										<left>77</left>
@@ -921,7 +921,7 @@
 											<width>63</width>
 											<height>25</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="true">Conditional</animation>
+											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 											<visible>!String.IsEmpty(ListItem.Year)</visible>
 										</control>
@@ -968,8 +968,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]" flipx="true">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(350).HasPrevious + Control.HasFocus(350)</visible>
 						</control>
 						<control type="image">
@@ -978,8 +978,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="-30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(350).HasNext + Control.HasFocus(350)</visible>
 						</control>
 						<control type="panel" id="350">
@@ -1038,8 +1038,8 @@
 									<top>0</top>
 									<left>50</left>
 									<width>373</width>
-									<animation effect="fade" start="0" end="100" time="160">Focus</animation>
-									<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+									<animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(Disable.Animations)">Focus</animation>
+									<animation effect="fade" start="0" end="100" time="0" condition="!Skin.HasSetting(Disable.Animations)">UnFocus</animation>
 									<height>260</height>
 									<texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/buttons/button-fo.png</texture>
 								</control>
@@ -1086,8 +1086,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]" flipx="true">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(450).HasPrevious + Control.HasFocus(450)</visible>
 						</control>
 						<control type="image">
@@ -1096,8 +1096,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="-30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(450).HasNext + Control.HasFocus(450)</visible>
 						</control>
 						<control type="panel" id="450">
@@ -1146,8 +1146,8 @@
 										<width>280</width>
 										<height>380</height>
 										<texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/buttons/button-fo.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
-										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+										<animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(Disable.Animations)">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0" condition="!Skin.HasSetting(Disable.Animations)">UnFocus</animation>
 									</control>
 									<control type="group">
 										<left>77</left>
@@ -1183,8 +1183,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]" flipx="true">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="-150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(750).HasPrevious + Control.HasFocus(750)</visible>
 						</control>
 						<control type="image">
@@ -1193,8 +1193,8 @@
 							<width>28</width>
 							<height>28</height>
 							<texture colordiffuse="$INFO[Window.Property(ImageColor)]">extendedinfo/arrowright.png</texture>
-							<animation effect="slide" start="-30,0" end="0,0" time="200">VisibleChange</animation>
-							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic">WindowOpen</animation>
+							<animation effect="slide" start="-30,0" end="0,0" time="200" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
+							<animation effect="slide" start="150" end="0" delay="640" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
 							<visible>Container(750).HasNext + Control.HasFocus(750)</visible>
 						</control>
 						<control type="panel" id="750">
@@ -1253,8 +1253,8 @@
 										<width>560</width>
 										<height>380</height>
 										<texture border="40" colordiffuse="$INFO[Window(home).Property(ImageColor)]">extendedinfo/buttons/button-fo.png</texture>
-										<animation effect="fade" start="0" end="100" time="160">Focus</animation>
-										<animation effect="fade" start="0" end="100" time="0">UnFocus</animation>
+										<animation effect="fade" start="0" end="100" time="160" condition="!Skin.HasSetting(Disable.Animations)">Focus</animation>
+										<animation effect="fade" start="0" end="100" time="0" condition="!Skin.HasSetting(Disable.Animations)">UnFocus</animation>
 									</control>
 									<control type="image">
 										<left>77</left>

@@ -1181,13 +1181,15 @@
 		<value condition="Integer.IsEqual(MusicPlayer.UserRating,10)">starrating/10.png</value>
 	</variable>
 	<variable name="WidgetThumbnailLabel">
-		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath),recentlyaddedepisodes)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
+		<value condition="String.IsEqual(ListItem.dbtype,episode)">$INFO[ListItem.TVShowTitle,, ]$INFO[ListItem.Season,s,e]$INFO[ListItem.Episode,, ]$INFO[ListItem.Title]</value>
+<!-- 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath),recentlyaddedepisodes)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value> -->
 		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
 	<variable name="WidgetThumbnailLabel2">
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetType),tvshows) + !String.IsEmpty(ListItem.Property(WatchedEpisodes))">$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetType),movies) | String.IsEqual(Container(9000).ListItem.Property(widgetType),musicvideos)">$INFO[ListItem.Year]</value>
+		<value condition="String.IsEqual(ListItem.Property(type),recentlyaddedepisodes) + !String.IsEmpty(ListItem.Premiered)">$INFO[ListItem.Premiered]</value>
+		<value condition="String.IsEqual(ListItem.dbtype,tvshow) + !String.IsEmpty(ListItem.Property(WatchedEpisodes))">$INFO[ListItem.Property(WatchedEpisodes)]$INFO[ListItem.Property(TotalEpisodes), / ]</value>
+		<value condition="String.IsEqual(ListItem.dbtype,movie) | String.IsEqual(Container(9000).ListItem.Property(widgetType),musicvideos)">$INFO[ListItem.Year]</value>
 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath),recentlyaddedepisodes) + !String.IsEmpty(ListItem.Premiered)">$INFO[ListItem.Premiered]</value>
 	</variable>
 	<variable name="AdvancedLauncherPlotVar">

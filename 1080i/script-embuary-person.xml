@@ -408,7 +408,7 @@
 	<include content="fullwidth-posterlist">
 		<param name="controlid" value="10054"/>
 		<param name="upid" value="10053"/>
-		<param name="downid" value="10055"/>
+		<param name="downid" value="noop"/>
 	</include>
 
 				</control>

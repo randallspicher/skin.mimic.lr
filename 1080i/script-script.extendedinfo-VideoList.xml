@@ -11,8 +11,8 @@
 			<texture>extendedinfo/common/white.png</texture>
 			<width>1920</width>
 			<height>1080</height>
-			<animation effect="fade" end="100" time="560">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+			<animation effect="fade" end="100" time="560" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)">WindowClose</animation>
 		</control>
 		<control type="image">
 			<texture background="true">$INFO[ListItem.Art(fanart_small)]</texture>
@@ -20,24 +20,24 @@
 			<height>1080</height>
 			<aspectratio>scale</aspectratio>
 			<fadetime>400</fadetime>
-			<animation effect="fade" end="100" time="560">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+			<animation effect="fade" end="100" time="560" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)">WindowClose</animation>
 		</control>
 		<control type="image">
 			<texture colordiffuse="FF12B2E7">extendedinfo/diffuseoverlay.jpg</texture>
-			<animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+			<animation effect="fade" start="100" end="80" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
 			<width>1920</width>
 			<height>1080</height>
-			<animation effect="fade" end="100" time="360">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+			<animation effect="fade" end="100" time="360" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="250" condition="!Skin.HasSetting(Disable.Animations)">WindowClose</animation>
 		</control>
 		<control type="group">
 			<top>0</top>
-			<animation type="WindowOpen" reversible="false">
+			<animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 				<effect type="zoom" start="80" end="100" center="960,540" delay="500" tween="back" time="240" />
 				<effect type="fade" delay="500" end="100" time="240" />
 			</animation>
-			<animation type="WindowClose" reversible="false">
+			<animation type="WindowClose" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 				<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="240" />
 				<effect type="fade" start="100" end="0" time="240" />
 			</animation>
@@ -48,17 +48,17 @@
 					<width>330</width>
 					<height>432</height>
 					<visible>Control.HasFocus(500)</visible>
-					<animation type="WindowOpen" reversible="false">
+					<animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 						<effect type="fade" start="0" end="100" delay="700" time="300" />
 					</animation>
-					<animation effect="fade" time="320" delay="200">Visible</animation>
-					<animation effect="fade" time="200">Hidden</animation>
+					<animation effect="fade" time="320" delay="200" condition="!Skin.HasSetting(Disable.Animations)">Visible</animation>
+					<animation effect="fade" time="200" condition="!Skin.HasSetting(Disable.Animations)">Hidden</animation>
 					<texture colordiffuse="FF12B2E7" border="40">extendedinfo/buttons/button-fo.png</texture>
-					<animation effect="slide" end="0,425" time="300" tween="cubic" easing="inout" condition="Container(500).Row(1)">Conditional</animation>
-					<animation effect="slide" end="350,0" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(500).Column,3)">Conditional</animation>
-					<animation effect="slide" end="350,0" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(500).Column,2)">Conditional</animation>
-					<animation effect="slide" end="350,0" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(500).Column,1)">Conditional</animation>
-					<animation effect="slide" end="350,0" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(500).Column,0)">Conditional</animation>
+					<animation effect="slide" end="0,425" time="300" tween="cubic" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+Container(500).Row(1)">Conditional</animation>
+					<animation effect="slide" end="350,0" time="300" tween="cubic" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+Integer.IsGreater(Container(500).Column,3)">Conditional</animation>
+					<animation effect="slide" end="350,0" time="300" tween="cubic" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+Integer.IsGreater(Container(500).Column,2)">Conditional</animation>
+					<animation effect="slide" end="350,0" time="300" tween="cubic" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+Integer.IsGreater(Container(500).Column,1)">Conditional</animation>
+					<animation effect="slide" end="350,0" time="300" tween="cubic" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+Integer.IsGreater(Container(500).Column,0)">Conditional</animation>
 				</control>
 				<control type="image">
 					<left>465</left>
@@ -66,23 +66,23 @@
 					<width>800</width>
 					<height>140</height>
 					<visible>Control.HasFocus(50)</visible>
-					<animation type="WindowOpen" reversible="false">
+					<animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 						<effect type="fade" start="0" end="100" delay="700" time="300" />
 					</animation>
-					<animation effect="fade" time="320" delay="200">Visible</animation>
-					<animation effect="fade" time="200">Hidden</animation>
+					<animation effect="fade" time="320" delay="200" condition="!Skin.HasSetting(Disable.Animations)">Visible</animation>
+					<animation effect="fade" time="200" condition="!Skin.HasSetting(Disable.Animations)">Hidden</animation>
 					<texture colordiffuse="FF12B2E7" border="40">extendedinfo/buttons/button-fo.png</texture>
-					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(50).Position,5)">Conditional</animation>
-					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(50).Position,4)">Conditional</animation>
-					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(50).Position,3)">Conditional</animation>
-					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(50).Position,2)">Conditional</animation>
-					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(50).Position,1)">Conditional</animation>
-					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(50).Position,0)">Conditional</animation>
+					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+Integer.IsGreater(Container(50).Position,5)">Conditional</animation>
+					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+Integer.IsGreater(Container(50).Position,4)">Conditional</animation>
+					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+Integer.IsGreater(Container(50).Position,3)">Conditional</animation>
+					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+Integer.IsGreater(Container(50).Position,2)">Conditional</animation>
+					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+Integer.IsGreater(Container(50).Position,1)">Conditional</animation>
+					<animation effect="slide" end="0,142" time="300" tween="cubic" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+Integer.IsGreater(Container(50).Position,0)">Conditional</animation>
 				</control>
 			</control>
 			<control type="group">
 				<top>140</top>
-				<animation type="WindowOpen" reversible="false">
+				<animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 					<effect type="slide" start="0,1000" end="0,0" delay="0" tween="sine" time="900" />
 					<effect type="fade" start="0" end="100" delay="0" tween="sine" time="1500" />
 				</animation>
@@ -111,7 +111,7 @@
 					<top>320</top>
 					<width>135</width>
 					<height>26</height>
-					<animation effect="fade" start="100" end="60" time="0" condition="String.IsEmpty(ListItem.Rating)">Conditional</animation>
+					<animation effect="fade" start="100" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations) + String.IsEmpty(ListItem.Rating)">Conditional</animation>
 					<texture fallback="flags/stars/0.0.png">$INFO[ListItem.Rating,flags/stars/,.png]</texture>
 				</control>
 				<control type="textbox">
@@ -121,7 +121,7 @@
 					<height>500</height>
 					<align>justify</align>
 					<label fallback="416">$INFO[ListItem.Plot,,[CR][CR]  ]</label>
-					<autoscroll delay="10000" time="1600" repeat="10000">true</autoscroll>
+<!-- 					<autoscroll delay="10000" time="1600" repeat="10000">true</autoscroll> -->
 					<font>font12</font>
 					<textcolor>FFDDDDDD</textcolor>
 				</control>
@@ -138,7 +138,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<animation type="WindowOpen" reversible="false">
+				<animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 					<effect type="slide" start="1000" end="0" delay="0" center="auto" tween="cubic" time="900" />
 					<effect type="zoom" start="50" end="100" center="960,1080" delay="0" tween="cubic" time="900" />
 				</animation>
@@ -217,10 +217,10 @@
 							<height>67</height>
 							<top>115</top>
 							<textcolor>FFFAFAFA</textcolor>
-							<animation type="Focus" reversible="false">
+							<animation type="Focus" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 								<effect type="fade" start="62" end="100" time="280" />
 							</animation>
-							<animation type="UnFocus" reversible="false">
+							<animation type="UnFocus" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 								<effect type="fade" start="100" end="62" time="280" />
 							</animation>
 							<align>left</align>
@@ -252,7 +252,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<animation type="WindowOpen" reversible="false">
+				<animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 					<effect type="slide" start="1000" end="0" delay="0" center="auto" tween="cubic" time="900" />
 					<effect type="zoom" start="50" end="100" center="960,1080" delay="0" tween="cubic" time="900" />
 				</animation>
@@ -329,8 +329,8 @@
 						<control type="group">
 							<top>150</top>
 							<left>80</left>
-							<animation effect="zoom" center="176,340" start="100" end="115" time="280" tween="back" reversible="false">Focus</animation>
-							<animation effect="zoom" center="176,340" start="115" end="100" time="200" tween="cubic" reversible="false">UnFocus</animation>
+							<animation effect="zoom" center="176,340" start="100" end="115" time="280" tween="back" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">Focus</animation>
+							<animation effect="zoom" center="176,340" start="115" end="100" time="200" tween="cubic" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">UnFocus</animation>
 							<control type="image">
 								<left>-15</left>
 								<top>0</top>
@@ -380,11 +380,11 @@
 							<align>center</align>
 							<font>font12</font>
 							<label>$INFO[ListItem.Label]</label>
-							<animation type="Focus" reversible="false">
+							<animation type="Focus" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 								<effect type="slide" start="0,0" end="0,35" time="280" tween="back" reversible="false"/>
 								<effect type="fade" start="62" end="100" time="280" />
 							</animation>
-							<animation type="UnFocus" reversible="false">
+							<animation type="UnFocus" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 								<effect type="slide"  start="0,35" end="0" time="200" tween="cubic" reversible="false"/>
 								<effect type="fade" start="100" end="62" time="280" />
 							</animation>
@@ -407,11 +407,11 @@
 		</control>
 		<control type="group">
 			<top>0</top>
-			<animation type="WindowOpen" reversible="false">
+			<animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 				<effect type="zoom" start="80" end="100" center="960,540" delay="500" tween="back" time="240" />
 				<effect type="fade" delay="500" end="100" time="240" />
 			</animation>
-			<animation type="WindowClose" reversible="false">
+			<animation type="WindowClose" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 				<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="240" />
 				<effect type="fade" start="100" end="0" time="240" />
 			</animation>
@@ -420,54 +420,54 @@
 				<left>0</left>
 				<top>0</top>
 				<!--
-				     <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation> -->
+				     <animation effect="fade" start="100" end="80" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
 				<width>1920</width>
 				<height>100</height>
-				<animation effect="fade" end="100" time="360">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+				<animation effect="fade" end="100" time="360" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="250" condition="!Skin.HasSetting(Disable.Animations)">WindowClose</animation>
 			</control>
 			<control type="image">
 				<texture>extendedinfo/fade.png</texture>
 				<left>0</left>
 				<!--
-				     <animation effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation> -->
+				     <animation effect="fade" start="100" end="80" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
 				<top>980</top>
 				<width>1920</width>
 				<height>100</height>
-				<animation effect="fade" end="100" time="360">WindowOpen</animation>
-				<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+				<animation effect="fade" end="100" time="360" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="250" condition="!Skin.HasSetting(Disable.Animations)">WindowClose</animation>
 			</control>
 			<control type="group">
-				<animation effect="slide" start="0" end="-290" time="250" condition="Control.IsVisible(50)">Conditional</animation>
+				<animation effect="slide" start="0" end="-290" time="250" condition="!Skin.HasSetting(Disable.Animations) + Control.IsVisible(50)">Conditional</animation>
 				<control type="image">
 					<texture>extendedinfo/arrowdown.png</texture>
 					<left>1090</left>
-					<animation effect="fade" time="250">VisibleChange</animation>
+					<animation effect="fade" time="250" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
 					<top>1040</top>
 					<width>120</width>
 					<height>30</height>
-					<animation effect="fade" end="100" time="360">WindowOpen</animation>
-					<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+					<animation effect="fade" end="100" time="360" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="250" condition="!Skin.HasSetting(Disable.Animations)">WindowClose</animation>
 					<visible>!String.IsEmpty(Window.Property(ArrowDown)) | Container(500).HasNext</visible>
 				</control>
 				<control type="image">
 					<texture flipy="true">extendedinfo/arrowdown.png</texture>
 					<left>1090</left>
-					<animation effect="fade" time="250">VisibleChange</animation>
+					<animation effect="fade" time="250" condition="!Skin.HasSetting(Disable.Animations)">VisibleChange</animation>
 					<top>10</top>
 					<width>120</width>
 					<height>30</height>
-					<animation effect="fade" end="100" time="360">WindowOpen</animation>
-					<animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
+					<animation effect="fade" end="100" time="360" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
+					<animation effect="fade" start="100" end="0" time="250" condition="!Skin.HasSetting(Disable.Animations)">WindowClose</animation>
 					<visible>!String.IsEmpty(Window.Property(ArrowUp)) | Container(500).HasPrevious</visible>
 				</control>
 			</control>
 			<control type="group">
-				<animation type="WindowOpen" reversible="false">
+				<animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 					<effect type="slide" start="-200" end="0" delay="1000" tween="sine" time="500" />
 					<effect type="slide" start="0" end="-200" delay="3000" tween="sine" time="500" />
 				</animation>
-				<animation effect="fade" start="100" end="0" time="0">WindowClose</animation>
+				<animation effect="fade" start="100" end="0" time="0" condition="!Skin.HasSetting(Disable.Animations)">WindowClose</animation>
 				<control type="image">
 					<texture flipx="true">extendedinfo/arrowright.png</texture>
 					<left>20</left>
@@ -487,7 +487,7 @@
 				</control>
 			</control>
 			<control type="group">
-				<animation type="WindowOpen" reversible="false">
+				<animation type="WindowOpen" reversible="false" condition="!Skin.HasSetting(Disable.Animations)">
 					<effect type="slide" start="0,-200" end="0,0" delay="1000" tween="sine" time="500" />
 				</animation>
 				<control type="label">
@@ -509,18 +509,18 @@
 					<align>left</align>
 					<textcolor>FFFAFAFA</textcolor>
 					<label>$INFO[Window.Property(Filter_Label)]</label>
-					<animation type="Conditional" condition="!ControlGroup(9000).HasFocus + !Control.HasFocus(6000) + !Control.HasFocus(6001) + !Control.HasFocus(7000)">
+					<animation type="Conditional" condition="!Skin.HasSetting(Disable.Animations)+[!ControlGroup(9000).HasFocus + !Control.HasFocus(6000) + !Control.HasFocus(6001) + !Control.HasFocus(7000)]">
 						<effect type="slide" end="-460" time="320" easing="in" tween="cubic" />
 					</animation>
 				</control>
 			</control>
 		</control>
 		<control type="group">
-			<animation effect="slide" start="-460" end="0" time="320" easing="out" tween="cubic">Visible</animation>
-			<animation effect="slide" start="0" end="-460" time="320" easing="in" tween="cubic">Hidden</animation>
+			<animation effect="slide" start="-460" end="0" time="320" easing="out" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">Visible</animation>
+			<animation effect="slide" start="0" end="-460" time="320" easing="in" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">Hidden</animation>
 			<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus | Control.HasFocus(6000) | Control.HasFocus(6001) | Control.HasFocus(7000)</visible>
 			<left>0</left>
-			<animation effect="slide" start="0" end="-460" time="320" tween="cubic">WindowClose</animation>
+			<animation effect="slide" start="0" end="-460" time="320" tween="cubic" condition="!Skin.HasSetting(Disable.Animations)">WindowClose</animation>
 			<control type="image">
 				<left>-112</left>
 				<width>550</width>
