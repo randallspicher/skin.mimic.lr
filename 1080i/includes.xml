@@ -807,8 +807,9 @@
 	</include>
 	<include name="OverlayIcons">
 		<control type="group">
-			<visible>$EXP[isVideo] | $EXP[isMovie] | $EXP[isTvshow] | $EXP[isSeason] | $EXP[isEpisode] | $EXP[isSet] | $EXP[isMusicvideo] | Container.Content(files) |
-				Container.Content(tvshows) | Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos) | Container.Content(videos)
+			<visible>$EXP[isVideo] | $EXP[isMovie] | $EXP[isTvshow] | $EXP[isSeason] | $EXP[isEpisode] | $EXP[isSet] 
+			| $EXP[isMusicvideo] | Container.Content(files) | Container.Content(recordings) | Container.Content(tvshows) 
+			| Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos) | Container.Content(videos)
 			</visible>
 			<left>$PARAM[OverlayLeft]</left>
 			<top>$PARAM[OverlayTop]</top>
@@ -843,8 +844,9 @@
 	</include>
 	<include name="OverlayList">
 		<control type="group">
-			<visible>$EXP[isVideo] | $EXP[isMovie] | $EXP[isTvshow] | $EXP[isSeason] | $EXP[isEpisode] | $EXP[isSet] | $EXP[isMusicvideo] | Container.Content(files) |
-				Container.Content(tvshows) | Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos) | Container.Content(videos) | Container.Content()
+			<visible>$EXP[isVideo] | $EXP[isMovie] | $EXP[isTvshow] | $EXP[isSeason] | $EXP[isEpisode] | $EXP[isSet] | $EXP[isMusicvideo] 
+			| Container.Content(files) | Container.Content(recordings) | Container.Content(tvshows) 
+			| Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos) | Container.Content(videos) | Container.Content()
 			</visible>
 			<control type="label">
 				<left>$PARAM[OverlayListLeft]</left>
