@@ -664,7 +664,7 @@ msgid "Select background"
 msgstr ""
 
 msgctxt "#31168"
-msgid "TheMovieDB"
+msgid "EmbuaryInfo"
 msgstr ""
 
 msgctxt "#31169"
@@ -803,7 +803,7 @@ msgid "Discover more videos directed by"
 msgstr ""
 
 msgctxt "#31202"
-msgid "View extended information"
+msgid "ExtendedInfo"
 msgstr ""
 
 

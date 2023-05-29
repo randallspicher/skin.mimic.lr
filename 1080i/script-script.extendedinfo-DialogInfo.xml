@@ -4,9 +4,9 @@
 	<controls>
 		<control type="group">
 			<!-- left side -->
-			<animation condition="!Skin.HasSetting(Disable.Animations)" effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine">WindowOpen</animation>
-			<animation effect="slide" end="-1500,0" time="900" tween="sine" condition="!Skin.HasSetting(Disable.Animations) +[Control.HasFocus(132) | ControlGroup(5000).HasFocus]">WindowClose</animation>
-			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Skin.HasSetting(Disable.Animations) + !Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
+			<animation effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine">WindowOpen</animation>
+			<animation effect="slide" end="-1500,0" time="900" tween="sine" condition="[Control.HasFocus(132) | ControlGroup(5000).HasFocus]">WindowClose</animation>
+			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
 			<control type="image">
 				<width>729</width>
 				<height>1080</height>
@@ -38,10 +38,10 @@
 			<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
 		</control>
 		<control type="group">
-			<animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
-			<animation effect="slide" end="1242,0" time="450" tween="sine" condition="!Skin.HasSetting(Disable.Animations)+[Control.HasFocus(132) | ControlGroup(5000).HasFocus]">WindowClose</animation>
-			<animation effect="slide" end="0,1080" time="450" tween="sine" condition="!Skin.HasSetting(Disable.Animations)!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">WindowClose</animation>
-			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Skin.HasSetting(Disable.Animations)!Control.HasFocus(132) + !ControlGroup(5000).HasFocus">Conditional</animation>
+			<animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine">WindowOpen</animation>
+			<animation effect="slide" end="1242,0" time="450" tween="sine" condition="[Control.HasFocus(132) | ControlGroup(5000).HasFocus]">WindowClose</animation>
+			<animation effect="slide" end="0,1080" time="450" tween="sine" condition="[!Control.HasFocus(132) + !ControlGroup(5000).HasFocus]">WindowClose</animation>
+			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="[!Control.HasFocus(132) + !ControlGroup(5000).HasFocus]">Conditional</animation>
 			<!-- right side -->
 			<control type="image">
 				<left>729</left>
@@ -289,15 +289,15 @@
 											<texture>extendedinfo/flags/local.png</texture>
 											<visible>!String.IsEmpty(ListItem.DBID)</visible>
 										</control>
-										<control type="image">
-											<top>310</top>
-											<width>63</width>
-											<height>25</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-											<visible>!String.IsEmpty(ListItem.Year)</visible>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>310</top> -->
+<!-- 											<width>63</width> -->
+<!-- 											<height>25</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 											<visible>!String.IsEmpty(ListItem.Year)</visible> -->
+<!-- 										</control> -->
 										<control type="label">
 											<left>5</left>
 											<top>310</top>
@@ -308,15 +308,15 @@
 											<align>left</align>
 											<label>$INFO[ListItem.Year]</label>
 										</control>
-										<control type="image">
-											<top>10</top>
-											<width>224</width>
-											<height>325</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(150)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>10</top> -->
+<!-- 											<width>224</width> -->
+<!-- 											<height>325</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(150)">Conditional</animation> -->
+<!-- 											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 										</control> -->
 										<control type="textbox">
 											<width>228</width>
 											<height>140</height>
@@ -367,15 +367,15 @@
 											<texture>extendedinfo/flags/local.png</texture>
 											<visible>!String.IsEmpty(ListItem.DBID)</visible>
 										</control>
-										<control type="image">
-											<top>310</top>
-											<width>63</width>
-											<height>25</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-											<visible>!String.IsEmpty(ListItem.Year)</visible>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>310</top> -->
+<!-- 											<width>63</width> -->
+<!-- 											<height>25</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 											<visible>!String.IsEmpty(ListItem.Year)</visible> -->
+<!-- 										</control> -->
 										<control type="label">
 											<left>5</left>
 											<top>310</top>
@@ -472,15 +472,15 @@
 											<texture>extendedinfo/flags/local.png</texture>
 											<visible>!String.IsEmpty(ListItem.DBID)</visible>
 										</control>
-										<control type="image">
-											<top>310</top>
-											<width>63</width>
-											<height>25</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-											<visible>!String.IsEmpty(ListItem.Year)</visible>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>310</top> -->
+<!-- 											<width>63</width> -->
+<!-- 											<height>25</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 											<visible>!String.IsEmpty(ListItem.Year)</visible> -->
+<!-- 										</control> -->
 										<control type="label">
 											<left>5</left>
 											<top>310</top>
@@ -491,15 +491,15 @@
 											<align>left</align>
 											<label>$INFO[ListItem.Year]</label>
 										</control>
-										<control type="image">
-											<top>10</top>
-											<width>224</width>
-											<height>325</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations) + !Control.HasFocus(250)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>10</top> -->
+<!-- 											<width>224</width> -->
+<!-- 											<height>325</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations) + !Control.HasFocus(250)">Conditional</animation> -->
+<!-- 											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 										</control> -->
 										<control type="textbox">
 											<width>228</width>
 											<height>140</height>
@@ -550,15 +550,15 @@
 											<texture>extendedinfo/flags/local.png</texture>
 											<visible>!String.IsEmpty(ListItem.DBID)</visible>
 										</control>
-										<control type="image">
-											<top>310</top>
-											<width>63</width>
-											<height>25</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-											<visible>!String.IsEmpty(ListItem.Year)</visible>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>310</top> -->
+<!-- 											<width>63</width> -->
+<!-- 											<height>25</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 											<visible>!String.IsEmpty(ListItem.Year)</visible> -->
+<!-- 										</control> -->
 										<control type="label">
 											<left>5</left>
 											<top>310</top>
@@ -655,15 +655,15 @@
 											<texture>extendedinfo/flags/local.png</texture>
 											<visible>!String.IsEmpty(ListItem.DBID)</visible>
 										</control>
-										<control type="image">
-											<top>310</top>
-											<width>63</width>
-											<height>25</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-											<visible>!String.IsEmpty(ListItem.Year)</visible>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>310</top> -->
+<!-- 											<width>63</width> -->
+<!-- 											<height>25</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 											<visible>!String.IsEmpty(ListItem.Year)</visible> -->
+<!-- 										</control> -->
 										<control type="label">
 											<left>5</left>
 											<top>310</top>
@@ -674,15 +674,15 @@
 											<align>left</align>
 											<label>$INFO[ListItem.Year]</label>
 										</control>
-										<control type="image">
-											<top>10</top>
-											<width>224</width>
-											<height>325</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="0" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(550)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>10</top> -->
+<!-- 											<width>224</width> -->
+<!-- 											<height>325</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" start="100" end="0" time="0" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(550)">Conditional</animation> -->
+<!-- 											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 										</control> -->
 										<control type="textbox">
 											<width>228</width>
 											<height>140</height>
@@ -733,15 +733,15 @@
 											<texture>extendedinfo/flags/local.png</texture>
 											<visible>!String.IsEmpty(ListItem.DBID)</visible>
 										</control>
-										<control type="image">
-											<top>310</top>
-											<width>63</width>
-											<height>25</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-											<visible>!String.IsEmpty(ListItem.Year)</visible>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>310</top> -->
+<!-- 											<width>63</width> -->
+<!-- 											<height>25</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 											<visible>!String.IsEmpty(ListItem.Year)</visible> -->
+<!-- 										</control> -->
 										<control type="label">
 											<left>5</left>
 											<top>310</top>
@@ -838,15 +838,15 @@
 											<texture>extendedinfo/flags/local.png</texture>
 											<visible>!String.IsEmpty(ListItem.DBID)</visible>
 										</control>
-										<control type="image">
-											<top>310</top>
-											<width>63</width>
-											<height>25</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-											<visible>!String.IsEmpty(ListItem.Year)</visible>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>310</top> -->
+<!-- 											<width>63</width> -->
+<!-- 											<height>25</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 											<visible>!String.IsEmpty(ListItem.Year)</visible> -->
+<!-- 										</control> -->
 										<control type="label">
 											<left>5</left>
 											<top>310</top>
@@ -857,15 +857,15 @@
 											<align>left</align>
 											<label>$INFO[ListItem.Year]</label>
 										</control>
-										<control type="image">
-											<top>10</top>
-											<width>224</width>
-											<height>325</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="0" condition="!Skin.HasSetting(Disable.Animations) + !Control.HasFocus(650)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>10</top> -->
+<!-- 											<width>224</width> -->
+<!-- 											<height>325</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" start="100" end="0" time="0" condition="!Skin.HasSetting(Disable.Animations) + !Control.HasFocus(650)">Conditional</animation> -->
+<!-- 											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 										</control> -->
 										<control type="textbox">
 											<width>228</width>
 											<height>140</height>
@@ -916,15 +916,15 @@
 											<texture>extendedinfo/flags/local.png</texture>
 											<visible>!String.IsEmpty(ListItem.DBID)</visible>
 										</control>
-										<control type="image">
-											<top>310</top>
-											<width>63</width>
-											<height>25</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-											<visible>!String.IsEmpty(ListItem.Year)</visible>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>310</top> -->
+<!-- 											<width>63</width> -->
+<!-- 											<height>25</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 											<visible>!String.IsEmpty(ListItem.Year)</visible> -->
+<!-- 										</control> -->
 										<control type="label">
 											<left>5</left>
 											<top>310</top>

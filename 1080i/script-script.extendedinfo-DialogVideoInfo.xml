@@ -3,10 +3,11 @@
 	<defaultcontrol always="true">4000</defaultcontrol>
 	<controls>
 		<control type="group">
-			<animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
-			<animation effect="slide" end="1242,0" time="450" tween="sine" condition="!Skin.HasSetting(Disable.Animations)+[Control.HasFocus(132) | ControlGroup(5000).HasFocus]">WindowClose</animation>
-			<animation effect="slide" end="0,1080" time="450" tween="sine" condition="!Skin.HasSetting(Disable.Animations)+[!Control.HasFocus(132) + !ControlGroup(5000).HasFocus]">WindowClose</animation>
-			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+[!Control.HasFocus(132) + !ControlGroup(5000).HasFocus]">Conditional</animation>
+			<animation effect="slide" start="5042,0" end="0,0" time="1500" tween="sine">WindowOpen</animation>
+			<animation effect="slide" end="1242,0" time="450" tween="sine" condition="[Control.HasFocus(132) | ControlGroup(5000).HasFocus]">WindowClose</animation>
+			<animation effect="slide" end="0,1080" time="450" tween="sine" condition="[!Control.HasFocus(132) + !ControlGroup(5000).HasFocus]">WindowClose</animation>
+			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="[!Control.HasFocus(132) + !ControlGroup(5000).HasFocus]">Conditional</animation>
+
 			<control type="image">
 				<left>729</left>
 				<width>1950</width>
@@ -740,15 +741,15 @@
 											<aspectratio aligny="center">scale</aspectratio>
 											<fadetime>0</fadetime>
 										</control>
-										<control type="image">
-											<top>10</top>
-											<width>224</width>
-											<height>325</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="0" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(1000)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>10</top> -->
+<!-- 											<width>224</width> -->
+<!-- 											<height>325</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" start="100" end="0" time="0" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(1000)">Conditional</animation> -->
+<!-- 											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 										</control> -->
 										<control type="textbox">
 											<width>228</width>
 											<left>0</left>
@@ -880,15 +881,15 @@
 											<texture background="true">$INFO[ListItem.Thumb]</texture>
 											<aspectratio aligny="center">scale</aspectratio>
 										</control>
-										<control type="image">
-											<top>10</top>
-											<width>224</width>
-											<height>325</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(750)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>10</top> -->
+<!-- 											<width>224</width> -->
+<!-- 											<height>325</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(750)">Conditional</animation> -->
+<!-- 											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 										</control> -->
 										<control type="textbox">
 											<left>0</left>
 											<width>228</width>
@@ -1068,16 +1069,16 @@
 											<texture>extendedinfo/flags/local.png</texture>
 											<visible>!String.IsEmpty(ListItem.dbid)</visible>
 										</control>
-										<control type="image">
-											<top>10</top>
-											<width>224</width>
-											<height>325</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(150)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-											<fadetime>0</fadetime>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>10</top> -->
+<!-- 											<width>224</width> -->
+<!-- 											<height>325</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(150)">Conditional</animation> -->
+<!-- 											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 											<fadetime>0</fadetime> -->
+<!-- 										</control> -->
 										<control type="textbox">
 											<left>0</left>
 											<width>228</width>
@@ -1464,16 +1465,16 @@
 										<aspectratio aligny="center">scale</aspectratio>
 										<fadetime>0</fadetime>
 									</control>
-									<control type="image">
-										<left>0</left>
-										<top>10</top>
-										<width>320</width>
-										<height>200</height>
-										<texture>extendedinfo/common/black.png</texture>
-										<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(1150)">Conditional</animation>
-										<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-										<aspectratio aligny="center">scale</aspectratio>
-									</control>
+<!-- 									<control type="image"> -->
+<!-- 										<left>0</left> -->
+<!-- 										<top>10</top> -->
+<!-- 										<width>320</width> -->
+<!-- 										<height>200</height> -->
+<!-- 										<texture>extendedinfo/common/black.png</texture> -->
+<!-- 										<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(1150)">Conditional</animation> -->
+<!-- 										<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 										<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 									</control> -->
 									<control type="textbox">
 										<left>0</left>
 										<width>323</width>
@@ -1593,15 +1594,15 @@
 										<aspectratio aligny="center">scale</aspectratio>
 										<fadetime>0</fadetime>
 									</control>
-									<control type="image">
-										<top>10</top>
-										<width>320</width>
-										<height>200</height>
-										<texture>extendedinfo/common/black.png</texture>
-										<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(350)">Conditional</animation>
-										<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-										<aspectratio aligny="center">scale</aspectratio>
-									</control>
+<!-- 									<control type="image"> -->
+<!-- 										<top>10</top> -->
+<!-- 										<width>320</width> -->
+<!-- 										<height>200</height> -->
+<!-- 										<texture>extendedinfo/common/black.png</texture> -->
+<!-- 										<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(350)">Conditional</animation> -->
+<!-- 										<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 										<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 									</control> -->
 									<control type="textbox">
 										<left>0</left>
 										<width>323</width>
@@ -2310,16 +2311,16 @@
 										<aspectratio aligny="center">scale</aspectratio>
 										<fadetime>0</fadetime>
 									</control>
-									<control type="image">
-										<left>77</left>
-										<top>28</top>
-										<width>224</width>
-										<height>325</height>
-										<texture>extendedinfo/common/black.png</texture>
-										<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(1250)">Conditional</animation>
-										<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-										<aspectratio aligny="center">scale</aspectratio>
-									</control>
+<!-- 									<control type="image"> -->
+<!-- 										<left>77</left> -->
+<!-- 										<top>28</top> -->
+<!-- 										<width>224</width> -->
+<!-- 										<height>325</height> -->
+<!-- 										<texture>extendedinfo/common/black.png</texture> -->
+<!-- 										<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(1250)">Conditional</animation> -->
+<!-- 										<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 										<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 									</control> -->
 								</control>
 							</itemlayout>
 							<focusedlayout height="400" width="270">
@@ -2417,16 +2418,16 @@
 										<aspectratio aligny="center">scale</aspectratio>
 										<fadetime>200</fadetime>
 									</control>
-									<control type="image">
-										<left>77</left>
-										<top>28</top>
-										<width>505</width>
-										<height>325</height>
-										<texture>extendedinfo/common/black.png</texture>
-										<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(1350)">Conditional</animation>
-										<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-										<aspectratio aligny="center">scale</aspectratio>
-									</control>
+<!-- 									<control type="image"> -->
+<!-- 										<left>77</left> -->
+<!-- 										<top>28</top> -->
+<!-- 										<width>505</width> -->
+<!-- 										<height>325</height> -->
+<!-- 										<texture>extendedinfo/common/black.png</texture> -->
+<!-- 										<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(1350)">Conditional</animation> -->
+<!-- 										<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 										<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 									</control> -->
 								</control>
 							</itemlayout>
 							<focusedlayout height="400" width="666">
@@ -2531,15 +2532,15 @@
 											<texture>extendedinfo/flags/local.png</texture>
 											<visible>!String.IsEmpty(ListItem.Property(account))</visible>
 										</control>
-										<control type="image">
-											<top>10</top>
-											<width>224</width>
-											<height>325</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(450)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>10</top> -->
+<!-- 											<width>224</width> -->
+<!-- 											<height>325</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(450)">Conditional</animation> -->
+<!-- 											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 										</control> -->
 										<control type="label">
 											<width>228</width>
 											<left>0</left>
@@ -2669,15 +2670,15 @@
 										<aspectratio aligny="center">scale</aspectratio>
 										<fadetime>0</fadetime>
 									</control>
-									<control type="image">
-										<top>10</top>
-										<width>320</width>
-										<height>200</height>
-										<texture>extendedinfo/common/black.png</texture>
-										<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(2000)">Conditional</animation>
-										<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-										<aspectratio aligny="center">scale</aspectratio>
-									</control>
+<!-- 									<control type="image"> -->
+<!-- 										<top>10</top> -->
+<!-- 										<width>320</width> -->
+<!-- 										<height>200</height> -->
+<!-- 										<texture>extendedinfo/common/black.png</texture> -->
+<!-- 										<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(2000)">Conditional</animation> -->
+<!-- 										<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation> -->
+<!-- 										<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 									</control> -->
 									<control type="textbox">
 										<left>0</left>
 										<width>323</width>
@@ -3020,9 +3021,10 @@
 			</control>
 		</control>
 		<control type="group">
-			<animation effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine" condition="!Skin.HasSetting(Disable.Animations)">WindowOpen</animation>
-			<animation effect="slide" end="-1500,0" time="900" tween="sine" condition="!Skin.HasSetting(Disable.Animations)+[Control.HasFocus(132) | ControlGroup(5000).HasFocus]">WindowClose</animation>
-			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="!Skin.HasSetting(Disable.Animations)+[!Control.HasFocus(132) + !ControlGroup(5000).HasFocus]">Conditional</animation>
+
+			<animation effect="slide" start="-1500,0" end="0,0" delay="600" time="900" tween="sine">WindowOpen</animation>
+			<animation effect="slide" end="-1500,0" time="900" tween="sine" condition="[Control.HasFocus(132) | ControlGroup(5000).HasFocus]">WindowClose</animation>
+			<animation effect="slide" end="-749,0" time="450" tween="sine" easing="inout" condition="[!Control.HasFocus(132) + !ControlGroup(5000).HasFocus]">Conditional</animation>
 			<control type="image">
 				<left>-10</left>
 				<top>-10</top>
