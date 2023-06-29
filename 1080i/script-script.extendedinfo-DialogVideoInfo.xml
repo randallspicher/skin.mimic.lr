@@ -1047,7 +1047,7 @@
 											<width>63</width>
 											<height>25</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
+											<animation effect="fade" end="60" time="0">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 											<visible>!String.IsEmpty(ListItem.Year)</visible>
 										</control>
@@ -1134,7 +1134,7 @@
 											<width>63</width>
 											<height>25</height>
 											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" end="60" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
+											<animation effect="fade" end="60" time="0">Conditional</animation>
 											<aspectratio aligny="center">scale</aspectratio>
 											<visible>!String.IsEmpty(ListItem.Year)</visible>
 										</control>
@@ -1306,15 +1306,15 @@
 											<align>left</align>
 											<label>$INFO[ListItem.Year]</label>
 										</control>
-										<control type="image">
-											<top>10</top>
-											<width>224</width>
-											<height>325</height>
-											<texture>extendedinfo/common/black.png</texture>
-											<animation effect="fade" start="100" end="0" time="200" condition="!Skin.HasSetting(Disable.Animations)+!Control.HasFocus(250)">Conditional</animation>
-											<animation effect="fade" end="30" time="0" condition="!Skin.HasSetting(Disable.Animations)">Conditional</animation>
-											<aspectratio aligny="center">scale</aspectratio>
-										</control>
+<!-- 										<control type="image"> -->
+<!-- 											<top>10</top> -->
+<!-- 											<width>224</width> -->
+<!-- 											<height>325</height> -->
+<!-- 											<texture>extendedinfo/common/black.png</texture> -->
+<!-- 											<animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(250)">Conditional</animation> -->
+<!-- 											<animation effect="fade" end="30" time="0">Conditional</animation> -->
+<!-- 											<aspectratio aligny="center">scale</aspectratio> -->
+<!-- 										</control> -->
 										<control type="textbox">
 											<left>0</left>
 											<width>228</width>

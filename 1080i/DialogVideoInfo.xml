@@ -882,7 +882,7 @@
 <!-- 						<visible>System.HasAddon(script.extendedinfo)</visible> -->
 <!-- 					</control> -->
 					<control type="button" id="209">
-                        <description>ExtenededInfo</description>
+                        <description>ExtendedInfo</description>
                         <include>ButtonInfoDialogsCommonValues</include>
                         <onclick>RunScript(script.extendedinfo,info=openinfodialog)</onclick>
                         <label>31202</label>
