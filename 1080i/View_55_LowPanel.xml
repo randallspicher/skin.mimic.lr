@@ -9,7 +9,7 @@
                 <visible>Integer.IsGreater(Container(55).NumItems,0)</visible>
                 <animation effect="fade" time="320" delay="300">Visible</animation>
                 <control type="image">
-                    <visible>[Container.Content(sets) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + Control.HasFocus(55) </visible>
+                    <visible>[Container.Content(favourites) | Container.Content(sets) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + Control.HasFocus(55) </visible>
                     <left>37</left>
                     <top>630</top>
                     <width>274</width>

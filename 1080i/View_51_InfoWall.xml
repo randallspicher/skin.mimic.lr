@@ -20,7 +20,7 @@
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>
 				<viewtype label="31021">icons</viewtype>
-				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)</visible>
+				<visible>Container.Content(favourites) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)</visible>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 
 				<itemlayout height="396" width="268" condition="!Skin.HasSetting(InfoWall.Banners) + !Skin.HasSetting(InfoWall.Logo)">

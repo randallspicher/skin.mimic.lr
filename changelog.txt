@@ -1,3 +1,7 @@
+8.0.1
+* Omega release
+* Add support for new "MyFavorites" window which replaces the old dialog
+
 7.0.7
 * Display PVR channel number input on screen when watching PVR
 * tweak to some MPAA rating icons

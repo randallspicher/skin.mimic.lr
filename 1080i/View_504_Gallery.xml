@@ -65,7 +65,7 @@
 				<pagecontrol>60</pagecontrol>
 				<focusposition>1</focusposition>
 				<orientation>horizontal</orientation>
-				<visible>[Container.Content(movies) | Container.Content(sets)| Container.Content(seasons)| Container.Content(tvshows) | Container.Content(images) | Container.Content(artists) |
+				<visible>[Container.Content(favourites) | Container.Content(movies) | Container.Content(sets)| Container.Content(seasons)| Container.Content(tvshows) | Container.Content(images) | Container.Content(artists) |
 					Container.Content(albums) ] + !Container.Content(addons)
 				</visible>
 				<itemlayout width="1167" height="650">

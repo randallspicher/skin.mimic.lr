@@ -25,7 +25,7 @@
                 <animation effect="slide" end="235,0" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(509).Column,0)">Conditional</animation>
             </control>
             <control type="image">
-                <visible>[Container.Content(movies) | Container.Content(tvshows)] + Control.HasFocus(509) + [Skin.HasSetting(Enable.WallLandscape) | Skin.HasSetting(Enable.WallLogo)]</visible>
+                <visible>[Container.Content(favourites) | Container.Content(movies) | Container.Content(tvshows)] + Control.HasFocus(509) + [Skin.HasSetting(Enable.WallLandscape) | Skin.HasSetting(Enable.WallLogo)]</visible>
                 <left>50</left>
                 <top>14</top>
                 <width>464</width>

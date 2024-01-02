@@ -18,7 +18,7 @@
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>
 				<viewtype label="31086">Icon</viewtype>
-				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(seasons) | Container.Content(sets) |
+				<visible>Container.Content(favourites) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(seasons) | Container.Content(sets) |
 					Container.Content(musicvideos) | Container.Content(files) | Container.Content(videos)
 				</visible>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>

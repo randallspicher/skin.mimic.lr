@@ -63,7 +63,7 @@
 		<label2>Common menu item</label2>
 		<icon>DefaultIconFavourite.png</icon>
 		<thumb>DefaultIconFavourite.png</thumb>
-		<action>ActivateWindow(favourites)</action>
+		<action>ActivateWindow(favouritesbrowser)</action>
 	</shortcut>
 	<shortcut>
 		<defaultID>weather</defaultID>
