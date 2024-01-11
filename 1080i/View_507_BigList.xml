@@ -39,7 +39,7 @@
                     <orientation>vertical</orientation>
                     <scrolltime tween="quadratic" easing="out">0</scrolltime>
                     <visible>Container.Content(favourites) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes) | Container.Content(videos) | [[Container.Content(artists) | Container.Content(albums)] + !Window.IsActive(videos)]</visible>
-                    <itemlayout width="1808" height="221" condition="Container.Content(episodes) | Container.Content(videos) | ![Skin.HasSetting(Enable.BigListThumb) | Skin.HasSetting(Enable.BigListPoster) | Container.Content(albums)]">
+                    <itemlayout width="1808" height="221" condition="Container.Content(episodes) | Container.Content(videos) | ![String.IsEqual(Control.GetLabel(10102),thumb) | String.IsEqual(Control.GetLabel(10102),poster) | Container.Content(albums)]">
                         <include>view_BigList-LandscapeCommons</include>
                         <control type="group">
                             <left>382</left>
@@ -93,7 +93,7 @@
                             </control>
                         </control>
                     </itemlayout>
-                    <focusedlayout width="1808" height="221" condition="Container.Content(episodes) | Container.Content(videos) | ![Skin.HasSetting(Enable.BigListThumb) | Skin.HasSetting(Enable.BigListPoster) | Container.Content(albums)]">
+                    <focusedlayout width="1808" height="221" condition="Container.Content(episodes) | Container.Content(videos) | ![String.IsEqual(Control.GetLabel(10102),thumb) | String.IsEqual(Control.GetLabel(10102),poster) | Container.Content(albums)]">
                         <include>view_BigList-LandscapeCommons</include>
                         <control type="group">
                             <left>382</left>
@@ -151,7 +151,7 @@
                             </control>
                         </control>
                     </focusedlayout>
-                    <itemlayout width="1808" height="221" condition="Skin.HasSetting(Enable.BigListPoster) + !Window.IsActive(music) + !Container.Content(episodes)">
+                    <itemlayout width="1808" height="221" condition="String.IsEqual(Control.GetLabel(10102),poster) + !Window.IsActive(music) + !Container.Content(episodes)">
                         <include>view_BigList-PosterCommons</include>
                         <control type="group">
                             <left>166</left>
@@ -205,7 +205,7 @@
                             </control>
                         </control>
                     </itemlayout>
-                    <focusedlayout width="1808" height="221" condition="Skin.HasSetting(Enable.BigListPoster) + !Window.IsActive(music) + !Container.Content(episodes)">
+                    <focusedlayout width="1808" height="221" condition="String.IsEqual(Control.GetLabel(10102),poster) + !Window.IsActive(music) + !Container.Content(episodes)">
                         <include>view_BigList-PosterCommons</include>
                         <control type="group">
                             <left>166</left>
@@ -263,7 +263,7 @@
                             </control>
                         </control>
                     </focusedlayout>
-                    <itemlayout width="1808" height="221" condition="[Container.Content(artists) + Skin.HasSetting(Enable.BigListThumb)] | Container.Content(albums)">
+                    <itemlayout width="1808" height="221" condition="[Container.Content(artists) + String.IsEqual(Control.GetLabel(10102),thumb)] | Container.Content(albums)">
                         <include>view_BigList-ThumbCommons</include>
                         <control type="group">
                             <left>231</left>
@@ -308,7 +308,7 @@
                             </control>
                         </control>
                     </itemlayout>
-                    <focusedlayout width="1808" height="221" condition="[Container.Content(artists) + Skin.HasSetting(Enable.BigListThumb)] | Container.Content(albums)">
+                    <focusedlayout width="1808" height="221" condition="[Container.Content(artists) + String.IsEqual(Control.GetLabel(10102),thumb)] | Container.Content(albums)">
                         <include>view_BigList-ThumbCommons</include>
                         <control type="group">
                             <left>231</left>
@@ -374,25 +374,25 @@
                 <effect type="zoom" time="150" start="105" end="100" delay="150" center="191,115" />
             </animation>
             <control type="image">
-                <visible>![Skin.HasSetting(Enable.BigListLogo) | Skin.HasSetting(Enable.BigListFanart)]</visible>
+                <visible>![String.IsEqual(Control.GetLabel(10102),logo) | String.IsEqual(Control.GetLabel(10102),fanart)]</visible>
                 <width>346</width>
                 <height>195</height>
-                <texture background="true" diffuse="diffuse/biglist-landscape.png">$VAR[LandscapeArtVar]</texture>
+                <texture background="true" diffuse="diffuse/biglist-landscape.png">$VAR[Art1Image]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
             </control>
             <control type="image">
-                <visible>Skin.HasSetting(Enable.BigListFanart)</visible>
+                <visible>String.IsEqual(Control.GetLabel(10102),fanart)</visible>
                 <width>346</width>
                 <height>195</height>
                 <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/biglist-landscape.png">$VAR[FanartVar]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
             </control>
             <control type="image">
-                <visible>Skin.HasSetting(Enable.BigListLogo)</visible>
+                <visible>String.IsEqual(Control.GetLabel(10102),logo)</visible>
                 <left>15</left>
                 <width>316</width>
                 <height>195</height>
-                <texture background="true" fallback="DefaultFolder.png">$VAR[LogoVar]</texture>
+                <texture background="true" fallback="DefaultFolder.png">$VAR[Art1Image]</texture>
                 <aspectratio>keep</aspectratio>
             </control>
             <control type="image">
@@ -401,7 +401,7 @@
                 <height>98</height>
                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
                 <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-                <visible>![Container.Content(episodes) | Container.Content(artists) | Container.Content(musicvideos) | Skin.HasSetting(Enable.BigListLogo) | Skin.HasSetting(Enable.BigListFanart)] + String.IsEmpty(ListItem.Art(landscape))</visible>
+                <visible>![Container.Content(episodes) | Container.Content(artists) | Container.Content(musicvideos) | String.IsEqual(Control.GetLabel(10102),logo) | String.IsEqual(Control.GetLabel(10102),fanart)] + String.IsEmpty(ListItem.Art(landscape))</visible>
             </control>
             <control type="image">
                 <animation center="auto" condition="Control.HasFocus(507)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation>
@@ -412,7 +412,7 @@
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
             </control>
             <control type="group">
-                <visible>!Skin.HasSetting(Enable.BigListLogo)</visible>
+                <visible>!String.IsEqual(Control.GetLabel(10102),logo)</visible>
                 <include content="OverlayIcons">
                     <param name="OverlayLeft" value="285" />
                     <param name="OverlayTop" value="0" />
@@ -431,7 +431,7 @@
             <control type="image">
                 <width>130</width>
                 <height>195</height>
-                <texture background="true" diffuse="diffuse/biglist-poster.png">$VAR[PosterVar]</texture>
+                <texture background="true" diffuse="diffuse/biglist-poster.png">$VAR[Art1Image]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
             </control>
             <control type="image">
@@ -459,7 +459,7 @@
             <control type="image">
                 <width>195</width>
                 <height>195</height>
-                <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/biglist-square.png">$VAR[ThumbVar]</texture>
+                <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/biglist-square.png">$VAR[Art1Image]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
             </control>
             <control type="image">

@@ -60,7 +60,7 @@
                             <width>484</width>
                             <height>290</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/episode.png">$VAR[ThumbVar]</texture>
+                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/episode.png">$VAR[Art1Image]</texture>
                             <fadetime>IconCrossfadeTime</fadetime>
                             <bordersize>20</bordersize>
                         </control>

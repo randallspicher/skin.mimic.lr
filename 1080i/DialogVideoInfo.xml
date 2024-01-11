@@ -962,7 +962,7 @@
 				<width>560</width>
 				<height>820</height>
 				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-				<texture background="true" diffuse="diffuse/videoinfo-poster.png">$VAR[PosterVar]</texture>
+				<texture background="true" diffuse="diffuse/videoinfo-poster.png">$VAR[ArtPoster]</texture>
 			</control>
 			<control type="image">
 				<description>default large actor image</description>
@@ -1011,7 +1011,7 @@
 				<width>560</width>
 				<height>820</height>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
-				<texture background="true">$VAR[PosterVar]</texture>
+				<texture background="true">$VAR[ArtPoster]</texture>
 			</control>
 		</control>
 		<control type="group">

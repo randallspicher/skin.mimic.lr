@@ -16,7 +16,7 @@
 	</variable>
 
 	<variable name="WeatherFanArtSingleImage_Current">
-			<value>$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[WeatherFanArtExtension]</value>
+		<value>$INFO[Skin.String(weatherfanart.path)]$INFO[Window(Weather).Property(Current.FanartCode)]$VAR[WeatherFanArtExtension]</value>
 	</variable>
 
 	<variable name="GlobalBackgroundVar">
@@ -150,7 +150,7 @@
 		<value condition="[Container.Content(actors) | Container.Content(directors)] + !String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2] $LOCALIZE[31123]</value>
 		<value condition="!Container.Content(genres)">$INFO[ListItem.Genre]</value>
 	</variable>
-	<variable name="PosterVar">
+	<variable name="ArtPoster">
 		<value condition="Container.Content(episodes) + !String.IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
 		<value condition="Container.Content(episodes) + !String.IsEmpty(Container.Art(season.poster))">$INFO[Container.Art(season.poster)]</value>
 		<value condition="Container.Content(episodes) + !String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
@@ -161,44 +161,51 @@
 		<value condition="Window.IsActive(videos)">DefaultFallbackMovies.png</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
-	<variable name="ThumbVar">
-		<value condition="String.Contains(ListItem.Label,* All Albums) | String.Contains(ListItem.Label,* All Songs)">$INFO[ListItem.Icon]</value>
-		<value condition="ListItem.IsParentFolder">DefaultFallbackParent.png</value>
+
+	<variable name="ArtFanart">
+		<value condition="ListItem.IsParentFolder">DefaultFolderBack.png</value>
+		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value>$INFO[ListItem.Icon]</value>
 	</variable>
-	<variable name="FanartViewThumb">
-		<value condition="Skin.HasSetting(Enable.FanartLandscape) + !String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
-		<value condition="Skin.HasSetting(Enable.FanartLogo) + !String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
-		<value condition="ListItem.IsParentFolder">DefaultFolderBack.png</value>
-		<value>$INFO[ListItem.Art(fanart)]</value>
-	</variable>
 
-	<variable name="GalleryArtVar">
-		<value condition="ListItem.IsParentFolder">DefaultFallbackParent.png</value>
-		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+	<variable name="ArtLandscape">
+		<value condition="ListItem.IsParentFolder">DefaultFolderBack.png</value>
 		<value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
-		<value>DefaultFallback.png</value>
+		<value>$INFO[ListItem.Icon]</value>
 	</variable>
 
-	<variable name="LandscapeArtVar">
-		<value condition="Container.Content(videos)">$INFO[ListItem.Icon]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(landscape)]</value>
-		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + !Container.Content(episodes)">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="!String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
-		<value condition="ListItem.IsParentFolder">DefaultFallbackParent.png</value>
-		<value>DefaultFallback.png</value>
-	</variable>
-	<variable name="FanartVar">
-		<value condition="ListItem.IsParentFolder">DefaultFallbackParent.png</value>
-		<value>$INFO[ListItem.Art(fanart)]</value>
-	</variable>
-	<variable name="LogoVar">
+<!-- 	<variable name="ArtLandscape"> -->
+<!-- 		<value condition="Container.Content(videos)">$INFO[ListItem.Icon]</value> -->
+<!-- 		<value condition="!String.IsEmpty(ListItem.Art(landscape)) + !Container.Content(episodes)">$INFO[ListItem.Art(landscape)]</value> -->
+<!-- 		<value condition="!String.IsEmpty(ListItem.Art(fanart)) + !Container.Content(episodes)">$INFO[ListItem.Art(fanart)]</value> -->
+<!-- 		<value condition="!String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value> -->
+<!-- 		<value condition="ListItem.IsParentFolder">DefaultFallbackParent.png</value> -->
+<!-- 		<value>DefaultFallback.png</value> -->
+<!-- 	</variable> -->
+<!-- 	<variable name="FanartVar"> -->
+<!-- 		<value condition="ListItem.IsParentFolder">DefaultFallbackParent.png</value> -->
+<!-- 		<value>$INFO[ListItem.Art(fanart)]</value> -->
+<!-- 	</variable> -->
+
+	<variable name="ArtLogo">
 		<value condition="ListItem.IsParentFolder">DefaultFolderBack.png</value>
-		<value>$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 	</variable>
-	
+
+<!-- 	<variable name="LogoVar"> -->
+<!-- 		<value condition="ListItem.IsParentFolder">DefaultFolderBack.png</value> -->
+<!-- 		<value>$INFO[ListItem.Art(clearlogo)]</value> -->
+<!-- 	</variable> -->
+
 	<variable name="OneOrMoreSeasonsVar">
 		<value condition="String.IsEqual(ListItem.Property(TotalSeasons),1)">$LOCALIZE[20373]</value>
 		<value>$LOCALIZE[33054]</value>
@@ -258,7 +265,8 @@
 			| String.Contains(ListItem.Filename,remux)
 			]">bluray</value>
 		<value condition="String.Contains(ListItem.Filename,dvb)">dvb</value>
-		<value condition="[String.Contains(ListItem.Filename,web-rip) 
+		<value
+			condition="[String.Contains(ListItem.Filename,web-rip) 
 		| String.Contains(ListItem.Filename,webrip) 
 		| String.Contains(ListItem.Filename,web-dl) 
 		| String.Contains(ListItem.Filename,webdl)]">webdl</value>
@@ -328,9 +336,9 @@
 		<value condition="String.Contains(ListItem.filenameandpath,dvd) 
 		| String.IsEqual(ListItem.FileExtension,iso) 
 		| String.IsEqual(ListItem.FileExtension,ifo)">dvd</value>
- 		<value condition="String.IsEqual(ListItem.FileExtension,dsf)">dsd</value>
- 		<value condition="String.IsEqual(ListItem.FileExtension,dff)">dsd</value> 
- 		<value condition="String.IsEqual(ListItem.FileExtension,mlp)">mlp</value> 
+		<value condition="String.IsEqual(ListItem.FileExtension,dsf)">dsd</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,dff)">dsd</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,mlp)">mlp</value>
 	</variable>
 
 
@@ -347,14 +355,14 @@
 			| String.Contains(Player.Filenameandpath,bd-rip) 
 			| String.Contains(Player.Filenameandpath,br-rip) 
 			| String.Contains(Player.Filenameandpath,brrip)]">bluray</value>
-		<value
-			condition="[String.Contains(Player.Filenameandpath,remux)]">bluray</value>
+		<value condition="[String.Contains(Player.Filenameandpath,remux)]">bluray</value>
 		<value condition="String.Contains(Player.Filenameandpath,dvb)">dvb</value>
 		<value condition="String.Contains(Player.Filenameandpath,web-dl)">webdl</value>
 		<value condition="String.Contains(Player.Filenameandpath,webdl)">webdl</value>
 		<value condition="String.Contains(Player.Filenameandpath,web-rip)">webdl</value>
 		<value condition="String.Contains(Player.Filenameandpath,webrip)">webdl</value>
-		<value condition="String.Contains(Player.Filenameandpath,dvd) 
+		<value
+			condition="String.Contains(Player.Filenameandpath,dvd) 
 		| String.Contains(Player.Filenameandpath,.iso,Right) 
 		| String.Contains(Player.Filenameandpath,.ifo,Right)">dvd</value>
 		<value condition="String.Contains(Player.Filenameandpath,vhs)">vhs</value>
@@ -424,20 +432,20 @@
 			| String.Contains(Player.Filenameandpath,bd-rip) 
 			| String.Contains(Player.Filenameandpath,br-rip) 
 			| String.Contains(Player.Filenameandpath,brrip)]">bluray</value>
-		<value
-			condition="[String.Contains(Player.Filenameandpath,remux)]">bluray</value>
+		<value condition="[String.Contains(Player.Filenameandpath,remux)]">bluray</value>
 		<value condition="String.Contains(Player.Filenameandpath,dvb)">dvb</value>
 		<value condition="String.Contains(Player.Filenameandpath,web-dl)">webdl</value>
 		<value condition="String.Contains(Player.Filenameandpath,webdl)">webdl</value>
 		<value condition="String.Contains(Player.Filenameandpath,web-rip)">webdl</value>
 		<value condition="String.Contains(Player.Filenameandpath,webrip)">webdl</value>
-		<value condition="String.Contains(Player.Filenameandpath,dvd) 
+		<value
+			condition="String.Contains(Player.Filenameandpath,dvd) 
 		| String.Contains(Player.Filenameandpath,.iso,Right) 
 		| String.Contains(Player.Filenameandpath,.ifo,Right)">dvd</value>
 		<value condition="String.Contains(Player.Filenameandpath,vhs)">vhs</value>
 	</variable>
 
-	<variable name="BannerThumb">
+	<variable name="ArtBanner">
 		<value condition="!String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(poster)) + String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(poster)]</value>
 	</variable>
@@ -498,7 +506,7 @@
 		<value condition="Control.HasFocus(104)">$LOCALIZE[31232]</value>
 
 		<value condition="Control.HasFocus(201)">$LOCALIZE[31116]</value>
- 		<value condition="Control.HasFocus(203)">$LOCALIZE[31275]</value>
+		<value condition="Control.HasFocus(203)">$LOCALIZE[31275]</value>
 		<value condition="Control.HasFocus(205)">$LOCALIZE[31164]</value>
 		<value condition="Control.HasFocus(207)">$LOCALIZE[31918]</value>
 		<value condition="Control.HasFocus(208)">$LOCALIZE[31919]</value>
@@ -642,7 +650,7 @@
 		<value>$LOCALIZE[1223]</value>
 	</variable>
 
-	<variable name="NowPlayingThumbVar">
+	<variable name="NowPlayingArtThumb">
 		<value condition="![Player.Playing | Player.HasAudio | Player.HasVideo] + !String.IsEmpty(Window(weather).Property(Current.FanartCode))">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode)]$VAR[WeatherIconExtVar]</value>
 		<value condition="[VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos)] + !String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
@@ -655,7 +663,7 @@
 		<value>DefaultIconClock.png</value>
 	</variable>
 
-	<variable name="HomeNowPlayingThumbVar">
+	<variable name="HomeNowPlayingArtThumb">
 		<value condition="![Player.Playing | Player.HasAudio | Player.HasVideo] + !String.IsEmpty(Window(weather).Property(Current.FanartCode))">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode)]$VAR[WeatherIconExtVar]</value>
 		<value condition="[VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos)] + !String.IsEmpty(Player.Art(poster))">$INFO[Player.Art(poster)]</value>
 		<value condition="VideoPlayer.Content(episodes) + !String.IsEmpty(Player.Art(tvshow.poster))">$INFO[Player.Art(tvshow.poster)]</value>
@@ -666,29 +674,6 @@
 		<value condition="[Player.Playing | Player.HasVideo | Player.HasAudio] + String.IsEmpty(Player.Art(thumb))">DefaultVideo.png</value>
 		<value condition="!String.IsEmpty(Weather.Plugin) + !Weather.IsFetched">DefaultAddonNone.png</value>
 		<value>DefaultIconClock.png</value>
-	</variable>
-	<!--<variable name="ColorHighlightVar"> <value condition="!String.IsEmpty(Skin.String(highlightcolor.name))">$INFO[Skin.String(highlightcolor.name)]</value> <value>highlight</value> 
-		</variable> <variable name="ColorBackgroundVar"> <value condition="!String.IsEmpty(Skin.String(backgroundcolor.name))">$INFO[Skin.String(backgroundcolor.name)]</value> <value>ItemDiffuse</value> 
-		</variable> <variable name="ColorDialogVar"> <value condition="!String.IsEmpty(Skin.String(dialogcolor.name))">$INFO[Skin.String(dialogcolor.name)]</value> <value>dialog</value> </variable> 
-		<variable name="ColorTextVar"> <value condition="!String.IsEmpty(Skin.String(textcolor.name))">$INFO[Skin.String(textcolor.name)]</value> <value>TitleTextColor</value> </variable> <variable 
-		name="ColorDisabledVar"> <value condition="!String.IsEmpty(Skin.String(disabledcolor.name))">$INFO[Skin.String(disabledcolor.name)]</value> <value>disabled</value> </variable> <variable 
-		name="ColorMenuVar"> <value condition="!String.IsEmpty(Skin.String(menucolor.name))">$INFO[Skin.String(menucolor.name)]</value> <value>TitleTextColor</value> </variable> <variable name="ColorRecordingVar"> 
-		<value condition="Player.Recording">ffff0000</value> <value condition="!Player.Recording + !String.IsEmpty(Skin.String(menucolor.name))">$INFO[Skin.String(menucolor.name)]</value> <value>TitleTextColor</value> 
-		</variable> -->
-	<variable name="ArtLabelVar">
-		<value
-			condition="[Control.IsVisible(57) + Skin.HasSetting(Enable.ShiftLandscape) + Window.IsActive(videos)] | [Control.IsVisible(59) + Skin.HasSetting(Enable.FanartLandscape) + Window.IsActive(videos)] | [Control.IsVisible(500) + Skin.HasSetting(Enable.IconLandscape)] | [Control.IsVisible(505) + !Skin.HasSetting(Enable.PanelFanart) + !Skin.HasSetting(Enable.PanelLogo)] | [Control.IsVisible(507) + !Skin.HasSetting(Enable.BigListPoster) + !Skin.HasSetting(Enable.BigListLogo) + !Skin.HasSetting(Enable.BigListFanart) + !Window.IsActive(music)] | [Control.IsVisible(509) + Skin.HasSetting(Enable.WallLandscape)] | [Control.IsVisible(52) + Skin.HasSetting(Enable.ThumbnailLandscape) + [Container.Content(movies) | Container.Content(tvshows)]]">$LOCALIZE[31100]</value>
-		<value
-			condition="[Control.IsVisible(51) + Skin.HasSetting(InfoWall.Banners)] | [Control.IsVisible(500) + Skin.HasSetting(Enable.IconBanner)] | [Control.IsVisible(509) + Skin.HasSetting(Enable.WallBanner)]">$LOCALIZE[31085]</value>
-		<value
-			condition="[Control.IsVisible(51) + Skin.HasSetting(InfoWall.Logo) + !Container.Content(seasons)] | [Control.IsVisible(500) + Skin.HasSetting(Enable.IconLogo) + !Container.Content(seasons)] | [Control.IsVisible(59) + Skin.HasSetting(Enable.FanartLogo) + Window.IsActive(videos)] | [Control.IsVisible(505) + Skin.HasSetting(Enable.PanelLogo)] | [Control.IsVisible(507) + Skin.HasSetting(Enable.BigListLogo)] | [Control.IsVisible(509) + Skin.HasSetting(Enable.WallLogo) + !Container.Content(seasons)] | [Control.IsVisible(52) + Skin.HasSetting(Enable.ThumbnailLogo) + [Container.Content(movies) | Container.Content(tvshows)]]">$LOCALIZE[31088]</value>
-
-		<value
-			condition="[Control.IsVisible(57) + Window.IsActive(music) + Skin.HasSetting(Enable.ShiftFanart)] | [Control.IsVisible(57) + Window.IsActive(videos) + Skin.HasSetting(Enable.ShiftVidFanart)] | [Control.IsVisible(505) + Skin.HasSetting(Enable.PanelFanart)] | [Control.IsVisible(507) + Window.IsActive(music) + !Skin.HasSetting(Enable.BigListThumb)] | [Control.IsVisible(507) + Window.IsActive(videos) + Skin.HasSetting(Enable.BigListFanart)] | [Control.IsVisible(52) + Skin.HasSetting(Enable.ThumbnailFanart)] | [Control.IsVisible(59) + Skin.HasSetting(Enable.FanartFanart) + Window.IsActive(videos)]">$LOCALIZE[20445]</value>
-		<value condition="[Control.IsVisible(507) + Skin.HasSetting(Enable.BigListPoster)]">$LOCALIZE[31016]</value>
-		<value
-			condition="[Control.IsVisible(57) + !Skin.HasSetting(Enable.ShiftFanart) + Window.IsActive(music)] | [Control.IsVisible(507) + [Skin.HasSetting(Enable.BigListThumb) | Container.Content(albums)]]">$LOCALIZE[21371]</value>
-		<value>$LOCALIZE[31016]</value>
 	</variable>
 
 	<variable name="SortDirection">
@@ -797,7 +782,7 @@
 		<value condition="String.IsEqual(ListItem.DBTYPE,artist)">$INFO[ListItem.Genre]</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,album)">$INFO[ListItem.Artist]</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,song)">$INFO[ListItem.Artist]$INFO[ListItem.Album, • ]</value>
-<!-- 		<value>$LOCALIZE[14116]</value> -->
+		<!-- <value>$LOCALIZE[14116]</value> -->
 	</variable>
 	<variable name="HeaderSubLabel">
 		<value condition="Window.IsActive(script-script.extendedinfo-DialogInfo.xml) + !String.IsEmpty(Window.Property(AlsoKnownAs))">$INFO[Window.Property(AlsoKnownAs)]</value>
@@ -855,7 +840,8 @@
 	</variable>
 
 
-	<variable name="ThumbViewImage">
+	<variable name="ArtThumb">
+		<value condition="String.Contains(ListItem.Label,* All Albums) | String.Contains(ListItem.Label,* All Songs)">$INFO[ListItem.Icon]</value>
 		<value condition="Container.Content(studios)">$INFO[ListItem.Label,resource://resource.images.studios.squarehd/,.jpg]</value>
 		<value condition="Container.Content(playlists)">DefaultPlaylist.png</value>
 		<value condition="Container.Content(directors)">DefaultDirector.png</value>
@@ -865,10 +851,9 @@
 		<value condition="Window.IsActive(videos) + Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/videogenre/,.png]</value>
 		<value condition="Window.IsActive(videos) + Container.Content(countries) + System.HasAddon(resource.images.moviecountryicons.maps)">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
 
-		<value
-			condition="Skin.HasSetting(Enable.ThumbnailFanart) + !String.IsEmpty(ListItem.Art(fanart)) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="Skin.HasSetting(Enable.ThumbnailLandscape) + !String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
-		<value condition="Skin.HasSetting(Enable.ThumbnailLogo) + !String.IsEmpty(ListItem.Art(clearlogo)) + [Container.Content(movies) | Container.Content(tvshows)]">$INFO[ListItem.Art(clearlogo)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),fanart) + !String.IsEmpty(ListItem.Art(fanart)) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]">$INFO[ListItem.Art(fanart)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),landscape) + !String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),logo + !String.IsEmpty(ListItem.Art(clearlogo)) + [Container.Content(movies) | Container.Content(tvshows)]">$INFO[ListItem.Art(clearlogo)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value condition="!String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
 		<value>$INFO[ListItem.Icon]</value>
@@ -1088,7 +1073,7 @@
 			condition="String.StartsWith(Container(9000).ListItem.Property(widgetPath),videodb://movies/genres/) | String.StartsWith(Container(9000).ListItem.Property(widgetPath),library://video/movies/genres.xml) | String.StartsWith(Container(9000).ListItem.Property(widgetPath),videodb://tvshows/genres/) | String.StartsWith(Container(9000).ListItem.Property(widgetPath),library://video/tvshows/genres.xml)">$INFO[ListItem.Label,special://skin/extras/videogenre/,.png]</value>
 		<value
 			condition="System.HasAddon(resource.images.moviecountryicons.maps) + [String.StartsWith(Container(9000).ListItem.Property(widgetPath),videodb://movies/country/) | String.StartsWith(Container(9000).ListItem.Property(widgetPath),library://video/movies/country.xml) | String.StartsWith(Container(9000).ListItem.Property(widgetPath),videodb://tvshows/country/) | String.StartsWith(Container(9000).ListItem.Property(widgetPath),library://video/tvshows/country.xml)]">$INFO[ListItem.Label,resource://resource.images.moviecountryicons.maps/,.png]</value>
-		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[21371]) | String.IsEmpty(Container(9000).ListItem.Property(widgetIcon))">$VAR[ThumbViewImage]</value>
+		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[21371]) | String.IsEmpty(Container(9000).ListItem.Property(widgetIcon))">$VAR[ArtThumb]</value>
 		<value
 			condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[20021]) + [String.IsEqual(Container(9000).ListItem.Property(widgetType),episodes) | String.IsEqual(Container(9000).ListItem.Property(widgetType),tvshows)] + !String.IsEmpty(ListItem.Art(tvshow.poster))">$INFO[ListItem.Art(tvshow.poster)]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(widgetIcon),$LOCALIZE[20021]) + !String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
@@ -1110,7 +1095,8 @@
 		<value>$LOCALIZE[547]</value>
 	</variable>
 	<variable name="MusicInfoYoutubePath">
-<!-- 		<value condition="System.HasAddon(script.extendedinfo) +String.IsEqual(ListItem.DBTYPE,artist)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Artist] $LOCALIZE[2]</value> -->
+		<!-- <value condition="System.HasAddon(script.extendedinfo) +String.IsEqual(ListItem.DBTYPE,artist)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Artist] 
+			$LOCALIZE[2]</value> -->
 		<value condition="System.HasAddon(script.extendedinfo) +String.IsEqual(ListItem.DBTYPE,album)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Artist] $ESCINFO[ListItem.Label] $LOCALIZE[558]</value>
 		<value condition="System.HasAddon(script.extendedinfo) +String.IsEqual(ListItem.DBTYPE,song)">plugin://script.extendedinfo?info=youtubesearchvideos&amp;&amp;id=$ESCINFO[ListItem.Artist] $ESCINFO[ListItem.Title]</value>
 	</variable>
@@ -1182,7 +1168,7 @@
 	</variable>
 	<variable name="WidgetThumbnailLabel">
 		<value condition="String.IsEqual(ListItem.dbtype,episode)">$INFO[ListItem.TVShowTitle,, ]$INFO[ListItem.Season,s,e]$INFO[ListItem.Episode,, ]$INFO[ListItem.Title]</value>
-<!-- 		<value condition="String.Contains(Container(9000).ListItem.Property(widgetPath),recentlyaddedepisodes)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value> -->
+		<!-- <value condition="String.Contains(Container(9000).ListItem.Property(widgetPath),recentlyaddedepisodes)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value> -->
 		<value condition="!String.IsEmpty(ListItem.Title)">$INFO[ListItem.Title]</value>
 		<value>$INFO[ListItem.Label]</value>
 	</variable>
@@ -1224,8 +1210,8 @@
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(defaultID),tvshows) + !Library.HasContent(TVShows)">$LOCALIZE[31273]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(defaultID),music) + !Library.HasContent(Music)">$LOCALIZE[31273]</value>
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(defaultID),musicvideos) + !Library.HasContent(MusicVideos)">$LOCALIZE[31273]</value>
-		<!--<value condition="String.IsEqual(Container(9000).ListItem.Property(defaultID),favorites) + !Integer.IsGreater(Window(favouritesbrowser).Container(450).NumItems,0)">No favourites found. 
-			You can add any item from media views to this list by using the context menu.</value> -->
+		<!--<value condition="String.IsEqual(Container(9000).ListItem.Property(defaultID),favorites) + !Integer.IsGreater(Window(favouritesbrowser).Container(450).NumItems,0)">No favourites 
+			found. You can add any item from media views to this list by using the context menu.</value> -->
 		<value condition="String.IsEqual(Container(9000).ListItem.Property(defaultID),weather) + IsEmpty(Weather.Plugin)">$LOCALIZE[31274]</value>
 	</variable>
 	<variable name="CommonBackgroundOverlay">
@@ -1301,96 +1287,425 @@
 		<value condition="!Skin.HasSetting(SaunaVertical)">Horizontal</value>
 		<value condition="Skin.HasSetting(SaunaVertical)">Vertical</value>
 	</variable>
-	
-		<variable name="Art2Setting">
-		
-		<!-- genre and tags are special -->
-		<value condition="String.IsEqual(ListItem.DBTYPE,tag) | String.IsEqual(ListItem.DBTYPE,source)
-		| String.IsEqual(ListItem.DBTYPE,genre)">genreicon</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall) 
-		+ String.IsEqual(ListItem.DBTYPE,movie)">$INFO[Skin.String(InfoWall.movie.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall) 
-		+ String.IsEqual(ListItem.DBTYPE,set)">$INFO[Skin.String(InfoWall.set.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall) 
-		+ String.IsEqual(ListItem.DBTYPE,tvshow)">$INFO[Skin.String(InfoWall.tvshow.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall) 
-		+ String.IsEqual(ListItem.DBTYPE,season)">$INFO[Skin.String(InfoWall.season.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall) 
-		+ String.IsEqual(ListItem.DBTYPE,episode)">$INFO[Skin.String(InfoWall.episode.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall) 
-		+ String.IsEqual(ListItem.DBTYPE,musicvideo)">$INFO[Skin.String(InfoWall.musicvideo.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall) 
-		+ String.IsEqual(ListItem.DBTYPE,album)">$INFO[Skin.String(InfoWall.album.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall) 
-		+ String.IsEqual(ListItem.DBTYPE,artist)">$INFO[Skin.String(InfoWall.artist.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall) 
-		+ String.IsEqual(ListItem.DBTYPE,song)">$INFO[Skin.String(InfoWall.song.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall) 
-		+ String.IsEqual(ListItem.DBTYPE,actor)">$INFO[Skin.String(InfoWall.actor.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall) 
-		+ String.IsEqual(ListItem.DBTYPE,video)">$INFO[Skin.String(InfoWall.video.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,InfoWall)"
-		>$INFO[Skin.String(InfoWall..Art2)]</value>
 
-		<value condition="String.IsEqual(Container.Viewmode,List) 
-		+ String.IsEqual(ListItem.DBTYPE,movie)">$INFO[Skin.String(List.movie.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,List) 
-		+ String.IsEqual(ListItem.DBTYPE,set)">$INFO[Skin.String(List.set.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,List) 
-		+ String.IsEqual(ListItem.DBTYPE,tvshow)">$INFO[Skin.String(List.tvshow.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,List) 
-		+ String.IsEqual(ListItem.DBTYPE,season)">$INFO[Skin.String(List.season.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,List) 
-		+ String.IsEqual(ListItem.DBTYPE,episode)">$INFO[Skin.String(List.episode.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,List) 
-		+ String.IsEqual(ListItem.DBTYPE,musicvideo)">$INFO[Skin.String(List.musicvideo.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,List) 
-		+ String.IsEqual(ListItem.DBTYPE,album)">$INFO[Skin.String(List.album.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,List) 
-		+ String.IsEqual(ListItem.DBTYPE,artist)">$INFO[Skin.String(List.artist.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,List) 
-		+ String.IsEqual(ListItem.DBTYPE,song)">$INFO[Skin.String(List.song.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,List) 
-		+ String.IsEqual(ListItem.DBTYPE,actor)">$INFO[Skin.String(List.actor.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,List) 
-		+ String.IsEqual(ListItem.DBTYPE,video)">$INFO[Skin.String(List.video.Art2)]</value>
-		<value condition="String.IsEqual(Container.Viewmode,List)"
-		>$INFO[Skin.String(List..Art2)]</value>
+	<variable name="ActualViewMode">
+		<!-- <value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[19032]">PVR Guide List</value> -->
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[535]">List</value>
+		<value condition="String.IsEqual(Container.Viewmode,list">List</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31086]">Wall</value>
+		<value condition="String.IsEqual(Container.Viewmode,Wall">Wall</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31021]">InfoWall</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31003]">LowList</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31093]">Episode</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31054]">Gallery</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31059]">Panel</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31052]">BigList</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31078]">BigWall</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31076]">SongList</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[100]">Thumbnail</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[536]">Thumbnail</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[21371]">Thumbnail</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31245]">LowPanel</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[31079]">Shift</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[20445]">Fanart</value>
+		<value condition="String.IsEqual(Container.Viewmode,Arcade">Arcade</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[90200]">KeibertzPlus</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[90300]">Covereflow</value>
+		<value condition="String.IsEqual(Container.Viewmode,$LOCALIZE[90900]">Sauna</value>
+		<value>List</value>
+	</variable>
+
+	<variable name="DbType">
+		<value>$INFO[ListItem.DBTYPE]</value>
+	</variable>
+
+
+	<variable name="Art1Setting">
+
+		<!-- genre and tags are special -->
+		<value condition="Container.Content(tags) | Container.Content(genres)
+		| Container.Content(sources)">genreicon</value>
+
+<!--     files -->
+<!--     songs -->
+<!--     artists -->
+<!--     albums -->
+<!--     movies -->
+<!--     tvshows -->
+<!--     seasons -->
+<!--     episodes -->
+<!--     musicvideos -->
+<!--     genres -->
+<!--     years -->
+<!--     actors -->
+<!--     playlists -->
+<!--     plugins -->
+<!--     studios -->
+<!--     directors -->
+<!--     sets -->
+<!--     tags -->
+   
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),Wall)">$INFO[Skin.String(Wall..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),LowList)">$INFO[Skin.String(LowList..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),Episode)">$INFO[Skin.String(Episode..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),Gallery)">$INFO[Skin.String(Gallery..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),Panel)">$INFO[Skin.String(Panel..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),BigList)">$INFO[Skin.String(BigList..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),SongList)">$INFO[Skin.String(SongList..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),BigWall)">$INFO[Skin.String(BigWall..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),Thumbnail)">$INFO[Skin.String(Thumbnail..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),LowPanel)">$INFO[Skin.String(LowPanel..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),Shift)">$INFO[Skin.String(Shift..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),Fanart)">$INFO[Skin.String(Fanart..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),Arcade)">$INFO[Skin.String(Arcade..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),KeibertzPlus)">$INFO[Skin.String(KeibertzPlus..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),Coverflow)">$INFO[Skin.String(Coverflow..Art1)]</value>
+
+		<value condition="Container.Content(movies) 		+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.movie.Art1)]</value>
+		<value condition="Container.Content(sets) 			+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.set.Art1)]</value>
+		<value condition="Container.Content(tvshows) 		+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.tvshow.Art1)]</value>
+		<value condition="Container.Content(seasons) 		+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.season.Art1)]</value>
+		<value condition="Container.Content(episodes) 		+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.episode.Art)]</value>
+		<value condition="Container.Content(musicvideos)	+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.musicvideo.Art1)]</value>
+		<value condition="Container.Content(albums)			+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.album.Art1)]</value>
+		<value condition="Container.Content(artists) 		+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.artist.Art1)]</value>
+		<value condition="Container.Content(songs) 			+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.song.Art1)]</value>
+		<value condition="[Container.Content(actors) | Content.Content(directors)] 		+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.actor.Art1)]</value>
+		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.file.Art1)]</value>
+		<value condition="Content.Content(games) 		+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.game.Art1)]</value>
+<!-- 		<value condition="Content.Content(files) 		+ String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna.video.Art1)]</value> -->
+		<value condition="String.IsEqual(Control.GetLabel(10101),Sauna)">$INFO[Skin.String(Sauna..Art1)]</value>
+
+
 		<!-- default to fanart if no property set -->
 		<value>thumb</value>
 	</variable>
 
-	<variable name="Art2LabelVar">
-		<value condition="String.IsEqual(Control.GetLabel(360),poster)">$LOCALIZE[31016]</value>
-		<value condition="String.IsEqual(Control.GetLabel(360),banner)">$LOCALIZE[31085]</value>
-		<value condition="String.IsEqual(Control.GetLabel(360),logo)">$LOCALIZE[31088]</value>
-		<value condition="String.IsEqual(Control.GetLabel(360),fanart)">$LOCALIZE[20445]</value>
-		<value condition="String.IsEqual(Control.GetLabel(360),landscape)">$LOCALIZE[31100]</value>
-		<value condition="String.IsEqual(Control.GetLabel(360),thumb)">$LOCALIZE[21371]</value>
+
+	<variable name="Art2Setting">
+
+		<!-- genre and tags are special -->
+		<value condition="String.IsEqual(ListItem.DBTYPE,tag) | String.IsEqual(ListItem.DBTYPE,source)
+		| String.IsEqual(ListItem.DBTYPE,genre)">genreicon</value>
+
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall) + String.IsEqual(ListItem.DBTYPE,movie)">$INFO[Skin.String(InfoWall.movie.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall) 	+ String.IsEqual(ListItem.DBTYPE,set)">$INFO[Skin.String(InfoWall.set.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall) 	+ String.IsEqual(ListItem.DBTYPE,tvshow)">$INFO[Skin.String(InfoWall.tvshow.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall) 	+ String.IsEqual(ListItem.DBTYPE,season)">$INFO[Skin.String(InfoWall.season.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall) 	+ String.IsEqual(ListItem.DBTYPE,episode)">$INFO[Skin.String(InfoWall.episode.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall) 	+ String.IsEqual(ListItem.DBTYPE,musicvideo)">$INFO[Skin.String(InfoWall.musicvideo.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall) 	+ String.IsEqual(ListItem.DBTYPE,album)">$INFO[Skin.String(InfoWall.album.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall) 	+ String.IsEqual(ListItem.DBTYPE,artist)">$INFO[Skin.String(InfoWall.artist.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall) 	+ String.IsEqual(ListItem.DBTYPE,song)">$INFO[Skin.String(InfoWall.song.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall) 	+ String.IsEqual(ListItem.DBTYPE,actor)">$INFO[Skin.String(InfoWall.actor.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall) 	+ String.IsEqual(ListItem.DBTYPE,video)">$INFO[Skin.String(InfoWall.video.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),InfoWall)">$INFO[Skin.String(InfoWall..Art2)]</value>
+
+		<value condition="String.IsEqual(Control.GetLabel(10101),List) + String.IsEqual(ListItem.DBTYPE,movie)">$INFO[Skin.String(List.movie.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),List) + String.IsEqual(ListItem.DBTYPE,set)">$INFO[Skin.String(List.set.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),List) + String.IsEqual(ListItem.DBTYPE,tvshow)">$INFO[Skin.String(List.tvshow.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),List) + String.IsEqual(ListItem.DBTYPE,season)">$INFO[Skin.String(List.season.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),List) + String.IsEqual(ListItem.DBTYPE,episode)">$INFO[Skin.String(List.episode.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),List) + String.IsEqual(ListItem.DBTYPE,musicvideo)">$INFO[Skin.String(List.musicvideo.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),List) + String.IsEqual(ListItem.DBTYPE,album)">$INFO[Skin.String(List.album.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),List) + String.IsEqual(ListItem.DBTYPE,artist)">$INFO[Skin.String(List.artist.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),List) + String.IsEqual(ListItem.DBTYPE,song)">$INFO[Skin.String(List.song.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),List) + String.IsEqual(ListItem.DBTYPE,actor)">$INFO[Skin.String(List.actor.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),List) + String.IsEqual(ListItem.DBTYPE,video)">$INFO[Skin.String(List.video.Art2)]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10101),List)">$INFO[Skin.String(List..Art2)]</value>
+		<!-- default to fanart if no property set -->
+		<value>thumb</value>
+	</variable>
+
+
+	<variable name="Art1LabelVar">
+		<value condition="String.IsEqual(Control.GetLabel(10102),poster)">$LOCALIZE[31016]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),banner)">$LOCALIZE[31085]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),logo)">$LOCALIZE[31088]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),fanart)">$LOCALIZE[20445]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),landscape)">$LOCALIZE[31100]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),thumb)">$LOCALIZE[21371]</value>
 		<!-- <value>$LOCALIZE[20445]</value> -->
 	</variable>
 
-	<variable name="Art2Image">
-		<value condition="String.IsEqual(Control.GetLabel(360),poster)
-		+ !String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-		<value condition="String.IsEqual(Control.GetLabel(360),banner)
-		+ !String.IsEmpty(ListItem.Art(banner))">$INFO[ListItem.Art(banner)]</value>
-		<value condition="String.IsEqual(Control.GetLabel(360),logo)
-		+ !String.IsEmpty(ListItem.Art(logo))">$INFO[ListItem.Art(logo)]</value>
-		<value condition="String.IsEqual(Control.GetLabel(360),fanart)
-		+ !String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
-		<value condition="String.IsEqual(Control.GetLabel(360),landscape)
-		+ !String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
-		<value condition="String.IsEqual(Control.GetLabel(360),thumb)
-		+ !String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+
+	<variable name="Art2LabelVar">
+		<value condition="String.IsEqual(Control.GetLabel(10103),poster)">$LOCALIZE[31016]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10103),banner)">$LOCALIZE[31085]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10103),logo)">$LOCALIZE[31088]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10103),fanart)">$LOCALIZE[20445]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10103),landscape)">$LOCALIZE[31100]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10103),thumb)">$LOCALIZE[21371]</value>
+		<!-- <value>$LOCALIZE[20445]</value> -->
+	</variable>
+
+	<variable name="Art1Image">
+		<value condition="String.IsEqual(Control.GetLabel(10102),poster)">$VAR[ArtPoster]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),banner)">$VAR[ArtBanner]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),logo)">$VAR[ArtLogo]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),fanart)">$VAR[ArtFanart]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),landscape)">$VAR[ArtLandscape]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10102),thumb)">$VAR[ArtThumb]</value>
 		<!-- Try to default to thumb for episodes, otheriwise fanart if it's populated -->
-		<value condition="String.IsEqual(ListItem.DBTYPE,episode)
-		+ !String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="String.IsEqual(Container.Content(episodes)) + !String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+<!-- 		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value> -->
+<!-- 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value> -->
+		<value>$VAR[ArtPoster]</value>
+	</variable>
+
+	<variable name="Art2Image">
+		<value condition="String.IsEqual(Control.GetLabel(10103),poster)">$VAR[ArtPoster]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10103),banner)">$VAR[ArtBanner]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10103),logo)">$VAR[ArtLogo]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10103),fanart)">$VAR[ArtFanart]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10103),landscape)">$VAR[ArtLandscape]</value>
+		<value condition="String.IsEqual(Control.GetLabel(10103),thumb)">$VAR[ArtThumb]</value>
+		<!-- Try to default to thumb for episodes, otheriwise fanart if it's populated -->
+		<value condition="String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(fanart))">$INFO[ListItem.Art(fanart)]</value>
 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
-		<value>$INFO[ListItem.Icon]</value>
+		<value>$VAR[ArtFanart]</value>
 	</variable>
-	
-	
-	
+
+
 </includes>

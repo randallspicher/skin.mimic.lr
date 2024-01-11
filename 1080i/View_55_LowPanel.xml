@@ -48,7 +48,7 @@
                             <width>250</width>
                             <height>375</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-poster.png">$VAR[PosterVar]</texture>
+                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-poster.png">$VAR[Art1Image]</texture>
                         </control>
                         <control type="image">
                             <top>6</top>
@@ -73,7 +73,7 @@
                             <width>250</width>
                             <height>375</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-poster.png">$VAR[PosterVar]</texture>
+                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-poster.png">$VAR[Art1Image]</texture>
                         </control>
                         <include content="OverlayIcons">
                             <param name="OverlayLeft" value="197" />
@@ -188,7 +188,7 @@
                             <width>355</width>
                             <height>355</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-square.png">$VAR[PosterVar]</texture>
+                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-square.png">$VAR[Art1Image]</texture>
                         </control>
                         <control type="image">
                             <top>6</top>
@@ -209,7 +209,7 @@
                             <width>355</width>
                             <height>355</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-square.png">$VAR[PosterVar]</texture>
+                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-square.png">$VAR[Art1Image]</texture>
                         </control>
                     </control>
                 </focusedlayout>

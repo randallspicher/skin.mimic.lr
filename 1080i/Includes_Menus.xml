@@ -387,6 +387,319 @@
 		</content>
 	</include>
 
+
+<!-- 	<include name="Art1Picker"> -->
+<!-- 		<param name="CurrentView" /> -->
+<!-- 		<param name="CurrentContent" /> -->
+<!-- 		<definition> -->
+<!-- 			<item> -->
+<!-- 				<description>Description</description> -->
+<!-- 				<label>$PARAM[CurrentView] - $PARAM[CurrentContent] - $LOCALIZE[31152]</label> -->
+<!-- 			</item> -->
+
+
+<!-- 			<item> -->
+<!-- 				<description>Wall - Poster</description> -->
+<!-- 				<label>31016</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.IconLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.IconBanner)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.IconLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Wall)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Wall - Landscape</description> -->
+<!-- 				<label>31100</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.IconBanner)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.IconLogo)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.IconLandscape)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Wall) + !Container.Content(seasons)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Wall - Banner</description> -->
+<!-- 				<label>31085</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.IconLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.IconLogo)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.IconBanner)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Wall)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Wall - Logo</description> -->
+<!-- 				<label>31088</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.IconLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.IconBanner)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.IconLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Wall) + !Container.Content(seasons)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Shift - Poster</description> -->
+<!-- 				<label>31016</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.ShiftVidFanart)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.ShiftLandscape)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Shift) + Window.IsActive(videos)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Shift - Fanart</description> -->
+<!-- 				<label>20445</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.ShiftLandscape)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.ShiftVidFanart)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Shift) + Window.IsActive(videos)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Shift - Landscape</description> -->
+<!-- 				<label>31100</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.ShiftVidFanart)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.ShiftLandscape)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Shift) + Window.IsActive(videos)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Shift - Thumbnail</description> -->
+<!-- 				<label>21371</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.ShiftFanart)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Shift) + Window.IsActive(music)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Shift - Fanart</description> -->
+<!-- 				<label>20445</label> -->
+<!-- 				<onclick>Skin.SetBool(Enable.ShiftFanart)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Shift) + Window.IsActive(music)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>InfoWall - Poster</description> -->
+<!-- 				<label>31016</label> -->
+<!-- 				<onclick>Skin.Reset(InfoWall.Banners)</onclick> -->
+<!-- 				<onclick>Skin.Reset(InfoWall.Logo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),InfoWall)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>InfoWall - Banner</description> -->
+<!-- 				<label>31085</label> -->
+<!-- 				<onclick>Skin.Reset(InfoWall.Logo)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(InfoWall.Banners)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),InfoWall)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>InfoWall - Logo</description> -->
+<!-- 				<label>31088</label> -->
+<!-- 				<onclick>Skin.Reset(InfoWall.Banners)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(InfoWall.Logo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),InfoWall) + !Container.Content(seasons)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>BigWall - Poster</description> -->
+<!-- 				<label>31016</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.WallLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.WallBanner)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.WallLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),BigWall)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>BigWall - Landscape</description> -->
+<!-- 				<label>31100</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.WallBanner)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.WallLogo)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.WallLandscape)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),BigWall) + !Container.Content(seasons)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>BigWall - Banner</description> -->
+<!-- 				<label>31085</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.WallLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.WallLogo)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.WallBanner)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),BigWall)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>BigWall - Logo</description> -->
+<!-- 				<label>31088</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.WallLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.WallBanner)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.WallLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),BigWall) + !Container.Content(seasons)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>BigList - Poster</description> -->
+<!-- 				<label>31016</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.BigListFanart)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.BigListLogo)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.BigListPoster)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),BigList) + [Container.Content(movies) | Container.Content(tvshows)]</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>BigList - Fanart</description> -->
+<!-- 				<label>20445</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.BigListPoster)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.BigListLogo)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.BigListFanart)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),BigList) + [Container.Content(movies) | Container.Content(tvshows)]</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>BigList - Landscape</description> -->
+<!-- 				<label>31100</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.BigListPoster)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.BigListFanart)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.BigListLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),BigList) + [Container.Content(movies) | Container.Content(tvshows)]</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>BigList - Logo</description> -->
+<!-- 				<label>31088</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.BigListPoster)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.BigListFanart)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.BigListLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),BigList) + [Container.Content(movies) | Container.Content(tvshows)]</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>BigList - Fanart (Music)</description> -->
+<!-- 				<label>20445</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.BigListThumb)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),BigList) + Container.Content(artists)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>BigList - Thumb (Music)</description> -->
+<!-- 				<label>21371</label> -->
+<!-- 				<onclick>Skin.SetBool(Enable.BigListThumb)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),BigList) + [Container.Content(artists) | Container.Content(albums)]</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Panel - Fanart</description> -->
+<!-- 				<label>20445</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.PanelLogo)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.PanelFanart)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Panel)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Panel - Landscape</description> -->
+<!-- 				<label>31100</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.PanelFanart)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.PanelLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Panel)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Panel - Logo</description> -->
+<!-- 				<label>31088</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.PanelFanart)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.PanelLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Panel)</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Thumbnail - Poster</description> -->
+<!-- 				<label>31016</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.ThumbnailFanart)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.ThumbnailLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.ThumbnailLogo)</onclick> -->
+<!-- 				<onclick>ReloadSkin()</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Thumbnail) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)] -->
+<!-- 				</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Thumbnail - Fanart</description> -->
+<!-- 				<label>20445</label> -->
+<!-- 				<onclick>Skin.SetBool(Enable.ThumbnailFanart)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.ThumbnailLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.ThumbnailLogo)</onclick> -->
+<!-- 				<onclick>ReloadSkin()</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Thumbnail) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)] -->
+<!-- 				</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Thumbnail - Landscape</description> -->
+<!-- 				<label>31100</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.ThumbnailFanart)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.ThumbnailLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.ThumbnailLogo)</onclick> -->
+<!-- 				<onclick>ReloadSkin()</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Thumbnail) + [Container.Content(movies) | Container.Content(tvshows)]</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Thumbnail - Logo</description> -->
+<!-- 				<label>31088</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.ThumbnailFanart)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.ThumbnailLandscape)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.ThumbnailLogo)</onclick> -->
+<!-- 				<onclick>ReloadSkin()</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Thumbnail) + [Container.Content(movies) | Container.Content(tvshows)]</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Fanart - Poster</description> -->
+<!-- 				<label>31016</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.FanartFanart)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.FanartLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.FanartLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Fanart) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)] -->
+<!-- 				</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Fanart - Fanart</description> -->
+<!-- 				<label>20445</label> -->
+<!-- 				<onclick>Skin.SetBool(Enable.FanartFanart)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.FanartLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.FanartLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Fanart) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)] -->
+<!-- 				</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Fanart - Landscape</description> -->
+<!-- 				<label>31100</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.FanartFanart)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.FanartLandscape)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.FanartLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Fanart) + [Container.Content(movies) | Container.Content(tvshows)]</visible> -->
+<!-- 			</item> -->
+<!-- 			<item> -->
+<!-- 				<description>Fanart - Logo</description> -->
+<!-- 				<label>31088</label> -->
+<!-- 				<onclick>Skin.Reset(Enable.FanartFanart)</onclick> -->
+<!-- 				<onclick>Skin.Reset(Enable.FanartLandscape)</onclick> -->
+<!-- 				<onclick>Skin.SetBool(Enable.FanartLogo)</onclick> -->
+<!-- 				<visible>String.IsEqual(Control.GetLabel(10101),Fanart) + [Container.Content(movies) | Container.Content(tvshows)]</visible> -->
+<!-- 			</item> -->
+<!-- 		</definition> -->
+<!-- 	</include> -->
+
+
+	<include name="Art1Picker">
+		<param name="CurrentView" />
+		<param name="CurrentContent" />
+		<definition>
+			<item>
+				<description>Description</description>
+				<label>$PARAM[CurrentView] - $PARAM[CurrentContent] - $LOCALIZE[31152]</label>
+			</item>
+			<item>
+				<description>Poster</description>
+				<label>31016</label>
+				<onclick>Skin.SetString($PARAM[CurrentView].$PARAM[CurrentContent].Art1,poster)</onclick>
+			</item>
+			<item>
+				<description>Banner</description>
+				<label>31085</label>
+				<onclick>Skin.SetString($PARAM[CurrentView].$PARAM[CurrentContent].Art1,banner)</onclick>
+			</item>
+			<item>
+				<description>Logo</description>
+				<label>31088</label>
+				<onclick>Skin.SetString($PARAM[CurrentView].$PARAM[CurrentContent].Art1,logo)</onclick>
+			</item>
+			<item>
+				<description>Fanart</description>
+				<label>20445</label>
+				<onclick>Skin.SetString($PARAM[CurrentView].$PARAM[CurrentContent].Art1,fanart)</onclick>
+			</item>
+			<item>
+				<description>Landscape</description>
+				<label>31100</label>
+				<onclick>Skin.SetString($PARAM[CurrentView].$PARAM[CurrentContent].Art1,landscape)</onclick>
+			</item>
+			<item>
+				<description>Thumb</description>
+				<label>21371</label>
+				<onclick>Skin.SetString($PARAM[CurrentView].$PARAM[CurrentContent].Art1,thumb)</onclick>
+			</item>
+
+		</definition>
+	</include>
+
+
 	<include name="Art2Picker">
 		<param name="CurrentView" />
 		<param name="CurrentContent" />
@@ -429,7 +742,7 @@
 		</definition>
 	</include>
 
-<include name="ButtonMenuList">
+	<include name="ButtonMenuList">
 		<left>0</left>
 		<top>80</top>
 		<width>600</width>

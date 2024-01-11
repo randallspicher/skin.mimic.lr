@@ -31,14 +31,14 @@
                 <visible>Container.Content(favourites) | Container.Content(movies) | Container.Content(tvshows) | [Container.Content(artists) + !Window.IsActive(videos)]</visible>
                 <scrolltime tween="quadratic" easing="out">300</scrolltime>
                 <orientation>horizontal</orientation>
-                <itemlayout width="1920" height="370" condition="[Container.Content(movies) | Container.Content(tvshows)] + ![Skin.HasSetting(Enable.FanartFanart) | Skin.HasSetting(Enable.FanartLandscape) | Skin.HasSetting(Enable.FanartLogo)]">
+                <itemlayout width="1920" height="370" condition="[Container.Content(movies) | Container.Content(tvshows)] + ![String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
                     <control type="image">
                         <left>30</left>
                         <top>30</top>
                         <width>194</width>
                         <height>290</height>
                         <aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
-                        <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/fanart-poster.png">$VAR[PosterVar]</texture>
+                        <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/fanart-poster.png">$VAR[Art1Image]</texture>
                     </control>
                     <include content="OverlayIcons">
                         <param name="OverlayLeft" value="164" />
@@ -81,14 +81,14 @@
                         <texture colordiffuse="FocusColor">$VAR[StarRatingVar]</texture>
                     </control>
                 </itemlayout>
-                <focusedlayout width="1920" height="370" condition="[Container.Content(movies) | Container.Content(tvshows)] + ![Skin.HasSetting(Enable.FanartFanart) | Skin.HasSetting(Enable.FanartLandscape) | Skin.HasSetting(Enable.FanartLogo)]">
+                <focusedlayout width="1920" height="370" condition="[Container.Content(movies) | Container.Content(tvshows)] + ![String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
                     <control type="image">
                         <left>30</left>
                         <top>30</top>
                         <width>194</width>
                         <height>290</height>
                         <aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
-                        <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/fanart-poster.png">$VAR[PosterVar]</texture>
+                        <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/fanart-poster.png">$VAR[Art1Image]</texture>
                     </control>
                     <include content="OverlayIcons">
                         <param name="OverlayLeft" value="164" />
@@ -131,14 +131,14 @@
                         <texture colordiffuse="FocusColor">$VAR[StarRatingVar]</texture>
                     </control>
                 </focusedlayout>
-                <itemlayout width="1920" height="370" condition="[Container.Content(movies) | Container.Content(tvshows)] + [Skin.HasSetting(Enable.FanartFanart) | Skin.HasSetting(Enable.FanartLandscape) | Skin.HasSetting(Enable.FanartLogo)]">
+                <itemlayout width="1920" height="370" condition="[Container.Content(movies) | Container.Content(tvshows)] + [String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
                     <control type="image">
                         <left>30</left>
                         <top>30</top>
                         <width>515</width>
                         <height>290</height>
                         <aspectratio aligny="center" align="center" scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="diffuse/fanart-landscape.png">$VAR[FanartViewThumb]</texture>
+                        <texture background="true" diffuse="diffuse/fanart-landscape.png">$VAR[ArtFanart]</texture>
                     </control>
                     <control type="image">
                         <left>30</left>
@@ -147,9 +147,9 @@
                         <height>140</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-                        <visible>Skin.HasSetting(Enable.FanartLandscape) + String.IsEmpty(ListItem.Art(landscape))</visible>
+                        <visible>String.IsEqual(Control.GetLabel(10102),landscape) + String.IsEmpty(ListItem.Art(landscape))</visible>
                     </control>
-                    <include content="OverlayIcons" condition="!Skin.HasSetting(Enable.FanartLogo)">
+                    <include content="OverlayIcons" condition="!String.IsEqual(Control.GetLabel(10102),logo)">
                         <param name="OverlayLeft" value="485" />
                         <param name="OverlayTop" value="30" />
                     </include>
@@ -190,14 +190,14 @@
                         <texture colordiffuse="FocusColor">$VAR[StarRatingVar]</texture>
                     </control>
                 </itemlayout>
-                <focusedlayout width="1920" height="370" condition="[Container.Content(movies) | Container.Content(tvshows)] + [Skin.HasSetting(Enable.FanartFanart) | Skin.HasSetting(Enable.FanartLandscape) | Skin.HasSetting(Enable.FanartLogo)]">
+                <focusedlayout width="1920" height="370" condition="[Container.Content(movies) | Container.Content(tvshows)] + [String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
                     <control type="image">
                         <left>30</left>
                         <top>30</top>
                         <width>515</width>
                         <height>290</height>
                         <aspectratio aligny="center" align="center" scalediffuse="false">keep</aspectratio>
-                        <texture background="true" diffuse="diffuse/fanart-landscape.png">$VAR[FanartViewThumb]</texture>
+                        <texture background="true" diffuse="diffuse/fanart-landscape.png">$VAR[ArtFanart]</texture>
                     </control>
                     <control type="image">
                         <left>30</left>
@@ -206,9 +206,9 @@
                         <height>140</height>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-                        <visible>Skin.HasSetting(Enable.FanartLandscape) + String.IsEmpty(ListItem.Art(landscape))</visible>
+                        <visible>String.IsEqual(Control.GetLabel(10102),landscape) + String.IsEmpty(ListItem.Art(landscape))</visible>
                     </control>
-                    <include content="OverlayIcons" condition="!Skin.HasSetting(Enable.FanartLogo)">
+                    <include content="OverlayIcons" condition="!String.IsEqual(Control.GetLabel(10102),logo)">
                         <param name="OverlayLeft" value="485" />
                         <param name="OverlayTop" value="30" />
                     </include>
@@ -256,7 +256,7 @@
                         <width>290</width>
                         <height>290</height>
                         <aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
-                        <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/fanart-square.png">$VAR[ThumbVar]</texture>
+                        <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/fanart-square.png">$VAR[Art1Image]</texture>
                     </control>
                     <control type="label">
                         <top>20</top>
@@ -295,7 +295,7 @@
                         <width>290</width>
                         <height>290</height>
                         <aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
-                        <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/fanart-square.png">$VAR[ThumbVar]</texture>
+                        <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/fanart-square.png">$VAR[Art1Image]</texture>
                     </control>
                     <control type="label">
                         <top>20</top>

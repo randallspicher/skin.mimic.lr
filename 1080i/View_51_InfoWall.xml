@@ -23,14 +23,14 @@
 				<visible>Container.Content(favourites) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)</visible>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 
-				<itemlayout height="396" width="268" condition="!Skin.HasSetting(InfoWall.Banners) + !Skin.HasSetting(InfoWall.Logo)">
+				<itemlayout height="396" width="268" condition="![String.IsEqual(Control.GetLabel(10102),banner) |String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape)| String.IsEqual(Control.GetLabel(10102),logo)]">
 					<control type="image">
 						<top>6</top>
 						<left>6</left>
 						<width>256</width>
 						<height>384</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/infowall-poster.png">$VAR[PosterVar]</texture>
+						<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/infowall-poster.png">$VAR[Art1Image]</texture>
 					</control>
 					<control type="image">
 						<top>6</top>
@@ -46,7 +46,7 @@
 					</include>
 				</itemlayout>
 
-				<focusedlayout height="396" width="268" condition="!Skin.HasSetting(InfoWall.Banners) + !Skin.HasSetting(InfoWall.Logo)">
+				<focusedlayout height="396" width="268" condition="!String.IsEqual(Control.GetLabel(10102),banner) + ![String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape)| String.IsEqual(Control.GetLabel(10102),logo)]">
 					<control type="group">
 						<include>PanelFocusedItemZoom</include>
 						<control type="image">
@@ -62,7 +62,8 @@
 							<width>256</width>
 							<height>384</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/infowall-poster.png">$VAR[PosterVar]</texture>
+							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/infowall-poster.png">$VAR[Art1Image]</texture>
+<!-- 							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/infowall-poster.png">$VAR[Art1Image]</texture> -->
 						</control>
 						<include content="OverlayIcons">
 							<param name="OverlayLeft" value="202" />
@@ -71,7 +72,7 @@
 					</control>
 				</focusedlayout>
 
-				<itemlayout width="1019" height="198" condition="Skin.HasSetting(InfoWall.Banners)">
+				<itemlayout width="1019" height="198" condition="String.IsEqual(Control.GetLabel(10102),banner)">
 					<control type="group">
 <!-- 						<left>25</left> -->
 						<control type="image">
@@ -80,7 +81,7 @@
 							<width>1007</width>
 							<height>186</height>
 							<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-							<texture background="true" diffuse="diffuse/infowall-banner.png">$VAR[BannerThumb]</texture>
+							<texture background="true" diffuse="diffuse/infowall-banner.png">$VAR[Art1Image]</texture>
 							<visible>!String.IsEmpty(ListItem.Art(banner)) | String.IsEmpty(ListItem.Art(fanart))</visible>
 						</control>
 						<control type="image">
@@ -128,7 +129,7 @@
 					</control>
 				</itemlayout>
 
-				<focusedlayout width="1019" height="198" condition="Skin.HasSetting(InfoWall.Banners)">
+				<focusedlayout width="1019" height="198" condition="String.IsEqual(Control.GetLabel(10102),banner)">
 					<control type="group">
 <!-- 						<left>25</left> -->
 						<control type="image">
@@ -146,7 +147,7 @@
 								<width>1007</width>
 								<height>186</height>
 								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
-								<texture background="true" diffuse="diffuse/infowall-banner.png">$VAR[BannerThumb]</texture>
+								<texture background="true" diffuse="diffuse/infowall-banner.png">$VAR[Art1Image]</texture>
 							</control>
 						</control>
 						<control type="group">
@@ -194,17 +195,17 @@
 					</control>
 				</focusedlayout>
 
-				<itemlayout height="264" width="357" condition="Skin.HasSetting(InfoWall.Logo) + !Container.Content(seasons)">
+				<itemlayout height="264" width="357" condition="[String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape)| String.IsEqual(Control.GetLabel(10102),logo)] + !Container.Content(seasons)">
 					<control type="image">
 						<top>6</top>
 						<left>16</left>
 						<width>325</width>
 						<height>252</height>
 						<aspectratio scalediffuse="false">keep</aspectratio>
-						<texture background="true">$VAR[LogoVar]</texture>
+						<texture background="true">$VAR[Art1Image]</texture>
 					</control>
 					<control type="group">
-						<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
+						<visible>[String.IsEmpty(ListItem.Art(clearlogo))+String.IsEmpty(ListItem(landscape))]</visible>
 						<control type="textbox">
 							<left>16</left>
 							<top>6</top>
@@ -226,7 +227,7 @@
 					</control>
 				</itemlayout>
 
-				<focusedlayout height="264" width="357" condition="Skin.HasSetting(InfoWall.Logo) + !Container.Content(seasons)">
+				<focusedlayout height="264" width="357" condition="[String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape)| String.IsEqual(Control.GetLabel(10102),logo)] + !Container.Content(seasons)">
 					<control type="group">
 						<include>PanelFocusedItemZoom</include>
 						<control type="image">
@@ -242,10 +243,10 @@
 							<width>325</width>
 							<height>252</height>
 							<aspectratio scalediffuse="false">keep</aspectratio>
-							<texture background="true">$VAR[LogoVar]</texture>
+							<texture background="true">$VAR[Art1Image]</texture>
 						</control>
 						<control type="group">
-							<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
+							<visible>[String.IsEmpty(ListItem.Art(clearlogo))+String.IsEmpty(ListItem(landscape))]</visible>
 							<control type="textbox">
 								<left>16</left>
 								<top>6</top>
@@ -307,7 +308,7 @@
 						<width>268</width>
 						<height>268</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/wall-square.png">$VAR[ThumbVar]</texture>
+						<texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/wall-square.png">$VAR[Art1Image]</texture>
 					</control>
 					<control type="image">
 						<top>6</top>
@@ -363,7 +364,7 @@
 							<width>268</width>
 							<height>268</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/wall-square.png">$VAR[ThumbVar]</texture>
+							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/wall-square.png">$VAR[Art1Image]</texture>
 						</control>
 						<control type="image">
 							<visible>Container.Content(albums)</visible>

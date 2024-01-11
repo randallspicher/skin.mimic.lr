@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 
+
 	<include name="BackButton">
 		<control type="button">
 			<visible>Skin.HasSetting(Enable.TouchScreen)</visible>
@@ -53,6 +54,32 @@
 
 	<include name="Topbar">
 
+			<control type="label" id="10101">
+				<description>Hidden object for normalized View Mode to check against</description>
+				<label>$VAR[ActualViewMode]</label>
+				<visible>false</visible>
+				<width>680</width>
+				<height>40</height>
+				<font>font30</font>
+			</control>
+			<control type="label" id="10102">
+				<description>Hidden object for Art1Setting to check against</description>
+				<label>$VAR[Art1Setting]</label>
+				<visible>true</visible>
+				<width>680</width>
+				<height>40</height>
+				<font>font30</font>
+			</control>
+			<control type="label" id="10103">
+				<description>Hidden object for Art2Setting to check against</description>
+				<label>$VAR[Art2Setting]</label>
+				<visible>false</visible>
+				<width>680</width>
+				<height>40</height>
+				<font>font30</font>
+			</control>
+
+
 		<control type="group">
 
 			<visible>!Control.IsVisible(509)</visible>
@@ -95,15 +122,15 @@
 				</control>
 
 
-				<!-- <control type="label"> -->
-				<!-- <width>800</width> -->
-				<!-- <align>left</align> -->
-				<!-- <aligny>center</aligny> -->
-				<!-- <font>cirrus_30</font> -->
-				<!-- <textcolor>TitleTextColor</textcolor> -->
-				<!-- <label>$INFO[ListItem.DBTYPE] : $INFO[ListItem.FolderPath]</label> -->
-				<!-- <scroll>true</scroll> -->
-				<!-- </control> -->
+				<control type="label">
+				<width>800</width>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>cirrus_30</font>
+				<textcolor>TitleTextColor</textcolor>
+				<label>$INFO[Container.Content] : $VAR[ActualViewMode] : $INFO[Control.GetLabel(10102)]</label>
+				<scroll>true</scroll>
+				</control>
 
 				<control type="label">
 					<width>auto</width>

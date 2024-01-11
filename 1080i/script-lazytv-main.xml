@@ -56,7 +56,7 @@
                         <width>256</width>
                         <height>384</height>
                         <aspectratio scalediffuse="false">scale</aspectratio>
-                        <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/infowall-poster.png">$VAR[PosterVar]</texture>
+                        <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/infowall-poster.png">$VAR[ArtPoster]</texture>
                     </control>
                     <control type="image">
                         <top>6</top>
@@ -107,7 +107,7 @@
                             <width>256</width>
                             <height>384</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/infowall-poster.png">$VAR[PosterVar]</texture>
+                            <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/infowall-poster.png">$VAR[ArtPoster]</texture>
                         </control>
                         <control type="group">
                             <visible>ListItem.IsSelected</visible>

@@ -69,7 +69,7 @@
 			<!-- view id = 508 -->
 			<include>View_505_Panel</include>
 			<!-- view id = 505 -->
-			<include>View_509_Wall</include>
+			<include>View_509_BigWall</include>
 			<!-- view id = 509 -->
 			<include>View_903_Coverflow</include>
 		</control>

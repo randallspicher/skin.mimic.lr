@@ -40,7 +40,7 @@
             <!-- view id = 505 -->
             <include>View_507_BigList</include>
             <!-- view id = 507 -->
-            <include>View_509_Wall</include>
+            <include>View_509_BigWall</include>
             <!-- view id = 509 -->
 			<include>View_900_Arcade</include>
 			<include>View_902_KeibertzPlus</include>

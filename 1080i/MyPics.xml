@@ -19,7 +19,7 @@
             <!-- view id = 510 -->
             <include>View_504_Gallery</include>
             <!-- view id = 504 -->
-            <include>View_509_Wall</include>
+            <include>View_509_BigWall</include>
             <!-- view id = 509 -->
             <include>ShiftFixedList</include>
             <!-- view id = 57 -->

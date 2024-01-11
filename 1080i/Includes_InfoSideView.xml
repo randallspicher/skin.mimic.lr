@@ -4,19 +4,30 @@
 	<!-- Container.Content (video) genres movies sets tvshows seasons episodes years actors directors studios tags musicvideos albums artists albums -->
 	<!-- ListItem.DBTYPE (video) movie set tag genre tvshow season episode musicvideo album actor -->
 
+
+
+
+
 	<include name="MusicInfoSide">
 		<control type="grouplist">
-			<animation effect="slide" time="300" tween="sine" easing="inout" start="0" end="-25" condition="Skin.HasSetting(InfoWall.Banners)">Conditional</animation>
+			<animation effect="slide" time="300" tween="sine" easing="inout" start="0" end="-25" condition="String.IsEqual(Control.GetLabel(10102),banner)">Conditional</animation>
 			<itemgap>15</itemgap>
 
-			<control type="label" id="360">
-				<description>Hidden object for Art2Setting to check against</description>
-				<label>$VAR[Art2Setting]</label>
-				<visible>false</visible>
-				<width>680</width>
-				<height>40</height>
-				<font>font30</font>
-			</control>
+<!-- 			<control type="label" id="360"> -->
+<!-- 				<description>Hidden object for Art2Setting to check against</description> -->
+<!-- 				<label>$VAR[Art2Setting]</label> -->
+<!-- 				<visible>false</visible> -->
+<!-- 				<width>680</width> -->
+<!-- 				<height>40</height> -->
+<!-- 				<font>font30</font> -->
+<!-- 			</control> -->
+
+					<include content="Art2PickerHidden">
+						<param name="CurrentView">$VAR[ActualViewMode]</param>
+						<param name="CurrentContent">$INFO[ListItem.DBType]</param>
+					</include>
+
+
 			<control type="label" id='361'>
 				<description>Hidden object for AudioSourceFlagVar to check against</description>
 				<visible>false</visible>
@@ -35,7 +46,7 @@
 
 			<control type="group">
 				<description>call genre icon include if we want a genre icon</description>
-				<visible>String.IsEqual(Control.GetLabel(360),genreicon)</visible>
+				<visible>String.IsEqual(Control.GetLabel(10103),genreicon)</visible>
 				<width>680</width>
 				<height>680</height>
 				<include content="external-genre-icon">
@@ -203,15 +214,15 @@
 
 	<include name="VideoInfoSide">
 		<control type="grouplist">
-			<animation effect="slide" time="300" tween="sine" easing="inout" start="0" end="-25" condition="Skin.HasSetting(InfoWall.Banners)">Conditional</animation>
+			<animation effect="slide" time="300" tween="sine" easing="inout" start="0" end="-25" condition="String.IsEqual(Control.GetLabel(10102),banner)">Conditional</animation>
 			<itemgap>10</itemgap>
 
 			<control type="multiimage">
 				<description>Image when landscape or fanart (scaled landscape)</description>
 				<visible>
-					String.IsEqual(Control.GetLabel(360),landscape)
-					| String.IsEqual(Control.GetLabel(360),fanart)
-					| String.IsEmpty(Control.GetLabel(360))
+					String.IsEqual(Control.GetLabel(10103),landscape)
+					| String.IsEqual(Control.GetLabel(10103),fanart)
+					| String.IsEmpty(Control.GetLabel(10103))
 				</visible>
 				<imagepath background="true" diffuse="diffuse/infowall-fanart.png">$VAR[Art2Image]</imagepath>
 				<width>680</width>
@@ -222,7 +233,7 @@
 			<control type="multiimage">
 				<description>Image when Banner</description>
 				<visible>
-					String.IsEqual(Control.GetLabel(360),banner)
+					String.IsEqual(Control.GetLabel(10103),banner)
 				</visible>
 				<imagepath background="true" diffuse="diffuse/infowall-fanart.png">$VAR[Art2Image]</imagepath>
 				<width>680</width>
@@ -233,8 +244,8 @@
 			<control type="multiimage">
 				<description>Image when Thumb or Logo view (landscape shrink to fit)</description>
 				<visible>
-					String.IsEqual(Control.GetLabel(360),thumb)
-					| String.IsEqual(Control.GetLabel(360),logo)
+					String.IsEqual(Control.GetLabel(10103),thumb)
+					| String.IsEqual(Control.GetLabel(10103),logo)
 				</visible>
 				<imagepath background="true" diffuse="diffuse/infowall-fanart.png">$VAR[Art2Image]</imagepath>
 				<width>680</width>
@@ -245,7 +256,7 @@
 			<control type="multiimage">
 				<description>Image when Poster View (Tall shrink to fit)</description>
 				<visible>
-					String.IsEqual(Control.GetLabel(360),poster)
+					String.IsEqual(Control.GetLabel(10103),poster)
 				</visible>
 				<imagepath background="true" diffuse="diffuse/infowall-fanart.png">$VAR[Art2Image]</imagepath>
 				<width>680</width>
@@ -256,7 +267,7 @@
 
 			<control type="group">
 				<description>call genre icon include if we want a genre icon</description>
-				<visible>String.IsEqual(Control.GetLabel(360),genreicon)</visible>
+				<visible>String.IsEqual(Control.GetLabel(10103),genreicon)</visible>
 				<width>680</width>
 				<height>680</height>
 				<include content="external-genre-icon">
@@ -265,14 +276,18 @@
 				</include>
 			</control>
 
-			<control type="label" id="360">
-				<description>Hidden object to store Art2Setting so that other objects can access it for comparisons</description>
-				<visible>false</visible>
-				<label>$VAR[Art2Setting]</label>
-				<width>680</width>
-				<height>40</height>
-				<font>font30</font>
-			</control>
+<!-- 			<control type="label" id="360"> -->
+<!-- 				<description>Hidden object to store Art2Setting so that other objects can access it for comparisons</description> -->
+<!-- 				<visible>false</visible> -->
+<!-- 				<label>$VAR[Art2Setting]</label> -->
+<!-- 				<width>680</width> -->
+<!-- 				<height>40</height> -->
+<!-- 				<font>font30</font> -->
+<!-- 			</control> -->
+					<include content="Art2PickerHidden">
+						<param name="CurrentView">$VAR[ActualViewMode]</param>
+						<param name="CurrentContent">$INFO[ListItem.DBType]</param>
+					</include>
 
 			<control type="label">
 				<label>$VAR[FloorLabelVar]</label>
@@ -302,8 +317,8 @@
 			</control>
 			<control type="textbox">
 				<visible>
-					!String.IsEqual(Control.GetLabel(360),poster)
-					+ !String.IsEqual(Control.GetLabel(360),genreicon)
+					!String.IsEqual(Control.GetLabel(10103),poster)
+					+ !String.IsEqual(Control.GetLabel(10103),genreicon)
 				</visible>
 				<label>$VAR[VideoPlotVar]</label>
 				<width>680</width>

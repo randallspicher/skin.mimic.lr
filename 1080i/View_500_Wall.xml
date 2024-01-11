@@ -24,8 +24,16 @@
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 
 				<itemlayout height="357" width="242"
-					condition="[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons)] + !Skin.HasSetting(Enable.IconLandscape) + !Skin.HasSetting(Enable.IconBanner) + !Skin.HasSetting(Enable.IconLogo)] | [Container.Content(seasons) + Skin.HasSetting(Enable.IconLandscape)] | [Container.Content(seasons) + Skin.HasSetting(Enable.IconLogo)]">
+					condition="[[Container.Content(movies) | Container.Content(tvshows) | 
+					Container.Content(sets) | Container.Content(seasons)] 
+					+ !String.IsEqual(Control.GetLabel(10102),landscape) 
+					+ !String.IsEqual(Control.GetLabel(10102),banner) 
+					+ !String.IsEqual(Control.GetLabel(10102),logo)] 
+					| [Container.Content(seasons) 
+					+ String.IsEqual(Control.GetLabel(10102),landscape)] 
+					| [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),logo)]">
 					<control type="group">
+					
 <!-- 						<left>62</left> -->
 						<control type="image">
 							<top>6</top>
@@ -33,7 +41,7 @@
 							<width>230</width>
 							<height>345</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/wall-poster.png">$VAR[PosterVar]</texture>
+							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/wall-poster.png">$VAR[Art1Image]</texture>
 						</control>
 						<control type="image">
 							<top>6</top>
@@ -51,7 +59,7 @@
 				</itemlayout>
 
 				<focusedlayout height="357" width="242"
-					condition="[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons)] + !Skin.HasSetting(Enable.IconLandscape) + !Skin.HasSetting(Enable.IconBanner) + !Skin.HasSetting(Enable.IconLogo)] | [Container.Content(seasons) + Skin.HasSetting(Enable.IconLandscape)] | [Container.Content(seasons) + Skin.HasSetting(Enable.IconLogo)]">
+					condition="[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons)] + !String.IsEqual(Control.GetLabel(10102),landscape) + !String.IsEqual(Control.GetLabel(10102),banner) + !String.IsEqual(Control.GetLabel(10102),logo)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),landscape)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),logo)]">
 					<control type="group">
 <!-- 						<left>62</left> -->
 						<include>PanelFocusedItemZoom</include>
@@ -68,7 +76,7 @@
 							<width>230</width>
 							<height>345</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/wall-poster.png">$VAR[PosterVar]</texture>
+							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/wall-poster.png">$VAR[Art1Image]</texture>
 						</control>
 						<include content="OverlayIcons">
 							<param name="OverlayLeft" value="178" />
@@ -78,18 +86,18 @@
 				</focusedlayout>
 
 				<itemlayout height="238" width="413"
-					condition="[Container.Content(movies) | Container.Content(tvshows)] + !Skin.HasSetting(Enable.IconBanner) + [Skin.HasSetting(Enable.IconLandscape) | Skin.HasSetting(Enable.IconLogo)]">
+					condition="[Container.Content(movies) | Container.Content(tvshows)] + !String.IsEqual(Control.GetLabel(10102),banner) + [String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
 					<control type="group">
 <!-- 						<left>83</left> -->
 						<control type="group">
-							<visible>Skin.HasSetting(Enable.IconLandscape)</visible>
+							<visible>String.IsEqual(Control.GetLabel(10102),landscape)</visible>
 							<control type="image">
 								<top>6</top>
 								<left>6</left>
 								<width>401</width>
 								<height>226</height>
 								<aspectratio>scale</aspectratio>
-								<texture background="true">$VAR[LandscapeArtVar]</texture>
+								<texture background="true">$VAR[Art1Image]</texture>
 							</control>
 							<control type="image">
 								<visible>String.IsEmpty(ListItem.Art(landscape))</visible>
@@ -102,7 +110,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>Skin.HasSetting(Enable.IconLogo)</visible>
+							<visible>String.IsEqual(Control.GetLabel(10102),logo)</visible>
 							<control type="image">
 								<top>6</top>
 								<left>16</left>
@@ -133,7 +141,7 @@
 							<texture border="5">overlays/diffuse-overlay.png</texture>
 							<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 						</control>
-						<include content="OverlayIcons" condition="Skin.HasSetting(Enable.IconLandscape)">
+						<include content="OverlayIcons" condition="String.IsEqual(Control.GetLabel(10102),landscape)">
 							<param name="OverlayLeft" value="349" />
 							<param name="OverlayTop" value="4" />
 						</include>
@@ -141,7 +149,7 @@
 				</itemlayout>
 
 				<focusedlayout height="238" width="413"
-					condition="[Container.Content(movies) | Container.Content(tvshows)] + !Skin.HasSetting(Enable.IconBanner) + [Skin.HasSetting(Enable.IconLandscape) | Skin.HasSetting(Enable.IconLogo)]">
+					condition="[Container.Content(movies) | Container.Content(tvshows)] + !String.IsEqual(Control.GetLabel(10102),banner) + [String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
 					<control type="group">
 <!-- 						<left>83</left> -->
 						<!-- <animation type="Focus"> -->
@@ -156,14 +164,14 @@
 							<texture colordiffuse="FocusColor" border="5">listselect_fo.png</texture>
 						</control>
 						<control type="group">
-							<visible>Skin.HasSetting(Enable.IconLandscape)</visible>
+							<visible>String.IsEqual(Control.GetLabel(10102),landscape)</visible>
 							<control type="image">
 								<left>6</left>
 								<top>6</top>
 								<width>401</width>
 								<height>226</height>
 								<aspectratio>scale</aspectratio>
-								<texture background="true">$VAR[LandscapeArtVar]</texture>
+								<texture background="true">$VAR[Art1Image]</texture>
 							</control>
 							<control type="image">
 								<visible>String.IsEmpty(ListItem.Art(landscape))</visible>
@@ -176,7 +184,7 @@
 							</control>
 						</control>
 						<control type="group">
-							<visible>Skin.HasSetting(Enable.IconLogo)</visible>
+							<visible>String.IsEqual(Control.GetLabel(10102),logo)</visible>
 							<control type="image">
 								<top>6</top>
 								<left>16</left>
@@ -199,14 +207,14 @@
 								</control>
 							</control>
 						</control>
-						<include content="OverlayIcons" condition="Skin.HasSetting(Enable.IconLandscape)">
+						<include content="OverlayIcons" condition="String.IsEqual(Control.GetLabel(10102),landscape)">
 							<param name="OverlayLeft" value="349" />
 							<param name="OverlayTop" value="4" />
 						</include>
 					</control>
 				</focusedlayout>
 
-				<itemlayout height="178" width="909" condition="Skin.HasSetting(Enable.IconBanner) + !Container.Content(episodes)">
+				<itemlayout height="178" width="909" condition="String.IsEqual(Control.GetLabel(10102),banner) + !Container.Content(episodes)">
 					<control type="image">
 						<top>6</top>
 						<left>6</left>
@@ -258,7 +266,7 @@
 					</include>
 				</itemlayout>
 
-				<focusedlayout height="178" width="909" condition="Skin.HasSetting(Enable.IconBanner) + !Container.Content(episodes)">
+				<focusedlayout height="178" width="909" condition="String.IsEqual(Control.GetLabel(10102),banner) + !Container.Content(episodes)">
 					<control type="group">
 						<include>PanelFocusedItemZoom</include>
 						<control type="image">
@@ -325,7 +333,7 @@
 							<width>412</width>
 							<height>345</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/wall-episode.png">$VAR[ThumbVar]</texture>
+							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/wall-episode.png">$VAR[Art1Image]</texture>
 						</control>
 						<control type="image">
 							<top>6</top>
@@ -375,7 +383,7 @@
 							<width>412</width>
 							<height>345</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/wall-episode.png">$VAR[ThumbVar]</texture>
+							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/wall-episode.png">$VAR[Art1Image]</texture>
 						</control>
 						<control type="group">
 							<!-- <animation center="auto" condition="Control.HasFocus(500)" easing="inout" effect="fade" end="0" start="100" time="300" tween="sine">Focus</animation> -->
@@ -512,8 +520,8 @@
 
 			<control type="group">
 				<!-- <animation effect="slide" time="0" start="0" end="20" -->
-				<!-- condition="[Skin.HasSetting(Enable.IconLandscape) | Skin.HasSetting(Enable.IconLogo)] + !Container.Content(seasons)">Conditional</animation> -->
-				<!-- <animation effect="slide" time="0" start="0" end="-60" condition="Skin.HasSetting(Enable.IconBanner) + !Container.Content(episodes)">Conditional</animation> -->
+				<!-- condition="[String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)] + !Container.Content(seasons)">Conditional</animation> -->
+				<!-- <animation effect="slide" time="0" start="0" end="-60" condition="String.IsEqual(Control.GetLabel(10102),banner) + !Container.Content(episodes)">Conditional</animation> -->
 				<!-- <animation effect="slide" time="0" start="0" end="-48" condition="Container.Content(musicvideos)">Conditional</animation> -->
 				<left>90</left>
 				<top>910</top>
@@ -539,8 +547,8 @@
 
 			<control type="group">
 				<!-- <animation effect="slide" time="0" start="0" end="20" -->
-				<!-- condition="[Skin.HasSetting(Enable.IconLandscape) | Skin.HasSetting(Enable.IconLogo)] + !Container.Content(seasons)">Conditional</animation> -->
-				<!-- <animation effect="slide" time="0" start="0" end="-60" condition="Skin.HasSetting(Enable.IconBanner) + !Container.Content(episodes)">Conditional</animation> -->
+				<!-- condition="[String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)] + !Container.Content(seasons)">Conditional</animation> -->
+				<!-- <animation effect="slide" time="0" start="0" end="-60" condition="String.IsEqual(Control.GetLabel(10102),banner) + !Container.Content(episodes)">Conditional</animation> -->
 				<!-- <animation effect="slide" time="0" start="0" end="-48" condition="Container.Content(musicvideos)">Conditional</animation> -->
 				<left>90</left>
 				<top>910</top>
@@ -564,8 +572,8 @@
 				</control>
 			</control>
 			<control type="group">
-				<!-- <animation effect="slide" time="0" start="0" end="-20" condition="[Skin.HasSetting(Enable.IconLandscape) | Skin.HasSetting(Enable.IconLogo)]">Conditional</animation> -->
-				<!-- <animation effect="slide" time="0" start="0" end="60" condition="Skin.HasSetting(Enable.IconBanner) + !Container.Content(episodes)">Conditional</animation> -->
+				<!-- <animation effect="slide" time="0" start="0" end="-20" condition="[String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">Conditional</animation> -->
+				<!-- <animation effect="slide" time="0" start="0" end="60" condition="String.IsEqual(Control.GetLabel(10102),banner) + !Container.Content(episodes)">Conditional</animation> -->
 				<!-- <animation effect="slide" time="0" start="0" end="40" condition="Container.Content(musicvideos)">Conditional</animation> -->
 				<control type="group">
 					<left>1480</left>
@@ -624,7 +632,7 @@
 							<width>345</width>
 							<height>345</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture fallback="DefaultAudio.png" background="true" diffuse="diffuse/wall-musicvideo.png">$VAR[ThumbVar]</texture>
+							<texture fallback="DefaultAudio.png" background="true" diffuse="diffuse/wall-musicvideo.png">$VAR[Art1Image]</texture>
 						</control>
 						<control type="image">
 							<left>6</left>
@@ -681,7 +689,7 @@
 							<width>345</width>
 							<height>345</height>
 							<aspectratio scalediffuse="false">scale</aspectratio>
-							<texture fallback="DefaultAudio.png" background="true" diffuse="diffuse/wall-musicvideo.png">$VAR[ThumbVar]</texture>
+							<texture fallback="DefaultAudio.png" background="true" diffuse="diffuse/wall-musicvideo.png">$VAR[Art1Image]</texture>
 						</control>
 						<control type="image">
 							<visible>Container.Content(albums)</visible>
