@@ -212,7 +212,7 @@
                                 <width>440</width>
                                 <height>248</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture background="true" diffuse="diffuse/bigwall-landscape.png">$VAR[LandscapeArtVar]</texture>
+                                <texture background="true" diffuse="diffuse/bigwall-landscape.png">$VAR[ArtLandscape]</texture>
                             </control>
                             <control type="image">
                                 <visible>String.IsEmpty(ListItem.Art(landscape))</visible>
@@ -264,7 +264,7 @@
                             <width>870</width>
                             <height>161</height>
                             <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture background="true" diffuse="diffuse/bigwall-banner.png">$VAR[BannerThumb]</texture>
+                            <texture background="true" diffuse="diffuse/bigwall-banner.png">$VAR[ArtBanner]</texture>
                             <visible>!String.IsEmpty(ListItem.Art(banner)) | String.IsEmpty(ListItem.Art(fanart))</visible>
                         </control>
                         <control type="image">
@@ -322,7 +322,7 @@
                                 <width>870</width>
                                 <height>161</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture background="true" diffuse="diffuse/bigwall-banner.png">$VAR[BannerThumb]</texture>
+                                <texture background="true" diffuse="diffuse/bigwall-banner.png">$VAR[ArtBanner]</texture>
                             </control>
                         </control>
                         <control type="group">

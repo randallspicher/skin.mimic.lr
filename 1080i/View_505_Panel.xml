@@ -141,7 +141,7 @@
 					<visible>String.IsEqual(Control.GetLabel(10102),fanart)</visible>
 					<width>525</width>
 					<height>296</height>
-					<texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/panel.png">$VAR[FanartVar]</texture>
+					<texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/panel.png">$VAR[Art1Image]</texture>
 					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 				</control>
 				<control type="image">

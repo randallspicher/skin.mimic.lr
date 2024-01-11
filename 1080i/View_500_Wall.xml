@@ -27,6 +27,7 @@
 					condition="[[Container.Content(movies) | Container.Content(tvshows) | 
 					Container.Content(sets) | Container.Content(seasons)] 
 					+ !String.IsEqual(Control.GetLabel(10102),landscape) 
+					+ !String.IsEqual(Control.GetLabel(10102),fanart) 
 					+ !String.IsEqual(Control.GetLabel(10102),banner) 
 					+ !String.IsEqual(Control.GetLabel(10102),logo)] 
 					| [Container.Content(seasons) 
@@ -59,7 +60,17 @@
 				</itemlayout>
 
 				<focusedlayout height="357" width="242"
-					condition="[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons)] + !String.IsEqual(Control.GetLabel(10102),landscape) + !String.IsEqual(Control.GetLabel(10102),banner) + !String.IsEqual(Control.GetLabel(10102),logo)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),landscape)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),logo)]">
+					condition="[[Container.Content(movies) | Container.Content(tvshows) 
+					| Container.Content(sets) 
+					| Container.Content(seasons)] 
+					+ !String.IsEqual(Control.GetLabel(10102),landscape) 
+					+ !String.IsEqual(Control.GetLabel(10102),fanart) 
+					+ !String.IsEqual(Control.GetLabel(10102),banner) 
+					+ !String.IsEqual(Control.GetLabel(10102),logo)] 
+					| [Container.Content(seasons) 
+					+ String.IsEqual(Control.GetLabel(10102),landscape)] 
+					| [Container.Content(seasons) 
+					+ String.IsEqual(Control.GetLabel(10102),logo)]">
 					<control type="group">
 <!-- 						<left>62</left> -->
 						<include>PanelFocusedItemZoom</include>
@@ -86,11 +97,14 @@
 				</focusedlayout>
 
 				<itemlayout height="238" width="413"
-					condition="[Container.Content(movies) | Container.Content(tvshows)] + !String.IsEqual(Control.GetLabel(10102),banner) + [String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
+					condition="[Container.Content(movies) | Container.Content(tvshows)] + !String.IsEqual(Control.GetLabel(10102),banner) + [String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
 					<control type="group">
 <!-- 						<left>83</left> -->
 						<control type="group">
-							<visible>String.IsEqual(Control.GetLabel(10102),landscape)</visible>
+							<visible>
+							String.IsEqual(Control.GetLabel(10102),landscape)
+							| String.IsEqual(Control.GetLabel(10102),fanart)
+							</visible>
 							<control type="image">
 								<top>6</top>
 								<left>6</left>
@@ -100,13 +114,39 @@
 								<texture background="true">$VAR[Art1Image]</texture>
 							</control>
 							<control type="image">
-								<visible>String.IsEmpty(ListItem.Art(landscape))</visible>
+								<visible>
+								[String.IsEqual(Control.GetLabel(10102),landscape)
+								+String.IsEmpty(ListItem.Art(landscape))] 
+								| 
+								[String.IsEqual(Control.GetLabel(10102),fanart)
+								+ ! String.IsEmpty(ListItem.Art(fanart))]
+								</visible>
 								<top>120</top>
 								<left>6</left>
 								<width>401</width>
 								<height>90</height>
 								<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 								<aspectratio align="center" aligny="bottom">keep</aspectratio>
+							</control>
+							<control type="group">
+								<visible>
+								[[String.IsEqual(Control.GetLabel(10102),landscape)
+								+String.IsEmpty(ListItem.Art(landscape))] 
+								| 
+								[String.IsEqual(Control.GetLabel(10102),fanart)
+								+ ! String.IsEmpty(ListItem.Art(fanart))]]
+								+ String.IsEmpty(ListItem.Art(clearlogo))
+								</visible>
+								<control type="textbox">
+									<left>16</left>
+									<top>6</top>
+									<width>381</width>
+									<height>226</height>
+									<align>center</align>
+									<aligny>center</aligny>
+									<font>font16</font>
+									<label>$VAR[FloorLabelVar]</label>
+								</control>
 							</control>
 						</control>
 						<control type="group">
@@ -149,7 +189,7 @@
 				</itemlayout>
 
 				<focusedlayout height="238" width="413"
-					condition="[Container.Content(movies) | Container.Content(tvshows)] + !String.IsEqual(Control.GetLabel(10102),banner) + [String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
+					condition="[Container.Content(movies) | Container.Content(tvshows)] + !String.IsEqual(Control.GetLabel(10102),banner) + [String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
 					<control type="group">
 <!-- 						<left>83</left> -->
 						<!-- <animation type="Focus"> -->
@@ -164,7 +204,10 @@
 							<texture colordiffuse="FocusColor" border="5">listselect_fo.png</texture>
 						</control>
 						<control type="group">
-							<visible>String.IsEqual(Control.GetLabel(10102),landscape)</visible>
+							<visible>
+							String.IsEqual(Control.GetLabel(10102),landscape)
+							| String.IsEqual(Control.GetLabel(10102),fanart)
+							</visible>
 							<control type="image">
 								<left>6</left>
 								<top>6</top>
@@ -174,7 +217,13 @@
 								<texture background="true">$VAR[Art1Image]</texture>
 							</control>
 							<control type="image">
-								<visible>String.IsEmpty(ListItem.Art(landscape))</visible>
+								<visible>
+								[String.IsEqual(Control.GetLabel(10102),landscape)
+								+String.IsEmpty(ListItem.Art(landscape))] 
+								| 
+								[String.IsEqual(Control.GetLabel(10102),fanart)
+								+ ! String.IsEmpty(ListItem.Art(fanart))]
+								</visible>
 								<top>120</top>
 								<left>6</left>
 								<width>401</width>
@@ -182,6 +231,27 @@
 								<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 								<aspectratio align="center" aligny="bottom">keep</aspectratio>
 							</control>
+							<control type="group">
+								<visible>
+								[[String.IsEqual(Control.GetLabel(10102),landscape)
+								+String.IsEmpty(ListItem.Art(landscape))] 
+								| 
+								[String.IsEqual(Control.GetLabel(10102),fanart)
+								+ ! String.IsEmpty(ListItem.Art(fanart))]]
+								+ String.IsEmpty(ListItem.Art(clearlogo))
+								</visible>
+								<control type="textbox">
+									<left>16</left>
+									<top>6</top>
+									<width>381</width>
+									<height>226</height>
+									<align>center</align>
+									<aligny>center</aligny>
+									<font>font16</font>
+									<label>$VAR[FloorLabelVar]</label>
+								</control>
+							</control>
+
 						</control>
 						<control type="group">
 							<visible>String.IsEqual(Control.GetLabel(10102),logo)</visible>
@@ -221,7 +291,7 @@
 						<width>897</width>
 						<height>166</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture background="true" diffuse="diffuse/wall-banner.png">$VAR[BannerThumb]</texture>
+						<texture background="true" diffuse="diffuse/wall-banner.png">$VAR[ArtBanner]</texture>
 						<visible>!String.IsEmpty(ListItem.Art(banner)) | String.IsEmpty(ListItem.Art(fanart))</visible>
 					</control>
 					<control type="image">
@@ -284,7 +354,7 @@
 								<width>897</width>
 								<height>166</height>
 								<aspectratio scalediffuse="false">scale</aspectratio>
-								<texture background="true" diffuse="diffuse/wall-banner.png">$VAR[BannerThumb]</texture>
+								<texture background="true" diffuse="diffuse/wall-banner.png">$VAR[ArtBanner]</texture>
 							</control>
 						</control>
 						<control type="group">

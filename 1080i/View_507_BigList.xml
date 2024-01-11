@@ -384,7 +384,7 @@
                 <visible>String.IsEqual(Control.GetLabel(10102),fanart)</visible>
                 <width>346</width>
                 <height>195</height>
-                <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/biglist-landscape.png">$VAR[FanartVar]</texture>
+                <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/biglist-landscape.png">$VAR[Art1Image]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
             </control>
             <control type="image">

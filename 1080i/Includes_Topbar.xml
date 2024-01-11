@@ -122,15 +122,15 @@
 				</control>
 
 
-				<control type="label">
-				<width>800</width>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>cirrus_30</font>
-				<textcolor>TitleTextColor</textcolor>
-				<label>$INFO[Container.Content] : $VAR[ActualViewMode] : $INFO[Control.GetLabel(10102)]</label>
-				<scroll>true</scroll>
-				</control>
+<!-- 				<control type="label"> -->
+<!-- 				<width>800</width> -->
+<!-- 				<align>left</align> -->
+<!-- 				<aligny>center</aligny> -->
+<!-- 				<font>cirrus_30</font> -->
+<!-- 				<textcolor>TitleTextColor</textcolor> -->
+<!-- 				<label>$INFO[Container.Content] : $VAR[ActualViewMode] : $INFO[Control.GetLabel(10102)]</label> -->
+<!-- 				<scroll>true</scroll> -->
+<!-- 				</control> -->
 
 				<control type="label">
 					<width>auto</width>

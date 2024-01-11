@@ -1398,7 +1398,7 @@ msgid "Mini"
 msgstr ""
 
 msgctxt "#90200"
-msgid "Keibertz+"
+msgid "KeibertzPlus"
 msgstr ""
 
 msgctxt "#90300"

@@ -77,7 +77,7 @@
 							<visible>!Container.Content(images)</visible>
 							<width>1155</width>
 							<height>650</height>
-							<texture fallback="special://skin/backgrounds/default_bg.jpg" background="true" diffuse="diffuse/gallery.png">$VAR[GalleryArtVar]</texture>
+							<texture fallback="special://skin/backgrounds/default_bg.jpg" background="true" diffuse="diffuse/gallery.png">$VAR[Art1Image]</texture>
 							<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
 						</control>
 

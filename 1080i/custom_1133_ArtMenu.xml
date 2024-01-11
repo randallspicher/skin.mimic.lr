@@ -68,7 +68,7 @@
 
 					<include content="Art1Picker" condition="String.IsEqual(Skin.String(ArtSelector),Art1)">
 						<param name="CurrentView">$VAR[ActualViewMode]</param>
-						<param name="CurrentContent">$INFO[ListItem.DBType]</param>
+						<param name="CurrentContent">$INFO[Container.Content]</param>
 					</include>
 					<include content="Art2Picker" condition="String.IsEqual(Skin.String(ArtSelector),Art2)">
 						<param name="CurrentView">$VAR[ActualViewMode]</param>
