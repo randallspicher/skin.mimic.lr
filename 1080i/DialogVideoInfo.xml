@@ -875,12 +875,19 @@
 						<visible>System.HasAddon(script.extendedinfo) + $EXP[isMovie]</visible>
 					</control>
 
-					<control type="button" id="210">
+					<control type="button" id="14">
                         <description>Video Version</description>
                         <include>ButtonInfoDialogsCommonValues</include>
-                        <onclick>ActivateWindow(videoversion)</onclick>
-                        <label>Versions</label>
-                        <visible></visible>
+<!--                         <onclick>ActivateWindow(videoversion)</onclick> -->
+                        <label>40000</label>
+                        <visible>String.IsEqual(ListItem.DBType,movie)</visible>
+                    </control>
+					<control type="button" id="15">
+                        <description>Video Version</description>
+                        <include>ButtonInfoDialogsCommonValues</include>
+<!--                         <onclick>ActivateWindow(videoversion)</onclick> -->
+                        <label>40211</label>
+                        <visible>String.IsEqual(ListItem.DBType,movie)</visible>
                     </control>
 
 <!-- 					<control type="button" id="204"> -->
