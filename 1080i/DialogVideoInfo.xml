@@ -874,6 +874,15 @@
 						<label>31185</label>
 						<visible>System.HasAddon(script.extendedinfo) + $EXP[isMovie]</visible>
 					</control>
+
+					<control type="button" id="210">
+                        <description>Video Version</description>
+                        <include>ButtonInfoDialogsCommonValues</include>
+                        <onclick>ActivateWindow(videoversion)</onclick>
+                        <label>Versions</label>
+                        <visible></visible>
+                    </control>
+
 <!-- 					<control type="button" id="204"> -->
 <!-- 						<description>YouTube</description> -->
 <!-- 						<include>ButtonInfoDialogsCommonValues</include> -->

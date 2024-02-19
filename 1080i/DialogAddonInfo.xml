@@ -266,14 +266,23 @@
 						<visible>Integer.IsGreater(Container(50).NumItems,0)</visible>
 					</control>
 					<control type="button" id="8">
-						<description>Update Addon button</description>
 						<include>ButtonInfoDialogsCommonValues</include>
-						<label>24069</label>
+						<label>24138</label>
 					</control>
 					<control type="radiobutton" id="13">
 						<description>Auto update button</description>
 						<align>left</align>
 						<include>ButtonInfoDialogsCommonValues</include>
+					</control>
+					<control type="button" id="14">
+						<description>Versions Addon button</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label>24069</label>
+					</control>
+					<control type="button" id="10">
+						<description>Dependencies</description>
+						<include>ButtonInfoDialogsCommonValues</include>
+						<label>39024</label>
 					</control>
 					<control type="button" id="7">
 						<description>Enable/Disable Addon button</description>

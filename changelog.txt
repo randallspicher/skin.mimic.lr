@@ -3,6 +3,9 @@
 * Add support for new "MyFavorites" window which replaces the old dialog
 * Revamp art1, can now select any art as art1 on any view
 * Fix art1 and art2 preference selections not working when choosing other languages
+* add some new buttons that have been added to kodi in recent versions
+* (preliminary) support for the new versions feature (still under development in kodi)
+
 
 7.0.7
 * Display PVR channel number input on screen when watching PVR

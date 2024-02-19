@@ -173,6 +173,15 @@
                         <align>center</align>
                         <texturenofocus colordiffuse="BorderDiffuse">selecteditem_bg.png</texturenofocus>
                     </control>
+                    <control type="button" id="11">
+                        <description>Reminder Button</description>
+                        <visible>Window.IsActive(PVRGuideInfo)</visible>
+                        <width>260</width>
+                        <label>826</label>
+                        <font>font15_title</font>
+                        <align>center</align>
+                        <texturenofocus colordiffuse="BorderDiffuse">selecteditem_bg.png</texturenofocus>
+                    </control>
                <control type="button" id="7">
                     <description>Cancel button</description>
                     <width>260</width>
