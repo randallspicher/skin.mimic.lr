@@ -8,22 +8,12 @@
     </coordinates>
 <!--     <include>Animation.Dialog</include> -->
     <controls>
-<!--         <include content="DialogBackgroundCommons"> -->
-<!--             <param name="DialogBackgroundWidth" value="1198" /> -->
-<!--             <param name="DialogBackgroundHeight" value="740" /> -->
-<!--             <param name="DialogHeaderLabel" value="-" /> -->
-<!--             <param name="DialogHeaderId" value="2" /> -->
-<!--         </include> -->
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <texture background="true" fallback="special://skin/backgrounds/default_bg.jpg">$INFO[Skin.String(CustomBackground)]</texture>
-            <fadetime>400</fadetime>
-        </control>
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <texture>background.png</texture>
-            <colordiffuse>BackgroundColor</colordiffuse>
-        </control>
+        <include content="DialogBackgroundCommons">
+            <param name="DialogBackgroundWidth" value="1198" />
+            <param name="DialogBackgroundHeight" value="740" />
+            <param name="DialogHeaderLabel" value="-" />
+            <param name="DialogHeaderId" value="2" />
+        </include>
 
         <control type="grouplist" id="5">
             <description>control area</description>
