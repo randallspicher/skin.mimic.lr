@@ -143,7 +143,7 @@
                         <include>Objects_DoubleKeyOff</include>
                     </control>
                     <control type="button" id="307">
-                        <description>IP Adress</description>
+                        <description>IP Address</description>
                         <label>IP</label>
                         <onup>309</onup>
                         <ondown>303</ondown>
@@ -394,6 +394,15 @@
                         <ondown>8</ondown>
                         <include>Objects_SingleKeyOff</include>
                     </control>
+                    <control type="button" id="310">
+                        <description>show password</description>
+                        <left>693</left>
+                        <onup>151</onup>
+                        <ondown>8</ondown>
+                        <width>140</width>
+                        <include>Objects_DoubleKeyOff</include>
+                    </control>
+
                 </control>
                 <!-- Row 5 -->
                 <control type="grouplist">
