@@ -412,6 +412,15 @@
 								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 								<texture background="true" diffuse="diffuse/videoinfo-actor.png">$VAR[CustomActorRolePath]$INFO[ListItem.Label] - $INFO[ListItem.Label2].jpg</texture>
 							</control>
+							<control type="image">
+								<visible>Skin.HasSetting(Enable.ActorLocalImages)</visible>
+								<top>6</top>
+								<left>6</left>
+								<width>277</width>
+								<height>406</height>
+								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+								<texture background="true" diffuse="diffuse/videoinfo-actor.png">$INFO[Control.GetLabel(9940)].actors/$INFO[Container(50).ListItem.Label].jpg</texture>
+							</control>
 
 							<control type="image">
 								<top>6</top>
@@ -461,6 +470,15 @@
 								<height>406</height>
 								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
 								<texture background="true" diffuse="diffuse/videoinfo-actor.png">$VAR[CustomActorRolePath]$INFO[ListItem.Label] - $INFO[ListItem.Label2].jpg</texture>
+							</control>
+							<control type="image">
+								<visible>Skin.HasSetting(Enable.ActorLocalImages)</visible>
+								<top>6</top>
+								<left>6</left>
+								<width>277</width>
+								<height>406</height>
+								<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+								<texture background="true" diffuse="diffuse/videoinfo-actor.png">$INFO[Control.GetLabel(9940)].actors/$INFO[Container(50).ListItem.Label].jpg</texture>
 							</control>
 							<control type="image">
 								<top>317</top>
@@ -966,7 +984,12 @@
 			</control>
 			<control type="image">
 				<description>default large actor image</description>
-				<visible>Control.HasFocus(50)+[String.IsEmpty(Control.GetLabel(9939))|!Skin.HasSetting(Enable.ActorRoleImages)]</visible>
+				<visible>
+					Control.HasFocus(50)
+					+[![Skin.HasSetting(Enable.ActorRoleImages)|Skin.HasSetting(Enable.ActorLocalImages)]
+					|[String.IsEmpty(Control.GetLabel(9939))+String.IsEmpty(Control.GetLabel(9941))]
+					]
+				</visible>
 				<top>190</top>
 				<left>72</left>
 				<width>560</width>
@@ -983,6 +1006,16 @@
 				<height>820</height>
 				<aspectratio align="center" aligny="top">keep</aspectratio>
 				<texture background="true" diffuse="diffuse/videoinfo-actor.png">$VAR[CustomActorRolePath]$INFO[Container(50).ListItem.Label] - $INFO[Container(50).ListItem.Label2].jpg</texture>
+			</control>
+			<control type="image" id="9941">
+				<description>custom large actor image</description>
+				<visible>Skin.HasSetting(Enable.ActorLocalImages) + Control.HasFocus(50)</visible>
+				<top>190</top>
+				<left>72</left>
+				<width>560</width>
+				<height>820</height>
+				<aspectratio align="center" aligny="top">keep</aspectratio>
+				<texture background="true" diffuse="diffuse/videoinfo-actor.png">$INFO[Control.GetLabel(9940)].actors/$INFO[Container(50).ListItem.Label].jpg</texture>
 			</control>
 
 
@@ -1045,5 +1078,12 @@
 				<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 			</control>
 		</control>
+		<control type="label" id="9940">
+			<visible>false</visible>
+			<label>$INFO[ListItem.Path]</label>
+
+		</control>
+
+
 	</controls>
 </window>

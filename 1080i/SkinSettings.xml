@@ -506,8 +506,8 @@
                         <selected>Skin.HasSetting(Enable.TouchScreen)</selected>
                     </control>
 					<control type="radiobutton" id="309">
+                        <include>SkinSettingsButtonDefaults</include>
 						<label>90945</label>
-						<include>ButtonCommonValues</include>
 						<onclick>Skin.ToggleSetting(Enable.HighlightFocused)</onclick>
 						<selected>Skin.HasSetting(Enable.HighlightFocused)</selected>
 					</control>
@@ -591,6 +591,12 @@
                         <label>90913</label>
                         <onclick>Skin.ToggleSetting(Enable.ZoomRadar)</onclick>
                         <selected>Skin.HasSetting(Enable.ZoomRadar)</selected>
+                    </control>
+                    <control type="radiobutton" id="422">
+                        <include>SkinSettingsButtonDefaults</include>
+                        <label>90933</label>
+                        <onclick>Skin.ToggleSetting(Enable.ActorLocalImages)</onclick>
+                        <selected>Skin.HasSetting(Enable.ActorLocalImages)</selected>
                     </control>
                     <control type="radiobutton" id="409">
                         <include>SkinSettingsButtonDefaults</include>

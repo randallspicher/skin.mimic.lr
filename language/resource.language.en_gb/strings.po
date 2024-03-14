@@ -1398,7 +1398,7 @@ msgid "Mini"
 msgstr ""
 
 msgctxt "#90200"
-msgid "Keibertz+"
+msgid "KeibertzPlus"
 msgstr ""
 
 msgctxt "#90300"
@@ -1519,9 +1519,11 @@ msgctxt "#90932"
 msgid "Add-Ons"
 msgstr ""
 
-#msgctxt "#90933"
-#msgid ""
-#msgstr ""
+
+msgctxt "#90933"
+msgid "Use Local Actor Images (from .actors)"
+msgstr ""
+
 
 #msgctxt "#90934"
 #msgid ""
