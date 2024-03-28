@@ -1,56 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <defaultcontrol />
-    <controls>
-    	<control type="label" id="15">
-			<left>100</left>
-			<top>100</top>
-			<width>600</width>
-			<height>300</height>
-			<label>$INFO[PVR.ChannelNumberInput]</label>
-            <textcolor>NormalTextColor</textcolor>
-			<shadowcolor>black</shadowcolor>
-			<align>top</align>
-			<font>font54</font>
+	<defaultcontrol/>
+	<controls>
+
+		<control type="group" id="0">
+			<control type="label" id="10">
+				<left>45</left>
+				<top>15</top>
+				<width>1770</width>
+				<height>100</height>
+				<label></label>
+				<font>font12</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label" id="11">
+				<left>45</left>
+				<top>45</top>
+				<width>1770</width>
+				<height>100</height>
+				<label></label>
+				<font>font12</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+			<control type="label" id="12">
+				<left>45</left>
+				<top>75</top>
+				<width>1770</width>
+				<height>100</height>
+				<label></label>
+				<font>font12</font>
+				<shadowcolor>black</shadowcolor>
+			</control>
+		</control>
+
+		<control type="group" id="1">
 			<visible>!String.IsEmpty(PVR.ChannelNumberInput)</visible>
+			<control type="image" id="1">
+				<left>95</left>
+				<top>40</top>
+				<width>240</width>
+				<height>120</height>
+				<texture border="16">dialog_context.png</texture>
+				<colordiffuse>dialog</colordiffuse>
+			</control>
+			<control type="label" id="1">
+				<left>95</left>
+				<top>40</top>
+				<width>240</width>
+				<height>120</height>
+				<label>$INFO[PVR.ChannelNumberInput]</label>
+				<textcolor>NormalTextColor</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>center</align>
+				<valign>center</valign>
+				<font>font54</font>
+				<visible>!String.IsEmpty(PVR.ChannelNumberInput)</visible>
+			</control>
 		</control>
 
 
-        <control type="group" id="0">
-            <control type="label" id="10">
-                <left>45</left>
-                <top>15</top>
-                <width>1770</width>
-                <height>100</height>
-                <label></label>
-                <font>font12</font>
-                <shadowcolor>black</shadowcolor>
-            </control>
-            <control type="label" id="11">
-                <left>45</left>
-                <top>45</top>
-                <width>1770</width>
-                <height>100</height>
-                <label></label>
-                <font>font12</font>
-                <shadowcolor>black</shadowcolor>
-            </control>
-            <control type="label" id="12">
-                <left>45</left>
-                <top>75</top>
-                <width>1770</width>
-                <height>100</height>
-                <label></label>
-                <font>font12</font>
-                <shadowcolor>black</shadowcolor>
-            </control>
 
-        </control>
-        <control type="label" id="1">
-            <font>WeatherTempFont</font>
-            <align>center</align>
-            <include>FullscreenDimensions</include>
-            <label>$INFO[Player.SeekNumeric]</label>
-        </control>
-    </controls>
+	</controls>
 </window>
