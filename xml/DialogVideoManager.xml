@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">50</defaultcontrol>
-	<onload condition="!String.IsEmpty(Container(50).ListItem.Art(poster))">SetProperty(poster,$ESCINFO[Container(50).ListItem.Art(poster)],home)</onload>
-	<onload condition="String.IsEmpty(Container(50).ListItem.Art(poster))">SetProperty(thumb,$ESCINFO[Container(50).ListItem.Art(thumb)],home)</onload>
-	<onunload>ClearProperty(poster,home)</onunload>
-	<onunload>ClearProperty(thumb,home)</onunload>
-	<include>Animation_DialogPopupOpenClose</include>
+<!-- 	<defaultcontrol always="true">50</defaultcontrol> -->
+<!-- 	<onload condition="!String.IsEmpty(Container(50).ListItem.Art(poster))">SetProperty(poster,$ESCINFO[Container(50).ListItem.Art(poster)],home)</onload> -->
+<!-- 	<onload condition="String.IsEmpty(Container(50).ListItem.Art(poster))">SetProperty(thumb,$ESCINFO[Container(50).ListItem.Art(thumb)],home)</onload> -->
+<!-- 	<onunload>ClearProperty(poster,home)</onunload> -->
+<!-- 	<onunload>ClearProperty(thumb,home)</onunload> -->
+<!-- 	<include>Animation_DialogPopupOpenClose</include> -->
 	<controls>
+
+        <control type="image">
+            <include>FullscreenDimensions</include>
+            <texture>background.png</texture>
+            <colordiffuse>BackgroundColor</colordiffuse>
+<!-- 			<include>FullscreenDimensions</include> -->
+<!-- 			<fadetime>400</fadetime> -->
+<!-- 			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation> -->
+<!-- 			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation> -->
+<!-- 			<texture>dialog_context.png</texture> -->
+<!-- 			<colordiffuse>AA000000</colordiffuse> -->
+		</control>
+
 		<control type="group">
 			<top>105</top>
 			<left>200</left>
@@ -15,39 +28,38 @@
 
 			<include>Animation.Dialog</include>
 			<include content="DialogBackgroundCommons">
-				<!-- <param name="DialogBackgroundWidth" value="1736" /> -->
-				<!-- <param name="DialogBackgroundHeight" value="722" /> -->
 				<param name="DialogBackgroundWidth" value="1520" />
 				<param name="DialogBackgroundHeight" value="870" />
 				<param name="DialogHeaderLabel" value="$LOCALIZE[-]" />
 				<param name="DialogHeaderId" value="2" />
 			</include>
+
 			<control type="image">
 				<top>150</top>
 				<left>60</left>
 				<width>400</width>
 				<height>600</height>
 				<align>center</align>
-				<aspectratio>scale</aspectratio>
-				<texture fallback="DefaultVideo.png" background="true">$VAR[ArtPoster]</texture>
-				<visible>[Control.HasFocus(50) + !String.IsEmpty(Container(50).ListItem.Art(poster))] | [Control.HasFocus(51) + !String.IsEmpty(Container(51).ListItem.Art(poster))] |
-					[!Control.HasFocus(50) + !Control.HasFocus(51) +!String.IsEmpty(Window(home).Property(poster))]
-				</visible>
-			</control>
-			<control type="image">
-				<top>200</top>
-				<left>40</left>
-				<width>260</width>
-				<height>390</height>
-				<align>center</align>
 				<aligny>center</aligny>
 				<aspectratio>keep</aspectratio>
 				<texture fallback="DefaultVideo.png" background="true">$VAR[VideoVersionPosterVar]</texture>
 			</control>
 
+<!-- 			<control type="label"> -->
+<!-- 				<right>20</right> -->
+<!-- 				<bottom>10</bottom> -->
+<!-- 				<width>275</width> -->
+<!-- 				<height>30</height> -->
+<!-- 				<font>font12</font> -->
+<!-- 				<align>right</align> -->
+<!-- 				<aligny>bottom</aligny> -->
+<!-- 				<textcolor>grey</textcolor> -->
+<!-- 				<label>$VAR[SelectLabel]</label> -->
+<!-- 			</control> -->
+
 			<control type="group" id="100">
 				<top>90</top>
-				<left>320</left>
+				<left>500</left>
 				<control type="image">
 					<top>0</top>
 					<left>0</left>
@@ -60,9 +72,9 @@
 					<top>20</top>
 					<left>20</left>
 					<height>580</height>
-					<onup>50</onup>
-					<ondown>50</ondown>
-					<onleft>200</onleft>
+<!-- 					<onup>50</onup> -->
+<!-- 					<ondown>50</ondown> -->
+					<onleft>9001</onleft>
 					<onright>60</onright>
 					<pagecontrol>60</pagecontrol>
 					<scrolltime>200</scrolltime>
@@ -85,9 +97,9 @@
 			</control>
 
 			<control type="label">
-				<visible>Control.HasFocus(50)</visible>
+<!-- 				<visible>Control.HasFocus(50)</visible> -->
 				<align>left</align>
-				<top>675</top>
+				<top>740</top>
 				<left>40</left>
 				<right>40</right>
 				<height>44</height>
@@ -96,7 +108,7 @@
 				<textcolor>99FFFFFF</textcolor>
 				<shadowcolor>text_shadow</shadowcolor>
 				<haspath>false</haspath>
-				<label>$VAR[VideoVersionFileVar]</label>
+				<label>$INFO[Container(50).ListItem.FileNameAndPath]</label>
 				<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
 				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 				<animation effect="fade" start="0" end="100" time="300">Visible</animation>
@@ -108,65 +120,60 @@
 				<top>50</top>
 				<width>300</width>
 				<height>800</height>
-				<onleft>100</onleft>
-				<onright>100</onright>
-				<itemgap>-20</itemgap>
+				<onleft condition="Integer.IsGreater(Container(50).NumItems,0)">100</onleft>
+<!-- 				<itemgap>-20</itemgap> -->
 				<align>center</align>
+				<valign>top</valign>
 				<scrolltime tween="quadratic">200</scrolltime>
 
 				<control type="button" id="21">
 					<description>Play</description>
-					<focusedcolor>FocusColor</focusedcolor>
-					<include>ButtonInfoDialogsCommonValues</include>
 					<label>$LOCALIZE[208]</label>
-					<visible></visible>
 				</control>
+				
 				<control type="button" id="22">
 					<description>Add Version</description>
-					<focusedcolor>FocusColor</focusedcolor>
-					<include>ButtonInfoDialogsCommonValues</include>
 					<label>40014</label>
-					<visible>Window.IsActive(managevideoversions)</visible>
+<!-- 					<visible>Window.IsActive(managevideoversions)</visible> -->
+					<visible>!Window.IsActive(managevideoextras)</visible>
 				</control>
+				
 				<control type="button" id="23">
-					<focusedcolor>FocusColor</focusedcolor>
 					<description>Add Extras</description>
-					<focusedcolor>FocusColor</focusedcolor>
-					<include>ButtonInfoDialogsCommonValues</include>
 					<label>40015</label>
 					<visible>Window.IsActive(managevideoextras)</visible>
 				</control>
 
 				<control type="button" id="27">
 					<description>Choose Art</description>
-					<focusedcolor>FocusColor</focusedcolor>
-					<include>ButtonInfoDialogsCommonValues</include>
 					<label>13511</label>
-					<visible></visible>
 				</control>
 
 				<control type="button" id="24">
-					<description>Rename</description>
-					<focusedcolor>FocusColor</focusedcolor>
-					<include>ButtonInfoDialogsCommonValues</include>
-					<label>118</label>
-					<visible></visible>
+					<description>Rename Version</description>
+					<label>40004</label>
+<!-- 					<visible>Window.IsActive(managevideoversions)</visible> -->
+					<visible>!Window.IsActive(managevideoextras)</visible>
 				</control>
+
+				<control type="button" id="28">
+					<description>Rename Extra</description>
+					<label>118</label>
+					<visible>Window.IsVisible(managevideoextras)</visible>
+				</control>
+
 				<control type="button" id="26">
 					<description>Remove</description>
-					<focusedcolor>FocusColor</focusedcolor>
-					<include>ButtonInfoDialogsCommonValues</include>
 					<label>15015</label>
-					<visible></visible>
 				</control>
 
 				<control type="button" id="25">
 					<description>Set Default</description>
-					<focusedcolor>FocusColor</focusedcolor>
-					<include>ButtonInfoDialogsCommonValues</include>
 					<label>40023</label>
-					<visible>Window.IsActive(managevideoversions)</visible>
+<!-- 					<visible>Window.IsActive(managevideoversions)</visible> -->
+					<visible>!Window.IsActive(managevideoextras)</visible>
 				</control>
+
 
 			</control>
 		</control>

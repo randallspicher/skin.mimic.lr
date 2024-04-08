@@ -4,7 +4,7 @@
 * Revamp art1, can now select any art as art1 on any view
 * Fix art1 and art2 preference selections not working when choosing other languages
 * add some new buttons that have been added to kodi in recent versions
-* (preliminary) support for the new versions feature (still under development in kodi)
+* Support for the new versions feature 
 * option to display cast images out of .actors subdirectory (showormoviename/.actors/actor name.jpg)
 
 
