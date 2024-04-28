@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-<!-- 	<defaultcontrol always="true">50</defaultcontrol> -->
-<!-- 	<onload condition="!String.IsEmpty(Container(50).ListItem.Art(poster))">SetProperty(poster,$ESCINFO[Container(50).ListItem.Art(poster)],home)</onload> -->
-<!-- 	<onload condition="String.IsEmpty(Container(50).ListItem.Art(poster))">SetProperty(thumb,$ESCINFO[Container(50).ListItem.Art(thumb)],home)</onload> -->
-<!-- 	<onunload>ClearProperty(poster,home)</onunload> -->
-<!-- 	<onunload>ClearProperty(thumb,home)</onunload> -->
-<!-- 	<include>Animation_DialogPopupOpenClose</include> -->
 	<controls>
 
         <control type="image">
             <include>FullscreenDimensions</include>
             <texture>background.png</texture>
             <colordiffuse>BackgroundColor</colordiffuse>
-<!-- 			<include>FullscreenDimensions</include> -->
-<!-- 			<fadetime>400</fadetime> -->
-<!-- 			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation> -->
-<!-- 			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation> -->
-<!-- 			<texture>dialog_context.png</texture> -->
-<!-- 			<colordiffuse>AA000000</colordiffuse> -->
 		</control>
 
 		<control type="group">
@@ -45,17 +33,6 @@
 				<texture fallback="DefaultVideo.png" background="true">$VAR[VideoVersionPosterVar]</texture>
 			</control>
 
-<!-- 			<control type="label"> -->
-<!-- 				<right>20</right> -->
-<!-- 				<bottom>10</bottom> -->
-<!-- 				<width>275</width> -->
-<!-- 				<height>30</height> -->
-<!-- 				<font>font12</font> -->
-<!-- 				<align>right</align> -->
-<!-- 				<aligny>bottom</aligny> -->
-<!-- 				<textcolor>grey</textcolor> -->
-<!-- 				<label>$VAR[SelectLabel]</label> -->
-<!-- 			</control> -->
 
 			<control type="group" id="100">
 				<top>90</top>
@@ -72,8 +49,6 @@
 					<top>20</top>
 					<left>20</left>
 					<height>580</height>
-<!-- 					<onup>50</onup> -->
-<!-- 					<ondown>50</ondown> -->
 					<onleft>9001</onleft>
 					<onright>60</onright>
 					<pagecontrol>60</pagecontrol>
@@ -97,7 +72,6 @@
 			</control>
 
 			<control type="label">
-<!-- 				<visible>Control.HasFocus(50)</visible> -->
 				<align>left</align>
 				<top>740</top>
 				<left>40</left>
@@ -121,7 +95,6 @@
 				<width>300</width>
 				<height>800</height>
 				<onleft condition="Integer.IsGreater(Container(50).NumItems,0)">100</onleft>
-<!-- 				<itemgap>-20</itemgap> -->
 				<align>center</align>
 				<valign>top</valign>
 				<scrolltime tween="quadratic">200</scrolltime>
@@ -134,14 +107,13 @@
 				<control type="button" id="22">
 					<description>Add Version</description>
 					<label>40014</label>
-<!-- 					<visible>Window.IsActive(managevideoversions)</visible> -->
-					<visible>!Window.IsActive(managevideoextras)</visible>
+					<visible>Window.IsVisible(managevideoversions)</visible>
 				</control>
 				
 				<control type="button" id="23">
 					<description>Add Extras</description>
 					<label>40015</label>
-					<visible>Window.IsActive(managevideoextras)</visible>
+					<visible>Window.IsVisible(managevideoextras)</visible>
 				</control>
 
 				<control type="button" id="27">
@@ -150,10 +122,10 @@
 				</control>
 
 				<control type="button" id="24">
-					<description>Rename Version</description>
+					<description>Rename Version/Version Type</description>
 					<label>40004</label>
-<!-- 					<visible>Window.IsActive(managevideoversions)</visible> -->
-					<visible>!Window.IsActive(managevideoextras)</visible>
+<!-- 					<label>31550</label> -->
+					<visible>Window.IsVisible(managevideoversions)</visible>
 				</control>
 
 				<control type="button" id="28">
@@ -170,8 +142,7 @@
 				<control type="button" id="25">
 					<description>Set Default</description>
 					<label>40023</label>
-<!-- 					<visible>Window.IsActive(managevideoversions)</visible> -->
-					<visible>!Window.IsActive(managevideoextras)</visible>
+					<visible>Window.IsVisible(managevideoversions)</visible>
 				</control>
 
 

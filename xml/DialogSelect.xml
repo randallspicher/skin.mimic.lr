@@ -53,6 +53,7 @@
             </control>
             <control type="group" id="9000">
                 <control type="panel" id="3">
+                <descrption>CONTROL BUTTONS</descrption>
                     <left>32</left>
                     <top>88</top>
                     <width>942</width>
@@ -116,8 +117,12 @@
                             <visible>ListItem.IsSelected</visible>
                         </control>
                     </focusedlayout>
+
+
+
                 </control>
                 <control type="panel" id="6">
+					<descrption>LIST OF SELECTIONS</descrption>
                     <left>32</left>
                     <top>88</top>
                     <width>942</width>
@@ -129,7 +134,18 @@
                     <pagecontrol>60</pagecontrol>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <itemlayout height="120" width="942">
+
                         <control type="image">
+                            <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+                            <left>10</left>
+                            <top>10</top>
+                            <width>100</width>
+                            <height>100</height>
+                            <aspectratio aligny="center" align="center" scalediffuse="false">keep</aspectratio>
+                            <texture background="true" diffuse="diffuse/list-icon.png" fallback="DefaultFolder.png">$INFO[ListItem.Art(poster)]</texture>
+                        </control>
+                        <control type="image">
+                            <visible>String.IsEmpty(ListItem.Art(poster))</visible>
                             <left>10</left>
                             <top>10</top>
                             <width>100</width>
@@ -137,7 +153,9 @@
                             <aspectratio aligny="center" align="center" scalediffuse="false">keep</aspectratio>
                             <texture background="true" diffuse="diffuse/list-icon.png" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
                         </control>
+
                         <control type="label">
+                            <visible>!Window.IsVisible(selectvideoversion)</visible>
                             <left>120</left>
                             <top>3</top>
                             <width>770</width>
@@ -147,6 +165,18 @@
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="label">
+                            <visible>Window.IsVisible(selectvideoversion)</visible>
+                            <left>120</left>
+                            <top>3</top>
+                            <width>770</width>
+                            <height>70</height>
+                            <font>font30</font>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$INFO[ListItem.VideoVersionName]</label>
+                        </control>
+
+                        <control type="label">
+                            <visible>!Window.IsVisible(selectvideoversion)</visible>
                             <left>120</left>
                             <top>52</top>
                             <width>770</width>
@@ -154,6 +184,17 @@
                             <textoffsetx>15</textoffsetx>
                             <label>$INFO[ListItem.Label2]</label>
                         </control>
+                        <control type="label">
+                            <visible>Window.IsVisible(selectvideoversion)</visible>
+                            <left>120</left>
+                            <top>52</top>
+                            <width>770</width>
+                            <height>60</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$VAR[VideoSourceFlagVar,, ]$INFO[ListItem.VideoResolution,, ]$INFO[Listitem.HdrType,, ]$INFO[ListItem.AudioCodec,,-]$INFO[ListItem.AudioChannels,,ch ]$INFO[ListItem.Duration]</label>
+                        </control>
+ 
+ 
                         <control type="label">
                             <left>120</left>
                             <width>822</width>
@@ -167,6 +208,17 @@
                     </itemlayout>
                     <focusedlayout height="120" width="942">
                         <control type="image">
+                            <visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+                            <left>10</left>
+                            <top>10</top>
+                            <width>100</width>
+                            <height>100</height>
+                            <aspectratio aligny="center" align="center" scalediffuse="false">keep</aspectratio>
+                            <texture background="true" diffuse="diffuse/list-icon.png" fallback="DefaultFolder.png">$INFO[ListItem.Art(poster)]</texture>
+                        </control>
+
+                        <control type="image">
+                            <visible>String.IsEmpty(ListItem.Art(poster))</visible>
                             <left>10</left>
                             <top>10</top>
                             <width>100</width>
@@ -174,7 +226,10 @@
                             <aspectratio aligny="center" align="center" scalediffuse="false">keep</aspectratio>
                             <texture background="true" diffuse="diffuse/list-icon.png" fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
                         </control>
+
+
                         <control type="label">
+                            <visible>!Window.IsVisible(selectvideoversion)</visible>
                             <left>120</left>
                             <top>3</top>
                             <width>770</width>
@@ -184,14 +239,36 @@
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                         <control type="label">
+                            <visible>Window.IsVisible(selectvideoversion)</visible>
+                            <left>120</left>
+                            <top>3</top>
+                            <width>770</width>
+                            <height>70</height>
+                            <font>font30</font>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$INFO[ListItem.VideoVersionName]</label>
+                        </control>
+
+                       <control type="label">
+                            <visible>!Window.IsVisible(selectvideoversion)</visible>
                             <left>120</left>
                             <top>52</top>
                             <width>770</width>
                             <height>60</height>
-                            <font>font13</font>
                             <textoffsetx>15</textoffsetx>
                             <label>$INFO[ListItem.Label2]</label>
                         </control>
+                        <control type="label">
+                            <visible>Window.IsVisible(selectvideoversion)</visible>
+                            <left>120</left>
+                            <top>52</top>
+                            <width>770</width>
+                            <height>60</height>
+                            <textoffsetx>15</textoffsetx>
+                            <label>$VAR[VideoSourceFlagVar,, ]$INFO[ListItem.VideoResolution,, ]$INFO[Listitem.HdrType,, ]$INFO[ListItem.AudioCodec,,-]$INFO[ListItem.AudioChannels,,ch ]$INFO[ListItem.Duration]</label>
+                        </control>
+  
+ 
                         <control type="label">
                             <left>120</left>
                             <width>822</width>
@@ -203,6 +280,8 @@
                             <visible>ListItem.IsSelected</visible>
                         </control>
                     </focusedlayout>
+
+
                 </control>
             </control>
             <control type="grouplist" id="9001">

@@ -1,3 +1,7 @@
+8.0.2
+* override some default behaviours in dialogselect to display videoversions better when selecting to play
+
+
 8.0.1
 * Omega release
 * Add support for new "MyFavorites" window which replaces the old dialog

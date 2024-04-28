@@ -1204,7 +1204,20 @@ msgctxt "#31511"
 msgid "Channel Options"
 msgstr ""
 
-#empty strings from id 31512 to 31900
+
+#empty strings from id 31512 to 31549
+
+msgctxt "#31550"
+msgid "Change Version"
+msgstr ""
+
+#msgctxt "#31551"
+#msgid ""
+#msgstr ""
+
+#empty strings from id 31555 to 31900
+
+
 #Weather plugin
 
 msgctxt "#31901"
@@ -1350,6 +1363,9 @@ msgstr ""
 msgctxt "#31949"
 msgid "Roboto"
 msgstr ""
+
+
+
 
 #lyrebird
 

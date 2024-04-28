@@ -94,7 +94,7 @@
 						<item>
 							<label>$INFO[ListItem.RatingAndVotes]</label>
 							<label2>$LOCALIZE[563]:</label2>
-							<visible>!String.IsEmpty(ListItem.Rating)</visible>
+							<visible>!String.IsEmpty(ListItem.RatingAndVotes)</visible>
 						</item>
 						<item>
 							<label>$INFO[ListItem.Genre]</label>

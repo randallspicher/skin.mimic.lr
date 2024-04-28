@@ -215,7 +215,7 @@
 	<include name="VideoInfoSide">
 		<control type="grouplist">
 			<animation effect="slide" time="300" tween="sine" easing="inout" start="0" end="-25" condition="String.IsEqual(Control.GetLabel(10102),banner)">Conditional</animation>
-			<itemgap>10</itemgap>
+			<itemgap>4</itemgap>
 
 			<control type="multiimage">
 				<description>Image when landscape or fanart (scaled landscape)</description>
@@ -295,24 +295,32 @@
 				<height>40</height>
 				<font>font30</font>
 				<scroll>true</scroll>
-				<aligny>bottom</aligny>
+				<aligny>center</aligny>
 			</control>
 			<control type="label">
-<!-- 				<label>$INFO[VideoPlayer.Year]$INFO[VideoPlayer.Genre, • ]</label> -->
-				<label>$INFO[ListItem.Year]$VAR[InfoWallSubLabelVar, • ]</label>
+				<label>$INFO[ListItem.Year]$INFO[ListItem.Duration, - ]$INFO[ListItem.Rating, - [COLOR=AltTextColor]$LOCALIZE[90957]:[/COLOR] ]</label>
 				<width>680</width>
-				<height>42</height>
+				<height>38</height>
 				<font>font14</font>
-				<aligny>top</aligny>
+				<aligny>center</aligny>
+<!-- 				<textcolor>AltTextColor</textcolor> -->
+			</control>
+			<control type="label">
+				<label>$VAR[InfoWallSubLabelVar]</label>
+				<width>680</width>
+				<height>26</height>
+				<font>font12</font>
+				<aligny>center</aligny>
 				<textcolor>AltTextColor</textcolor>
 			</control>
+
 			<control type="textbox">
 				<description>Description</description>
 				<visible>!String.IsEmpty(ListItem.AddonDescription)</visible>
 				<label>$INFO[ListItem.AddonDescription]</label>
 				<width>680</width>
 				<height>275</height>
-				<font>font14_textbox</font>
+				<font>font13_textbox</font>
 				<include>AutoscrollDefault</include>
 			</control>
 			<control type="textbox">
