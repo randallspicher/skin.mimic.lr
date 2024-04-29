@@ -50,7 +50,7 @@
                         </control>
                         <include content="OverlayList">
                             <param name="OverlayListLeft" value="1750" />
-                            <param name="OverlayListTop" value="5" />
+                            <param name="OverlayListTop" value="34" />
                         </include>
                     </itemlayout>
                     <focusedlayout height="275" width="1820" condition="Container.Content(episodes) | Container.Content(videos)">
@@ -113,7 +113,7 @@
                         </control>
                         <include content="OverlayList">
                             <param name="OverlayListLeft" value="1750" />
-                            <param name="OverlayListTop" value="94" />
+                            <param name="OverlayListTop" value="34" />
                         </include>
                     </focusedlayout>
                 </control>

@@ -21,7 +21,7 @@
 				<width>FullscreenWidth</width>
 				<height>90</height>
 				<align>center</align>
-				<valign>center</valign>
+				<aligny>center</aligny>
 				<itemgap>30</itemgap>
 				<orientation>horizontal</orientation>
 				<control type="image" id="800011">

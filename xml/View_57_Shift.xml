@@ -41,7 +41,7 @@
                 <top>100</top>
                 <width>340</width>
                 <height>490</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">keep</aspectratio>
                 <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/shift-poster.png">$VAR[Art1Image]</texture>
                 <bordersize>20</bordersize>
             </control>
@@ -55,8 +55,8 @@
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
             </control>
             <include content="OverlayIcons">
-                <param name="OverlayLeft" value="250" />
-                <param name="OverlayTop" value="118" />
+                <param name="OverlayLeft" value="271" />
+                <param name="OverlayTop" value="126" />
             </include>
         </itemlayout>
         <focusedlayout width="315" height="730" condition="[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets)] + !String.IsEqual(Control.GetLabel(10102),landscape) + !String.IsEqual(Control.GetLabel(10102),fanart)] | Container.Content(seasons)">
@@ -68,7 +68,7 @@
                     <top>100</top>
                     <width>340</width>
                     <height>490</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
                     <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/shift-poster.png">$VAR[Art1Image]</texture>
                     <bordersize>20</bordersize>
                 </control>
@@ -84,8 +84,8 @@
   						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
                 </control>
                 <include content="OverlayIcons">
-                    <param name="OverlayLeft" value="250" />
-                    <param name="OverlayTop" value="118" />
+                    <param name="OverlayLeft" value="271" />
+                    <param name="OverlayTop" value="126" />
                 </include>
             </control>
         </focusedlayout>
@@ -95,7 +95,7 @@
                 <top>265</top>
                 <width>340</width>
                 <height>340</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">keep</aspectratio>
                 <texture background="true" diffuse="diffuse/shift-square.png">$INFO[ListItem.Icon]</texture>
                 <bordersize>20</bordersize>
             </control>
@@ -109,8 +109,8 @@
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
             </control>
             <include content="OverlayIcons">
-                <param name="OverlayLeft" value="250" />
-                <param name="OverlayTop" value="283" />
+                <param name="OverlayLeft" value="271" />
+                <param name="OverlayTop" value="295" />
             </include>
         </itemlayout>
         <focusedlayout width="315" height="730" condition="Container.Content(musicvideos) | Container.Content(addons)">
@@ -122,14 +122,14 @@
                     <top>265</top>
                     <width>340</width>
                     <height>340</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
                     <texture background="true" diffuse="diffuse/shift-square.png">$INFO[ListItem.Icon]</texture>
                     <bordersize>20</bordersize>
                 </control>
-                <include content="OverlayIcons">
-                    <param name="OverlayLeft" value="250" />
-                    <param name="OverlayTop" value="283" />
-                </include>
+            <include content="OverlayIcons">
+                <param name="OverlayLeft" value="271" />
+                <param name="OverlayTop" value="295" />
+            </include>
             </control>
         </focusedlayout>
         <itemlayout width="588" height="730" condition="Container.Content(episodes) | [[Container.Content(movies) | Container.Content(tvshows)] + [String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),fanart)]]">
@@ -139,7 +139,7 @@
                 <top>240</top>
                 <width>610</width>
                 <height>360</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">keep</aspectratio>
                 <texture background="true" diffuse="diffuse/shift-landscape.png">$VAR[Art1Image]</texture>
                 <bordersize>20</bordersize>
             </control>
@@ -149,7 +149,7 @@
                 <top>240</top>
                 <width>610</width>
                 <height>360</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">keep</aspectratio>
                 <texture background="true" diffuse="diffuse/shift-landscape.png">$VAR[Art1Image]</texture>
                 <bordersize>20</bordersize>
             </control>
@@ -172,8 +172,8 @@
   						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
             </control>
             <include content="OverlayIcons">
-                <param name="OverlayLeft" value="295" />
-                <param name="OverlayTop" value="258" />
+                <param name="OverlayLeft" value="302" />
+                <param name="OverlayTop" value="268" />
             </include>
         </itemlayout>
         <focusedlayout width="588" height="730" condition="Container.Content(episodes) | [[Container.Content(movies) | Container.Content(tvshows)] + [String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),fanart)]]">
@@ -186,7 +186,7 @@
                     <top>240</top>
                     <width>610</width>
                     <height>360</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
                     <texture background="true" diffuse="diffuse/shift-landscape.png">$VAR[Art1Image]</texture>
                     <bordersize>20</bordersize>
                 </control>
@@ -196,7 +196,7 @@
                     <top>240</top>
                     <width>610</width>
                     <height>360</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
                     <texture background="true" diffuse="diffuse/shift-landscape.png">$VAR[Art1Image]</texture>
                     <bordersize>20</bordersize>
                 </control>
@@ -210,8 +210,8 @@
                     <aspectratio align="center" aligny="bottom">keep</aspectratio>
                 </control>
                 <include content="OverlayIcons">
-                    <param name="OverlayLeft" value="295" />
-                    <param name="OverlayTop" value="258" />
+                <param name="OverlayLeft" value="302" />
+                <param name="OverlayTop" value="268" />
                 </include>
             </control>
         </focusedlayout>
@@ -222,7 +222,7 @@
                 <top>240</top>
                 <width>610</width>
                 <height>360</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">keep</aspectratio>
                 <texture background="true" diffuse="diffuse/shift-landscape.png">$INFO[ListItem.Icon]</texture>
                 <bordersize>20</bordersize>
             </control>
@@ -246,8 +246,8 @@
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
             </control>
             <include content="OverlayIcons">
-                <param name="OverlayLeft" value="295" />
-                <param name="OverlayTop" value="258" />
+                <param name="OverlayLeft" value="302" />
+                <param name="OverlayTop" value="268" />
             </include>
         </itemlayout>
         <focusedlayout width="588" height="730" condition="Container.Content(files) | Container.Content(videos)">
@@ -260,7 +260,7 @@
                     <top>240</top>
                     <width>610</width>
                     <height>360</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
                     <texture background="true" diffuse="diffuse/shift-landscape.png">$INFO[ListItem.Icon]</texture>
                     <bordersize>20</bordersize>
                 </control>
@@ -275,8 +275,8 @@
                     <bordersize>20</bordersize>
                 </control>
                 <include content="OverlayIcons">
-                    <param name="OverlayLeft" value="295" />
-                    <param name="OverlayTop" value="258" />
+                <param name="OverlayLeft" value="302" />
+                <param name="OverlayTop" value="268" />
                 </include>
             </control>
         </focusedlayout>
@@ -303,7 +303,7 @@
                 <top>265</top>
                 <width>340</width>
                 <height>340</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">keep</aspectratio>
                 <texture background="true" diffuse="diffuse/shift-square.png">$INFO[ListItem.Icon]</texture>
                 <bordersize>20</bordersize>
             </control>
@@ -326,7 +326,7 @@
                     <top>265</top>
                     <width>340</width>
                     <height>340</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
                     <texture background="true" diffuse="diffuse/shift-square.png">$INFO[ListItem.Icon]</texture>
                     <bordersize>20</bordersize>
                 </control>
@@ -338,7 +338,7 @@
                 <top>240</top>
                 <width>610</width>
                 <height>360</height>
-                <aspectratio scalediffuse="false">scale</aspectratio>
+                <aspectratio scalediffuse="false">keep</aspectratio>
                 <texture background="true" diffuse="diffuse/shift-landscape.png">$VAR[Art1Image]</texture>
                 <bordersize>20</bordersize>
             </control>
@@ -361,7 +361,7 @@
                     <top>240</top>
                     <width>610</width>
                     <height>360</height>
-                    <aspectratio scalediffuse="false">scale</aspectratio>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
                     <texture background="true" diffuse="diffuse/shift-landscape.png">$VAR[Art1Image]</texture>
                     <bordersize>20</bordersize>
                 </control>

@@ -106,7 +106,7 @@
 					<width>$PARAM[width]</width>
 					<height>$PARAM[height]</height>
 					<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-					<texture background="true">$VAR[ResourceIcon]</texture>
+					<texture background="true" fallback="blank.png">$VAR[ResourceIcon]</texture>
 				</control>
 			</control>
 
@@ -158,31 +158,31 @@
 		<param name="visible" />
 		<definition>
 			<control type="image">
-				<visible>$PARAM[visible]</visible>
+<!-- 				<visible>$PARAM[visible]</visible> -->
 				<left>0</left>
 				<top>0</top>
 				<width>$PARAM[width]</width>
 				<height>$PARAM[height]</height>
 				<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-				<texture background="true">$PARAM[icon].jpg</texture>
+				<texture background="true" fallback="blank.png">$PARAM[icon].jpg</texture>
 			</control>
 			<control type="image">
-				<visible>$PARAM[visible]</visible>
+<!-- 				<visible>$PARAM[visible]</visible> -->
 				<left>0</left>
 				<top>0</top>
 				<width>$PARAM[width]</width>
 				<height>$PARAM[height]</height>
 				<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-				<texture background="true">$PARAM[icon].png</texture>
+				<texture background="true" fallback="blank.png">$PARAM[icon].png</texture>
 			</control>
 			<control type="image">
-				<visible>$PARAM[visible]</visible>
+<!-- 				<visible>$PARAM[visible]</visible> -->
 				<left>0</left>
 				<top>0</top>
 				<width>$PARAM[width]</width>
 				<height>$PARAM[height]</height>
 				<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-				<texture background="true">$PARAM[icon].gif</texture>
+				<texture background="true" fallback="blank.png">$PARAM[icon].gif</texture>
 			</control>
 		</definition>
 	</include>

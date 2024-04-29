@@ -252,8 +252,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="961" />
-							<!-- <param name="OverlayListLeft" value="1081" /> -->
-							<param name="OverlayListTop" value="27" />
+							<param name="OverlayListTop" value="44" />
 						</include>
 					</itemlayout>
 					
@@ -352,7 +351,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="961" />
-							<param name="OverlayListTop" value="27" />
+							<param name="OverlayListTop" value="44" />
 						</include>
 					</focusedlayout>
 					
@@ -447,7 +446,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="1671" />
-							<param name="OverlayListTop" value="28" />
+							<param name="OverlayListTop" value="44" />
 						</include>
 					</itemlayout>
 					
@@ -543,7 +542,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="1671" />
-							<param name="OverlayListTop" value="28" />
+							<param name="OverlayListTop" value="44" />
 						</include>
 					</focusedlayout>
 					
@@ -590,7 +589,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="961" />
-							<param name="OverlayListTop" value="0" />
+							<param name="OverlayListTop" value="14" />
 						</include>
 					</itemlayout>
 
@@ -640,7 +639,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="961" />
-							<param name="OverlayListTop" value="0" />
+							<param name="OverlayListTop" value="14" />
 						</include>
 					</focusedlayout>
 
@@ -687,7 +686,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="1671" />
-							<param name="OverlayListTop" value="0" />
+							<param name="OverlayListTop" value="14" />
 						</include>
 					</itemlayout>
 
@@ -737,7 +736,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="1671" />
-							<param name="OverlayListTop" value="0" />
+							<param name="OverlayListTop" value="14" />
 						</include>
 					</focusedlayout>
 
@@ -823,7 +822,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="800" />
-							<param name="OverlayListTop" value="28" />
+							<param name="OverlayListTop" value="44" />
 						</include>
 					</itemlayout>
 
@@ -911,7 +910,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="800" />
-							<param name="OverlayListTop" value="28" />
+							<param name="OverlayListTop" value="44" />
 						</include>
 					</focusedlayout>
 
@@ -950,7 +949,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="800" />
-							<param name="OverlayListTop" value="0" />
+							<param name="OverlayListTop" value="14" />
 						</include>
 					</itemlayout>
 
@@ -992,7 +991,7 @@
 						</control>
 						<include content="OverlayList">
 							<param name="OverlayListLeft" value="800" />
-							<param name="OverlayListTop" value="0" />
+							<param name="OverlayListTop" value="14" />
 						</include>
 					</focusedlayout>
 				</control>

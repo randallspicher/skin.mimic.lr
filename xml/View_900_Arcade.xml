@@ -663,8 +663,8 @@
   						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 					</control>
 					<include content="OverlayIcons">
-						<param name="OverlayLeft" value="10" />
-						<param name="OverlayTop" value="70" />
+						<param name="OverlayLeft" value="186" />
+						<param name="OverlayTop" value="68"/>
 					</include>
 				</itemlayout>
 				<focusedlayout width="230" height="500"
@@ -736,10 +736,10 @@
 							<bordertexture border="5" colordiffuse="BorderDiffuse">listselect_fo.png</bordertexture>
 							<bordersize>5</bordersize>
 						</control>
-						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="10" />
-							<param name="OverlayTop" value="70" />
-						</include>
+					<include content="OverlayIcons">
+						<param name="OverlayLeft" value="186" />
+						<param name="OverlayTop" value="68"/>
+					</include>
 					</control>
 				</focusedlayout>
 				<!-- Widescreen -->
@@ -816,10 +816,10 @@
 							<label>[UPPERCASE]$INFO[ListItem.Year] [COLOR=NormalTextColor]•[/COLOR] $INFO[ListItem.Genre][/UPPERCASE]</label>
 							<scroll>false</scroll>
 						</control>
-						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="10" />
-							<param name="OverlayTop" value="70" />
-						</include>
+					<include content="OverlayIcons">
+						<param name="OverlayLeft" value="466" />
+						<param name="OverlayTop" value="68"/>
+					</include>
 					</control>
 				</itemlayout>
 				<focusedlayout width="510" height="450" condition="Container.Content(Episodes)">
@@ -927,10 +927,10 @@
 								<label>[UPPERCASE]$INFO[ListItem.Year] [COLOR=NormalTextColor]•[/COLOR] $INFO[ListItem.Genre][/UPPERCASE]</label>
 								<scroll>false</scroll>
 							</control>
-							<include content="OverlayIcons">
-								<param name="OverlayLeft" value="10" />
-								<param name="OverlayTop" value="70" />
-							</include>
+					<include content="OverlayIcons">
+						<param name="OverlayLeft" value="466" />
+						<param name="OverlayTop" value="68" />
+					</include>
 						</control>
 					</control>
 				</focusedlayout>

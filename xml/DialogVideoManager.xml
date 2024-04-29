@@ -96,7 +96,7 @@
 				<height>800</height>
 				<onleft condition="Integer.IsGreater(Container(50).NumItems,0)">100</onleft>
 				<align>center</align>
-				<valign>top</valign>
+				<aligny>top</aligny>
 				<scrolltime tween="quadratic">200</scrolltime>
 
 				<control type="button" id="21">

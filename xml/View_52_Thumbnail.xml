@@ -120,11 +120,11 @@
 						<height>50</height>
 						<texture background="true">$VAR[AudioSourceFlagVar,flags/audiosource/,.png]</texture>
 					</control>
+						<include content="OverlayIcons">
+							<param name="OverlayLeft" value="290" />
+							<param name="OverlayTop" value="24" />
+						</include>
 
-					<include content="OverlayIcons">
-						<param name="OverlayLeft" value="272" />
-						<param name="OverlayTop" value="18" />
-					</include>
 				</itemlayout>
 				<focusedlayout height="390" width="350" condition="!Container.Content(episodes)">
 					<include content="ItemFocusBorder">
@@ -179,13 +179,12 @@
 						<height>50</height>
 						<texture background="true">$VAR[AudioSourceFlagVar,flags/audiosource/,.png]</texture>
 					</control>
-
-
-					<include content="OverlayIcons">
-						<param name="OverlayLeft" value="272" />
-						<param name="OverlayTop" value="18" />
-					</include>
+						<include content="OverlayIcons">
+							<param name="OverlayLeft" value="290" />
+							<param name="OverlayTop" value="24" />
+						</include>
 				</focusedlayout>
+
 				<itemlayout height="260" width="350" condition="Container.Content(episodes)">
 					<include content="ItemBorder">
 						
@@ -222,11 +221,12 @@
 						<texture border="5">overlays/diffuse-overlay.png</texture>
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 					</control>
-					<include content="OverlayIcons">
-						<param name="OverlayLeft" value="272" />
-						<param name="OverlayTop" value="18" />
-					</include>
+						<include content="OverlayIcons">
+							<param name="OverlayLeft" value="290" />
+							<param name="OverlayTop" value="24" />
+						</include>
 				</itemlayout>
+
 				<focusedlayout height="260" width="350" condition="Container.Content(episodes)">
 					<include content="ItemFocusBorder">
 						
@@ -255,11 +255,12 @@
 						<aspectratio align="center" aligny="center">keep</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
 					</control>
-					<include content="OverlayIcons">
-						<param name="OverlayLeft" value="272" />
-						<param name="OverlayTop" value="18" />
-					</include>
+						<include content="OverlayIcons">
+							<param name="OverlayLeft" value="290" />
+							<param name="OverlayTop" value="24" />
+						</include>
 				</focusedlayout>
+
 			</control>
 		</control>
 		<control type="group">

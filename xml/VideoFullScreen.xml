@@ -52,7 +52,7 @@
 				<textcolor>NormalTextColor</textcolor>
 				<shadowcolor>black</shadowcolor>
 				<align>center</align>
-				<valign>center</valign>
+				<aligny>center</aligny>
 				<font>font54</font>
 				<visible>!String.IsEmpty(PVR.ChannelNumberInput)</visible>
 			</control>

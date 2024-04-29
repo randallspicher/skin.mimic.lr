@@ -53,8 +53,8 @@
 							<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 						</control>
 						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="178" />
-							<param name="OverlayTop" value="4" />
+							<param name="OverlayLeft" value="198" />
+							<param name="OverlayTop" value="8" />
 						</include>
 					</control>
 				</itemlayout>
@@ -90,8 +90,8 @@
 							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/wall-poster.png">$VAR[Art1Image]</texture>
 						</control>
 						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="178" />
-							<param name="OverlayTop" value="4" />
+							<param name="OverlayLeft" value="198" />
+							<param name="OverlayTop" value="8" />
 						</include>
 					</control>
 				</focusedlayout>
@@ -181,9 +181,9 @@
 							<texture border="5">overlays/diffuse-overlay.png</texture>
 							<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 						</control>
-						<include content="OverlayIcons" condition="String.IsEqual(Control.GetLabel(10102),landscape)">
-							<param name="OverlayLeft" value="349" />
-							<param name="OverlayTop" value="4" />
+						<include content="OverlayIcons">
+							<param name="OverlayLeft" value="369" />
+							<param name="OverlayTop" value="8" />
 						</include>
 					</control>
 				</itemlayout>
@@ -277,9 +277,9 @@
 								</control>
 							</control>
 						</control>
-						<include content="OverlayIcons" condition="String.IsEqual(Control.GetLabel(10102),landscape)">
-							<param name="OverlayLeft" value="349" />
-							<param name="OverlayTop" value="4" />
+						<include content="OverlayIcons">
+							<param name="OverlayLeft" value="369" />
+							<param name="OverlayTop" value="8" />
 						</include>
 					</control>
 				</focusedlayout>
@@ -330,10 +330,10 @@
 						<texture border="5">overlays/diffuse-overlay.png</texture>
 						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 					</control>
-					<include content="OverlayIcons">
-						<param name="OverlayLeft" value="845" />
-						<param name="OverlayTop" value="4" />
-					</include>
+						<include content="OverlayIcons">
+							<param name="OverlayLeft" value="865" />
+							<param name="OverlayTop" value="8" />
+						</include>
 				</itemlayout>
 
 				<focusedlayout height="178" width="909" condition="String.IsEqual(Control.GetLabel(10102),banner) + !Container.Content(episodes)">
@@ -388,8 +388,8 @@
 							</control>
 						</control>
 						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="845" />
-							<param name="OverlayTop" value="4" />
+							<param name="OverlayLeft" value="865" />
+							<param name="OverlayTop" value="8" />
 						</include>
 					</control>
 				</focusedlayout>
@@ -430,8 +430,8 @@
 							<info>ListItem.Label</info>
 						</control>
 						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="360" />
-							<param name="OverlayTop" value="4" />
+							<param name="OverlayLeft" value="380" />
+							<param name="OverlayTop" value="8" />
 						</include>
 					</control>
 				</itemlayout>
@@ -484,8 +484,8 @@
 							</control>
 						</control>
 						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="360" />
-							<param name="OverlayTop" value="4" />
+							<param name="OverlayLeft" value="380" />
+							<param name="OverlayTop" value="8" />
 						</include>
 					</control>
 				</focusedlayout>
@@ -526,8 +526,8 @@
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="293" />
-							<param name="OverlayTop" value="4" />
+							<param name="OverlayLeft" value="313" />
+							<param name="OverlayTop" value="8" />
 						</include>
 					</control>
 				</itemlayout>
@@ -580,8 +580,8 @@
 							</control>
 						</control>
 						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="293" />
-							<param name="OverlayTop" value="4" />
+							<param name="OverlayLeft" value="313" />
+							<param name="OverlayTop" value="8" />
 						</include>
 					</control>
 				</focusedlayout>

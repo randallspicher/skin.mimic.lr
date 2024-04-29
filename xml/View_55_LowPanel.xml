@@ -47,7 +47,7 @@
                             <left>6</left>
                             <width>250</width>
                             <height>375</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false" aligny="top">keep</aspectratio>
                             <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-poster.png">$VAR[Art1Image]</texture>
                         </control>
                         <control type="image">
@@ -58,11 +58,11 @@
                             <texture border="5">overlays/diffuse-overlay.png</texture>
     						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
                         </control>
-                        <include content="OverlayIcons">
-                            <param name="OverlayLeft" value="197" />
-                            <param name="OverlayTop" value="4" />
-                        </include>
                     </control>
+                        <include content="OverlayIcons">
+                            <param name="OverlayLeft" value="218" />
+                            <param name="OverlayTop" value="8" />
+                        </include>
                 </itemlayout>
                 <focusedlayout height="387" width="262">
                     <control type="group">
@@ -72,14 +72,14 @@
                             <top>6</top>
                             <width>250</width>
                             <height>375</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false" aligny="top">keep</aspectratio>
                             <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-poster.png">$VAR[Art1Image]</texture>
                         </control>
-                        <include content="OverlayIcons">
-                            <param name="OverlayLeft" value="197" />
-                            <param name="OverlayTop" value="4" />
-                        </include>
                     </control>
+                        <include content="OverlayIcons">
+                            <param name="OverlayLeft" value="218" />
+                            <param name="OverlayTop" value="8" />
+                        </include>
                 </focusedlayout>
             </control>
             <control type="group">
@@ -187,7 +187,7 @@
                             <left>6</left>
                             <width>355</width>
                             <height>355</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false" aligny="top">keep</aspectratio>
                             <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-square.png">$VAR[Art1Image]</texture>
                         </control>
                         <control type="image">
@@ -208,7 +208,7 @@
                             <top>6</top>
                             <width>355</width>
                             <height>355</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false" aligny="top">keep</aspectratio>
                             <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/lowpanel-square.png">$VAR[Art1Image]</texture>
                         </control>
                     </control>

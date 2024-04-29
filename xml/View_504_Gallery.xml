@@ -38,6 +38,11 @@
 					<label>$INFO[ListItem.Property(Artist_Genre)]</label>
 					<visible>$EXP[isArtist]</visible>
 				</control>
+				<include content="OverlayList">
+					<param name="OverlayListLeft" value="1400" />
+					<param name="OverlayListTop" value="764" />
+				</include>
+				
 			</control>
 			<!--strip top -->
 			<control type="image">
@@ -111,10 +116,10 @@
 							<texture border="5">overlays/diffuse-overlay.png</texture>
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 						</control>
-						<include content="OverlayIcons" condition="![Container.Content(images) | Container.Content(artists)]">
-							<param name="OverlayLeft" value="1095" />
-							<param name="OverlayTop" value="0" />
-						</include>
+<!-- 						<include content="OverlayIcons" condition="![Container.Content(images) | Container.Content(artists)]"> -->
+<!-- 							<param name="OverlayLeft" value="1123" /> -->
+<!-- 							<param name="OverlayTop" value="8" /> -->
+<!-- 						</include> -->
 					</control>
 				</itemlayout>
 				<focusedlayout width="1167" height="650">
@@ -195,8 +200,8 @@
 						</control>
 
 						<include content="OverlayIcons" condition="![Container.Content(images) | Container.Content(artists)]">
-							<param name="OverlayLeft" value="1095" />
-							<param name="OverlayTop" value="0" />
+							<param name="OverlayLeft" value="1113" />
+							<param name="OverlayTop" value="18" />
 						</include>
 					</control>
 				</focusedlayout>

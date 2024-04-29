@@ -41,8 +41,8 @@
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 					</control>
 					<include content="OverlayIcons">
-						<param name="OverlayLeft" value="202" />
-						<param name="OverlayTop" value="4" />
+						<param name="OverlayLeft" value="224" />
+						<param name="OverlayTop" value="8" />
 					</include>
 				</itemlayout>
 
@@ -65,11 +65,11 @@
 							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/infowall-poster.png">$VAR[Art1Image]</texture>
 <!-- 							<texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/infowall-poster.png">$VAR[Art1Image]</texture> -->
 						</control>
-						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="202" />
-							<param name="OverlayTop" value="4" />
-						</include>
 					</control>
+					<include content="OverlayIcons">
+						<param name="OverlayLeft" value="224" />
+						<param name="OverlayTop" value="8" />
+					</include>
 				</focusedlayout>
 
 				<itemlayout width="1019" height="198" condition="String.IsEqual(Control.GetLabel(10102),banner)">
@@ -122,11 +122,11 @@
 							<texture border="5">overlays/diffuse-overlay.png</texture>
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 						</control>
-						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="955" />
-							<param name="OverlayTop" value="4" />
-						</include>
 					</control>
+						<include content="OverlayIcons">
+							<param name="OverlayLeft" value="975" />
+							<param name="OverlayTop" value="8" />
+						</include>
 				</itemlayout>
 
 				<focusedlayout width="1019" height="198" condition="String.IsEqual(Control.GetLabel(10102),banner)">
@@ -188,11 +188,11 @@
 								<texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
 							</control>
 						</control>
-						<include content="OverlayIcons">
-							<param name="OverlayLeft" value="955" />
-							<param name="OverlayTop" value="4" />
-						</include>
 					</control>
+						<include content="OverlayIcons">
+							<param name="OverlayLeft" value="975" />
+							<param name="OverlayTop" value="8" />
+						</include>
 				</focusedlayout>
 
 				<itemlayout height="264" width="357" condition="[String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape)| String.IsEqual(Control.GetLabel(10102),logo)] + !Container.Content(seasons)">
@@ -225,6 +225,11 @@
 						<texture border="5">overlays/diffuse-overlay.png</texture>
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 					</control>
+						<include content="OverlayIcons">
+							<param name="OverlayLeft" value="313" />
+							<param name="OverlayTop" value="8" />
+						</include>
+
 				</itemlayout>
 
 				<focusedlayout height="264" width="357" condition="[String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape)| String.IsEqual(Control.GetLabel(10102),logo)] + !Container.Content(seasons)">
@@ -259,6 +264,10 @@
 							</control>
 						</control>
 					</control>
+						<include content="OverlayIcons">
+							<param name="OverlayLeft" value="313" />
+							<param name="OverlayTop" value="8" />
+						</include>
 				</focusedlayout>
 			</control>
 

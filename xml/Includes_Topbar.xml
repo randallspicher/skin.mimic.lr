@@ -65,7 +65,7 @@
 			<control type="label" id="10102">
 				<description>Hidden object for Art1Setting to check against</description>
 				<label>$VAR[Art1Setting]</label>
-				<visible>true</visible>
+				<visible>false</visible>
 				<width>680</width>
 				<height>40</height>
 				<font>font30</font>

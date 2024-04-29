@@ -260,8 +260,7 @@
         </focusedlayout>
     </include>
     <include name="GlobalSearchCommons">
-					<include content="ItemBorder">
-					</include>
+		<include>ItemBorder</include>
         <control type="label">
             <left>20</left>
             <right>20</right>
@@ -290,4 +289,5 @@
         <autoscroll time="3000" delay="4000" repeat="5000">[$PARAM[condition]] + !Skin.HasSetting(Disable.AutoScroll)</autoscroll>
 		</definition>
     </include>
+    
 </includes>

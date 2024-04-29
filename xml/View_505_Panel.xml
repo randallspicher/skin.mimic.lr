@@ -161,8 +161,8 @@
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 				</control>
 				<include content="OverlayIcons" condition="![Container.Content(artists)]">
-					<param name="OverlayLeft" value="465" />
-					<param name="OverlayTop" value="0" />
+					<param name="OverlayLeft" value="474" />
+					<param name="OverlayTop" value="8" />
 				</include>
 			</control>
 		</control>

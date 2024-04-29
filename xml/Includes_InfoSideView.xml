@@ -22,10 +22,10 @@
 <!-- 				<font>font30</font> -->
 <!-- 			</control> -->
 
-					<include content="Art2PickerHidden">
-						<param name="CurrentView">$VAR[ActualViewMode]</param>
-						<param name="CurrentContent">$INFO[ListItem.DBType]</param>
-					</include>
+<!-- 					<include content="Art2PickerHidden"> -->
+<!-- 						<param name="CurrentView">$VAR[ActualViewMode]</param> -->
+<!-- 						<param name="CurrentContent">$INFO[ListItem.DBType]</param> -->
+<!-- 					</include> -->
 
 
 			<control type="label" id='361'>
@@ -206,8 +206,7 @@
 				<width>680</width>
 				<height>270</height>
 				<font>font14_textbox</font>
-                    <include content="AutoscrollDefault">
-                    </include>
+                    <include content="AutoscrollDefault"/>
 			</control>
 		</control>
 	</include>
@@ -284,10 +283,10 @@
 <!-- 				<height>40</height> -->
 <!-- 				<font>font30</font> -->
 <!-- 			</control> -->
-					<include content="Art2PickerHidden">
-						<param name="CurrentView">$VAR[ActualViewMode]</param>
-						<param name="CurrentContent">$INFO[ListItem.DBType]</param>
-					</include>
+<!-- 					<include content="Art2PickerHidden"> -->
+<!-- 						<param name="CurrentView">$VAR[ActualViewMode]</param> -->
+<!-- 						<param name="CurrentContent">$INFO[ListItem.DBType]</param> -->
+<!-- 					</include> -->
 
 			<control type="label">
 				<label>$VAR[FloorLabelVar]</label>
@@ -332,8 +331,7 @@
 				<width>680</width>
 				<height>300</height>
 				<font>font14_textbox</font>
-                    <include content="AutoscrollDefault">
-                    </include>
+                    <include>AutoscrollDefault</include>
 			</control>
 
 			<!-- <control type="group"> -->

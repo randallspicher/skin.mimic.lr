@@ -1,6 +1,7 @@
 8.0.2
 * override some default behaviours in dialogselect to display videoversions better when selecting to play
-
+* adjust watched icon placement and display
+* some cleanups on artwork apect ratios
 
 8.0.1
 * Omega release

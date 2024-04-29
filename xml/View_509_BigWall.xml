@@ -7,7 +7,34 @@
             <include>Animation.Common</include>
             <top>-15</top>
             <control type="image">
-                <visible>[Container.Content(sets) | [[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + !String.IsEqual(Control.GetLabel(10102),landscape) + !String.IsEqual(Control.GetLabel(10102),banner) + !String.IsEqual(Control.GetLabel(10102),logo)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),landscape)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),logo)]] + Control.HasFocus(509)</visible>
+                <visible>
+                [
+                  Container.Content(sets) 
+                  | 
+                    [
+                      [
+                        Container.Content(movies) 
+                        | Container.Content(tvshows) 
+                        | Container.Content(seasons)
+                      ] 
+                      + !String.IsEqual(Control.GetLabel(10102),landscape) 
+                      + !String.IsEqual(Control.GetLabel(10102),fanart) 
+                      + !String.IsEqual(Control.GetLabel(10102),banner) 
+                      + !String.IsEqual(Control.GetLabel(10102),logo)
+                    ] 
+                  | 
+                    [
+                      Container.Content(seasons) 
+                      + String.IsEqual(Control.GetLabel(10102),landscape)
+                    ] 
+                  | 
+                    [
+                      Container.Content(seasons) 
+                      + String.IsEqual(Control.GetLabel(10102),logo)
+                    ]
+                  ] 
+                + Control.HasFocus(509)
+                </visible>
                 <left>14</left>
                 <top>15</top>
                 <width>247</width>
@@ -25,7 +52,19 @@
                 <animation effect="slide" end="235,0" time="300" tween="cubic" easing="inout" condition="Integer.IsGreater(Container(509).Column,0)">Conditional</animation>
             </control>
             <control type="image">
-                <visible>[Container.Content(favourites) | Container.Content(movies) | Container.Content(tvshows)] + Control.HasFocus(509) + [String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]</visible>
+                <visible>
+                [
+                  Container.Content(favourites) 
+                  | Container.Content(movies) 
+                  | Container.Content(tvshows)
+                ] 
+                + Control.HasFocus(509) 
+                + [
+                    String.IsEqual(Control.GetLabel(10102),landscape) 
+                    | String.IsEqual(Control.GetLabel(10102),fanart) 
+                    | String.IsEqual(Control.GetLabel(10102),logo)
+                  ]
+                  </visible>
                 <left>50</left>
                 <top>14</top>
                 <width>464</width>
@@ -88,7 +127,7 @@
                 <pagecontrol>60</pagecontrol>
                 <preloaditems>2</preloaditems>
                 <scrolltime tween="quadratic">400</scrolltime>
-                <itemlayout width="235" height="346" condition="[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons)] + !String.IsEqual(Control.GetLabel(10102),landscape) + !String.IsEqual(Control.GetLabel(10102),banner) + !String.IsEqual(Control.GetLabel(10102),logo)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),landscape)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),logo)]">
+                <itemlayout width="235" height="346" condition="[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons)] + !String.IsEqual(Control.GetLabel(10102),landscape) + !String.IsEqual(Control.GetLabel(10102),fanart) + !String.IsEqual(Control.GetLabel(10102),banner) + !String.IsEqual(Control.GetLabel(10102),logo)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),landscape)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),logo)]">
                     <control type="group">
                         <top>1</top>
                         <height>1038</height>
@@ -108,13 +147,13 @@
                             <texture border="5">overlays/diffuse-overlay.png</texture>
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
                         </control>
-                        <include content="OverlayIcons">
-                            <param name="OverlayLeft" value="171" />
-                            <param name="OverlayTop" value="4" />
-                        </include>
                     </control>
+                        <include content="OverlayIcons">
+                            <param name="OverlayLeft" value="191" />
+                            <param name="OverlayTop" value="8" />
+                        </include>
                 </itemlayout>
-                <focusedlayout width="235" height="346" condition="[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons)] + !String.IsEqual(Control.GetLabel(10102),landscape) + !String.IsEqual(Control.GetLabel(10102),banner) + !String.IsEqual(Control.GetLabel(10102),logo)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),landscape)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),logo)]">
+                <focusedlayout width="235" height="346" condition="[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(sets) | Container.Content(seasons)] + !String.IsEqual(Control.GetLabel(10102),landscape) + !String.IsEqual(Control.GetLabel(10102),fanart) + !String.IsEqual(Control.GetLabel(10102),banner) + !String.IsEqual(Control.GetLabel(10102),logo)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),landscape)] | [Container.Content(seasons) + String.IsEqual(Control.GetLabel(10102),logo)]">
                     <control type="group">
                         <animation type="Focus">
                             <effect type="zoom" time="150" start="95" end="100" center="117,174" />
@@ -130,17 +169,17 @@
                             <aspectratio scalediffuse="false">scale</aspectratio>
                             <texture fallback="DefaultFallback.png" background="true" diffuse="diffuse/bigwall-poster.png">$VAR[Art1Image]</texture>
                         </control>
-                        <include content="OverlayIcons">
-                            <param name="OverlayLeft" value="171" />
-                            <param name="OverlayTop" value="4" />
-                        </include>
                     </control>
+                        <include content="OverlayIcons">
+                            <param name="OverlayLeft" value="191" />
+                            <param name="OverlayTop" value="8" />
+                        </include>
                 </focusedlayout>
-                <itemlayout width="452" height="260" condition="[Container.Content(movies) | Container.Content(tvshows)] + [String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
+                <itemlayout width="452" height="260" condition="[Container.Content(movies) | Container.Content(tvshows)] + [String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),logo)]">
                     <control type="group">
                         <left>36</left>
                         <control type="group">
-                            <visible>String.IsEqual(Control.GetLabel(10102),landscape)</visible>
+                            <visible>String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),fanart)</visible>
                             <control type="image">
                                 <top>6</top>
                                 <left>6</left>
@@ -191,13 +230,13 @@
                             <texture border="5">overlays/diffuse-overlay.png</texture>
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
                         </control>
-                        <include content="OverlayIcons" condition="String.IsEqual(Control.GetLabel(10102),landscape)">
-                            <param name="OverlayLeft" value="388" />
-                            <param name="OverlayTop" value="4" />
+                        <include content="OverlayIcons">
+                            <param name="OverlayLeft" value="400" />
+                            <param name="OverlayTop" value="8" />
                         </include>
                     </control>
                 </itemlayout>
-                <focusedlayout width="452" height="260" condition="[Container.Content(movies) | Container.Content(tvshows)] + [String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
+                <focusedlayout width="452" height="260" condition="[Container.Content(movies) | Container.Content(tvshows)] + [String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),fanart)| String.IsEqual(Control.GetLabel(10102),logo)]">
                     <control type="group">
                         <animation type="Focus">
                             <effect type="zoom" time="150" start="95" end="100" center="242,130" />
@@ -205,14 +244,14 @@
                         </animation>
                         <left>36</left>
                         <control type="group">
-                            <visible>String.IsEqual(Control.GetLabel(10102),landscape)</visible>
+                            <visible>String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),fanart)</visible>
                             <control type="image">
                                 <top>6</top>
                                 <left>6</left>
                                 <width>440</width>
                                 <height>248</height>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture background="true" diffuse="diffuse/bigwall-landscape.png">$VAR[ArtLandscape]</texture>
+                                <texture background="true" diffuse="diffuse/bigwall-landscape.png">$VAR[Art1Image]</texture>
                             </control>
                             <control type="image">
                                 <visible>String.IsEmpty(ListItem.Art(landscape))</visible>
@@ -248,9 +287,9 @@
                                 </control>
                             </control>
                         </control>
-                        <include content="OverlayIcons" condition="String.IsEqual(Control.GetLabel(10102),landscape)">
-                            <param name="OverlayLeft" value="388" />
-                            <param name="OverlayTop" value="4" />
+                        <include content="OverlayIcons">
+                            <param name="OverlayLeft" value="400" />
+                            <param name="OverlayTop" value="8" />
                         </include>
                     </control>
                 </focusedlayout>
@@ -304,9 +343,10 @@
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
                         </control>
                         <include content="OverlayIcons">
-                            <param name="OverlayLeft" value="818" />
-                            <param name="OverlayTop" value="4" />
+                            <param name="OverlayLeft" value="836" />
+                            <param name="OverlayTop" value="8" />
                         </include>
+
                     </control>
                 </itemlayout>
                 <focusedlayout height="173" width="882" condition="[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)] + String.IsEqual(Control.GetLabel(10102),banner)">
@@ -356,8 +396,8 @@
                             </control>
                         </control>
                         <include content="OverlayIcons">
-                            <param name="OverlayLeft" value="818" />
-                            <param name="OverlayTop" value="4" />
+                            <param name="OverlayLeft" value="836" />
+                            <param name="OverlayTop" value="8" />
                         </include>
                     </control>
                 </focusedlayout>

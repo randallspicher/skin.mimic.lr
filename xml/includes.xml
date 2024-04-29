@@ -29,8 +29,8 @@
 	<include file="View_909_Sauna.xml" />
 	<include file="variables.xml" />
 	<include file="script-skinshortcuts-includes.xml" />
-	
-	
+
+
 
 	<constant name="FanartCrossfadeTime">500</constant>
 	<constant name="IconCrossfadeTime">400</constant>
@@ -208,13 +208,10 @@
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.SetString(ArtSelector,Art1)</onclick>
 			<onclick>ActivateWindow(1133)</onclick>
-<!-- 			<visible>[Window.IsActive(videos) + [Control.IsVisible(500) | Control.IsVisible(59) | [Control.IsVisible(57) + !Container.Content(seasons) + !Container.Content(addons)] |
-				Control.IsVisible(51) | Control.IsVisible(509) | Control.IsVisible(505)] + !Container.Content(episodes) + !Container.Content(sets) + !Container.Content(addons) +
-				!Container.Content(musicvideos) + !Container.Content(files)] | [Control.IsVisible(507) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)]]
-				| [Window.IsActive(music) + Control.IsVisible(57) + !Container.Content(addons)] | [Control.IsVisible(52) + [Container.Content(movies) | Container.Content(tvshows) |
-				Container.Content(seasons) | Container.Content(sets)]]
-			</visible>
--->			
+			<!-- <visible>[Window.IsActive(videos) + [Control.IsVisible(500) | Control.IsVisible(59) | [Control.IsVisible(57) + !Container.Content(seasons) + !Container.Content(addons)] | Control.IsVisible(51) 
+				| Control.IsVisible(509) | Control.IsVisible(505)] + !Container.Content(episodes) + !Container.Content(sets) + !Container.Content(addons) + !Container.Content(musicvideos) + !Container.Content(files)] 
+				| [Control.IsVisible(507) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(artists)]] | [Window.IsActive(music) + Control.IsVisible(57) + !Container.Content(addons)] 
+				| [Control.IsVisible(52) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]] </visible> -->
 		</control>
 
 		<control type="button" id="1808">
@@ -785,83 +782,126 @@
 		</control>
 	</include>
 	<include name="OverlayIcons">
+		<param name="OverlayLeft"/>	
+		<param name="OverlayTop"/>	
+	    <definition>
 		<control type="group">
-			<visible>$EXP[isVideo] | $EXP[isMovie] | $EXP[isTvshow] | $EXP[isSeason] | $EXP[isEpisode] | $EXP[isSet] 
-			| $EXP[isMusicvideo] | Container.Content(files) | Container.Content(recordings) | Container.Content(tvshows) 
-			| Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos) | Container.Content(videos)
+			<visible>$EXP[isVideo] | $EXP[isMovie] | $EXP[isTvshow] | $EXP[isSeason] | $EXP[isEpisode] | $EXP[isSet]
+				| $EXP[isMusicvideo] | Container.Content(files) |
+				Container.Content(recordings) | Container.Content(tvshows)
+				| Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos) | Container.Content(videos)
 			</visible>
+			<width>33</width>
+			<height>33</height>
 			<left>$PARAM[OverlayLeft]</left>
 			<top>$PARAM[OverlayTop]</top>
-			<control type="image">
-				<width>60</width>
-				<height>60</height>
-				<texture background="true" colordiffuse="FocusColor">$VAR[OverlayBGVar]</texture>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
-			</control>
+
 			<control type="label">
-				<top>2</top>
-				<left>2</left>
-				<width>56</width>
-				<height>56</height>
-				<align>center</align>
-				<font>IconPlayer</font>
-				<label>$VAR[OverlayIconVar]</label>
-			</control>
-			<control type="label">
-				<visible>!ListItem.IsResumable</visible>
-				<visible>!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]</visible>
-				<top>1</top>
-				<left>1</left>
-				<width>56</width>
-				<height>56</height>
-				<align>center</align>
-				<font>IconSuperTiny</font>
+				<description>circle background (unwatched/in progress)</description>
+				<visible>
+					[!Skin.HasSetting(Disable.ResumableOverlay) + ListItem.IsResumable]
+					| [Skin.HasSetting(Enable.UnwatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) | Integer.IsEqual(ListItem.PlayCount,0)]]
+				</visible>
+				<font>IconSmall</font>
 				<textcolor>FocusColor</textcolor>
+				<label>T</label>
+			</control>
+			<control type="label">
+				<description>Half Filled Circle for in progress</description>
+				<visible>
+					[!Skin.HasSetting(Disable.ResumableOverlay) + ListItem.IsResumable]
+				</visible>
+				<font>IconSmall</font>
+				<label>S</label>
+			</control>
+
+			<control type="label">
+				<description>empty Circle for Unwatched</description>
+				<visible>
+				 [Skin.HasSetting(Enable.UnwatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) | Integer.IsEqual(ListItem.PlayCount,0)]]
+				</visible>
+				<font>IconSmall</font>
+				<label>R</label>
+			</control>
+
+			<control type="label">
+				<description>circle background (watched)</description>
+				<visible>
+					!ListItem.IsResumable + [!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]]
+				</visible>
+				<font>IconSmall</font>
+<!-- 				<textcolor>FocusColor</textcolor> -->
+				<label>T</label>
+			</control>
+
+<!-- 			<control type="label"> -->
+<!-- 				<description>empty Circle for watched</description> -->
+<!-- 				<visible> -->
+<!-- 					!ListItem.IsResumable + [!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]] -->
+<!-- 				</visible> -->
+<!-- 				<font>IconSmall</font> -->
+<!-- 				<label>R</label> -->
+<!-- 			</control> -->
+
+			<control type="label">
+				<description>checkmark if watched</description>
+				<visible>
+					!ListItem.IsResumable + [!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]]
+				</visible>
+				<left>4</left>
+				<textcolor>FocusColor</textcolor>
+				<font>IconTiny</font>
 				<label>A</label>
 			</control>
+
+
 		</control>
+		</definition>
 	</include>
+	
+	
 	<include name="OverlayList">
+		<param name="OverlayLeft"/>	
+		<param name="OverlayTop"/>	
+	    <definition>
 		<control type="group">
-			<visible>$EXP[isVideo] | $EXP[isMovie] | $EXP[isTvshow] | $EXP[isSeason] | $EXP[isEpisode] | $EXP[isSet] | $EXP[isMusicvideo] 
-			| Container.Content(files) | Container.Content(recordings) | Container.Content(tvshows) 
-			| Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos) | Container.Content(videos) | Container.Content()
+			<visible>$EXP[isVideo] | $EXP[isMovie] | $EXP[isTvshow] | $EXP[isSeason] | $EXP[isEpisode] | $EXP[isSet] | $EXP[isMusicvideo]
+				| Container.Content(files) |
+				Container.Content(recordings) | Container.Content(tvshows)
+				| Container.Content(episodes) | Container.Content(movies) | Container.Content(musicvideos) | Container.Content(videos)
+				| Container.Content()
 			</visible>
-			<control type="label">
 				<left>$PARAM[OverlayListLeft]</left>
 				<top>$PARAM[OverlayListTop]</top>
-				<width>64</width>
-				<height>64</height>
+				<width>33</width>
+				<height>33</height>
+			<control type="label">
 				<font>IconSmall</font>
-				<align>center</align>
 				<label>$VAR[OverlayListVar]</label>
 				<visible>!String.IsEmpty(ListItem.Overlay)</visible>
 			</control>
 			<control type="label">
 				<visible>!ListItem.IsResumable</visible>
 				<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)</visible>
-				<left>$PARAM[OverlayListLeft]</left>
-				<top>$PARAM[OverlayListTop]</top>
-				<width>64</width>
-				<height>62</height>
-				<align>center</align>
+				<left>4</left>
 				<font>IconTiny</font>
 				<textcolor>FocusColor</textcolor>
 				<label>A</label>
 			</control>
 		</control>
+		</definition>
 	</include>
 	<include name="OverlayExtendedInfo">
 		<control type="group">
 			<visible>!IsEmpty(ListItem.DBID)</visible>
 			<left>$PARAM[OverlayExtendedLeft]</left>
 			<top>$PARAM[OverlayExtendedTop]</top>
-			<control type="image">
-				<width>60</width>
-				<height>60</height>
-				<texture colordiffuse="FocusColor">overlays/overlaybg.png</texture>
-				<aspectratio align="center" aligny="top">keep</aspectratio>
-			</control>
+			<!-- <control type="image"> -->
+			<!-- <width>60</width> -->
+			<!-- <height>60</height> -->
+			<!-- <texture colordiffuse="FocusColor">overlays/overlaybg.png</texture> -->
+			<!-- <aspectratio align="center" aligny="top">keep</aspectratio> -->
+			<!-- </control> -->
 			<control type="label">
 				<top>2</top>
 				<left>2</left>
@@ -957,7 +997,7 @@
 				<height>$PARAM[height]</height>
 				<texture>$INFO[ListItem.VideoResolution,flags/videoresolution/,.png]</texture>
 			</control>
-			
+
 			<control type="group">
 				<include>MediaFlagVars</include>
 				<width>130</width>
@@ -1026,7 +1066,7 @@
 					<include>MediaFlagVars</include>
 					<height>$PARAM[height]</height>
 					<width>75</width>
-					<texture>resource://resource.images.studios.white/$INFO[ListItem.Studio,,.png]</texture>
+					<texture fallback="blank.png">resource://resource.images.studios.white/$INFO[ListItem.Studio,,.png]</texture>
 					<visible>[$EXP[isTvshow] | $EXP[isSeason]] + !Window.IsVisible(movieinformation)</visible>
 				</control>
 			</control>
@@ -1049,7 +1089,7 @@
 			<control type="image">
 				<include>MediaFlagVars</include>
 				<height>$PARAM[height]</height>
-				<texture>$VAR[AudioSourceFlagVar,flags/audiosource/,.png]</texture>
+				<texture fallback="blank.png">$VAR[AudioSourceFlagVar,flags/audiosource/,.png]</texture>
 			</control>
 
 			<control type="group">
@@ -1059,7 +1099,7 @@
 					<include>MediaFlagVars</include>
 					<width>130</width>
 					<height>$PARAM[height]</height>
-					<texture>resource://resource.images.studios.white/$INFO[ListItem.Studio,,.png]</texture>
+					<texture fallback="blank.png">resource://resource.images.studios.white/$INFO[ListItem.Studio,,.png]</texture>
 					<visible>!IsEmpty(ListItem.Studio)</visible>
 				</control>
 			</control>
@@ -1276,7 +1316,8 @@
 		<control type="label">
 			<height>50</height>
 			<label>$LOCALIZE[169]:$INFO[Player.Process(videowidth), ,x]$INFO[Player.Process(videoheight),, px]$INFO[Player.Process(videodar),$COMMA ,
-				AR]$INFO[Player.Process(videofps),$COMMA , FPS]</label>
+				AR]$INFO[Player.Process(videofps),$COMMA , FPS]
+			</label>
 			<visible>!String.IsEmpty(Player.Process(videowidth)) | !String.IsEmpty(Player.Process(videoheight)) | !String.IsEmpty(Player.Process(videodar))</visible>
 		</control>
 		<control type="label">
@@ -1330,7 +1371,8 @@
 			<textoffsetx>15</textoffsetx>
 			<textcolor>DisabledColor</textcolor>
 			<align>right</align>
-			<label>$INFO[Container($PARAM[ContainerID]).NumItems,, $LOCALIZE[31025] • ]$INFO[Container($PARAM[ContainerID]).CurrentPage]$INFO[Container($PARAM[ContainerID]).NumPages,/]</label>
+			<label>$INFO[Container($PARAM[ContainerID]).NumItems,, $LOCALIZE[31025] • ]$INFO[Container($PARAM[ContainerID]).CurrentPage]$INFO[Container($PARAM[ContainerID]).NumPages,/]
+			</label>
 			<visible>Integer.IsGreater(Container($PARAM[ContainerID]).NumItems,0) + [$PARAM[Visibility]]</visible>
 			<animation effect="fade" start="0" end="100" time="300" tween="sine" easing="inout" delay="300">Visible</animation>
 		</control>
@@ -1401,14 +1443,14 @@
 	</include>
 
 	<include name="ItemBorder">
-		<param name="bottom" default="60"/>
+		<param name="bottom" default="60" />
 		<definition>
 			<control type="image">
 				<left>10</left>
 				<top>10</top>
 				<right>10</right>
 				<bottom>10</bottom>
-<!-- 				<texture colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texture> -->
+				<!-- <texture colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texture> -->
 				<texture colordiffuse="BorderDiffuse" border="5">background.png</texture>
 			</control>
 			<control type="image">
@@ -1422,7 +1464,7 @@
 	</include>
 
 	<include name="ItemFocusBorder">
-		<param name="bottom" default="60"/>
+		<param name="bottom" default="60" />
 		<definition>
 			<control type="image">
 				<texture colordiffuse="FocusColor" border="5">listselect_fo.png</texture>
@@ -1811,7 +1853,7 @@
 							<width>295</width>
 							<label>$INFO[ListItem.Label]</label>
 							<font>font12</font>
-<!-- 							<scroll>true</scroll> -->
+							<!-- <scroll>true</scroll> -->
 							<align>center</align>
 						</control>
 						<control type="label">
@@ -1821,7 +1863,7 @@
 							<width>295</width>
 							<label>$LOCALIZE[20373] $INFO[ListItem.Season]</label>
 							<font>font12</font>
-<!-- 							<scroll>true</scroll> -->
+							<!-- <scroll>true</scroll> -->
 							<align>center</align>
 						</control>
 						<control type="label">
@@ -1831,7 +1873,7 @@
 							<label>$INFO[ListItem.Label2]</label>
 							<font>font13</font>
 							<wrapmultiline>true</wrapmultiline>
-<!-- 							<scroll>true</scroll> -->
+							<!-- <scroll>true</scroll> -->
 							<align>center</align>
 							<aligny>top</aligny>
 						</control>
@@ -1842,7 +1884,7 @@
 							<height>50</height>
 							<label>$INFO[ListItem.year]</label>
 							<font>font13</font>
-<!-- 							<scroll>true</scroll> -->
+							<!-- <scroll>true</scroll> -->
 							<align>center</align>
 							<aligny>top</aligny>
 						</control>
@@ -2011,7 +2053,7 @@
 							<width>580</width>
 							<label>$INFO[ListItem.Label]</label>
 							<font>font12</font>
-<!-- 							<scroll>true</scroll> -->
+							<!-- <scroll>true</scroll> -->
 							<align>center</align>
 						</control>
 						<control type="label">
@@ -2021,7 +2063,7 @@
 							<width>580</width>
 							<label>$LOCALIZE[20373] $INFO[ListItem.Season]</label>
 							<font>font12</font>
-<!-- 							<scroll>true</scroll> -->
+							<!-- <scroll>true</scroll> -->
 							<align>center</align>
 						</control>
 						<control type="label">
@@ -2031,7 +2073,7 @@
 							<label>$INFO[ListItem.Label2]</label>
 							<font>font13</font>
 							<wrapmultiline>true</wrapmultiline>
-<!-- 							<scroll>true</scroll> -->
+							<!-- <scroll>true</scroll> -->
 							<align>center</align>
 							<aligny>top</aligny>
 						</control>
@@ -2042,7 +2084,7 @@
 							<height>50</height>
 							<label>$INFO[ListItem.year]</label>
 							<font>font13</font>
-<!-- 							<scroll>true</scroll> -->
+							<!-- <scroll>true</scroll> -->
 							<align>center</align>
 							<aligny>top</aligny>
 						</control>
@@ -2087,7 +2129,7 @@
 						<align>$PARAM[align]</align>
 						<font>$PARAM[font]</font>
 						<aligny>center</aligny>
-<!-- 						<textcolor>$PARAM[fontcolor]</textcolor> -->
+						<!-- <textcolor>$PARAM[fontcolor]</textcolor> -->
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</control>
@@ -2101,7 +2143,7 @@
 						<align>$PARAM[align]</align>
 						<font>$PARAM[font]</font>
 						<aligny>center</aligny>
-<!-- 						<textcolor>$PARAM[fontcolor]</textcolor> -->
+						<!-- <textcolor>$PARAM[fontcolor]</textcolor> -->
 						<label>$INFO[ListItem.Label]</label>
 					</control>
 				</control>
@@ -2112,8 +2154,8 @@
 					<top>0</top>
 					<right>0</right>
 					<bottom>0</bottom>
-			        <texture colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texture>
-<!-- 					<animation effect="fade" start="100" end="50" time="0">UnFocus</animation> -->
+					<texture colordiffuse="BorderDiffuse" border="5">listselect_fo.png</texture>
+					<!-- <animation effect="fade" start="100" end="50" time="0">UnFocus</animation> -->
 				</control>
 				<control type="group">
 					<visible>ListItem.Property(PVR.IsRecordingTimer) | ListItem.Property(PVR.IsRemindingTimer)</visible>
@@ -2140,7 +2182,7 @@
 						<bottom>0</bottom>
 						<align>$PARAM[align]</align>
 						<font>$PARAM[font]</font>
-			<focusedcolor>FocusColor</focusedcolor>
+						<focusedcolor>FocusColor</focusedcolor>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
 						<scroll>true</scroll>
@@ -2157,7 +2199,7 @@
 						<font>$PARAM[font]</font>
 						<aligny>center</aligny>
 						<label>$INFO[ListItem.Label]</label>
-			<focusedcolor>FocusColor</focusedcolor>
+						<focusedcolor>FocusColor</focusedcolor>
 						<scroll>true</scroll>
 					</control>
 				</control>
@@ -2166,5 +2208,5 @@
 	</include>
 
 
-	
+
 </includes>

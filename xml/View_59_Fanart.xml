@@ -40,10 +40,6 @@
                         <aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
                         <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/fanart-poster.png">$VAR[Art1Image]</texture>
                     </control>
-                    <include content="OverlayIcons">
-                        <param name="OverlayLeft" value="164" />
-                        <param name="OverlayTop" value="30" />
-                    </include>
                     <control type="label">
                         <top>20</top>
                         <left>257</left>
@@ -80,6 +76,11 @@
                         <aspectratio>keep</aspectratio>
                         <texture colordiffuse="FocusColor">$VAR[StarRatingVar]</texture>
                     </control>
+					<include content="OverlayList">
+						<param name="OverlayListLeft" value="1864" />
+						<param name="OverlayListTop" value="75" />
+					</include>
+
                 </itemlayout>
                 <focusedlayout width="1920" height="370" condition="[Container.Content(movies) | Container.Content(tvshows)] + ![String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
                     <control type="image">
@@ -90,10 +91,6 @@
                         <aspectratio aligny="center" align="center" scalediffuse="false">scale</aspectratio>
                         <texture background="true" fallback="DefaultFallback.png" diffuse="diffuse/fanart-poster.png">$VAR[Art1Image]</texture>
                     </control>
-                    <include content="OverlayIcons">
-                        <param name="OverlayLeft" value="164" />
-                        <param name="OverlayTop" value="30" />
-                    </include>
                     <control type="label">
                         <top>20</top>
                         <left>257</left>
@@ -130,6 +127,11 @@
                         <aspectratio>keep</aspectratio>
                         <texture colordiffuse="FocusColor">$VAR[StarRatingVar]</texture>
                     </control>
+					<include content="OverlayList">
+						<param name="OverlayListLeft" value="1864" />
+						<param name="OverlayListTop" value="75" />
+					</include>
+
                 </focusedlayout>
                 <itemlayout width="1920" height="370" condition="[Container.Content(movies) | Container.Content(tvshows)] + [String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
                     <control type="image">
@@ -149,10 +151,6 @@
                         <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
                         <visible>String.IsEqual(Control.GetLabel(10102),landscape) + String.IsEmpty(ListItem.Art(landscape))</visible>
                     </control>
-                    <include content="OverlayIcons" condition="!String.IsEqual(Control.GetLabel(10102),logo)">
-                        <param name="OverlayLeft" value="485" />
-                        <param name="OverlayTop" value="30" />
-                    </include>
                     <control type="label">
                         <top>20</top>
                         <left>575</left>
@@ -189,6 +187,11 @@
                         <aspectratio>keep</aspectratio>
                         <texture colordiffuse="FocusColor">$VAR[StarRatingVar]</texture>
                     </control>
+					<include content="OverlayList">
+						<param name="OverlayListLeft" value="1864" />
+						<param name="OverlayListTop" value="75" />
+					</include>
+
                 </itemlayout>
                 <focusedlayout width="1920" height="370" condition="[Container.Content(movies) | Container.Content(tvshows)] + [String.IsEqual(Control.GetLabel(10102),fanart) | String.IsEqual(Control.GetLabel(10102),landscape) | String.IsEqual(Control.GetLabel(10102),logo)]">
                     <control type="image">
@@ -208,10 +211,6 @@
                         <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
                         <visible>String.IsEqual(Control.GetLabel(10102),landscape) + String.IsEmpty(ListItem.Art(landscape))</visible>
                     </control>
-                    <include content="OverlayIcons" condition="!String.IsEqual(Control.GetLabel(10102),logo)">
-                        <param name="OverlayLeft" value="485" />
-                        <param name="OverlayTop" value="30" />
-                    </include>
                     <control type="label">
                         <top>20</top>
                         <left>575</left>
@@ -248,6 +247,10 @@
                         <aspectratio>keep</aspectratio>
                         <texture colordiffuse="FocusColor">$VAR[StarRatingVar]</texture>
                     </control>
+					<include content="OverlayList">
+						<param name="OverlayListLeft" value="1864" />
+						<param name="OverlayListTop" value="75" />
+					</include>
                 </focusedlayout>
                 <itemlayout width="1920" height="370" condition="Container.Content(artists) + !Window.IsActive(videos)">
                     <control type="image">
@@ -287,6 +290,10 @@
                         <include>InfoPanelButtonsValues</include>
                         <label>$INFO[ListItem.Property(Artist_Description)]</label>
                     </control>
+					<include content="OverlayList">
+						<param name="OverlayListLeft" value="1864" />
+						<param name="OverlayListTop" value="75" />
+					</include>
                 </itemlayout>
                 <focusedlayout width="1920" height="370" condition="Container.Content(artists) + !Window.IsActive(videos)">
                     <control type="image">
@@ -326,6 +333,10 @@
                         <include>InfoPanelButtonsValues</include>
                         <label>$INFO[ListItem.Property(Artist_Description)]</label>
                     </control>
+					<include content="OverlayList">
+						<param name="OverlayListLeft" value="1864" />
+						<param name="OverlayListTop" value="75" />
+					</include>
                 </focusedlayout>
             </control>
         </control>

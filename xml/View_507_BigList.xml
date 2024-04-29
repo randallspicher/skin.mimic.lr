@@ -91,7 +91,12 @@
                                 <aspectratio align="right">keep</aspectratio>
                                 <visible>![String.IsEmpty(ListItem.Title) | Container.Content(artists) | Container.Content(musicvideos) | String.Contains(Container.FolderPath,plugin.video)]</visible>
                             </control>
+                            
                         </control>
+                        <include content="OverlayList">
+							<param name="OverlayListLeft" value="1728"/>
+							<param name="OverlayListTop" value="74"/>
+						</include>
                     </itemlayout>
                     <focusedlayout width="1808" height="221" condition="Container.Content(episodes) | Container.Content(videos) | ![String.IsEqual(Control.GetLabel(10102),thumb) | String.IsEqual(Control.GetLabel(10102),poster) | Container.Content(albums)]">
                         <include>view_BigList-LandscapeCommons</include>
@@ -148,8 +153,13 @@
                                     <aspectratio align="right">keep</aspectratio>
                                     <visible>![String.IsEmpty(ListItem.Title) | Container.Content(artists) | Container.Content(musicvideos) | String.Contains(Container.FolderPath,plugin.video)]</visible>
                                 </control>
+                                
                             </control>
                         </control>
+                         <include content="OverlayList">
+							<param name="OverlayListLeft" value="1728"/>
+							<param name="OverlayListTop" value="74"/>
+						</include>
                     </focusedlayout>
                     <itemlayout width="1808" height="221" condition="String.IsEqual(Control.GetLabel(10102),poster) + !Window.IsActive(music) + !Container.Content(episodes)">
                         <include>view_BigList-PosterCommons</include>
@@ -203,7 +213,13 @@
                                 <aspectratio align="right">keep</aspectratio>
                                 <visible>![String.IsEmpty(ListItem.Title) | Container.Content(artists) | Container.Content(musicvideos) | String.Contains(Container.FolderPath,plugin.video)]</visible>
                             </control>
+                            
+                            
                         </control>
+                        <include content="OverlayList">
+							<param name="OverlayListLeft" value="1728"/>
+							<param name="OverlayListTop" value="74"/>
+						</include>
                     </itemlayout>
                     <focusedlayout width="1808" height="221" condition="String.IsEqual(Control.GetLabel(10102),poster) + !Window.IsActive(music) + !Container.Content(episodes)">
                         <include>view_BigList-PosterCommons</include>
@@ -233,6 +249,7 @@
                                     <label>$INFO[ListItem.Property(Artist_Genre)]</label>
                                     <visible>Container.Content(artists)</visible>
                                 </control>
+                                
                                 <control type="textbox">
                                     <visible>!Container.Content(artists)</visible>
                                     <top>110</top>
@@ -260,8 +277,13 @@
                                     <aspectratio align="right">keep</aspectratio>
                                     <visible>![String.IsEmpty(ListItem.Title) | Container.Content(artists) | Container.Content(musicvideos) | String.Contains(Container.FolderPath,plugin.video)]</visible>
                                 </control>
+
                             </control>
                         </control>
+						<include content="OverlayList">
+							<param name="OverlayListLeft" value="1728"/>
+							<param name="OverlayListTop" value="74"/>
+						</include>
                     </focusedlayout>
                     <itemlayout width="1808" height="221" condition="[Container.Content(artists) + String.IsEqual(Control.GetLabel(10102),thumb)] | Container.Content(albums)">
                         <include>view_BigList-ThumbCommons</include>
@@ -306,7 +328,12 @@
                                 <aspectratio align="right">keep</aspectratio>
                                 <visible>Container.Content(albums)</visible>
                             </control>
+                            
                         </control>
+                        <include content="OverlayList">
+							<param name="OverlayListLeft" value="1728"/>
+							<param name="OverlayListTop" value="74"/>
+						</include>
                     </itemlayout>
                     <focusedlayout width="1808" height="221" condition="[Container.Content(artists) + String.IsEqual(Control.GetLabel(10102),thumb)] | Container.Content(albums)">
                         <include>view_BigList-ThumbCommons</include>
@@ -353,8 +380,13 @@
                                     <aspectratio align="right">keep</aspectratio>
                                     <visible>Container.Content(albums)</visible>
                                 </control>
+                                
                             </control>
                         </control>
+                        <include content="OverlayList">
+							<param name="OverlayListLeft" value="1728"/>
+							<param name="OverlayListTop" value="74"/>
+						</include>
                     </focusedlayout>
                 </control>
             </control>
@@ -411,13 +443,13 @@
                 <texture border="5">overlays/diffuse-overlay.png</texture>
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
             </control>
-            <control type="group">
-                <visible>!String.IsEqual(Control.GetLabel(10102),logo)</visible>
-                <include content="OverlayIcons">
-                    <param name="OverlayLeft" value="285" />
-                    <param name="OverlayTop" value="0" />
-                </include>
-            </control>
+<!--             <control type="group"> -->
+<!--                 <visible>!String.IsEqual(Control.GetLabel(10102),logo)</visible> -->
+<!--                 <include content="OverlayIcons"> -->
+<!--                     <param name="OverlayLeft" value="285" /> -->
+<!--                     <param name="OverlayTop" value="0" /> -->
+<!--                 </include> -->
+<!--             </control> -->
         </control>
     </include>
     <include name="view_BigList-PosterCommons">
@@ -442,10 +474,10 @@
                 <texture border="5">overlays/diffuse-overlay.png</texture>
  						<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
             </control>
-            <include content="OverlayIcons">
-                <param name="OverlayLeft" value="72" />
-                <param name="OverlayTop" value="0" />
-            </include>
+<!--             <include content="OverlayIcons"> -->
+<!--                 <param name="OverlayLeft" value="72" /> -->
+<!--                 <param name="OverlayTop" value="0" /> -->
+<!--             </include> -->
         </control>
     </include>
     <include name="view_BigList-ThumbCommons">

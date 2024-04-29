@@ -74,7 +74,7 @@
                     </control>
                     <include content="OverlayList">
                         <param name="OverlayListLeft" value="1071" />
-                        <param name="OverlayListTop" value="27" />
+                        <param name="OverlayListTop" value="44" />
                     </include>
                 </itemlayout>
                 <focusedlayout height="120" width="1140">
@@ -104,7 +104,7 @@
                     </control>
                     <include content="OverlayList">
                         <param name="OverlayListLeft" value="1071" />
-                        <param name="OverlayListTop" value="27" />
+                        <param name="OverlayListTop" value="44" />
                     </include>
                 </focusedlayout>
             </control>

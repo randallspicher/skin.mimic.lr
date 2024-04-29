@@ -108,8 +108,8 @@
 				<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 			</control>
 			<include content="OverlayIcons">
-				<param name="OverlayLeft" value="272" />
-				<param name="OverlayTop" value="18" />
+							<param name="OverlayLeft" value="290" />
+							<param name="OverlayTop" value="24" />
 			</include>
 		</itemlayout>
 
@@ -141,8 +141,8 @@
 				<param name="height" value="310" />
 			</include>
 			<include content="OverlayIcons">
-				<param name="OverlayLeft" value="272" />
-				<param name="OverlayTop" value="18" />
+							<param name="OverlayLeft" value="290" />
+							<param name="OverlayTop" value="24" />
 			</include>
 		</focusedlayout>
 
@@ -191,8 +191,8 @@
 				<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 			</control>
 			<include content="OverlayIcons">
-				<param name="OverlayLeft" value="272" />
-				<param name="OverlayTop" value="18" />
+							<param name="OverlayLeft" value="290" />
+							<param name="OverlayTop" value="24" />
 			</include>
 		</itemlayout>
 
@@ -233,8 +233,8 @@
 			<!-- <param name="height" value="310" /> -->
 			<!-- </include> -->
 			<include content="OverlayIcons">
-				<param name="OverlayLeft" value="272" />
-				<param name="OverlayTop" value="18" />
+							<param name="OverlayLeft" value="290" />
+							<param name="OverlayTop" value="24" />
 			</include>
 		</focusedlayout>
 
@@ -267,6 +267,7 @@
 				<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
 				<texture background="true" fallback="DefaultFolder.png" diffuse="diffuse/poster-widget.png">$VAR[WidgetArt]</texture>
 			</control>
+
 			<include content="external-genre-icon">
 				<param name="left" value="20" />
 				<param name="top" value="20" />
@@ -293,7 +294,7 @@
 				<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 			</control>
 			<include content="OverlayIcons">
-				<param name="OverlayLeft" value="170" />
+				<param name="OverlayLeft" value="644" />
 				<param name="OverlayTop" value="18" />
 			</include>
 		</itemlayout>
@@ -326,6 +327,8 @@
 				<aspectratio scalediffuse="false" align="center" aligny="center">scale</aspectratio>
 				<texture background="true" fallback="DefaultFolder.png" diffuse="diffuse/poster-widget.png">$VAR[WidgetArt]</texture>
 			</control>
+
+
 			<include content="external-genre-icon">
 				<param name="left" value="20" />
 				<param name="top" value="20" />
@@ -342,7 +345,7 @@
 				<include>AutoscrollDefault</include>
 			</control>
 			<include content="OverlayIcons">
-				<param name="OverlayLeft" value="170" />
+				<param name="OverlayLeft" value="644" />
 				<param name="OverlayTop" value="18" />
 			</include>
 		</focusedlayout>
@@ -399,7 +402,7 @@
 				<visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
 			</control>
 			<include content="OverlayIcons">
-				<param name="OverlayLeft" value="170" />
+				<param name="OverlayLeft" value="819" />
 				<param name="OverlayTop" value="18" />
 			</include>
 		</itemlayout>
@@ -449,7 +452,7 @@
 				<include>AutoscrollDefault</include>
 			</control>
 			<include content="OverlayIcons">
-				<param name="OverlayLeft" value="170" />
+				<param name="OverlayLeft" value="819" />
 				<param name="OverlayTop" value="18" />
 			</include>
 		</focusedlayout>
