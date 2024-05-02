@@ -39,6 +39,8 @@
             <animation effect="slide" end="0,-120" time="240" tween="quadratic" condition="Window.IsVisible(selectdialog) | Window.IsVisible(okdialog) | Window.IsVisible(VisualisationPresetList)">Conditional</animation>
             <animation effect="slide" start="0,-120" end="0,0" time="240" tween="quadratic">WindowOpen</animation>
             <animation effect="slide" end="0,-120" start="0,0" time="240" tween="quadratic">WindowClose</animation>
+            <width>FullscreenWidth</width>
+            <align>center</align>
             <control type="image">
                 <top>-16</top>
                 <left>-16</left>
@@ -52,11 +54,13 @@
                 <height>64</height>
                 <width>FullscreenWidth</width>
                 <align>center</align>
-                <itemgap>0</itemgap>
-                <scrolltime tween="sine">200</scrolltime>
+                <itemgap>20</itemgap>
+<!--                 <scrolltime tween="sine">200</scrolltime> -->
                 <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+                
                 <onup>700</onup>
-                <ondown>706</ondown>
+                <ondown>602</ondown>
                 <onleft>202</onleft>
                 <onright>202</onright>
 
@@ -65,11 +69,11 @@
 					<visible>Skin.HasSetting(Enable.TouchScreen)</visible>
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>z</label>
-                    <align>center</align>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconSmall</font>
+                    <label>$VAR[Icon-Minimize]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
                     <onclick>Action(Close,visualisation)</onclick>
                 </control>
 
@@ -77,75 +81,38 @@
                 <control type="button" id="700">
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>E</label>
-                    <align>center</align>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconSmall</font>
+                    <label>$VAR[Icon-List]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
                     <onclick>Close</onclick>
                     <onclick>ActivateWindow(musicplaylist)</onclick>
                 </control>
-                <control type="button" id="500">
-                    <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-                    <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>i</label>
-                    <align>center</align>
-                    <width>100</width>
-                    <height>64</height>
-                    <font>IconMedium</font>
-                </control>
-                <control type="button" id="702">
-                    <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-                    <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>D</label>
-                    <align>center</align>
-                    <width>100</width>
-                    <height>64</height>
-                    <font>IconMedium</font>
-                    <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
-                    <visible>Visualisation.Enabled</visible>
-                </control>
-                <control type="button" id="705">
-                    <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-                    <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>r</label>
-                    <align>center</align>
-                    <width>100</width>
-                    <height>64</height>
-                    <font>IconMedium</font>
-                    <onclick>ActivateWindow(visualisationpresetlist)</onclick>
-                    <visible>Visualisation.Enabled + Visualisation.HasPresets</visible>
-                </control>
-                <control type="button" id="701">
-                    <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-                    <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>F</label>
-                    <align>center</align>
-                    <aligny>top</aligny>
-                    <textoffsety>10</textoffsety>
-                    <width>100</width>
-                    <height>64</height>
-                    <font>IconMedium</font>
-                    <onclick>setrating</onclick>
-                </control>
+
+
+                <!-- spacer gap here -->
+
+                
                 <control type="button" id="600">
+                	<left>40</left>
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>g</label>
-                    <align>center</align>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconSmall</font>
+                    <label>$VAR[Icon-PreviousTrack]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
                     <onclick>PlayerControl(Previous)</onclick>
                 </control>
                 <control type="button" id="601">
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>H</label>
-                    <textoffsetx>32</textoffsetx>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconSmall</font>
+                    <label>$VAR[Icon-Rewind]</label>
+					<align>center</align>
+                    <font>IconNormal</font>
                     <onclick>PlayerControl(Rewind)</onclick>
                 </control>
                 <control type="togglebutton" id="602">
@@ -153,90 +120,145 @@
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
                     <alttexturefocus colordiffuse="FocusColor">osd/button_bg.png</alttexturefocus>
                     <alttexturenofocus colordiffuse="22ffffff">osd/button_bg.png</alttexturenofocus>
-                    <label>K</label>
-                    <altlabel>I</altlabel>
-                    <align>center</align>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconSmall</font>
+                    <label>$VAR[Icon-Pause]</label>
+                    <altlabel>$VAR[Icon-Play]</altlabel>
+                    <align>center</align>
+                    <font>IconNormal</font>
                     <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
                     <onclick>PlayerControl(Play)</onclick>
                 </control>
                 <control type="button" id="603">
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>J</label>
-                    <align>center</align>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconSmall</font>
+                    <label>$VAR[Icon-Stop]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
                     <onclick>PlayerControl(Stop)</onclick>
                 </control>
                 <control type="button" id="604">
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>G</label>
-                    <align>right</align>
-                    <textoffsetx>32</textoffsetx>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconSmall</font>
+                    <label>$VAR[Icon-FastForward]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
                     <onclick>PlayerControl(Forward)</onclick>
                 </control>
                 <control type="button" id="605">
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>f</label>
-                    <align>center</align>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconSmall</font>
+                    <label>$VAR[Icon-NextTrack]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
                     <onclick>PlayerControl(Next)</onclick>
+                </control>
+                
+
+
+                
+                <!-- spacer gap here -->
+                
+                <control type="button" id="714">
+                    <left>40</left>
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<left>20</left>
+                    <width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-Audio]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>ActivateWindow(osdaudiosettings)</onclick>
+				</control>
+                
+                <control type="button" id="500">
+                    <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+                    <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+                    <width>64</width>
+                    <height>64</height>
+                    <label>$VAR[Icon-Visualization]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
+                </control>
+                <control type="button" id="702">
+                    <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+                    <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+                    <width>64</width>
+                    <height>64</height>
+                    <label>$VAR[Icon-VisSettings]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
+                    <onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+                    <visible>Visualisation.Enabled</visible>
+                </control>
+                <control type="button" id="705">
+                    <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+                    <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+                    <width>64</width>
+                    <height>64</height>
+                    <label>$VAR[Icon-VisPresets]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
+                    <onclick>ActivateWindow(visualisationpresetlist)</onclick>
+                    <visible>Visualisation.Enabled + Visualisation.HasPresets</visible>
+                </control>
+                <control type="button" id="701">
+                    <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+                    <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+                    <width>64</width>
+                    <height>64</height>
+                    <label>$VAR[Icon-SetRating]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
+                    <onclick>setrating</onclick>
                 </control>
                 <control type="button" id="703">
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>h</label>
-                    <align>center</align>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconMedium</font>
+                    <label>$VAR[Icon-Lyrics]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
                     <onclick>Close</onclick>
                     <onclick>RunScript(script.cu.lrclyrics)</onclick>
                     <visible>System.HasAddon(script.cu.lrclyrics)</visible>
                 </control>
-                <control type="togglebutton" id="704">
+                <control type="button" id="704">
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <alttexturefocus colordiffuse="FocusColor">osd/button_bg.png</alttexturefocus>
-                    <alttexturenofocus colordiffuse="22ffffff">osd/button_bg.png</alttexturenofocus>
-                    <label>N</label>
-                    <altlabel>M</altlabel>
-                    <align>center</align>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconMedium</font>
-                    <usealttexture>Playlist.IsRandom</usealttexture>
+                    <label>$VAR[ShuffleButtonVar]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
                     <onclick>PlayerControl(Random)</onclick>
                 </control>
                 <control type="button" id="708">
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>$VAR[MusicOSDRepeatButtonVar]</label>
-                    <align>center</align>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconMedium</font>
+                    <label>$VAR[RepeatButtonVar]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
                     <onclick>PlayerControl(Repeat)</onclick>
                 </control>
                 <control type="button" id="706">
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>B</label>
-                    <align>center</align>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconMedium</font>
+                    <label>$VAR[Icon-Settings]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
                     <onclick>Dialog.Close(musicosd)</onclick>
                     <onclick>ActivateWindow(1120)</onclick>
                     <onclick>SetProperty(MusicOSD.Settings,True,home)</onclick>
@@ -244,11 +266,11 @@
                 <control type="button" id="712">
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <label>C</label>
-                    <align>center</align>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
-                    <font>IconMedium</font>
+                    <label>$VAR[Icon-Screen]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
 <!--                     <onclick>Dialog.Close(musicosd)</onclick> -->
 
 					<onclick condition="String.IsEmpty(Skin.String(musicvis.view)) | String.IsEqual(Skin.String(musicvis.view),StandardView)">Skin.SetString(musicvis.view,CoverView)</onclick>
@@ -256,6 +278,17 @@
 					<onclick condition="!String.IsEmpty(Skin.String(musicvis.view)) + String.IsEqual(Skin.String(musicvis.view),CoverView2)">Skin.SetString(musicvis.view,StandardView)</onclick>
 <!--      	            <onclick>ReplaceWindow(visualisation,Skin.String(musicvis.view))</onclick> -->
                 </control>
+				<control type="button" id="719">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<label>$VAR[Icon-Info]</label>
+					<align>center</align>
+                    <width>64</width>
+                    <height>64</height>
+					<font>IconNormal</font>
+					<onclick>Close</onclick>
+					<onclick>ActivateWindow(fullscreeninfo)</onclick>
+				</control>
 
 
             </control>

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
 	<include file="defaults.xml" />
+	<include file="fonts/commonfonts.xml"/>
 	<include file="Includes_Animations.xml" />
 	<include file="Includes_Backgrounds.xml" />
 	<include file="Includes_CommonValues.xml" />
+	<include file="Includes_Icons.xml" />
 	<include file="Includes_Home.xml" />
 	<include file="Includes_Menus.xml" />
 	<include file="Includes_Topbar.xml" />
@@ -112,8 +114,8 @@
 			<left>368</left>
 			<width>72</width>
 			<height>72</height>
-			<label>x</label>
-			<font>IconTiny</font>
+			<label>$VAR[Icon-Close]</label>
+			<font>IconSmall</font>
 			<focusedcolor>FocusColor</focusedcolor>
 			<onclick>$PARAM[CloseIconDialogClose]</onclick>
 			<onclick>$PARAM[CloseIconDialogClose2]</onclick>
@@ -597,27 +599,27 @@
 				<onback>ClearProperty(MediaMenu,Home)</onback>
 				<onback>50</onback>
 				<control type="button" id="6051">
-					<label>g</label>
+					<label>$VAR[Icon-PreviousTrack]</label>
 					<width>57</width>
-					<font>IconPlayer</font>
+					<font>IconSmall</font>
 					<onclick>PlayerControl(Previous)</onclick>
 					<textoffsetx>0</textoffsetx>
 					<align>center</align>
 				</control>
 				<control type="button" id="6052">
-					<label>H</label>
+					<label>$VAR[Icon-Rewind]</label>
 					<width>57</width>
-					<font>IconPlayer</font>
+					<font>IconSmall</font>
 					<onclick>PlayerControl(Rewind)</onclick>
 					<enable>Player.SeekEnabled</enable>
 					<textoffsetx>0</textoffsetx>
 					<align>center</align>
 				</control>
 				<control type="togglebutton" id="6053">
-					<label>I</label>
-					<altlabel>K</altlabel>
+					<label>$VAR[Icon-Play]</label>
+					<altlabel>$VAR[Icon-Pause]</altlabel>
 					<width>57</width>
-					<font>IconPlayer</font>
+					<font>IconSmall</font>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 					<onclick>PlayerControl(Play)</onclick>
 					<enable>Player.PauseEnabled</enable>
@@ -625,34 +627,34 @@
 					<align>center</align>
 				</control>
 				<control type="button" id="6054">
-					<label>J</label>
+					<label>$VAR[Icon-Stop]</label>
 					<width>57</width>
-					<font>IconPlayer</font>
+					<font>IconSmall</font>
 					<onclick>PlayerControl(Stop)</onclick>
 					<textoffsetx>0</textoffsetx>
 					<align>center</align>
 				</control>
 				<control type="button" id="6055">
-					<label>G</label>
+					<label>$VAR[Icon-FastForward]</label>
 					<width>57</width>
-					<font>IconPlayer</font>
+					<font>IconSmall</font>
 					<onclick>PlayerControl(Forward)</onclick>
 					<enable>Player.SeekEnabled</enable>
 					<textoffsetx>0</textoffsetx>
 					<align>center</align>
 				</control>
 				<control type="button" id="6056">
-					<label>f</label>
+					<label>$VAR[Icon-NextTrack]</label>
 					<width>57</width>
-					<font>IconPlayer</font>
+					<font>IconSmall</font>
 					<onclick>PlayerControl(Next)</onclick>
 					<textoffsetx>0</textoffsetx>
 					<align>center</align>
 				</control>
 				<control type="button" id="6057">
-					<label>q</label>
+					<label>$VAR[Icon-Maximize]</label>
 					<width>58</width>
-					<font>IconPlayer</font>
+					<font>IconSmall</font>
 					<onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
 					<onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
 					<textoffsetx>0</textoffsetx>
@@ -781,6 +783,7 @@
 			<orientation>horizontal</orientation>
 		</control>
 	</include>
+
 	<include name="OverlayIcons">
 		<param name="OverlayLeft"/>	
 		<param name="OverlayTop"/>	
@@ -796,64 +799,24 @@
 			<left>$PARAM[OverlayLeft]</left>
 			<top>$PARAM[OverlayTop]</top>
 
+
 			<control type="label">
 				<description>circle background (unwatched/in progress)</description>
 				<visible>
 					[!Skin.HasSetting(Disable.ResumableOverlay) + ListItem.IsResumable]
 					| [Skin.HasSetting(Enable.UnwatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) | Integer.IsEqual(ListItem.PlayCount,0)]]
+ 					| !ListItem.IsResumable + [!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]] 
 				</visible>
-				<font>IconSmall</font>
+				<font>IconNormal</font>
 				<textcolor>FocusColor</textcolor>
-				<label>T</label>
-			</control>
-			<control type="label">
-				<description>Half Filled Circle for in progress</description>
-				<visible>
-					[!Skin.HasSetting(Disable.ResumableOverlay) + ListItem.IsResumable]
-				</visible>
-				<font>IconSmall</font>
-				<label>S</label>
+				<label>$VAR[Icon-WatchedBG]</label>
 			</control>
 
 			<control type="label">
-				<description>empty Circle for Unwatched</description>
-				<visible>
-				 [Skin.HasSetting(Enable.UnwatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) | Integer.IsEqual(ListItem.PlayCount,0)]]
-				</visible>
-				<font>IconSmall</font>
-				<label>R</label>
+				<description>Watchedstatus</description>
+				<font>IconNormal</font>
+				<label>$VAR[Icon-WatchedStatus]</label>
 			</control>
-
-			<control type="label">
-				<description>circle background (watched)</description>
-				<visible>
-					!ListItem.IsResumable + [!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]]
-				</visible>
-				<font>IconSmall</font>
-<!-- 				<textcolor>FocusColor</textcolor> -->
-				<label>T</label>
-			</control>
-
-<!-- 			<control type="label"> -->
-<!-- 				<description>empty Circle for watched</description> -->
-<!-- 				<visible> -->
-<!-- 					!ListItem.IsResumable + [!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]] -->
-<!-- 				</visible> -->
-<!-- 				<font>IconSmall</font> -->
-<!-- 				<label>R</label> -->
-<!-- 			</control> -->
-
-			<control type="label">
-				<description>checkmark if watched</description>
-				<visible>
-					!ListItem.IsResumable + [!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]]
-				</visible>
-				<left>4</left>
-				<textcolor>FocusColor</textcolor>
-				<font>IconTiny</font>
-				<label>A</label>
-			</control>
-
 
 		</control>
 		</definition>
@@ -875,18 +838,21 @@
 				<top>$PARAM[OverlayListTop]</top>
 				<width>33</width>
 				<height>33</height>
+
 			<control type="label">
-				<font>IconSmall</font>
-				<label>$VAR[OverlayListVar]</label>
-				<visible>!String.IsEmpty(ListItem.Overlay)</visible>
+				<description>circle background watched</description>
+				<visible>
+				!String.IsEmpty(ListItem.Overlay) +
+ 				 !ListItem.IsResumable + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]] 
+				</visible>
+				<font>IconNormal</font>
+				<textcolor>FocusColor</textcolor>
+				<label>$VAR[Icon-WatchedBG]</label>
 			</control>
 			<control type="label">
-				<visible>!ListItem.IsResumable</visible>
-				<visible>String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)</visible>
-				<left>4</left>
-				<font>IconTiny</font>
-				<textcolor>FocusColor</textcolor>
-				<label>A</label>
+				<font>IconNormal</font>
+				<label>$VAR[OverlayListVar]</label>
+				<visible>!String.IsEmpty(ListItem.Overlay)</visible>
 			</control>
 		</control>
 		</definition>
@@ -896,20 +862,11 @@
 			<visible>!IsEmpty(ListItem.DBID)</visible>
 			<left>$PARAM[OverlayExtendedLeft]</left>
 			<top>$PARAM[OverlayExtendedTop]</top>
-			<!-- <control type="image"> -->
-			<!-- <width>60</width> -->
-			<!-- <height>60</height> -->
-			<!-- <texture colordiffuse="FocusColor">overlays/overlaybg.png</texture> -->
-			<!-- <aspectratio align="center" aligny="top">keep</aspectratio> -->
-			<!-- </control> -->
-			<control type="label">
-				<top>2</top>
-				<left>2</left>
-				<width>56</width>
-				<height>56</height>
-				<align>center</align>
-				<font>IconPlayer</font>
-				<label>T</label>
+			<control type="image">
+			<width>60</width>
+			<height>60</height>
+			<texture colordiffuse="FocusColor">overlays/overlaybg.png</texture>
+			<aspectratio align="center" aligny="top">keep</aspectratio>
 			</control>
 			<control type="label">
 				<top>2</top>
@@ -917,9 +874,18 @@
 				<width>56</width>
 				<height>56</height>
 				<align>center</align>
-				<font>IconSuperTiny</font>
+				<font>IconSmall</font>
+				<label>$VAR[Icon-Circle]</label>
+			</control>
+			<control type="label">
+				<top>2</top>
+				<left>2</left>
+				<width>56</width>
+				<height>56</height>
+				<align>center</align>
+				<font>IconSmall</font>
 				<textcolor>NormalTextColor</textcolor>
-				<label>I</label>
+				<label>$VAR[Icon-Play]</label>
 			</control>
 		</control>
 	</include>
@@ -1203,8 +1169,8 @@
 				<width>400</width>
 				<align>center</align>
 				<textoffsetx>30</textoffsetx>
-				<font>IconMedium</font>
-				<label>B</label>
+				<font>IconNormal</font>
+				<label>$VAR[Icon-Settings]</label>
 				<focusedcolor>FocusColor</focusedcolor>
 				<texturefocus />
 				<onright>ClearProperty(MediaMenu,Home)</onright>
@@ -1478,222 +1444,9 @@
 			</control>
 		</definition>
 	</include>
+	
+	
 
-	<include name="CommonFonts">
-		<font>
-			<name>IconSuperTiny</name>
-			<filename>WebHostingHub-Modified.ttf</filename>
-			<size>16</size>
-		</font>
-		<font>
-			<name>IconTiny</name>
-			<filename>WebHostingHub-Modified.ttf</filename>
-			<size>20</size>
-		</font>
-		<font>
-			<name>IconPlayer</name>
-			<filename>WebHostingHub-Modified.ttf</filename>
-			<size>24</size>
-		</font>
-		<font>
-			<name>IconSmall</name>
-			<filename>WebHostingHub-Modified.ttf</filename>
-			<size>30</size>
-		</font>
-		<font>
-			<name>IconMedium</name>
-			<filename>WebHostingHub-Modified.ttf</filename>
-			<size>36</size>
-		</font>
-		<font>
-			<name>IconLarge</name>
-			<filename>WebHostingHub-Modified.ttf</filename>
-			<size>42</size>
-		</font>
-		<font>
-			<name>lyrics1</name>
-			<filename>lyrics/Bungee-Regular.ttf</filename>
-			<style>lowercase</style>
-			<linespacing>0.9</linespacing>
-			<size>120</size>
-		</font>
-		<font>
-			<name>lyrics1b</name>
-			<filename>lyrics/Blogger_Sans-Bold.ttf</filename>
-			<linespacing>1.0</linespacing>
-			<size>70</size>
-		</font>
-		<font>
-			<name>lyrics2</name>
-			<filename>lyrics/theboldfont.ttf</filename>
-			<linespacing>0.9</linespacing>
-			<size>120</size>
-		</font>
-		<font>
-			<name>lyrics2b</name>
-			<filename>lyrics/Days.ttf</filename>
-			<linespacing>0.85</linespacing>
-			<size>62</size>
-		</font>
-		<font>
-			<name>lyrics3</name>
-			<filename>lyrics/Geomancy - Extra Bold.ttf</filename>
-			<linespacing>0.9</linespacing>
-			<size>120</size>
-		</font>
-		<font>
-			<name>lyrics3b</name>
-			<filename>lyrics/Exo2-BlackItalic.ttf</filename>
-			<linespacing>0.85</linespacing>
-			<size>62</size>
-		</font>
-		<font>
-			<name>lyrics4</name>
-			<filename>lyrics/MontserratAlternates-Bold.ttf</filename>
-			<linespacing>0.8</linespacing>
-			<size>60</size>
-		</font>
-		<font>
-			<name>lyrics4b</name>
-			<filename>lyrics/theboldfont.ttf</filename>
-			<linespacing>0.9</linespacing>
-			<size>120</size>
-		</font>
-		<font>
-			<name>lyrics5</name>
-			<style>uppercase</style>
-			<filename>lyrics/PassionOne-Regular.ttf</filename>
-			<size>140</size>
-		</font>
-		<font>
-			<name>lyrics5b</name>
-			<filename>lyrics/Blogger_Sans-Bold.ttf</filename>
-			<linespacing>1.0</linespacing>
-			<size>70</size>
-		</font>
-		<font>
-			<name>lyrics6</name>
-			<filename>lyrics/BOXING.ttf</filename>
-			<aspect>1.3</aspect>
-			<style>lowercase</style>
-			<linespacing>0.9</linespacing>
-			<size>104</size>
-		</font>
-		<font>
-			<name>lyrics6b</name>
-			<filename>lyrics/MontserratAlternates-Bold.ttf</filename>
-			<linespacing>0.8</linespacing>
-			<size>60</size>
-		</font>
-		<font>
-			<name>lyrics7</name>
-			<filename>lyrics/Bungee-Regular.ttf</filename>
-			<style>lowercase</style>
-			<linespacing>0.9</linespacing>
-			<size>120</size>
-		</font>
-		<font>
-			<name>lyrics7b</name>
-			<filename>lyrics/Exo2-BlackItalic.ttf</filename>
-			<linespacing>0.85</linespacing>
-			<size>62</size>
-		</font>
-		<font>
-			<name>lyrics8</name>
-			<filename>lyrics/Geomancy - Extra Bold.ttf</filename>
-			<linespacing>0.9</linespacing>
-			<size>120</size>
-		</font>
-		<font>
-			<name>lyrics8b</name>
-			<filename>lyrics/BubblegumSans-Regular.ttf</filename>
-			<linespacing>0.9</linespacing>
-			<size>70</size>
-		</font>
-		<font>
-			<name>lyrics9</name>
-			<filename>lyrics/BOXING.ttf</filename>
-			<style>lowercase</style>
-			<linespacing>0.9</linespacing>
-			<size>275</size>
-		</font>
-		<font>
-			<name>lyrics9b</name>
-			<filename>lyrics/BOXING.ttf</filename>
-			<style>lowercase</style>
-			<linespacing>0.9</linespacing>
-			<size>165</size>
-		</font>
-		<font>
-			<name>lyrics9c</name>
-			<filename>lyrics/BOXING.ttf</filename>
-			<style>lowercase</style>
-			<linespacing>0.9</linespacing>
-			<size>220</size>
-		</font>
-		<font>
-			<name>lyrics9d</name>
-			<filename>lyrics/Days.ttf</filename>
-			<linespacing>0.85</linespacing>
-			<size>60</size>
-		</font>
-		<font>
-			<name>lyrics0</name>
-			<style>uppercase</style>
-			<filename>lyrics/PassionOne-Regular.ttf</filename>
-			<size>125</size>
-		</font>
-		<font>
-			<name>lyrics0a</name>
-			<style>uppercase</style>
-			<filename>lyrics/PassionOne-Regular.ttf</filename>
-			<size>175</size>
-		</font>
-		<font>
-			<name>lyrics0b</name>
-			<style>uppercase</style>
-			<filename>lyrics/PassionOne-Regular.ttf</filename>
-			<size>225</size>
-		</font>
-		<font>
-			<name>lyrics0c</name>
-			<filename>lyrics/BubblegumSans-Regular.ttf</filename>
-			<linespacing>0.85</linespacing>
-			<size>70</size>
-		</font>
-		<font>
-			<name>lyrics1s</name>
-			<filename>lyrics/BubblegumSans-Regular.ttf</filename>
-			<linespacing>1.15</linespacing>
-			<size>76</size>
-		</font>
-		<font>
-			<name>lyrics3s</name>
-			<filename>lyrics/Blogger_Sans-Bold.ttf</filename>
-			<linespacing>0.9</linespacing>
-			<aspect>1.1</aspect>
-			<size>92</size>
-		</font>
-		<font>
-			<name>lyrics5s</name>
-			<filename>lyrics/Days.ttf</filename>
-			<linespacing>0.8</linespacing>
-			<size>80</size>
-		</font>
-		<font>
-			<name>lyrics7s</name>
-			<filename>lyrics/MontserratAlternates-Bold.ttf</filename>
-			<style>bold</style>
-			<linespacing>0.75</linespacing>
-			<size>72</size>
-		</font>
-		<font>
-			<name>lyrics9s</name>
-			<filename>lyrics/Exo2-BlackItalic.ttf</filename>
-			<linespacing>0.85</linespacing>
-			<size>80</size>
-		</font>
-	</include>
 
 
 	<include name="fullwidth-posterlist">

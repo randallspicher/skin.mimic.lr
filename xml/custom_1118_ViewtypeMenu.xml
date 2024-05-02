@@ -224,8 +224,8 @@
                 <width>400</width>
                 <align>center</align>
                 <textoffsetx>30</textoffsetx>
-                <font>IconMedium</font>
-                <label>B</label>
+                <font>IconNormal</font>
+                <label>$VAR[Icon-Settings]</label>
                 <focusedcolor>FocusColor</focusedcolor>
                 <texturefocus />
                 <onright>Dialog.Close(1118)</onright>

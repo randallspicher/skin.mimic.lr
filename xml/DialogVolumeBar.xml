@@ -40,7 +40,7 @@
                 <top>41</top>
                 <width>40</width>
                 <height>40</height>
-                <font>IconSmall</font>
+                <font>IconNormal</font>
                 <label>$VAR[VolumeIconVar]</label>
                 <visible>!Player.Muted | [Window.IsActive(fullscreenvideo) | Window.IsActive(slideshow)]</visible>
             </control>

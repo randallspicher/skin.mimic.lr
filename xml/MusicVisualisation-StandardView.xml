@@ -249,11 +249,11 @@
 				<usecontrolcoords>true</usecontrolcoords>
 				<control type="label">
 					<top>8</top>
-					<label>H</label>
+					<label>$VAR[Icon-Rewind]</label>
 					<width>35</width>
 					<height>35</height>
 					<align>center</align>
-					<font>IconTiny</font>
+					<font>IconSmall</font>
 					<visible>Player.Rewinding</visible>
 				</control>
 				<control type="label">
@@ -265,11 +265,11 @@
 				</control>
 				<control type="label">
 					<top>8</top>
-					<label>G</label>
+					<label>$VAR[Icon-FastForward]</label>
 					<width>35</width>
 					<height>35</height>
 					<align>center</align>
-					<font>IconTiny</font>
+					<font>IconSmall</font>
 					<visible>Player.Forwarding</visible>
 				</control>
 			</control>

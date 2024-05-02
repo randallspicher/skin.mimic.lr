@@ -54,37 +54,27 @@
             <top>88</top>
             <width>80</width>
             <height>100</height>
-            <font>IconSmall</font>
+            <font>IconNormal</font>
             <align>center</align>
-            <label>S</label>
+            <label>$VAR[Icon-InProgress]</label>
         </control>
         <control type="label">
             <left>32</left>
             <top>188</top>
             <width>80</width>
             <height>100</height>
-            <font>IconSmall</font>
+            <font>IconNormal</font>
             <align>center</align>
-            <label>T</label>
+            <label>$VAR[Icon-Watched]</label>
         </control>
         <control type="label">
             <left>32</left>
             <top>288</top>
             <width>80</width>
             <height>100</height>
-            <font>IconSmall</font>
+            <font>IconNormal</font>
             <align>center</align>
-            <label>R</label>
-        </control>
-        <control type="label">
-            <left>32</left>
-            <top>187</top>
-            <width>80</width>
-            <height>100</height>
-            <align>center</align>
-            <font>IconTiny</font>
-            <textcolor>FocusColor</textcolor>
-            <label>A</label>
+            <label>$VAR[Icon-Unwatched]</label>
         </control>
     </controls>
 </window>

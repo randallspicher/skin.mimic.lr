@@ -186,8 +186,7 @@
 			<width>400</width>
 			<align>center</align>
 			<textoffsetx>30</textoffsetx>
-			<font>IconMedium</font>
-			<label>A</label>
+			<label>186</label>
 			<focusedcolor>FocusColor</focusedcolor>
 			<texturefocus />
 			<onup>1310</onup>

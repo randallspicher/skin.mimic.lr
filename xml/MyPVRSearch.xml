@@ -74,22 +74,22 @@
                             <top>30</top>
                             <width>120</width>
                             <height>30</height>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>15</textoffsetx>
                             <align>right</align>
                             <selectedcolor>SelectedColor</selectedcolor>
-                            <label>u</label>
+                            <label>$VAR[Icon-Timer]</label>
                             <visible>ListItem.HasTimer</visible>
                         </control>
                         <control type="label">
                             <top>30</top>
                             <width>120</width>
                             <height>30</height>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>15</textoffsetx>
                             <align>right</align>
                             <selectedcolor>SelectedColor</selectedcolor>
-                            <label>j</label>
+                            <label>$VAR[Icon-Video]</label>
                             <visible>ListItem.IsRecording</visible>
                         </control>
                     </control>
@@ -152,20 +152,20 @@
                             <top>30</top>
                             <width>120</width>
                             <height>30</height>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>15</textoffsetx>
                             <align>right</align>
-                            <label>u</label>
+                            <label>$VAR[Icon-Timer]</label>
                             <visible>ListItem.HasTimer</visible>
                         </control>
                         <control type="label">
                             <top>30</top>
                             <width>120</width>
                             <height>30</height>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>15</textoffsetx>
                             <align>right</align>
-                            <label>j</label>
+                            <label>$VAR[Icon-Video]</label>
                             <visible>ListItem.IsRecording</visible>
                         </control>
                     </control>

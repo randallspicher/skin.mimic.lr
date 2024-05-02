@@ -2,6 +2,7 @@
 * override some default behaviours in dialogselect to display videoversions better when selecting to play
 * adjust watched icon placement and display
 * some cleanups on artwork apect ratios
+* cleanup on how osd icons and watched status is coded and rendered and use better font source for icons
 
 8.0.1
 * Omega release

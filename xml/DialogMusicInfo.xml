@@ -242,9 +242,9 @@
 										<top>7</top>
 										<width>64</width>
 										<height>64</height>
-										<font>IconSmall</font>
+										<font>IconNormal</font>
 										<align>center</align>
-										<label>T</label>
+										<label>$VAR[Icon-Circle]</label>
 									</control>
 									<control type="label">
 										<left>505</left>
@@ -252,9 +252,9 @@
 										<width>64</width>
 										<height>62</height>
 										<align>center</align>
-										<font>IconSuperTiny</font>
 										<textcolor>NormalTextColor</textcolor>
-										<label>I</label>
+										<font>IconSmall</font>
+										<label>$VAR[Icon-Play]</label>
 									</control>
 								</control>
 							</control>
@@ -292,9 +292,9 @@
 										<top>7</top>
 										<width>64</width>
 										<height>64</height>
-										<font>IconSmall</font>
+										<font>IconNormal</font>
 										<align>center</align>
-										<label>T</label>
+										<label>$VAR[Icon-Circle]</label>
 									</control>
 									<control type="label">
 										<left>505</left>
@@ -302,9 +302,9 @@
 										<width>64</width>
 										<height>62</height>
 										<align>center</align>
-										<font>IconSuperTiny</font>
 										<textcolor>NormalTextColor</textcolor>
-										<label>I</label>
+										<font>IconSmall</font>
+										<label>$VAR[Icon-Play]</label>
 									</control>
 								</control>
 							</control>
@@ -647,8 +647,8 @@
 						<width>30</width>
 						<height>30</height>
 						<align>center</align>
-						<label>a</label>
-						<font>IconTiny</font>
+						<label>$VAR[Icon-ScrollLeft]</label>
+						<font>IconSmall</font>
 						<textcolor>DisabledColor</textcolor>
 					</control>
 					<control type="label">
@@ -657,8 +657,8 @@
 						<width>30</width>
 						<height>30</height>
 						<align>center</align>
-						<label>b</label>
-						<font>IconTiny</font>
+						<label>$VAR[Icon-ScrollRight]</label>
+						<font>IconSmall</font>
 						<textcolor>DisabledColor</textcolor>
 					</control>
 				</control>

@@ -67,16 +67,16 @@
                         <top>-1</top>
                         <width>35</width>
                         <height>60</height>
-                        <font>IconTiny</font>
-                        <label>I</label>
+                        <font>IconSmall</font>
+                        <label>$VAR[Icon-Play]</label>
                     </control>
                     <control type="label">
                         <left>840</left>
                         <top>-6</top>
                         <width>30</width>
                         <height>70</height>
-                        <font>IconSmall</font>
-                        <label>j</label>
+                        <font>IconNormal</font>
+                        <label>$VAR[Icon-Video]</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="label">
@@ -122,16 +122,16 @@
                         <top>-1</top>
                         <width>35</width>
                         <height>60</height>
-                        <font>IconTiny</font>
-                        <label>I</label>
+                        <font>IconSmall</font>
+                        <label>$VAR[Icon-Play]</label>
                     </control>
                     <control type="label">
                         <left>840</left>
                         <top>-6</top>
                         <width>30</width>
                         <height>70</height>
-                        <font>IconSmall</font>
-                        <label>j</label>
+                        <font>IconNormal</font>
+                        <label>$VAR[Icon-Video]</label>
                         <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="label">

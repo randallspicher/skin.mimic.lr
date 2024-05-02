@@ -73,12 +73,12 @@
                 <top>206</top>
                 <width>64</width>
                 <height>64</height>
-                <label>I</label>
+                <label>$VAR[Icon-Play]</label>
                 <textoffsetx>0</textoffsetx>
                 <align>center</align>
                 <onleft>3013</onleft>
                 <onright>3013</onright>
-                <font>IconMedium</font>
+                <font>IconNormal</font>
             </control>
             <control type="button" id="3013">
                 <description>Cancel</description>
@@ -86,14 +86,14 @@
                 <top>206</top>
                 <width>64</width>
                 <height>64</height>
-                <label>J</label>
+                <label>$VAR[Icon-Stop]</label>
                 <align>center</align>
                 <aligny>top</aligny>
                 <textoffsetx>0</textoffsetx>
                 <textoffsety>11</textoffsety>
                 <onleft>3012</onleft>
                 <onright>3012</onright>
-                <font>IconMedium</font>
+                <font>IconNormal</font>
             </control>
         </control>
     </controls>

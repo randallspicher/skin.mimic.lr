@@ -84,9 +84,9 @@
                             <width>942</width>
                             <height>60</height>
                             <align>right</align>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>15</textoffsetx>
-                            <label>A</label>
+                            <label>$VAR[Icon-Checkmark]</label>
                             <visible>ListItem.IsSelected</visible>
                         </control>
                     </itemlayout>
@@ -111,9 +111,9 @@
                             <width>942</width>
                             <height>60</height>
                             <align>right</align>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>15</textoffsetx>
-                            <label>A</label>
+                            <label>$VAR[Icon-Checkmark]</label>
                             <visible>ListItem.IsSelected</visible>
                         </control>
                     </focusedlayout>
@@ -200,9 +200,9 @@
                             <width>822</width>
                             <height>120</height>
                             <align>right</align>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>20</textoffsetx>
-                            <label>A</label>
+                            <label>$VAR[Icon-Checkmark]</label>
                             <visible>ListItem.IsSelected</visible>
                         </control>
                     </itemlayout>
@@ -274,9 +274,9 @@
                             <width>822</width>
                             <height>120</height>
                             <align>right</align>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>20</textoffsetx>
-                            <label>A</label>
+                            <label>$VAR[Icon-Checkmark]</label>
                             <visible>ListItem.IsSelected</visible>
                         </control>
                     </focusedlayout>

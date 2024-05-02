@@ -204,8 +204,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
@@ -213,8 +213,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -303,8 +303,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
@@ -312,8 +312,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<top>3</top>
@@ -398,8 +398,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
@@ -407,8 +407,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -494,8 +494,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
@@ -503,8 +503,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<top>3</top>
@@ -552,16 +552,16 @@
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<left>20</left>
@@ -602,16 +602,16 @@
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<left>20</left>
@@ -649,16 +649,16 @@
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<left>20</left>
@@ -699,16 +699,16 @@
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<left>20</left>
@@ -782,8 +782,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
@@ -791,8 +791,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<left>135</left>
@@ -870,8 +870,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
@@ -879,8 +879,8 @@
 							<top>5</top>
 							<width>35</width>
 							<height>70</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<top>3</top>
@@ -920,16 +920,16 @@
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<left>20</left>
@@ -962,16 +962,16 @@
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>I</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Play]</label>
 						</control>
 						<control type="label">
 							<visible>ListItem.IsPlaying + Player.Paused</visible>
 							<left>20</left>
 							<width>35</width>
 							<height>60</height>
-							<font>IconTiny</font>
-							<label>K</label>
+							<font>IconSmall</font>
+							<label>$VAR[Icon-Pause]</label>
 						</control>
 						<control type="label">
 							<left>20</left>

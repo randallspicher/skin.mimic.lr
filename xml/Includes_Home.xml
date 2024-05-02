@@ -60,8 +60,8 @@
                     <left>1885</left>
                     <width>40</width>
                     <height>40</height>
-                    <label>y</label>
-                    <font>IconTiny</font>
+                    <label>$VAR[Icon-RSS]</label>
+                    <font>IconSmall</font>
                     <textcolor>NormalTextColor</textcolor>
                 </control>
                 <control type="rss">

@@ -102,9 +102,9 @@
                             <top>50</top>
                             <width>120</width>
                             <height>30</height>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>15</textoffsetx>
-                            <label>u</label>
+                            <label>$VAR[Icon-Timer]</label>
                             <visible>ListItem.HasTimer</visible>
                         </control>
                         <control type="label">
@@ -112,9 +112,9 @@
                             <top>50</top>
                             <width>120</width>
                             <height>30</height>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>15</textoffsetx>
-                            <label>j</label>
+                            <label>$VAR[Icon-Video]</label>
                             <visible>ListItem.IsRecording</visible>
                         </control>
                     </control>
@@ -141,9 +141,9 @@
                             <top>50</top>
                             <width>120</width>
                             <height>30</height>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>15</textoffsetx>
-                            <label>u</label>
+                            <label>$VAR[Icon-Timer]</label>
                             <visible>ListItem.HasTimer</visible>
                         </control>
                         <control type="label">
@@ -151,9 +151,9 @@
                             <top>50</top>
                             <width>120</width>
                             <height>30</height>
-                            <font>IconSmall</font>
+                            <font>IconNormal</font>
                             <textoffsetx>15</textoffsetx>
-                            <label>j</label>
+                            <label>$VAR[Icon-Video]</label>
                             <visible>ListItem.IsRecording</visible>
                         </control>
                     </control>

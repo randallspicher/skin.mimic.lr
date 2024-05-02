@@ -161,8 +161,8 @@
 					<width>30</width>
 					<height>30</height>
 					<align>center</align>
-					<label>s</label>
-					<font>IconTiny</font>
+					<label>$VAR[Icon-ScrollUp]</label>
+					<font>IconSmall</font>
 					<textcolor>DisabledColor</textcolor>
 				</control>
 				<control type="label">
@@ -171,8 +171,8 @@
 					<width>30</width>
 					<height>30</height>
 					<align>center</align>
-					<label>t</label>
-					<font>IconTiny</font>
+					<label>$VAR[Icon-ScrollDown]</label>
+					<font>IconSmall</font>
 					<textcolor>DisabledColor</textcolor>
 				</control>
 			</control>

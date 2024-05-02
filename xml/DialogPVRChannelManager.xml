@@ -72,9 +72,9 @@
                         <top>15</top>
                         <width>30</width>
                         <height>30</height>
-                        <font>IconTiny</font>
+                        <font>IconSmall</font>
                         <align>center</align>
-                        <label>T</label>
+                        <label>$VAR[Icon-Checkmark]</label>
                         <visible>ListItem.Property(Changed)</visible>
                     </control>
                 </itemlayout>
@@ -116,9 +116,9 @@
                         <top>15</top>
                         <width>30</width>
                         <height>30</height>
-                        <font>IconTiny</font>
+                        <font>IconSmall</font>
                         <align>center</align>
-                        <label>T</label>
+                        <label>$VAR[Icon-Checkmark]</label>
                         <visible>ListItem.Property(Changed)</visible>
                     </control>
                     <control type="label">

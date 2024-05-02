@@ -569,16 +569,16 @@
 						<left>17</left>
 						<width>60</width>
 						<height>67</height>
-						<font>IconTiny</font>
-						<label>I</label>
+						<font>IconSmall</font>
+						<label>$VAR[Icon-Play]</label>
 					</control>
 					<control type="label">
 						<visible>ListItem.IsPlaying + Player.Paused</visible>
 						<left>17</left>
 						<width>60</width>
 						<height>67</height>
-						<font>IconTiny</font>
-						<label>K</label>
+						<font>IconSmall</font>
+						<label>$VAR[Icon-Pause]</label>
 					</control>
 					<control type="label">
 						<left>65</left>
@@ -622,16 +622,16 @@
 						<left>17</left>
 						<width>60</width>
 						<height>67</height>
-						<font>IconTiny</font>
-						<label>I</label>
+						<font>IconSmall</font>
+						<label>$VAR[Icon-Play]</label>
 					</control>
 					<control type="label">
 						<visible>ListItem.IsPlaying + Player.Paused</visible>
 						<left>17</left>
 						<width>60</width>
 						<height>67</height>
-						<font>IconTiny</font>
-						<label>K</label>
+						<font>IconSmall</font>
+						<label>$VAR[Icon-Pause]</label>
 					</control>
 					<control type="label">
 						<left>65</left>

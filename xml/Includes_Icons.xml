@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<!-- playback controls -->
+
+	<variable name="IconSet">
+		<value>default</value>
+	</variable>
+
+	<variable name="Icon-Circle">
+		<value>&#xF189;</value>
+	</variable>
+
+	<!-- Video Options -->
+
+	<variable name="Icon-Video">
+		<!-- j -->
+		<value>&#xF19C;</value><!-- old timey camera -->
+		<value>&#xF17F;</value><!-- round filme reel -->
+		<value>&#xF7C5;</value><!--Flat rectangular camera  -->
+		<value>&#xF7C3;</value><!-- Square camera -->
+		<value>&#xF7C4;</value><!-- Circle camera -->
+	</variable>
+	<variable name="Icon-VideoMenu">
+		<value>&#xF3ED;</value>
+		<value>&#xF5E1;</value>
+	</variable>
+
+	<variable name="Icon-Subtitles">
+		<value>&#xF130;</value><!-- bubble with lines -->
+		<value>&#xF7C6;</value><!-- CC -->
+		<value>&#xF1FC;</value><!-- circle with CC -->
+		<value>&#xF697;</value><!-- square with bubble -->
+	</variable>
+
+	<variable name="Icon-Audio">
+		<value>&#xF372;</value><!-- Old Fashioned Tower Speaker-->
+		<value>&#xF180;</value>
+		<value>&#xF609;</value><!-- Large round Spaker -->
+	</variable>
+	<variable name="Icon-AudioPassThrough">
+		<value>&#xF605;</value><!-- AV equipment -->
+	</variable>
+	<variable name="Icon-AudioHigh">
+		<value>&#xF0E2;</value>
+	</variable>
+	<variable name="Icon-AudioMedium">
+		<value>&#xF0E3;</value>
+	</variable>
+	<variable name="Icon-AudioLow">
+		<value>&#xF7E2;</value><!-- speaker with L -->
+		<value>&#xF0E5;</value><!-- speaker with slash -->
+	</variable>
+	<variable name="Icon-AudioMute">
+		<value>&#xF0E4;</value>
+	</variable>
+
+	<variable name="VolumeIconVar">
+		<value condition="Integer.IsGreater(Control.GetLabel(29999),66)">$VAR[Icon-AudioHigh]</value>
+		<value condition="Integer.IsGreater(Control.GetLabel(29999),33)">$VAR[Icon-AudioLow]</value>
+		<value condition="player.passthrough">$VAR[Icon-AudioPassThrough]</value>
+		<value condition="Player.Muted">$VAR[Icon-AudioMute]</value>
+		<value>$VAR[Icon-AudioLow]</value>
+	</variable>
+
+
+
+
+	<!-- Navigation -->
+	<variable name="Icon-Back">
+		<value>&#xF31E;</value><!-- sharp left -->
+	</variable>
+	<variable name="Icon-ScrollUp">
+		<value>&#xF31C;</value>
+	</variable>
+	<variable name="Icon-ScrollDown">
+		<value>&#xF31D;</value>
+	</variable>
+	<variable name="Icon-ScrollLeft">
+		<value>&#xF31A;</value>
+	</variable>
+	<variable name="Icon-ScrollRight">
+		<value>&#xF31B;</value>
+	</variable>
+	<variable name="Icon-NextChannel">
+		<value>&#xF48B;</value><!-- chevron down -->
+		<value>&#xF476;</value><!-- filled circle plus -->
+		<value>&#x002B;</value><!-- simple plus -->
+	</variable>
+	<variable name="Icon-PreviousChannel">
+		<value>&#xF48A;</value><!-- chevron up  -->
+		<value>&#xF477;</value><!-- filled circle minus -->
+		<value>&#x2212;</value><!-- simple minus -->
+	</variable>
+
+	<!-- Others -->
+
+	<variable name="Icon-ColorManagement">
+		<value>&#xF1B9;</value>
+	</variable>
+
+	<variable name="Icon-Lyrics">
+		<value>&#xF4F6;</value><!--  microphone -->
+		<value>&#xF69C;</value><!-- -square with microphone -->
+	</variable>
+	<variable name="Icon-Visualization">
+		<value>&#xF2B5;</value><!-- Fancy Eye -->
+		<value>&#xF280;</value><!-- simple Eye -->
+		<value>&#xF618;</value><!-- squeezed rectangle screen -->
+		<value>&#xF619;</value><!-- rounded screen -->
+	</variable>
+	<variable name="Icon-VisSettings">
+		<value>&#xF4D5;</value><!-- sliders -->
+		<value>&#xF008;</value><!-- Square with sliders -->
+	</variable>
+	<variable name="Icon-VisPresets">
+		<value>&#xF2DD;</value><!-- wierd thingy -->
+		<value>&#xF644;</value><!-- square with wierd thingy -->
+	</variable>
+
+	<variable name="Icon-Info">
+		<value>&#xF315;</value><!-- filled circle with i --> -->
+		<value>&#xF766;</value><!-- Open Circle with ! -->
+		<value>&#xF04A;</value><!-- Filed Circle with ! -->
+	</variable>
+	<variable name="Icon-Guide">
+		<value>&#xF0C3;</value>
+	</variable>
+	<variable name="Icon-3DMode">
+		<value>&#xF39D;</value><!-- polarized glasses -->
+		<value>&#xF294;</value><!-- filled glasses -->
+	</variable>
+	<variable name="Icon-Maximize">
+		<value>&#xF1E0;</value><!-- picture with expandish corners -->
+	</variable>
+	<variable name="Icon-Minimize">
+		<value>&#xF1ED;</value><!-- square with expandish corners -->
+	</variable>
+	<variable name="Icon-Timer">
+		<value>&#xF219;</value>
+	</variable>
+
+	<variable name="Icon-Bookmark">
+		<value>&#xF5D9;</value><!-- diagnal boomkark -->
+		<value>&#xF699;</value><!-- Square with bookmark -->
+	</variable>
+
+	<variable name="Icon-Unwatched">
+		<value>&#xF52B;</value><!-- Empty Moon --> 
+		<value>&#xF7A1;</value><!-- Empty Sun --> 
+	</variable>
+	<variable name="Icon-InProgress">
+		<value>&#xF531;</value><!-- Half Filled Moon --> 
+		<value>&#xF7A2;</value><!-- Half Filled Sun --> 
+		<value>&#xF848;</value><!-- half circle solid on right -->
+	</variable>
+	<variable name="Icon-Watched">
+		<value>&#xF479;</value><!-- Solid circle with check -->
+		<value>&#xF7A3;</value><!-- Fully Filled Sun --> 
+		<value>&#xF479;</value><!-- Solid circle with check -->
+		<value>&#xF52F;</value><!-- Filled Moon --> 
+		<value>&#xF471;</value><!-- Open circle with check -->
+		<value>&#xF498;</value><!-- Open square with check -->
+	</variable>
+
+	<variable name="Icon-WatchedBG">
+			<value>&#xF52F;</value><!-- Filled Moon --> 
+	</variable>
+
+	<variable name="Icon-WatchedStatus">
+		<value condition="!Skin.HasSetting(Disable.ResumableOverlay) + ListItem.IsResumable">$VAR[Icon-InProgress]</value>
+		<value condition="Skin.HasSetting(Enable.UnwatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) | Integer.IsEqual(ListItem.PlayCount,0)]">$VAR[Icon-Unwatched]</value>
+		<value condition="!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]">$VAR[Icon-Watched]</value>
+	</variable>
+
+<!-- 	<variable name="OverlayBGVar"> -->
+<!-- 		<value condition="!Skin.HasSetting(Disable.ResumableOverlay) + ListItem.IsResumable">overlays/overlaybg.png</value> -->
+<!-- 		<value condition="Skin.HasSetting(Enable.UnwatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) | Integer.IsEqual(ListItem.PlayCount,0)]">overlays/overlaybg.png</value> -->
+<!-- 		<value condition="!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]">overlays/overlaybg.png</value> -->
+<!-- 	</variable> -->
+	<variable name="OverlayListVar">
+		<value condition="ListItem.IsResumable">$VAR[Icon-InProgress]</value>
+		<value condition="String.IsEqual(ListItem.Overlay,OverlayUnwatched.png)">$VAR[Icon-Unwatched]</value>
+		<value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)">$VAR[Icon-Watched]</value>
+	</variable>
+
+
+
+	<variable name="Icon-TempoUp">
+		<value>&#x7D6;</value><!-- Curcle with up arrow-->
+		<value>&#x571;</value><!-- Square with Plus -->
+	</variable>
+	<variable name="Icon-TempoDown">
+		<value>&#x7D6;</value><!-- Curcle with down arrow-->
+		<value>&#x572;</value><!-- Square with Minus -->
+	</variable>
+	<variable name="Icon-Close">
+		<value>&#xF311;</value><!-- open square with x -->
+		<value>&#xF2BE;</value><!-- filled circle with x -->
+	</variable>
+	<variable name="Icon-RSS">
+		<value>&#xF17B;</value><!-- Plain -->
+		<value>&#xF520;</value><!-- Circular -->
+	</variable>
+
+	<variable name="Icon-Checkmark">
+		<value>&#x2713;</value>
+	</variable>
+	<variable name="Icon-Settings">
+		<value>&#xF307;</value><!--multiple gears -->
+		<value>&#xF69B;</value><!--square with gear -->
+		<value>&#xF681;</value><!--circle with screwdriver -->
+	</variable>
+	<variable name="Icon-Screen">
+		<value>&#xF1A0;</value>
+		<value>&#xF0FB;</value>
+	</variable>
+	<variable name="Icon-Menu">
+		<value>&#xF0A5;</value>
+	</variable>
+	<variable name="Icon-List">
+		<value>&#xF113;</value>
+		<value>&#xF024;</value><!-- square with list -->
+	</variable>
+
+	<variable name="Icon-SetRating">
+		<value>&#xF492;</value><!-- outlined star -->
+		<value>&#xF143;</value><!-- solid star -->
+		<value>&#xF696;</value><!-- solid square with star -->
+	</variable>
+
+
+
+
+	<variable name="Icon-Play">
+		<value>&#xF184;</value><!-- plain -->
+		<value>&#xF4F9;</value><!-- solid square -->
+		<value>&#xF55B;</value><!-- solid circle -->
+	</variable>
+	<variable name="Icon-Pause">
+		<value>&#xF186;</value><!-- plain -->
+		<value>&#xF4FB;</value><!-- solid square -->
+		<value>&#xF55D;</value><!-- solid circle -->
+	</variable>
+	<variable name="Icon-Stop">
+		<value>&#xF185;</value><!-- plain -->
+		<value>&#xF4FA;</value><!-- solid square -->
+		<value>&#xF55C;</value><!-- solid circle -->
+	</variable>
+	<variable name="Icon-Record">
+		<value>&#xF0CC;</value><!-- plain -->
+		<value>&#xF4FC;</value><!-- solid square -->
+		<value>&#xF55E;</value><!-- solid circle -->
+	</variable>
+	<variable name="Icon-FastForward">
+		<value>&#xF182;</value><!-- plain -->
+		<value>&#xF4FD;</value><!-- solid square -->
+		<value>&#xF55F;</value><!-- solid circle -->
+	</variable>
+	<variable name="Icon-Rewind">
+		<value>&#xF183;</value><!-- plain -->
+		<value>&#xF4FE;</value><!-- solid square -->
+		<value>&#xF560;</value><!-- solid circle -->
+	</variable>
+	<variable name="Icon-PreviousTrack">
+		<value>&#xF18B;</value><!-- plain >|-->
+		<value>&#xF4FF;</value><!-- solid square |>-->
+		<value>&#xF561;</value><!-- solid circle |>-->
+	</variable>
+	<variable name="Icon-NextTrack">
+		<value>&#xF18A;</value><!-- plain >|-->
+		<value>&#xF4FF;</value><!-- solid square |> -->
+		<value>&#xF561;</value><!-- solid circle |> -->
+	</variable>
+	<variable name="Icon-StepForward">
+		<value>&#xF197;</value><!-- plain |>-->
+	</variable>
+	<variable name="Icon-StepBack">
+		<value>&#xF198;</value><!-- plain |>-->
+	</variable>
+	<variable name="Icon-Eject">
+		<value>&#xF199;</value><!-- plain -->
+	</variable>
+
+
+
+	<!-- PLAYMODES : -->
+
+	<variable name="PlayModeIcon-RepeatAll">
+		<value>&#xF187;</value><!-- squarish -->
+		<value>&#xF48C;</value><!-- ovalish -->
+		<value>&#xF486;</value><!-- very square -->
+	</variable>
+	<variable name="PlayModeIcon-RepeatOne">
+		<value>&#xF196;</value>
+	</variable>
+	<variable name="PlayModeIcon-PlayOnce">
+		<value>&#xF63E;</value>
+		<value>&#xF68D;</value>
+	</variable>
+	<variable name="PlayModeIcon-Shuffle">
+		<value>&#xF188;</value>
+	</variable>
+	<variable name="PlayModeIcon-InOrder">
+		<value>&#xF63F;</value>
+	</variable>
+
+	<!-- <usealttexture>Playlist.IsRandom</usealttexture> -->
+	<variable name="ShuffleButtonVar">
+		<value condition="!Playlist.IsRandom">$VAR[PlayModeIcon-InOrder]</value>
+		<value condition="Playlist.IsRandom">$VAR[PlayModeIcon-Shuffle]</value>
+	</variable>
+
+	<variable name="RepeatButtonVar">
+		<value condition="!Playlist.IsRepeat + !Playlist.IsRepeatOne">$VAR[PlayModeIcon-PlayOnce]</value>
+		<value condition="Playlist.IsRepeatOne">$VAR[PlayModeIcon-RepeatOne]</value>
+		<value condition="Playlist.IsRepeat">$VAR[PlayModeIcon-RepeatAll]</value>
+	</variable>
+
+
+
+</includes>
+
+

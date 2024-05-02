@@ -69,21 +69,6 @@
 		<value condition="String.IsEqual(Skin.String(musicvis.background),albumwall)">$LOCALIZE[31068]</value>
 		<value>$LOCALIZE[231]</value>
 	</variable>
-	<variable name="OverlayBGVar">
-		<value condition="!Skin.HasSetting(Disable.ResumableOverlay) + ListItem.IsResumable">overlays/overlaybg.png</value>
-		<value condition="Skin.HasSetting(Enable.UnwatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) | Integer.IsEqual(ListItem.PlayCount,0)]">overlays/overlaybg.png</value>
-		<value condition="!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]">overlays/overlaybg.png</value>
-	</variable>
-	<variable name="OverlayIconVar">
-		<value condition="!Skin.HasSetting(Disable.ResumableOverlay) + ListItem.IsResumable">S</value>
-		<value condition="Skin.HasSetting(Enable.UnwatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayUnwatched.png) | Integer.IsEqual(ListItem.PlayCount,0)]">R</value>
-		<value condition="!Skin.HasSetting(Disable.WatchedOverlay) + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]">T</value>
-	</variable>
-	<variable name="OverlayListVar">
-		<value condition="ListItem.IsResumable">S</value>
-		<value condition="String.IsEqual(ListItem.Overlay,OverlayUnwatched.png)">R</value>
-		<value condition="String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)">T</value>
-	</variable>
 	<variable name="BreadcrumbsInfoVar">
 		<value condition="String.IsEqual(ListItem.DBTYPE,episode)">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title]</value>
 		<value condition="String.IsEqual(ListItem.DBTYPE,artist) + !String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]</value>
@@ -126,11 +111,6 @@
 	</variable>
 	<variable name="MediaFlagHeight">
 		<value>50</value>
-	</variable>
-	<variable name="MusicOSDRepeatButtonVar">
-		<value condition="!Playlist.IsRepeat + !Playlist.IsRepeatOne">O</value>
-		<value condition="Playlist.IsRepeatOne">p</value>
-		<value condition="Playlist.IsRepeat">L</value>
 	</variable>
 	<!-- List Label Vars -->
 	<variable name="ListMainLabelVar">
@@ -1215,13 +1195,6 @@
 		<value condition="Skin.HasSetting(Enable.HorizontalMenu)">Horizontal</value>
 		<value>Vertical</value>
 	</variable>
-	<variable name="VolumeIconVar">
-		<value condition="Integer.IsGreater(Control.GetLabel(29999),66)">k</value>
-		<value condition="Integer.IsGreater(Control.GetLabel(29999),33)">l</value>
-		<value condition="player.passthrough">w</value>
-		<value condition="Player.Muted">m</value>
-		<value>v</value>
-	</variable>
 	<variable name="InfoWallSubLabelVar">
 		<value condition="!String.IsEmpty(ListItem.Genre)">$INFO[ListItem.Genre]</value>
 		<value>$INFO[ListItem.Label2]</value>
@@ -1735,6 +1708,6 @@
 		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
 		<value>$VAR[ArtFanart]</value>
 	</variable>
-
+	
 
 </includes>

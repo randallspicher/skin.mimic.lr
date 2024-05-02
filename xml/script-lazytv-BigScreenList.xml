@@ -86,19 +86,8 @@
                                     <width>56</width>
                                     <height>56</height>
                                     <align>center</align>
-                                    <font>IconPlayer</font>
-                                    <label>T</label>
-                                </control>
-                                <control type="label">
-                                    <top>1</top>
-                                    <left>1</left>
-                                    <width>56</width>
-                                    <height>56</height>
-                                    <align>center</align>
-                                    <font>IconSuperTiny</font>
-                                    <textcolor>NormalTextColor</textcolor>
-                                    <selectedcolor>SelectedColor</selectedcolor>
-                                    <label>A</label>
+                                    <font>IconSmall</font>
+                                    <label>$VAR[Icon-Checkmark]</label>
                                 </control>
                             </control>
                         </control>
@@ -156,19 +145,8 @@
                                     <width>56</width>
                                     <height>56</height>
                                     <align>center</align>
-                                    <font>IconPlayer</font>
-                                    <label>T</label>
-                                </control>
-                                <control type="label">
-                                    <top>1</top>
-                                    <left>1</left>
-                                    <width>56</width>
-                                    <height>56</height>
-                                    <align>center</align>
-                                    <font>IconSuperTiny</font>
-                                    <textcolor>NormalTextColor</textcolor>
-                                    <selectedcolor>SelectedColor</selectedcolor>
-                                    <label>A</label>
+                                    <font>IconSmall</font>
+                                    <label>$VAR[Icon-Checkmark]</label>
                                 </control>
                             </control>
                         </control>
