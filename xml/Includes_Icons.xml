@@ -34,8 +34,9 @@
 	</variable>
 
 	<variable name="Icon-Audio">
+		<value>&#xF0E2;</value><!-- speaker  -->
+		<value>&#xF180;</value><!-- heaphones -->
 		<value>&#xF372;</value><!-- Old Fashioned Tower Speaker-->
-		<value>&#xF180;</value>
 		<value>&#xF609;</value><!-- Large round Spaker -->
 	</variable>
 	<variable name="Icon-AudioPassThrough">
@@ -83,14 +84,14 @@
 		<value>&#xF31B;</value>
 	</variable>
 	<variable name="Icon-NextChannel">
+		<value>&#x2212;</value><!-- simple minus -->
 		<value>&#xF48B;</value><!-- chevron down -->
 		<value>&#xF476;</value><!-- filled circle plus -->
-		<value>&#x002B;</value><!-- simple plus -->
 	</variable>
 	<variable name="Icon-PreviousChannel">
+		<value>&#x002B;</value><!-- simple plus -->
 		<value>&#xF48A;</value><!-- chevron up  -->
 		<value>&#xF477;</value><!-- filled circle minus -->
-		<value>&#x2212;</value><!-- simple minus -->
 	</variable>
 
 	<!-- Others -->
@@ -136,6 +137,11 @@
 	<variable name="Icon-Minimize">
 		<value>&#xF1ED;</value><!-- square with expandish corners -->
 	</variable>
+
+	<variable name="Icon-Display">
+		<value>&#xF1E0;</value><!-- picture with expandish corners -->
+	</variable>
+
 	<variable name="Icon-Timer">
 		<value>&#xF219;</value>
 	</variable>
@@ -150,9 +156,10 @@
 		<value>&#xF7A1;</value><!-- Empty Sun --> 
 	</variable>
 	<variable name="Icon-InProgress">
+		<value>&#xF52D;</value><!-- half circle solid on right -->
+		<value>&#xF484;</value><!-- half circle solid on right (thicker)-->
 		<value>&#xF531;</value><!-- Half Filled Moon --> 
 		<value>&#xF7A2;</value><!-- Half Filled Sun --> 
-		<value>&#xF848;</value><!-- half circle solid on right -->
 	</variable>
 	<variable name="Icon-Watched">
 		<value>&#xF479;</value><!-- Solid circle with check -->

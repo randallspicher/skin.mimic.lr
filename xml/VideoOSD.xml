@@ -39,9 +39,11 @@
 				<height>144</height>
 				<width>FullscreenWidth</width>
 				<align>center</align>
-				<itemgap>0</itemgap>
-				<scrolltime tween="sine">200</scrolltime>
-				<orientation>horizontal</orientation>
+
+                <itemgap>15</itemgap>
+                <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
+				
 				<onup>700</onup>
 				<ondown condition="!Control.HasFocus(717)">719</ondown>
 				<ondown condition="Control.HasFocus(717)">12000</ondown>
@@ -52,7 +54,7 @@
 					<visible>Skin.HasSetting(Enable.TouchScreen)</visible>
                     <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
                     <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-                    <width>100</width>
+                    <width>64</width>
                     <height>64</height>
                     <label>$VAR[Icon-Back]</label>
                     <align>center</align>
@@ -60,41 +62,23 @@
                     <onclick>Action(Close,fullscreenvideo)</onclick>
                 </control>
 
-				<control type="button" id="700">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-Audio]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>ActivateWindow(osdaudiosettings)</onclick>
-				</control>
-				<control type="button" id="701">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-Video]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>ActivateWindow(osdvideosettings)</onclick>
-				</control>
-				<control type="button" id="720">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-ColorManagement]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>ActivateWindow(osdcmssettings)</onclick>
-					<visible>System.HasCMS</visible>
-				</control>
+                <control type="button" id="700">
+                    <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+                    <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+                    <width>64</width>
+                    <height>64</height>
+                    <label>$VAR[Icon-List]</label>
+                    <align>center</align>
+                    <font>IconNormal</font>
+                    <onclick>Close</onclick>
+                    <onclick>ActivateWindow(videoplaylist)</onclick>
+                    <visible>!String.IsEmpty(VideoPlayer.position(1).Title)</visible>
+                </control>
+
 				<control type="button" id="702">
 					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
+					<width>64</width>
 					<height>64</height>
 					<label>$VAR[Icon-Bookmark]</label>
 					<align>center</align>
@@ -102,175 +86,26 @@
 					<onclick>ActivateWindow(videobookmarks)</onclick>
 					<visible>!VideoPlayer.Content(livetv)</visible>
 				</control>
-				<control type="button" id="703">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-PreviousChannel]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>PlayerControl(Previous)</onclick>
-					<visible>VideoPlayer.Content(livetv)</visible>
-				</control>
-				<control type="button" id="704">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-NextChannel]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>PlayerControl(Next)</onclick>
-					<visible>VideoPlayer.Content(livetv)</visible>
-				</control>
-				<control type="button" id="705">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-PreviousTrack]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>PlayerControl(Previous)</onclick>
-					<visible>!VideoPlayer.Content(livetv)</visible>
-				</control>
-				<control type="button" id="706">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-Rewind]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>PlayerControl(Rewind)</onclick>
-					<visible>Player.SeekEnabled</visible>
-				</control>
-				<control type="togglebutton" id="707">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<alttexturefocus colordiffuse="FocusColor">osd/button_bg.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="22ffffff">osd/button_bg.png</alttexturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-Pause]</label>
-					<altlabel>$VAR[Icon-Play]</altlabel>
-					<align>center</align>
-					<font>IconNormal</font>
-					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
-					<onclick>PlayerControl(Play)</onclick>
-					<visible>Player.PauseEnabled</visible>
-				</control>
-				<control type="button" id="708">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-Stop]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>PlayerControl(Stop)</onclick>
-				</control>
-				<control type="button" id="709">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-FastForward]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>PlayerControl(Forward)</onclick>
-					<visible>Player.SeekEnabled</visible>
-				</control>
-				<control type="button" id="710">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-NextTrack]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>PlayerControl(Next)</onclick>
-					<visible>!VideoPlayer.Content(livetv)</visible>
-				</control>
-				<control type="button" id="711">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-TempoDown]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>PlayerControl(tempodown)</onclick>
-					<visible>Player.TempoEnabled</visible>
-				</control>
-				<control type="button" id="712">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
-					<height>64</height>
-					<label>$VAR[Icon-TempoUp]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>PlayerControl(tempoup)</onclick>
-					<visible>Player.TempoEnabled</visible>
-				</control>
 				<control type="button" id="713">
 					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
 					<label>$VAR[Icon-VideoMenu]</label>
 					<align>center</align>
-					<width>100</width>
+					<width>64</width>
 					<height>64</height>
 					<font>IconNormal</font>
 					<onclick>PlayerControl(ShowVideoMenu)</onclick>
 					<visible>VideoPlayer.HasMenu + !VideoPlayer.Content(livetv)</visible>
 				</control>
-				<control type="button" id="714">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<label>$VAR[Icon-3DMode]</label>
-					<align>center</align>
-					<width>100</width>
-					<height>64</height>
-					<font>IconNormal</font>
-					<onclick>StereoMode</onclick>
-					<visible>VideoPlayer.IsStereoscopic</visible>
-				</control>
-				<control type="button" id="10">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<label>$VAR[Icon-Recording]</label>
-					<align>center</align>
-					<width>100</width>
-					<height>64</height>
-					<font>IconNormal</font>
-					<onclick>PVR.ToggleRecordPlayingChannel</onclick>
-					<enable>Pvr.CanRecordPlayingChannel</enable>
-					<usealttexture>Pvr.IsRecordingPlayingChannel</usealttexture>
-					<visible>VideoPlayer.Content(livetv) + !Pvr.IsRecordingPlayingChannel</visible>
-				</control>
-				<control type="button" id="910">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<label>$VAR[Icon-Recording]</label>
- 					<textcolor>red</textcolor>
-					<align>center</align>
-					<width>100</width>
-					<height>64</height>
-					<font>IconNormal</font>
-					<animation effect="fade" start="100" end="0" delay="650" time="350" loop="true" condition="true">conditional</animation>
-					<onclick>PVR.ToggleRecordPlayingChannel</onclick>
-					<enable>Pvr.CanRecordPlayingChannel</enable>
-					<usealttexture>Pvr.IsRecordingPlayingChannel</usealttexture>
-					<visible>VideoPlayer.Content(livetv) + Pvr.IsRecordingPlayingChannel</visible>
-				</control>
+
 				<control type="button" id="715">
+					<!-- SPACER HERE -->
+					<left>40</left>
 					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
 					<label>$VAR[Icon-Screen]</label>
 					<align>center</align>
-					<width>100</width>
+					<width>64</width>
 					<height>64</height>
 					<font>IconNormal</font>
 					<onclick>ActivateWindow(PVROSDChannels)</onclick>
@@ -282,17 +117,188 @@
 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
 					<label>$VAR[Icon-Guide]</label>
 					<align>center</align>
-					<width>100</width>
+					<width>64</width>
 					<height>64</height>
 					<font>IconNormal</font>
 					<onclick>Close</onclick>
 					<onclick>ActivateWindow(tvguide,,return)</onclick>
 					<visible>VideoPlayer.Content(livetv)</visible>
 				</control>
+
+				<control type="button" id="704">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-NextChannel]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>ChannelDown</onclick>
+					<visible>VideoPlayer.Content(livetv)</visible>
+				</control>
+
+				<control type="button" id="703">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-PreviousChannel]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>ChannelUp</onclick>
+					<visible>VideoPlayer.Content(livetv)</visible>
+				</control>
+
+
+
+
+				<control type="button" id="705">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-PreviousTrack]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>PlayerControl(Previous)</onclick>
+					<visible>!VideoPlayer.Content(livetv)</visible>
+				</control>
+
+
+				<control type="button" id="706">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-Rewind]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>PlayerControl(Rewind)</onclick>
+					<visible>Player.SeekEnabled</visible>
+				</control>
+
+
+				<control type="button" id="708">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-Stop]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>PlayerControl(Stop)</onclick>
+				</control>
+				<control type="togglebutton" id="707">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<alttexturefocus colordiffuse="FocusColor">osd/button_bg.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="22ffffff">osd/button_bg.png</alttexturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-Pause]</label>
+					<altlabel>$VAR[Icon-Play]</altlabel>
+					<align>center</align>
+					<font>IconNormal</font>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+					<onclick>PlayerControl(Play)</onclick>
+					<visible>Player.PauseEnabled</visible>
+				</control>
+				<control type="button" id="709">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-FastForward]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>PlayerControl(Forward)</onclick>
+					<visible>Player.SeekEnabled</visible>
+				</control>
+				<control type="button" id="710">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-NextTrack]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>PlayerControl(Next)</onclick>
+					<visible>!VideoPlayer.Content(livetv)</visible>
+				</control>
+
+
+				<control type="button" id="10">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<label>$VAR[Icon-Record]</label>
+					<align>center</align>
+					<width>64</width>
+					<height>64</height>
+					<font>IconNormal</font>
+					<onclick>PVR.ToggleRecordPlayingChannel</onclick>
+					<enable>Pvr.CanRecordPlayingChannel</enable>
+					<usealttexture>Pvr.IsRecordingPlayingChannel</usealttexture>
+					<visible>VideoPlayer.Content(livetv) + !Pvr.IsRecordingPlayingChannel</visible>
+				</control>
+				<control type="button" id="910">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<label>$VAR[Icon-Record]</label>
+ 					<textcolor>red</textcolor>
+					<align>center</align>
+					<width>64</width>
+					<height>64</height>
+					<font>IconNormal</font>
+					<animation effect="fade" start="100" end="0" delay="650" time="350" loop="true" condition="true">conditional</animation>
+					<onclick>PVR.ToggleRecordPlayingChannel</onclick>
+					<enable>Pvr.CanRecordPlayingChannel</enable>
+					<usealttexture>Pvr.IsRecordingPlayingChannel</usealttexture>
+					<visible>VideoPlayer.Content(livetv) + Pvr.IsRecordingPlayingChannel</visible>
+				</control>
+
+
+
+				<control type="button" id="711">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-TempoDown]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>PlayerControl(tempodown)</onclick>
+					<visible>Player.TempoEnabled</visible>
+				</control>
+				<control type="button" id="712">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-TempoUp]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>PlayerControl(tempoup)</onclick>
+					<visible>Player.TempoEnabled</visible>
+				</control>
+
+
+
+				<control type="button" id="700">
+					<!-- SPACER HERE -->
+					<left>40</left>
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-Audio]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>ActivateWindow(osdaudiosettings)</onclick>
+				</control>
 				<control type="button" id="717">
 					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>100</width>
+					<width>64</width>
 					<height>64</height>
 					<label>$VAR[Icon-Subtitles]</label>
 					<align>center</align>
@@ -304,18 +310,55 @@
 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
 					<label>P</label>
 					<align>center</align>
-					<width>100</width>
+					<width>64</width>
 					<height>64</height>
 					<font>IconNormal</font>
 					<onclick>ActivateWindow(Teletext)</onclick>
 					<visible>Pvr.HasTxt</visible>
 				</control>
+
+
+				<control type="button" id="701">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-Video]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>ActivateWindow(osdvideosettings)</onclick>
+				</control>
+				<control type="button" id="714">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<label>$VAR[Icon-3DMode]</label>
+					<align>center</align>
+					<width>64</width>
+					<height>64</height>
+					<font>IconNormal</font>
+					<onclick>StereoMode</onclick>
+					<visible>VideoPlayer.IsStereoscopic</visible>
+				</control>
+
+
+				<control type="button" id="720">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-ColorManagement]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>ActivateWindow(osdcmssettings)</onclick>
+					<visible>System.HasCMS</visible>
+				</control>
+
 				<control type="button" id="719">
 					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
 					<label>$VAR[Icon-Info]</label>
 					<align>center</align>
-					<width>100</width>
+					<width>64</width>
 					<height>64</height>
 					<font>IconNormal</font>
 					<onclick>Close</onclick>
@@ -326,70 +369,14 @@
 			<control type="label">
 				<top>30</top>
 				<left>1800</left>
-				<width>100</width>
+				<width>64</width>
 				<height>40</height>
 				<font>font16</font>
 				<label>$INFO[Player.Playspeed,,x]</label>
 				<visible>Player.IsTempo</visible>
 			</control>
-<!-- 			<control type="group" id="12000"> -->
-<!-- 				<left>1100</left> -->
-<!-- 				<top>130</top> -->
-<!-- 				<visible>Control.HasFocus(717) | ControlGroup(12000).HasFocus</visible> -->
-<!-- 				<animation effect="fade" time="100">WindowClose</animation> -->
-<!-- 				<animation effect="slide" time="0" end="50" condition="VideoPlayer.HasMenu">Conditional</animation> -->
-<!-- 				<animation effect="slide" time="0" end="50" condition="VideoPlayer.IsStereoscopic">Conditional</animation> -->
-<!-- 				<animation effect="slide" time="0" end="100" condition="Player.TempoEnabled">Conditional</animation> -->
-<!-- 				<control type="image"> -->
-<!-- 					<left>-16</left> -->
-<!-- 					<top>-16</top> -->
-<!-- 					<width>542</width> -->
-<!-- 					<height>312</height> -->
-<!-- 					<texture border="16">dialog_context.png</texture> -->
-<!-- 					<colordiffuse>dialog</colordiffuse> -->
-<!-- 				</control> -->
-<!-- 				<control type="grouplist" id="12100"> -->
-<!-- 					<left>20</left> -->
-<!-- 					<top>20</top> -->
-<!-- 					<width>470</width> -->
-<!-- 					<height>260</height> -->
-<!-- 					<itemgap>0</itemgap> -->
-<!-- 					<onleft>717</onleft> -->
-<!-- 					<onright>717</onright> -->
-<!-- 					<onup>12100</onup> -->
-<!-- 					<ondown>12100</ondown> -->
-<!-- 					<orientation>vertical</orientation> -->
-<!-- 					<control type="radiobutton" id="12104"> -->
-<!-- 						<width>470</width> -->
-<!-- 						<label>$LOCALIZE[449]</label> -->
-<!-- 						<radioposx>350</radioposx> -->
-<!-- 						<onclick>ShowSubtitles</onclick> -->
-<!-- 						<selected>VideoPlayer.SubtitlesEnabled + VideoPlayer.HasSubtitles</selected> -->
-<!-- 						<enable>VideoPlayer.HasSubtitles</enable> -->
-<!-- 					</control> -->
-<!-- 					<control type="button" id="12101"> -->
-<!-- 						<description>Download with Subtitles script</description> -->
-<!-- 						<width>470</width> -->
-<!-- 						<label>33003</label> -->
-<!-- 						<onclick>Dialog.Close(VideoOSD)</onclick> -->
-<!-- 						<onclick>ActivateWindow(SubtitleSearch)</onclick> -->
-<!-- 						<enable>!VideoPlayer.Content(LiveTV)</enable> -->
-<!-- 					</control> -->
-<!-- 					<control type="button" id="12102"> -->
-<!-- 						<width>470</width> -->
-<!-- 						<label>$LOCALIZE[22006]</label> -->
-<!-- 						<onclick>SubtitleDelay</onclick> -->
-<!-- 						<enable>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</enable> -->
-<!-- 					</control> -->
-<!-- 					<control type="button" id="12103"> -->
-<!-- 						<width>470</width> -->
-<!-- 						<label>$LOCALIZE[21448]</label> -->
-<!-- 						<label2>[UPPERCASE]$INFO[VideoPlayer.SubtitlesLanguage][/UPPERCASE]</label2> -->
-<!-- 						<onclick>CycleSubtitle</onclick> -->
-<!-- 						<enable>VideoPlayer.HasSubtitles + VideoPlayer.SubtitlesEnabled</enable> -->
-<!-- 					</control> -->
-<!-- 				</control> -->
-<!-- 			</control> -->
+
+
 		</control>
 	</controls>
 </window>

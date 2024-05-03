@@ -5,17 +5,14 @@
 	<include name="BackButton">
 		<control type="button">
 			<visible>Skin.HasSetting(Enable.TouchScreen)</visible>
-			<width>85</width>
-<!-- 			<height>80</height> -->
-			<onclick>Back</onclick>
-<!-- 			<texturefocus colordiffuse="TitleTextColor">special://skin/extras/icons/back.png</texturefocus> -->
-<!-- 			<texturenofocus colordiffuse="TitleTextColor">special://skin/extras/icons/back.png</texturenofocus> -->
-			<aspectratio align="center" aligny="center">stretch</aspectratio>
-<!-- 			<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation> -->
-			<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-			<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
 			<align>center</align>
+			<width>72</width>
+			<height>64</height>
+			<onclick>Back</onclick>
+<!-- 			<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
+<!-- 			<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
 			<font>IconLarge</font>
+			<scroll>false</scroll>
 			<label>$VAR[Icon-Back]</label>
 		</control>
 	</include>
@@ -25,14 +22,14 @@
 			<description>Menu button</description>
 			<visible>Skin.HasSetting(Enable.TouchScreen)
 			+ ![Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible>
-			<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-			<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+<!-- 			<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
+<!-- 			<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
 			<label>$VAR[Icon-Menu]</label>
 			<align>center</align>
-			<width>85</width>
-<!-- 			<height>80</height> -->
+			<width>72</width>
+			<height>64</height>
 			<font>IconLarge</font>
-			<aspectratio align="center" aligny="center">keep</aspectratio>
+			<scroll>false</scroll>
 			<onclick>Menu</onclick>
 		</control>
 	</include>
@@ -44,14 +41,14 @@
 			<visible>Skin.HasSetting(Enable.TouchScreen)
 				+ [ Player.HasVideo | Player.HasAudio]
 			</visible>
-<!-- 			<aspectratio align="center" aligny="center">keep</aspectratio> -->
-			<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-			<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+<!-- 			<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
+<!-- 			<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
 			<label>$VAR[Icon-Maximize]</label>
 			<align>center</align>
-			<width>85</width>
-<!-- 			<height>80</height> -->
+			<width>64</width>
+			<height>64</height>
 			<font>IconLarge</font>
+			<scroll>false</scroll>
 			<onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
 			<onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
 		</control>

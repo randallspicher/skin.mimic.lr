@@ -842,8 +842,12 @@
 			<control type="label">
 				<description>circle background watched</description>
 				<visible>
-				!String.IsEmpty(ListItem.Overlay) +
- 				 !ListItem.IsResumable + [String.IsEqual(ListItem.Overlay,OverlayWatched.png) | Integer.IsGreater(ListItem.PlayCount,0)]] 
+				!String.IsEmpty(ListItem.Overlay) 
+				+ !ListItem.IsResumable 
+ 				+ [
+ 				     String.IsEqual(ListItem.Overlay,OverlayWatched.png) 
+ 				     | Integer.IsGreater(ListItem.PlayCount,0)
+ 				  ] 
 				</visible>
 				<font>IconNormal</font>
 				<textcolor>FocusColor</textcolor>
