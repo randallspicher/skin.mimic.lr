@@ -304,7 +304,8 @@
                     <height>64</height>
 					<font>IconNormal</font>
 					<onclick>Close</onclick>
-					<onclick>ActivateWindow(fullscreeninfo)</onclick>
+					<onclick>info</onclick>
+<!-- 					<onclick>ActivateWindow(fullscreeninfo)</onclick> -->
 <!-- 					<onclick>ActivateWindow(musicinformation)</onclick> -->
 <!-- 					<onclick>ActivateWindow(songinformation)</onclick> -->
 				</control>

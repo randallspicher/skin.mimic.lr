@@ -51,17 +51,6 @@
 				<onclick condition="String.IsEqual(Skin.String(musicvis.background),albumwall)">
 					Skin.SetString(musicvis.background,none)
 				</onclick>
-
-
-				<!-- <onclick>SetProperty(Dialog.1.Label,$LOCALIZE[231])</onclick> -->
-				<!-- <onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(musicvis.background,none))</onclick> -->
-				<!-- <onclick>SetProperty(Dialog.2.Label,$LOCALIZE[20445])</onclick> -->
-				<!-- <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(musicvis.background,fanart))</onclick> -->
-				<!-- <onclick condition="System.HasAddon(script.artistslideshow)">SetProperty(Dialog.3.Label,$INFO[System.AddonTitle(script.artistslideshow)])</onclick> -->
-				<!-- <onclick condition="System.HasAddon(script.artistslideshow)">SetProperty(Dialog.3.BuiltIn,Skin.SetString(musicvis.background,artistslideshow))</onclick> -->
-				<!-- <onclick>SetProperty(Dialog.4.Label,$LOCALIZE[31068])</onclick> -->
-				<!-- <onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(musicvis.background,albumwall))</onclick> -->
-				<!-- <onclick condition="System.HasAddon(script.toolbox)">RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31167])</onclick> -->
 			</control>
 			<control type="radiobutton" id="90205">
 				<width>1074</width>
@@ -95,16 +84,6 @@
 				<onclick condition="String.IsEmpty(Skin.String(musicvis.view)) | String.IsEqual(Skin.String(musicvis.view),StandardView)">Skin.SetString(musicvis.view,CoverView)</onclick>
 				<onclick condition="!String.IsEmpty(Skin.String(musicvis.view)) + String.IsEqual(Skin.String(musicvis.view),CoverView)">Skin.SetString(musicvis.view,CoverView2)</onclick>
 				<onclick condition="!String.IsEmpty(Skin.String(musicvis.view)) + String.IsEqual(Skin.String(musicvis.view),CoverView2)">Skin.SetString(musicvis.view,StandardView)</onclick>
-
-
-
-				<!-- <onclick>SetProperty(Dialog.1.Label,StandardView)</onclick> -->
-				<!-- <onclick>SetProperty(Dialog.1.BuiltIn,Skin.SetString(musicvis.view,StandardView))</onclick> -->
-				<!-- <onclick>SetProperty(Dialog.2.Label,CoverView)</onclick> -->
-				<!-- <onclick>SetProperty(Dialog.2.BuiltIn,Skin.SetString(musicvis.view,CoverView))</onclick> -->
-				<!-- <onclick>SetProperty(Dialog.3.Label,CoverView2)</onclick> -->
-				<!-- <onclick>SetProperty(Dialog.3.BuiltIn,Skin.SetString(musicvis.view,CoverView2))</onclick> -->
-				<!-- <onclick condition="System.HasAddon(script.toolbox)">RunScript(script.toolbox,info=selectdialog,header=Choose View)</onclick> -->
 			</control>
 
 			<control type="radiobutton" id="90203">
