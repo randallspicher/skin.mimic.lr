@@ -19,7 +19,8 @@
 
 	<include name="MenuButton">
 		<control type="button">
-			<description>Menu button</description>
+		<left>10</left>
+   			<description>Menu button</description>
 			<visible>Skin.HasSetting(Enable.TouchScreen)
 			+ ![Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible>
 <!-- 			<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
@@ -36,6 +37,7 @@
 
 	<include name="FullscreenButton">
 		<control type="button">
+		<left>10</left>
 			<description>fullscreen button</description>
 			<description>full-screen display button</description>
 			<visible>Skin.HasSetting(Enable.TouchScreen)
@@ -45,7 +47,7 @@
 <!-- 			<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
 			<label>$VAR[Icon-Maximize]</label>
 			<align>center</align>
-			<width>64</width>
+			<width>72</width>
 			<height>64</height>
 			<font>IconLarge</font>
 			<scroll>false</scroll>
@@ -110,6 +112,7 @@
 				<width>1200</width>
 				<height>60</height>
 				<orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
 				<itemgap>5</itemgap>
 
 				<include>BackButton</include>
@@ -137,6 +140,7 @@
 <!-- 				</control> -->
 
 				<control type="label">
+				    <left>10</left>
 					<width>auto</width>
 					<align>left</align>
 					<aligny>center</aligny>

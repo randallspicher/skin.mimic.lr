@@ -457,9 +457,9 @@ msgctxt "#31111"
 msgid "TheMovieDB Helper"
 msgstr ""
 
-#msgctxt "#31112"
-#msgid ""
-#msgstr ""
+msgctxt "#31112"
+msgid "Close"
+msgstr ""
 
 #msgctxt "#31113"
 #msgid ""

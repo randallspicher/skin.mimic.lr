@@ -129,6 +129,13 @@
             <onright>9000</onright>
             <onup>11</onup>
             <ondown>11</ondown>  
+            <control type="button" id="900">
+                <description>Close</description>
+                <width>379</width>
+                <label>31112</label>
+                <include>ButtonInfoDialogsCommonValues</include>
+                <onclick>Close</onclick>
+            </control>
             <control type="button" id="2">
                 <description>Create Bookmark button</description>
                 <label>294</label>

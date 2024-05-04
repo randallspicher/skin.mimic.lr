@@ -3,17 +3,18 @@
 	<defaultcontrol always="true">90200</defaultcontrol>
 	<coordinates>
 		<system>1</system>
-		<left>392</left>
-		<top>210</top>
+		<left>361</left>
+		<top>170</top>
 	</coordinates>
 	<include>Animation.Dialog</include>
 	<controls>
 		<include content="DialogBackgroundCommons">
-			<param name="DialogBackgroundWidth" value="1136" />
-			<param name="DialogBackgroundHeight" value="660" />
+			<param name="DialogBackgroundWidth" value="1198" />
+			<param name="DialogBackgroundHeight" value="740" />
 			<param name="DialogHeaderLabel" value="$LOCALIZE[31048]" />
 			<param name="DialogHeaderId" value="2" />
 		</include>
+
 		<control type="grouplist" id="90200">
 			<description>control area</description>
 			<left>32</left>
@@ -23,8 +24,9 @@
 			<itemgap>0</itemgap>
 			<pagecontrol>6</pagecontrol>
 			<onup>90200</onup>
-			<ondown>90200</ondown>
+			<ondown>9001</ondown>
 			<onleft>9001</onleft>
+			<onright>9001</onright>
 			<onright>6</onright>
 			<control type="button" id="90201">
 				<description>Background Button</description>
@@ -124,5 +126,27 @@
 				<visible>System.HasAddon(script.artistslideshow)</visible>
 			</control>
 		</control>
+        <!-- button group -->
+        <control type="grouplist" id="9001">
+            <left>31</left>
+            <top>648</top>
+            <height>60</height>
+            <width>1138</width>
+            <onup>90204</onup>
+            <onleft>9001</onleft>
+            <onright>9001</onright>
+            <ondown>90200</ondown>
+            <align>center</align>
+            <itemgap>14</itemgap>
+            <orientation>horizontal</orientation>
+            <control type="button" id="900">
+                <description>Close</description>
+                <width>379</width>
+                <label>31112</label>
+                <include>ButtonInfoDialogsCommonValues</include>
+                <onclick>Close</onclick>
+            </control>
+        </control>
+
 	</controls>
 </window>

@@ -4,6 +4,7 @@
 * some cleanups on artwork apect ratios
 * cleanup on how osd icons and watched status is coded and rendered and use better font source for icons
 
+
 8.0.1
 * Omega release
 * Add support for new "MyFavorites" window which replaces the old dialog
