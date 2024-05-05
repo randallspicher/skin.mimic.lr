@@ -40,7 +40,7 @@
 				<width>FullscreenWidth</width>
 				<align>center</align>
 
-                <itemgap>20</itemgap>
+                <itemgap>24</itemgap>
                 <orientation>horizontal</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
 				
@@ -100,7 +100,7 @@
 
 				<control type="button" id="705">
 					<!-- SPACER HERE -->
-					<left>40</left>
+					<left>24</left>
 					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
 					<label>$VAR[Icon-Screen]</label>
@@ -203,6 +203,17 @@
 					<onclick>PlayerControl(Play)</onclick>
 					<visible>Player.PauseEnabled</visible>
 				</control>
+				<control type="button" id="728">
+					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
+					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
+					<width>64</width>
+					<height>64</height>
+					<label>$VAR[Icon-StepForward]</label>
+					<align>center</align>
+					<font>IconNormal</font>
+					<onclick>PlayerControl(FrameAdvance(1))</onclick>
+					<enable>Player.Paused</enable>
+				</control>
 				<control type="button" id="713">
 					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
@@ -258,34 +269,52 @@
 
 
 
-				<control type="button" id="717">
+<!-- 				<control type="button" id="717"> -->
+<!-- 					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
+<!-- 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
+<!-- 					<width>64</width> -->
+<!-- 					<height>64</height> -->
+<!-- 					<label>$VAR[Icon-TempoDown]</label> -->
+<!-- 					<align>center</align> -->
+<!-- 					<font>IconNormal</font> -->
+<!-- 					<onclick>PlayerControl(tempodown)</onclick> -->
+<!-- 					<visible>Player.TempoEnabled</visible> -->
+<!-- 				</control> -->
+
+				<control type="button" id="727">
+					<!-- SPACER HERE -->
+					<left>24</left>
 					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>64</width>
+					<width>auto</width>
 					<height>64</height>
-					<label>$VAR[Icon-TempoDown]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>PlayerControl(tempodown)</onclick>
+					<font>font14</font>
+					<label>$INFO[Player.Playspeed,,x]</label>
+					<onclick condition="String.IsEqual(Control.GetLabel(799),Low)">PlayerControl(tempo(0.80))</onclick>
+					<onclick condition="String.IsEqual(Control.GetLabel(799),Up)">PlayerControl(tempoup)</onclick>
+					<onclick condition="String.IsEqual(Control.GetLabel(799),One)">PlayerControl(play)</onclick>
+					<onclick condition="String.IsEqual(Control.GetLabel(799),One)">PlayerControl(tempo(1.00))</onclick>
 					<visible>Player.TempoEnabled</visible>
+					<enable>!Player.Paused</enable>
 				</control>
-				<control type="button" id="718">
-					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
-					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
-					<width>64</width>
-					<height>64</height>
-					<label>$VAR[Icon-TempoUp]</label>
-					<align>center</align>
-					<font>IconNormal</font>
-					<onclick>PlayerControl(tempoup)</onclick>
-					<visible>Player.TempoEnabled</visible>
-				</control>
+				
+<!-- 				<control type="button" id="718"> -->
+<!-- 					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
+<!-- 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
+<!-- 					<width>64</width> -->
+<!-- 					<height>64</height> -->
+<!-- 					<label>$VAR[Icon-TempoUp]</label> -->
+<!-- 					<align>center</align> -->
+<!-- 					<font>IconNormal</font> -->
+<!-- 					<onclick>PlayerControl(tempoup)</onclick> -->
+<!-- 					<visible>Player.TempoEnabled</visible> -->
+<!-- 				</control> -->
 
 
 
 				<control type="button" id="719">
 					<!-- SPACER HERE -->
-					<left>40</left>
+					<left>24</left>
 					<texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus>
 					<texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus>
 					<width>64</width>
@@ -366,17 +395,15 @@
 					<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
 				</control>
 			</control>
-			<control type="label">
-				<top>30</top>
-				<left>1800</left>
-				<width>64</width>
-				<height>40</height>
-				<font>font16</font>
-				<label>$INFO[Player.Playspeed,,x]</label>
-				<visible>Player.IsTempo</visible>
-			</control>
-
-
 		</control>
+		
+		<control type="label" id="799">
+		<sedcription>hidden control to hold rule for tempo change</sedcription>
+		<label>$VAR[TempoRule]</label>
+		<visible>false</visible>		
+		</control>
+
+		
+		
 	</controls>
 </window>

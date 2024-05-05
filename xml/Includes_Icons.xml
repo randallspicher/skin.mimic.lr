@@ -194,12 +194,12 @@
 
 
 	<variable name="Icon-TempoUp">
-		<value>&#x7D6;</value><!-- Curcle with up arrow-->
-		<value>&#x571;</value><!-- Square with Plus -->
+		<value>&#xF74A;</value><!-- speech bubble plus -->
+		<value>&#xF571;</value><!-- Square with Plus -->
 	</variable>
 	<variable name="Icon-TempoDown">
-		<value>&#x7D6;</value><!-- Curcle with down arrow-->
-		<value>&#x572;</value><!-- Square with Minus -->
+		<value>&#xF74B;</value><!-- speech bubble minux -->
+		<value>&#xF572;</value><!-- Square with Minus -->
 	</variable>
 	<variable name="Icon-Close">
 		<value>&#xF311;</value><!-- open square with x -->
