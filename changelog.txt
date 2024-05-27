@@ -1,7 +1,7 @@
-8.0.2
-* override some default behaviours in dialogselect to display videoversions better when selecting to play
+8.1.0
+* override some default behaviours in dialog select to display video versions better when selecting to play
 * adjust watched icon placement and display
-* some cleanups on artwork apect ratios
+* some cleanups on artwork aspect ratios
 * cleanup on how osd icons and watched status is coded and rendered and use better font source for icons
 
 

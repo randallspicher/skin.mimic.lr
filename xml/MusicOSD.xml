@@ -55,7 +55,7 @@
                 <height>64</height>
                 <width>FullscreenWidth</width>
                 <align>center</align>
-                <itemgap>24</itemgap>
+                <itemgap>28</itemgap>
                 <orientation>horizontal</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
                 
