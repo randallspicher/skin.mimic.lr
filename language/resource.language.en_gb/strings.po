@@ -1540,18 +1540,17 @@ msgctxt "#90933"
 msgid "Use Local Actor Images (from .actors)"
 msgstr ""
 
+msgctxt "#90934"
+msgid "Shrink To Display Entire Image"
+msgstr ""
 
-#msgctxt "#90934"
-#msgid ""
-#msgstr ""
+msgctxt "#90935"
+msgid "Zoom/Crop Image To Fill Window"
+msgstr ""
 
-#msgctxt "#90935"
-#msgid ""
-#msgstr ""
-
-#msgctxt "#90936"
-#msgid ""
-#msgstr ""
+msgctxt "#90936"
+msgid "Image Display"
+msgstr ""
 
 #msgctxt "#90937"
 #msgid ""
