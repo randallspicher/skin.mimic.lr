@@ -21,22 +21,22 @@
 
 	<include name="MusicVisCoverView2">
 
-					<control type="label">
-						<left>10</left>
-						<top>10</top>
-						<width>900</width>
-						<height>30</height>
-						<font>font12</font>
-						<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</label>
-					</control>
-					<control type="label">
-						<left>10</left>
-						<top>40</top>
-						<width>900</width>
-						<height>30</height>
-						<font>font12</font>
-						<label>$VAR[MusicVizBackground]</label>
-					</control>
+<!-- 					<control type="label"> -->
+<!-- 						<left>10</left> -->
+<!-- 						<top>10</top> -->
+<!-- 						<width>900</width> -->
+<!-- 						<height>30</height> -->
+<!-- 						<font>font12</font> -->
+<!-- 						<label>$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</label> -->
+<!-- 					</control> -->
+<!-- 					<control type="label"> -->
+<!-- 						<left>10</left> -->
+<!-- 						<top>40</top> -->
+<!-- 						<width>900</width> -->
+<!-- 						<height>30</height> -->
+<!-- 						<font>font12</font> -->
+<!-- 						<label>$VAR[MusicVizBackground]</label> -->
+<!-- 					</control> -->
 
 
 		<control type="image">
