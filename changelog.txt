@@ -1,5 +1,6 @@
 8.2.0
 * allow control of aspect ratio for music visualisation fanart backgrounds
+* show some more data on the weather screens
 
 8.1.0
 * override some default behaviours in dialog select to display video versions better when selecting to play
