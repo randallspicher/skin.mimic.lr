@@ -62,17 +62,44 @@
 						<selectedcolor>SelectedColor</selectedcolor>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
+
 					<control type="label">
 						<left>200</left>
-						<top>15</top>
+						<top>30</top>
 						<width>475</width>
 						<height>180</height>
 						<valign>top</valign>
 						<font>font12</font>
 						<scroll>true</scroll>
 						<selectedcolor>SelectedColor</selectedcolor>
-						<label>$INFO[ListItem.Property(DewPoint),[COLOR=LabelTextColor]$LOCALIZE[405]:[/COLOR] ,[CR]]$INFO[ListItem.Property(FeelsLike),[COLOR=LabelTextColor]$LOCALIZE[402]:[/COLOR] ,[CR]]$INFO[ListItem.Property(WindDirection),[COLOR=LabelTextColor]$LOCALIZE[383]:[/COLOR] ,$COMMA ]$INFO[ListItem.Property(WindSpeed),,[CR]]$INFO[ListItem.Property(ChancePrecipitation),[COLOR=LabelTextColor]$LOCALIZE[1442] $LOCALIZE[1443] [LOWERCASE]$LOCALIZE[1448][/LOWERCASE]:[/COLOR] ]</label>
+						<label>$INFO[ListItem.Property(WindChill),[COLOR=LabelTextColor]$LOCALIZE[31490]:[/COLOR] [COLOR=LowTemp],[/COLOR][CR]]$INFO[ListItem.Property(DewPoint),[COLOR=LabelTextColor]$LOCALIZE[405]:[/COLOR] ,[CR]]$INFO[ListItem.Property(WindDirection),[COLOR=LabelTextColor]$LOCALIZE[383]:[/COLOR] ,$COMMA ]$INFO[ListItem.Property(WindSpeed),,[CR]]$INFO[ListItem.Property(ChancePrecipitation),[COLOR=LabelTextColor]$LOCALIZE[1442] $LOCALIZE[1443] [LOWERCASE]$LOCALIZE[1448][/LOWERCASE]:[/COLOR] ]</label>
+						<visible>!String.IsEmpty(ListItem.Property(WindChill))</visible>
 					</control>
+					<control type="label">
+						<left>200</left>
+						<top>30</top>
+						<width>475</width>
+						<height>180</height>
+						<valign>top</valign>
+						<font>font12</font>
+						<scroll>true</scroll>
+						<selectedcolor>SelectedColor</selectedcolor>
+						<label>$INFO[ListItem.Property(HeatIndex),[COLOR=LabelTextColor]$LOCALIZE[31491]:[/COLOR] [COLOR=HighTemp],[/COLOR][CR]]$INFO[ListItem.Property(DewPoint),[COLOR=LabelTextColor]$LOCALIZE[405]:[/COLOR] ,[CR]]$INFO[ListItem.Property(WindDirection),[COLOR=LabelTextColor]$LOCALIZE[383]:[/COLOR] ,$COMMA ]$INFO[ListItem.Property(WindSpeed),,[CR]]$INFO[ListItem.Property(ChancePrecipitation),[COLOR=LabelTextColor]$LOCALIZE[1442] $LOCALIZE[1443] [LOWERCASE]$LOCALIZE[1448][/LOWERCASE]:[/COLOR] ]</label>
+						<visible>!String.IsEmpty(ListItem.Property(HeatIndex))</visible>
+					</control>
+					<control type="label">
+						<left>200</left>
+						<top>30</top>
+						<width>475</width>
+						<height>180</height>
+						<valign>top</valign>
+						<font>font12</font>
+						<scroll>true</scroll>
+						<selectedcolor>SelectedColor</selectedcolor>
+						<label>$INFO[ListItem.Property(FeelsLike),[COLOR=LabelTextColor]$LOCALIZE[402]:[/COLOR] ,[CR]]$INFO[ListItem.Property(DewPoint),[COLOR=LabelTextColor]$LOCALIZE[405]:[/COLOR] ,[CR]]$INFO[ListItem.Property(WindDirection),[COLOR=LabelTextColor]$LOCALIZE[383]:[/COLOR] ,$COMMA ]$INFO[ListItem.Property(WindSpeed),,[CR]]$INFO[ListItem.Property(ChancePrecipitation),[COLOR=LabelTextColor]$LOCALIZE[1442] $LOCALIZE[1443] [LOWERCASE]$LOCALIZE[1448][/LOWERCASE]:[/COLOR] ]</label>
+						<visible>String.IsEmpty(ListItem.Property(HeatIndex)) + String.IsEmpty(ListItem.Property(WindChill))</visible>
+					</control>
+
 					<control type="label">
 						<left>200</left>
 						<top>30</top>
@@ -135,16 +162,42 @@
 						<selectedcolor>SelectedColor</selectedcolor>
 						<label>$INFO[ListItem.Label2]</label>
 					</control>
+
 					<control type="label">
 						<left>200</left>
-						<top>15</top>
+						<top>30</top>
 						<width>475</width>
 						<height>180</height>
 						<valign>top</valign>
 						<font>font12</font>
 						<scroll>true</scroll>
 						<selectedcolor>SelectedColor</selectedcolor>
-						<label>$INFO[ListItem.Property(DewPoint),[COLOR=LabelTextColor]$LOCALIZE[405]:[/COLOR] ,[CR]]$INFO[ListItem.Property(FeelsLike),[COLOR=LabelTextColor]$LOCALIZE[402]:[/COLOR] ,[CR]]$INFO[ListItem.Property(WindDirection),[COLOR=LabelTextColor]$LOCALIZE[383]:[/COLOR] ,$COMMA ]$INFO[ListItem.Property(WindSpeed),,[CR]]$INFO[ListItem.Property(ChancePrecipitation),[COLOR=LabelTextColor]$LOCALIZE[1442] $LOCALIZE[1443] [LOWERCASE]$LOCALIZE[1448][/LOWERCASE]:[/COLOR] ]</label>
+						<label>$INFO[ListItem.Property(WindChill),[COLOR=LabelTextColor]$LOCALIZE[31490]:[/COLOR] [COLOR=LowTemp],[/COLOR][CR]]$INFO[ListItem.Property(DewPoint),[COLOR=LabelTextColor]$LOCALIZE[405]:[/COLOR] ,[CR]]$INFO[ListItem.Property(WindDirection),[COLOR=LabelTextColor]$LOCALIZE[383]:[/COLOR] ,$COMMA ]$INFO[ListItem.Property(WindSpeed),,[CR]]$INFO[ListItem.Property(ChancePrecipitation),[COLOR=LabelTextColor]$LOCALIZE[1442] $LOCALIZE[1443] [LOWERCASE]$LOCALIZE[1448][/LOWERCASE]:[/COLOR] ]</label>
+						<visible>!String.IsEmpty(ListItem.Property(WindChill))</visible>
+					</control>
+					<control type="label">
+						<left>200</left>
+						<top>30</top>
+						<width>475</width>
+						<height>180</height>
+						<valign>top</valign>
+						<font>font12</font>
+						<scroll>true</scroll>
+						<selectedcolor>SelectedColor</selectedcolor>
+						<label>$INFO[ListItem.Property(HeatIndex),[COLOR=LabelTextColor]$LOCALIZE[31491]:[/COLOR] [COLOR=HighTemp],[/COLOR][CR]]$INFO[ListItem.Property(DewPoint),[COLOR=LabelTextColor]$LOCALIZE[405]:[/COLOR] ,[CR]]$INFO[ListItem.Property(WindDirection),[COLOR=LabelTextColor]$LOCALIZE[383]:[/COLOR] ,$COMMA ]$INFO[ListItem.Property(WindSpeed),,[CR]]$INFO[ListItem.Property(ChancePrecipitation),[COLOR=LabelTextColor]$LOCALIZE[1442] $LOCALIZE[1443] [LOWERCASE]$LOCALIZE[1448][/LOWERCASE]:[/COLOR] ]</label>
+						<visible>!String.IsEmpty(ListItem.Property(HeatIndex))</visible>
+					</control>
+					<control type="label">
+						<left>200</left>
+						<top>30</top>
+						<width>475</width>
+						<height>180</height>
+						<valign>top</valign>
+						<font>font12</font>
+						<scroll>true</scroll>
+						<selectedcolor>SelectedColor</selectedcolor>
+						<label>$INFO[ListItem.Property(FeelsLike),[COLOR=LabelTextColor]$LOCALIZE[402]:[/COLOR] ,[CR]]$INFO[ListItem.Property(DewPoint),[COLOR=LabelTextColor]$LOCALIZE[405]:[/COLOR] ,[CR]]$INFO[ListItem.Property(WindDirection),[COLOR=LabelTextColor]$LOCALIZE[383]:[/COLOR] ,$COMMA ]$INFO[ListItem.Property(WindSpeed),,[CR]]$INFO[ListItem.Property(ChancePrecipitation),[COLOR=LabelTextColor]$LOCALIZE[1442] $LOCALIZE[1443] [LOWERCASE]$LOCALIZE[1448][/LOWERCASE]:[/COLOR] ]</label>
+						<visible>String.IsEmpty(ListItem.Property(HeatIndex)) + String.IsEmpty(ListItem.Property(WindChill))</visible>
 					</control>
 
 					<control type="label">
