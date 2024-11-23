@@ -2,8 +2,6 @@
 	<shortcut>
 		<defaultID>19033</defaultID>
 		<label>19033</label>
-<!-- 		<defaultID>10007</defaultID> -->
-<!-- 		<label>10007</label> -->
 		<label2>Common menu item</label2>
 		<icon>special://skin/extras/icons/info.png</icon>
 		<thumb/>
