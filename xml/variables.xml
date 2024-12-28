@@ -512,7 +512,7 @@
 		<value>$INFO[Player.Art(thumb)]</value>
 	</variable>
 	<variable name="PlayerTitleLabelVar">
-		<value condition="Player.ChapterCount">$INFO[Player.Title]$INFO[player.chapter, • $LOCALIZE[21396] ]$INFO[player.chaptercount, / ,]</value>
+		<value condition="Player.ChapterCount">$INFO[Player.Title]$INFO[player.chapter, • $LOCALIZE[21396] ]$INFO[player.chaptercount, / ,] $INFO[Player.ChapterName, • ,]</value>
 		<value>$INFO[Player.Title]</value>
 	</variable>
 	<variable name="SkinSettingsDescriptionVar">
