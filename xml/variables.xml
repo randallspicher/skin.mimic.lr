@@ -706,7 +706,9 @@
 		<value>.png</value>
 	</variable>
 	<variable name="WeatherCurrentConditions">
-		<value condition="Window(weather).Property(Current.FeelsLike)">$INFO[Window(weather).Property(Current.Condition)], $LOCALIZE[402] $INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits]</value>
+		<value condition="!String.IsEmpty(Window(weather).Property(Current.WindChill))">$INFO[Window(weather).Property(Current.Condition)][CR]$INFO[Window(weather).Property(Current.WindChill),[COLOR=LabelTextColor]$LOCALIZE[31490]:[/COLOR] [COLOR=LowTemp],[/COLOR]]</value>
+		<value condition="!String.IsEmpty(Window(weather).Property(Current.HeatIndex))">$INFO[Window(weather).Property(Current.Condition)][CR]$INFO[Window(weather).Property(Current.HeatIndex),[COLOR=LabelTextColor]$LOCALIZE[31491]:[/COLOR] [COLOR=HighTemp],[/COLOR]]</value>
+		<value condition="!String.IsEmpty(Window(weather).Property(Current.FeelsLike)) + !String.IsEqual(Window(weather).Property(Current.FeelsLike),Window(weather).Property(Current.Temperature))">$INFO[Window(weather).Property(Current.Condition)][CR]$LOCALIZE[402] $INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits]</value>
 		<value>$INFO[Window(weather).Property(Current.Condition)]</value>
 	</variable>
 
