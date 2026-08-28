@@ -93,6 +93,32 @@
 		<value>&#xF48A;</value><!-- chevron up  -->
 		<value>&#xF477;</value><!-- filled circle minus -->
 	</variable>
+	<variable name="Icon-Up">
+		<value>&#xF301;</value>
+	</variable>
+	<variable name="Icon-Down">
+		<value>&#xF2FE;</value>
+	</variable>
+	<variable name="Icon-Disable">
+		<value>&#xF313;</value>
+	</variable>
+	<variable name="Icon-Enable">
+		<value>&#xF471;</value>
+	</variable>
+	<variable name="Icon-Delete">
+		<value>&#x00D7;</value>
+	</variable>
+	<variable name="Icon-Add">
+		<value>&#x002B;</value><!-- filled circle plus -->
+	</variable>
+
+   <variable name="Icon-MenuItemEnableDisable">
+      <value condition="String.IsEqual(Container(211).ListItem.Property(skinshortcuts-disabled),True)">&#xF471;</value>
+      <!--enable button-->
+      <value>&#xF313;</value>
+      <!-- disable button -->
+   </variable>
+
 
 	<!-- Others -->
 
@@ -327,5 +353,3 @@
 
 
 </includes>
-
-

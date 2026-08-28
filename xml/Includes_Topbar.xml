@@ -1,397 +1,377 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
-
-
-	<include name="BackButton">
-		<control type="button">
-			<visible>Skin.HasSetting(Enable.TouchScreen)</visible>
-			<align>center</align>
-			<width>72</width>
-			<height>64</height>
-			<onclick>Back</onclick>
-			<!-- <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
-			<!-- <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
-			<font>IconLarge</font>
-			<scroll>false</scroll>
-			<label>$VAR[Icon-Back]</label>
-		</control>
-	</include>
-
-	<include name="MenuButton">
-		<control type="button">
-			<left>10</left>
-			<description>Menu button</description>
-			<visible>Skin.HasSetting(Enable.TouchScreen)
-				+ ![Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]
-			</visible>
-			<!-- <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
-			<!-- <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
-			<label>$VAR[Icon-Menu]</label>
-			<align>center</align>
-			<width>72</width>
-			<height>64</height>
-			<font>IconLarge</font>
-			<scroll>false</scroll>
-			<onclick>Menu</onclick>
-		</control>
-	</include>
-
-	<include name="FullscreenButton">
-		<control type="button">
-			<left>10</left>
-			<description>fullscreen button</description>
-			<description>full-screen display button</description>
-			<visible>Skin.HasSetting(Enable.TouchScreen)
-				+ [ Player.HasVideo | Player.HasAudio]
-			</visible>
-			<!-- <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
-			<!-- <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
-			<label>$VAR[Icon-Maximize]</label>
-			<align>center</align>
-			<width>72</width>
-			<height>64</height>
-			<font>IconLarge</font>
-			<scroll>false</scroll>
-			<onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
-			<onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
-		</control>
-	</include>
-
-
-	<include name="Topbar">
-
-		<control type="label" id="10101">
-			<description>Hidden object for normalized View Mode to check against</description>
-			<label>$VAR[ActualViewMode]</label>
-			<visible>false</visible>
-			<width>680</width>
-			<height>40</height>
-			<font>font30</font>
-		</control>
-		<control type="label" id="10102">
-			<description>Hidden object for Art1Setting to check against</description>
-			<label>$VAR[Art1Setting]</label>
-			<visible>false</visible>
-			<width>680</width>
-			<height>40</height>
-			<font>font30</font>
-		</control>
-		<control type="label" id="10103">
-			<description>Hidden object for Art2Setting to check against</description>
-			<label>$VAR[Art2Setting]</label>
-			<visible>false</visible>
-			<width>680</width>
-			<height>40</height>
-			<font>font30</font>
-		</control>
-
-
-		<control type="group">
-
-			<visible>!Control.IsVisible(509)</visible>
-			<control type="image">
-				<!-- <visible>[Control.IsVisible(59) | Control.IsVisible(501)] + -->
-				<!-- !$EXP[isInfoDialog] -->
-				<!-- </visible> -->
-				<width>FullscreenWidth</width>
-				<height>60</height>
-				<texture>background.png</texture>
-				<colordiffuse>ItemDiffuse</colordiffuse>
-			</control>
-			<control type="image">
-				<width>FullscreenWidth</width>
-				<height>60</height>
-				<colordiffuse>33000000</colordiffuse>
-				<texture>menu_fo.png</texture>
-				<aspectratio>stretch</aspectratio>
-				<visible>!Skin.HasSetting(TopbarHideBackground)</visible>
-			</control>
-			<control type="grouplist">
-				<left>20</left>
-				<top>0</top>
-				<aligny>center</aligny>
-				<width>1200</width>
-				<height>60</height>
-				<orientation>horizontal</orientation>
-				<usecontrolcoords>true</usecontrolcoords>
-				<itemgap>5</itemgap>
-
-				<include>BackButton</include>
-				<include>MenuButton</include>
-				<include>FullscreenButton</include>
-
-				<control type="image">
-					<width>60</width>
-					<height>60</height>
-					<visible>!Skin.HasSetting(Enable.TouchScreen)</visible>
-					<texture colordiffuse="TitleTextColor">$VAR[HeaderIcon]</texture>
-					<aspectratio align="center" aligny="center">keep</aspectratio>
-					<animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
-				</control>
-
-
-				<!-- <control type="label"> -->
-				<!-- <width>800</width> -->
-				<!-- <align>left</align> -->
-				<!-- <aligny>center</aligny> -->
-				<!-- <font>cirrus_30</font> -->
-				<!-- <textcolor>TitleTextColor</textcolor> -->
-				<!-- <label>$INFO[Container.Content] : $VAR[ActualViewMode] : $INFO[Control.GetLabel(10102)]</label> -->
-				<!-- <scroll>true</scroll> -->
-				<!-- </control> -->
-
-				<control type="label">
-					<left>10</left>
-					<width>auto</width>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>cirrus_30</font>
-					<textcolor>LabelTextColor</textcolor>
-					<label>•</label>
-					<scroll>false</scroll>
-				</control>
-				<control type="label">
-					<visible>![Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible>
-					<width>auto</width>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>cirrus_30</font>
-					<textcolor>TitleTextColor</textcolor>
-					<label>$VAR[BreadcrumbsVar]</label>
-					<scroll>false</scroll>
-				</control>
-				<control type="label">
-					<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible>
-					<width>auto</width>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>cirrus_30</font>
-					<textcolor>TitleTextColor</textcolor>
-					<label>$INFO[ListItem.Label]</label>
-<!-- 					<label2>$VAR[HeaderSubLabelInfoDialog]</label2> -->
-				</control>
-<!-- 				<control type="label"> -->
-<!-- 					<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible> -->
-<!-- 					<width>auto</width> -->
-<!-- 					<align>left</align> -->
-<!-- 					<aligny>center</aligny> -->
-<!-- 					<font>cirrus_30</font> -->
-<!-- 					<textcolor>LabelTextColor</textcolor> -->
-<!-- 					<label>•</label> -->
-<!-- 					<scroll>false</scroll> -->
-<!-- 				</control> -->
-<!-- 				<control type="label"> -->
-<!-- 					<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible> -->
-<!-- 					<width>auto</width> -->
-<!-- 					<align>left</align> -->
-<!-- 					<aligny>center</aligny> -->
-<!-- 					<font>cirrus_30</font> -->
-<!-- 					<textcolor>AltTextColor</textcolor> -->
-<!-- 					<label>$VAR[HeaderSubLabelInfoDialog]</label> -->
-<!-- 				</control> -->
-			</control>
-			<control type="grouplist">
-				<left>1100</left>
-				<top>0</top>
-				<width>800</width>
-				<height>60</height>
-				<align>right</align>
-				<aligny>center</aligny>
-				<orientation>horizontal</orientation>
-				<itemgap>20</itemgap>
-				<control type="label">
-					<width>auto</width>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>font31</font>
-					<textcolor>TitleTextColor</textcolor>
-					<label>$INFO[System.Date]</label>
-					<scroll>false</scroll>
-				</control>
-				<control type="label">
-					<width>auto</width>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>cirrus_30</font>
-					<textcolor>LabelTextColor</textcolor>
-					<label>•</label>
-					<scroll>false</scroll>
-				</control>
-				<!-- weather icon when weather addon provies remote image -->
-				<control type="image">
-					<width>30</width>
-					<height>60</height>
-					<visible>!Skin.HasSetting(HideTopbarWeather) + String.IsEmpty(Window(weather).Property(Alerts.IsFetched)) + Skin.HasSetting(Enable.RemoteWeatherIcons)</visible>
-					<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-					<texture background="true">$INFO[Window(weather).Property(Current.RemoteIcon)]</texture>
-				</control>
-				<!-- weather icon when using only local mapped icons -->
-				<control type="multiimage">
-					<width>30</width>
-					<height>80</height>
-					<visible>!Skin.HasSetting(HideTopbarWeather) + String.IsEmpty(Window(weather).Property(Alerts.IsFetched)) + !Skin.HasSetting(Enable.RemoteWeatherIcons)</visible>
-					<aspectratio scalediffuse="false" align="center" aligny="center">keep</aspectratio>
-					<imagepath>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode)]$VAR[WeatherIconExtVar]</imagepath>
-					<timeperimage>70</timeperimage>
-					<fadetime>1</fadetime>
-					<randomize>false</randomize>
-				</control>
-				<control type="label">
-					<description>weather alerts</description>
-					<width>auto</width>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>font31</font>
-					<!-- <textcolor>Alert</textcolor> -->
-					<label>[B][COLOR=Alert]!!![/COLOR][/B]</label>
-					<visible>!Skin.HasSetting(HideTopbarWeather) + !String.IsEmpty(Window(weather).Property(Alerts.IsFetched))</visible>
-				</control>
-
-				<control type="label">
-					<width>auto</width>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>font31</font>
-					<textcolor>TitleTextColor</textcolor>
-					<label>[B]$INFO[Weather.Temperature][/B]</label>
-					<scroll>false</scroll>
-					<visible>!Skin.HasSetting(HideTopbarWeather) + Weather.IsFetched
-					</visible>
-				</control>
-				<control type="label">
-					<width>auto</width>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>cirrus_30</font>
-					<textcolor>LabelTextColor</textcolor>
-					<label>•</label>
-					<scroll>false</scroll>
-					<visible>!Skin.HasSetting(HideTopbarWeather) + Weather.IsFetched
-					</visible>
-				</control>
-				<control type="label">
-					<width>auto</width>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>font31</font>
-					<textcolor>TitleTextColor</textcolor>
-					<label>$INFO[System.Time]</label>
-					<scroll>false</scroll>
-				</control>
-			</control>
-		</control>
-
-		<control type="group">
-			<visible>!Window.IsActive(extendedprogressdialog)</visible>
-			<width>FullscreenWidth</width>
-			<top>60</top>
-			<left>60</left>
-			<height>100</height>
-
-
-		<control type="label">
-<!-- 			<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible> -->
-			<top>0</top>
-			<height>40</height>
-			<left>0</left>
-			<font>cirrus_30</font>
-			<textcolor>LabelTextColor</textcolor>
-			<label>$VAR[HeaderSubLabelInfoDialog]</label>
-		</control>
-
-
-		<control type="label">
-<!-- 			<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible> -->
-			<width>FullscreenWidth</width>
-			<top>40</top>
-			<height>40</height>
-			<left>0</left>
-			<font>cirrus_30</font>
-			<textcolor>TitleTextColor</textcolor>
-			<label>$VAR[LibraryStatsVar]</label>
-		</control>
-
-</control>
-
-
-		<!-- Now Playing info -->
-
-		<control type="group">
-			<visible>!Control.IsVisible(509) + [Player.Playing | Player.HasAudio
-				| Player.HasVideo]
-			</visible>
-			<width>FullscreenWidth</width>
-			<top>70</top>
-			<height>100</height>
-
-			<control type="image">
-				<visible>[Control.IsVisible(59) | Control.IsVisible(501)] +
-					!$EXP[isInfoDialog]
-				</visible>
-				<texture>background.png</texture>
-				<colordiffuse>ItemDiffuse</colordiffuse>
-			</control>
-
-			<control type="image">
-				<texture>menu_fo.png</texture>
-				<colordiffuse>33000000</colordiffuse>
-			</control>
-
-			<control type="group">
-				<top>5</top>
-				<left>40</left>
-				<right>40</right>
-
-				<control type="button">
-					<description>Now Playing Thumb</description>
-					<height>100</height>
-					<width>820</width>
-					<left>1020</left>
-					<top>-10</top>
-					<onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
-					<onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
-				</control>
-
-				<control type="image">
-					<description>Now Playing Thumb</description>
-					<height>100</height>
-					<width>100</width>
-					<left>1720</left>
-					<top>-10</top>
-					<aspectratio align="center" aligny="center" scalediffuse="false">keep</aspectratio>
-					<texture diffuse="diffuse/nowplaying.png">$VAR[TopbarNowPlayingThumb]</texture>
-					<!-- <texturefocus diffuse="diffuse/nowplaying.png">$VAR[TopbarNowPlayingThumb]</texturefocus> -->
-					<!-- <texturenofocus diffuse="diffuse/nowplaying.png">$VAR[TopbarNowPlayingThumb]</texturenofocus> -->
-					<!-- <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation> -->
-					<!-- <visible>[!Window.IsVisible(volumebar) + [!Window.IsVisible(extendedprogressdialog) | Window.IsVisible(script-globalsearch-main.xml) | Window.IsVisible(script-globalsearch-infodialog.xml) 
+   <include name="BackButton">
+      <control type="button">
+         <visible>Skin.HasSetting(Enable.TouchScreen)</visible>
+         <align>center</align>
+         <width>72</width>
+         <height>64</height>
+         <onclick>Back</onclick>
+         <!-- <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
+         <!-- <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
+         <font>IconLarge</font>
+         <scroll>false</scroll>
+         <label>$VAR[Icon-Back]</label>
+      </control>
+   </include>
+   <include name="MenuButton">
+      <control type="button">
+         <left>10</left>
+         <description>Menu button</description>
+         <visible>Skin.HasSetting(Enable.TouchScreen)
+				+ ![Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible>
+         <!-- <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
+         <!-- <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
+         <label>$VAR[Icon-Menu]</label>
+         <align>center</align>
+         <width>72</width>
+         <height>64</height>
+         <font>IconLarge</font>
+         <scroll>false</scroll>
+         <onclick>Menu</onclick>
+      </control>
+   </include>
+   <include name="FullscreenButton">
+      <control type="button">
+         <left>10</left>
+         <description>fullscreen button</description>
+         <description>full-screen display button</description>
+         <visible>Skin.HasSetting(Enable.TouchScreen)
+				+ [ Player.HasVideo | Player.HasAudio]</visible>
+         <!-- <texturefocus colordiffuse="FocusColor">osd/button_bg.png</texturefocus> -->
+         <!-- <texturenofocus colordiffuse="22ffffff">osd/button_bg.png</texturenofocus> -->
+         <label>$VAR[Icon-Maximize]</label>
+         <align>center</align>
+         <width>72</width>
+         <height>64</height>
+         <font>IconLarge</font>
+         <scroll>false</scroll>
+         <onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
+         <onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
+      </control>
+   </include>
+   <include name="Topbar">
+      <control type="label" id="10101">
+         <description>Hidden object for normalized View Mode to check against</description>
+         <label>$VAR[ActualViewMode]</label>
+         <visible>false</visible>
+         <width>680</width>
+         <height>40</height>
+         <font>font30</font>
+      </control>
+      <control type="label" id="10102">
+         <description>Hidden object for Art1Setting to check against</description>
+         <label>$VAR[Art1Setting]</label>
+         <visible>false</visible>
+         <width>680</width>
+         <height>40</height>
+         <font>font30</font>
+      </control>
+      <control type="label" id="10103">
+         <description>Hidden object for Art2Setting to check against</description>
+         <label>$VAR[Art2Setting]</label>
+         <visible>false</visible>
+         <width>680</width>
+         <height>40</height>
+         <font>font30</font>
+      </control>
+      <control type="label" id="10104">
+         <description>Hidden object for Art2Setting to check against</description>
+         <label>$INFO[Container(9000).ListItem.Property(widgetArt)]</label>
+         <visible>false</visible>
+         <width>680</width>
+         <height>40</height>
+         <font>font30</font>
+      </control>
+      <control type="group">
+         <visible>!Control.IsVisible(509)</visible>
+         <control type="image">
+            <!-- <visible>[Control.IsVisible(59) | Control.IsVisible(501)] + -->
+            <!-- !$EXP[isInfoDialog] -->
+            <!-- </visible> -->
+            <width>FullscreenWidth</width>
+            <height>60</height>
+            <texture>background.png</texture>
+            <colordiffuse>ItemDiffuse</colordiffuse>
+         </control>
+         <control type="image">
+            <width>FullscreenWidth</width>
+            <height>60</height>
+            <colordiffuse>33000000</colordiffuse>
+            <texture>menu_fo.png</texture>
+            <aspectratio>stretch</aspectratio>
+            <visible>!Skin.HasSetting(TopbarHideBackground)</visible>
+         </control>
+         <control type="grouplist">
+            <left>20</left>
+            <top>0</top>
+            <aligny>center</aligny>
+            <width>1200</width>
+            <height>60</height>
+            <orientation>horizontal</orientation>
+            <usecontrolcoords>true</usecontrolcoords>
+            <itemgap>5</itemgap>
+            <include>BackButton</include>
+            <include>MenuButton</include>
+            <include>FullscreenButton</include>
+            <control type="image">
+               <width>60</width>
+               <height>60</height>
+               <visible>!Skin.HasSetting(Enable.TouchScreen)</visible>
+               <texture colordiffuse="TitleTextColor">$VAR[HeaderIcon]</texture>
+               <aspectratio align="center" aligny="center">keep</aspectratio>
+               <animation effect="fade"
+                  start="0"
+                  end="100"
+                  time="150">VisibleChange</animation>
+            </control>
+            <!-- <control type="label"> -->
+            <!-- <width>800</width> -->
+            <!-- <align>left</align> -->
+            <!-- <aligny>center</aligny> -->
+            <!-- <font>cirrus_30</font> -->
+            <!-- <textcolor>TitleTextColor</textcolor> -->
+            <!-- <label>$INFO[Container.Content] : $VAR[ActualViewMode] : $INFO[Control.GetLabel(10102)]</label> -->
+            <!-- <scroll>true</scroll> -->
+            <!-- </control> -->
+            <control type="label">
+               <left>10</left>
+               <width>auto</width>
+               <align>left</align>
+               <aligny>center</aligny>
+               <font>cirrus_30</font>
+               <textcolor>LabelTextColor</textcolor>
+               <label>•</label>
+               <scroll>false</scroll>
+            </control>
+            <control type="label">
+               <visible>![Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible>
+               <width>auto</width>
+               <align>left</align>
+               <aligny>center</aligny>
+               <font>cirrus_30</font>
+               <textcolor>TitleTextColor</textcolor>
+               <label>$VAR[BreadcrumbsVar]</label>
+               <scroll>false</scroll>
+            </control>
+            <control type="label">
+               <visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible>
+               <width>auto</width>
+               <align>left</align>
+               <aligny>center</aligny>
+               <font>cirrus_30</font>
+               <textcolor>TitleTextColor</textcolor>
+               <label>$INFO[ListItem.Label]</label>
+               <!-- 					<label2>$VAR[HeaderSubLabelInfoDialog]</label2> -->
+            </control>
+            <!-- 				<control type="label"> -->
+            <!-- 					<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible> -->
+            <!-- 					<width>auto</width> -->
+            <!-- 					<align>left</align> -->
+            <!-- 					<aligny>center</aligny> -->
+            <!-- 					<font>cirrus_30</font> -->
+            <!-- 					<textcolor>LabelTextColor</textcolor> -->
+            <!-- 					<label>•</label> -->
+            <!-- 					<scroll>false</scroll> -->
+            <!-- 				</control> -->
+            <!-- 				<control type="label"> -->
+            <!-- 					<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible> -->
+            <!-- 					<width>auto</width> -->
+            <!-- 					<align>left</align> -->
+            <!-- 					<aligny>center</aligny> -->
+            <!-- 					<font>cirrus_30</font> -->
+            <!-- 					<textcolor>AltTextColor</textcolor> -->
+            <!-- 					<label>$VAR[HeaderSubLabelInfoDialog]</label> -->
+            <!-- 				</control> -->
+         </control>
+         <control type="grouplist">
+            <left>1100</left>
+            <top>0</top>
+            <width>800</width>
+            <height>60</height>
+            <align>right</align>
+            <aligny>center</aligny>
+            <orientation>horizontal</orientation>
+            <itemgap>20</itemgap>
+            <control type="label">
+               <width>auto</width>
+               <align>left</align>
+               <aligny>center</aligny>
+               <font>font31</font>
+               <textcolor>TitleTextColor</textcolor>
+               <label>$INFO[System.Date]</label>
+               <scroll>false</scroll>
+            </control>
+            <control type="label">
+               <width>auto</width>
+               <align>left</align>
+               <aligny>center</aligny>
+               <font>cirrus_30</font>
+               <textcolor>LabelTextColor</textcolor>
+               <label>•</label>
+               <scroll>false</scroll>
+            </control>
+            <!-- weather icon when weather addon provies remote image -->
+            <control type="image">
+               <width>30</width>
+               <height>60</height>
+               <visible>!Skin.HasSetting(HideTopbarWeather) + String.IsEmpty(Window(weather).Property(Alerts.IsFetched)) + Skin.HasSetting(Enable.RemoteWeatherIcons)</visible>
+               <aspectratio scalediffuse="false"
+                  align="center"
+                  aligny="center">keep</aspectratio>
+               <texture background="true">$INFO[Window(weather).Property(Current.RemoteIcon)]</texture>
+            </control>
+            <!-- weather icon when using only local mapped icons -->
+            <control type="multiimage">
+               <width>30</width>
+               <height>80</height>
+               <visible>!Skin.HasSetting(HideTopbarWeather) + String.IsEmpty(Window(weather).Property(Alerts.IsFetched)) + !Skin.HasSetting(Enable.RemoteWeatherIcons)</visible>
+               <aspectratio scalediffuse="false"
+                  align="center"
+                  aligny="center">keep</aspectratio>
+               <imagepath>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode)]$VAR[WeatherIconExtVar]</imagepath>
+               <timeperimage>70</timeperimage>
+               <fadetime>1</fadetime>
+               <randomize>false</randomize>
+            </control>
+            <control type="label">
+               <description>weather alerts</description>
+               <width>auto</width>
+               <align>left</align>
+               <aligny>center</aligny>
+               <font>font31</font>
+               <!-- <textcolor>Alert</textcolor> -->
+               <label>[B][COLOR=Alert]!!![/COLOR][/B]</label>
+               <visible>!Skin.HasSetting(HideTopbarWeather) + !String.IsEmpty(Window(weather).Property(Alerts.IsFetched))</visible>
+            </control>
+            <control type="label">
+               <width>auto</width>
+               <align>left</align>
+               <aligny>center</aligny>
+               <font>font31</font>
+               <textcolor>TitleTextColor</textcolor>
+               <label>[B]$INFO[Weather.Temperature][/B]</label>
+               <scroll>false</scroll>
+               <visible>!Skin.HasSetting(HideTopbarWeather) + Weather.IsFetched</visible>
+            </control>
+            <control type="label">
+               <width>auto</width>
+               <align>left</align>
+               <aligny>center</aligny>
+               <font>cirrus_30</font>
+               <textcolor>LabelTextColor</textcolor>
+               <label>•</label>
+               <scroll>false</scroll>
+               <visible>!Skin.HasSetting(HideTopbarWeather) + Weather.IsFetched</visible>
+            </control>
+            <control type="label">
+               <width>auto</width>
+               <align>left</align>
+               <aligny>center</aligny>
+               <font>font31</font>
+               <textcolor>TitleTextColor</textcolor>
+               <label>$INFO[System.Time]</label>
+               <scroll>false</scroll>
+            </control>
+         </control>
+      </control>
+      <control type="group">
+         <visible>!Window.IsActive(extendedprogressdialog)</visible>
+         <width>FullscreenWidth</width>
+         <top>60</top>
+         <left>60</left>
+         <height>100</height>
+         <control type="label">
+            <!-- 			<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible> -->
+            <top>0</top>
+            <height>40</height>
+            <left>0</left>
+            <font>cirrus_30</font>
+            <textcolor>LabelTextColor</textcolor>
+            <label>$VAR[HeaderSubLabelInfoDialog]</label>
+         </control>
+         <control type="label">
+            <!-- 			<visible>[Window.IsActive(movieinformation)|Window.IsActive(musicinformation)|Window.IsActive(songinformation)|Window.IsActive(addoninformation)]</visible> -->
+            <width>FullscreenWidth</width>
+            <top>40</top>
+            <height>40</height>
+            <left>0</left>
+            <font>cirrus_30</font>
+            <textcolor>TitleTextColor</textcolor>
+            <label>$VAR[LibraryStatsVar]</label>
+         </control>
+      </control>
+      <!-- Now Playing info -->
+      <control type="group">
+         <visible>!Control.IsVisible(509) + [Player.Playing | Player.HasAudio
+				| Player.HasVideo]</visible>
+         <width>FullscreenWidth</width>
+         <top>70</top>
+         <height>100</height>
+         <control type="image">
+            <visible>[Control.IsVisible(59) | Control.IsVisible(501)] +
+					!$EXP[isInfoDialog]</visible>
+            <texture>background.png</texture>
+            <colordiffuse>ItemDiffuse</colordiffuse>
+         </control>
+         <control type="image">
+            <texture>menu_fo.png</texture>
+            <colordiffuse>33000000</colordiffuse>
+         </control>
+         <control type="group">
+            <top>5</top>
+            <left>40</left>
+            <right>40</right>
+            <control type="button">
+               <description>Now Playing Thumb</description>
+               <height>100</height>
+               <width>820</width>
+               <left>1020</left>
+               <top>-10</top>
+               <onclick condition="Player.HasVideo">ActivateWindow(fullscreenvideo)</onclick>
+               <onclick condition="Player.HasAudio">ActivateWindow(visualisation)</onclick>
+            </control>
+            <control type="image">
+               <description>Now Playing Thumb</description>
+               <height>100</height>
+               <width>100</width>
+               <left>1720</left>
+               <top>-10</top>
+               <aspectratio align="center"
+                  aligny="center"
+                  scalediffuse="false">keep</aspectratio>
+               <texture diffuse="diffuse/nowplaying.png">$VAR[TopbarNowPlayingThumb]</texture>
+               <!-- <texturefocus diffuse="diffuse/nowplaying.png">$VAR[TopbarNowPlayingThumb]</texturefocus> -->
+               <!-- <texturenofocus diffuse="diffuse/nowplaying.png">$VAR[TopbarNowPlayingThumb]</texturenofocus> -->
+               <!-- <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation> -->
+               <!-- <visible>[!Window.IsVisible(volumebar) + [!Window.IsVisible(extendedprogressdialog) | Window.IsVisible(script-globalsearch-main.xml) | Window.IsVisible(script-globalsearch-infodialog.xml) 
 						| Window.IsVisible(favouritesbrowser)]] | [Player.Muted + !Window.IsVisible(extendedprogressdialog)] </visible> -->
-				</control>
-
-				<control type="group">
-					<right>140</right>
-					<top>0</top>
-					<control type="group">
-						<control type="label">
-							<description>Title</description>
-							<label>$VAR[TopbarNowPlayingTitle]</label>
-							<top>-10</top>
-							<align>right</align>
-							<height>48</height>
-							<font>font36</font>
-							<textcolor>NormalTextColor</textcolor>
-						</control>
-						<control type="label">
-							<description>Album</description>
-							<label>$VAR[TopbarNowPlayingArtistAlbum]</label>
-							<top>45</top>
-							<align>right</align>
-							<height>40</height>
-							<font>font16</font>
-							<textcolor>AltTextColor</textcolor>
-						</control>
-					</control>
-				</control>
-			</control>
-		</control>
-	</include>
+            </control>
+            <control type="group">
+               <right>140</right>
+               <top>0</top>
+               <control type="group">
+                  <control type="label">
+                     <description>Title</description>
+                     <label>$VAR[TopbarNowPlayingTitle]</label>
+                     <top>-10</top>
+                     <align>right</align>
+                     <height>48</height>
+                     <font>font36</font>
+                     <textcolor>NormalTextColor</textcolor>
+                  </control>
+                  <control type="label">
+                     <description>Album</description>
+                     <label>$VAR[TopbarNowPlayingArtistAlbum]</label>
+                     <top>45</top>
+                     <align>right</align>
+                     <height>40</height>
+                     <font>font16</font>
+                     <textcolor>AltTextColor</textcolor>
+                  </control>
+               </control>
+            </control>
+         </control>
+      </control>
+   </include>
 </includes>

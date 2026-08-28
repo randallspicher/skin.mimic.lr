@@ -25,7 +25,7 @@
 					<top>870</top>
 					<width>1920</width>
 					<height>80</height>
-					<colordiffuse>90000000</colordiffuse>
+					<colordiffuse>31320000</colordiffuse>
 					<texture flipy="true">lyretex/gradient_h.png</texture>
 					<aspectratio>stretch</aspectratio>
 				</control>
@@ -58,7 +58,7 @@
 					<top>950</top>
 					<right>0</right>
 					<bottom>0</bottom>
-					<texture colordiffuse="90000000" border="5">menu_fo.png</texture>
+					<texture colordiffuse="31320000" border="5">menu_fo.png</texture>
 				</control>
 			</control>
 		</control>
@@ -788,7 +788,7 @@
 							<top>280</top>
 							<width>470</width>
 							<height>100</height>
-							<colordiffuse>99000000</colordiffuse>
+							<colordiffuse>93132000</colordiffuse>
 							<texture>menu_fo.png</texture>
 							<aspectratio>stretch</aspectratio>
 						</control>
@@ -899,7 +899,7 @@
 								<top>280</top>
 								<width>470</width>
 								<height>100</height>
-								<colordiffuse>99000000</colordiffuse>
+								<colordiffuse>93132000</colordiffuse>
 								<texture>menu_fo.png</texture>
 								<aspectratio>stretch</aspectratio>
 							</control>
@@ -994,31 +994,24 @@
 	<include name="ArcadeOptions">
 		<control type="button" id="90010">
 			<description>Layout Selector (Movies)</description>
-			<label>89010</label>
+			<label>31321</label>
 			<label2>$VAR[LayoutLabelVar]</label2>
 			<include>ButtonCommonValues</include>
-			<onclick>Skin.SelectBool(89010, 90001|Arcade.Default, 90002|ArcadeMoviesReversed, 90004|ArcadeMoviesBigInfo, 90005|ArcadeMoviesMini)</onclick>
+			<onclick>Skin.SelectBool(31321, 31319|Arcade.Default, 31318|ArcadeMoviesReversed, 31310|ArcadeMoviesBigInfo, 31306|ArcadeMoviesMini)</onclick>
 			<visible>Control.IsVisible(900) + [Container.Content(Movies)| Container.Content(sets)]</visible>
 		</control>
 		<control type="button" id="90011">
 			<description>Art Selector (Movies)</description>
-			<label>89000</label>
+			<label>31325</label>
 			<label2>$VAR[ImageLabelVar]</label2>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(ArcadeMoviesBigInfo) + !Skin.HasSetting(ArcadeMoviesMini)</enable>
-			<onclick>Skin.SelectBool(89000, 20445|, 89003|Movies_900_Landscape)</onclick>
+			<onclick>Skin.SelectBool(31325, 20445|, 31322|Movies_900_Landscape)</onclick>
 			<visible>Control.IsVisible(900) + [Container.Content(Movies)| Container.Content(sets)]</visible>
 		</control>
-<!-- 		<control type="radiobutton" id="90012"> -->
-<!-- 			<description>Bright Icons (Movies)</description> -->
-<!-- 			<label>90945</label> -->
-<!-- 			<include>ButtonCommonValues</include> -->
-<!-- 			<onclick>Skin.ToggleSetting(Movies_900_BrightIcons)</onclick> -->
-<!-- 			<visible>Control.IsVisible(900) + [Container.Content(Movies)| Container.Content(sets)]</visible> -->
-<!-- 		</control> -->
 		<control type="radiobutton" id="90013">
 			<description>Hide Star Rating (Movies)</description>
-			<label>90947</label>
+			<label>31207</label>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(ArcadeMoviesBigInfo) + !Skin.HasSetting(ArcadeMoviesMini)</enable>
 			<onclick>Skin.ToggleSetting(Movies_900_HideStars)</onclick>
@@ -1026,7 +1019,7 @@
 		</control>
 		<control type="radiobutton" id="90014">
 			<description>Hide Studio Flags (Movies)</description>
-			<label>90948</label>
+			<label>31206</label>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(ArcadeMoviesBigInfo) + !Skin.HasSetting(ArcadeMoviesMini)</enable>
 			<onclick>Skin.ToggleSetting(Movies_900_HideStudioFlags)</onclick>
@@ -1034,31 +1027,24 @@
 		</control>
 		<control type="button" id="90020">
 			<description>Layout Selector (TV Shows)</description>
-			<label>89010</label>
+			<label>31321</label>
 			<label2>$VAR[LayoutLabelVar]</label2>
 			<include>ButtonCommonValues</include>
-			<onclick>Skin.SelectBool(89010, 90001|Arcade.Default, 90002|ArcadeTVShowsReversed, 90004|ArcadeTVShowsBigInfo, 90005|ArcadeTVShowsMini)</onclick>
+			<onclick>Skin.SelectBool(31321, 31319|Arcade.Default, 31318|ArcadeTVShowsReversed, 31310|ArcadeTVShowsBigInfo, 31306|ArcadeTVShowsMini)</onclick>
 			<visible>Control.IsVisible(900) + [Container.Content(TVShows)| Container.Content(seasons)]</visible>
 		</control>
 		<control type="button" id="90021">
 			<description>Art Selector (TVShows)</description>
-			<label>89000</label>
+			<label>31325</label>
 			<label2>$VAR[ImageLabelVar]</label2>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(ArcadeTVShowsBigInfo) + !Skin.HasSetting(ArcadeTVShowsMini)</enable>
-			<onclick>Skin.SelectBool(89000, 20445|, 89003|TVShows_900_Landscape)</onclick>
+			<onclick>Skin.SelectBool(31325, 20445|, 31322|TVShows_900_Landscape)</onclick>
 			<visible>Control.IsVisible(900) + [Container.Content(TVShows)| Container.Content(seasons)]</visible>
 		</control>
-<!-- 		<control type="radiobutton" id="90022"> -->
-<!-- 			<description>Bright Icons (TVShows)</description> -->
-<!-- 			<label>90945</label> -->
-<!-- 			<include>ButtonCommonValues</include> -->
-<!-- 			<onclick>Skin.ToggleSetting(TVShows_900_BrightIcons)</onclick> -->
-<!-- 			<visible>Control.IsVisible(900) + [Container.Content(TVShows)| Container.Content(seasons)]</visible> -->
-<!-- 		</control> -->
 		<control type="radiobutton" id="90023">
 			<description>Hide Star Rating (TVShows)</description>
-			<label>90947</label>
+			<label>31207</label>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(ArcadeTVShowsBigInfo) + !Skin.HasSetting(ArcadeTVShowsMini)</enable>
 			<onclick>Skin.ToggleSetting(TVShows_900_HideStars)</onclick>
@@ -1066,7 +1052,7 @@
 		</control>
 		<control type="radiobutton" id="90024">
 			<description>Hide Studio Flags (TVShows)</description>
-			<label>90948</label>
+			<label>31206</label>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(ArcadeTVShowsBigInfo) + !Skin.HasSetting(ArcadeTVShowsMini)</enable>
 			<onclick>Skin.ToggleSetting(TVShows_900_HideStudioFlags)</onclick>
@@ -1074,29 +1060,22 @@
 		</control>
 		<control type="button" id="90030">
 			<description>Layout Selector (Episodes)</description>
-			<label>89010</label>
+			<label>31321</label>
 			<label2>$VAR[LayoutLabelVar]</label2>
 			<include>ButtonCommonValues</include>
-			<onclick>Skin.SelectBool(89010, 90001|Arcade.Default, 90002|ArcadeEpisodesReversed, 90004|ArcadeEpisodesBigInfo, 90005|ArcadeEpisodesMini)</onclick>
+			<onclick>Skin.SelectBool(31321, 31319|Arcade.Default, 31318|ArcadeEpisodesReversed, 31310|ArcadeEpisodesBigInfo, 31306|ArcadeEpisodesMini)</onclick>
 			<visible>Control.IsVisible(900) + Container.Content(Episodes)</visible>
 		</control>
-<!-- 		<control type="radiobutton" id="90031"> -->
-<!-- 			<description>Bright Icons (Episodes)</description> -->
-<!-- 			<label>90945</label> -->
-<!-- 			<include>ButtonCommonValues</include> -->
-<!-- 			<onclick>Skin.ToggleSetting(Episodes_900_BrightIcons)</onclick> -->
-<!-- 			<visible>Control.IsVisible(900) + Container.Content(Episodes)</visible> -->
-<!-- 		</control> -->
 		<control type="radiobutton" id="90032">
 			<description>Hide Labels (Episodes)</description>
-			<label>90950</label>
+			<label>31151</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(Episodes_900_HideLabels)</onclick>
 			<visible>Control.IsVisible(900) + Container.Content(Episodes)</visible>
 		</control>
 		<control type="radiobutton" id="90033">
 			<description>Hide Star Rating (Episodes)</description>
-			<label>90947</label>
+			<label>31207</label>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(ArcadeEpisodesBigInfo) + !Skin.HasSetting(ArcadeEpisodesMini)</enable>
 			<onclick>Skin.ToggleSetting(Episodes_900_HideStars)</onclick>
@@ -1104,7 +1083,7 @@
 		</control>
 		<control type="radiobutton" id="90034">
 			<description>Hide Studio Flags (Episodes)</description>
-			<label>90948</label>
+			<label>31206</label>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(ArcadeEpisodesBigInfo) + !Skin.HasSetting(ArcadeEpisodesMini)</enable>
 			<onclick>Skin.ToggleSetting(Episodes_900_HideStudioFlags)</onclick>
@@ -1112,31 +1091,24 @@
 		</control>
 		<control type="button" id="90050">
 			<description>Layout Selector (Games)</description>
-			<label>89010</label>
+			<label>31321</label>
 			<label2>$VAR[LayoutLabelVar]</label2>
 			<include>ButtonCommonValues</include>
-			<onclick>Skin.SelectBool(90301, 90001|Arcade.Default, 90002|Arcade.Games.Reversed, 90003|Arcade.Games.Adaptive, 90004|Arcade.Games.BigInfo, 90005|Arcade.Games.Mini)</onclick>
+			<onclick>Skin.SelectBool(31303, 31319|Arcade.Default, 31318|Arcade.Games.Reversed, 31316|Arcade.Games.Adaptive, 31310|Arcade.Games.BigInfo, 31306|Arcade.Games.Mini)</onclick>
 			<visible>$EXP[GameSupport] + Control.IsVisible(900)</visible>
 		</control>
 		<control type="button" id="90051">
 			<description>Art Selector (Games)</description>
-			<label>89000</label>
+			<label>31325</label>
 			<label2>$VAR[ImageLabelVar]</label2>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(Arcade.Games.BigInfo) + !Skin.HasSetting(Arcade.Games.Mini)</enable>
-			<onclick>Skin.SelectBool(89000, 20445|, 89001|ArcadeSnaps, 89002|ArcadeTitles)</onclick>
+			<onclick>Skin.SelectBool(31325, 20445|, 31324|ArcadeSnaps, 31323|ArcadeTitles)</onclick>
 			<visible>Control.IsVisible(900) + $EXP[GameSupport]</visible>
 		</control>
-<!-- 		<control type="radiobutton" id="90052"> -->
-<!-- 			<description>Bright Icons (Games)</description> -->
-<!-- 			<label>90945</label> -->
-<!-- 			<include>ButtonCommonValues</include> -->
-<!-- 			<onclick>Skin.ToggleSetting(Games_900_BrightIcons)</onclick> -->
-<!-- 			<visible>Control.IsVisible(900) + $EXP[GameSupport]</visible> -->
-<!-- 		</control> -->
 		<control type="radiobutton" id="90053">
 			<description>Trailers (Games)</description>
-			<label>90949</label>
+			<label>31179</label>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(Arcade.Games.BigInfo) + !Skin.HasSetting(Arcade.Games.Mini)</enable>
 			<onclick>Skin.ToggleSetting(Arcade.Trailers)</onclick>
@@ -1145,7 +1117,7 @@
 		</control>
 		<control type="radiobutton" id="90054">
 			<description>Hide Star Rating (Games)</description>
-			<label>90947</label>
+			<label>31207</label>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(Arcade.Games.BigInfo) + !Skin.HasSetting(Arcade.Games.Mini)</enable>
 			<onclick>Skin.ToggleSetting(Arcade.Games.HideStars)</onclick>
@@ -1154,7 +1126,7 @@
 		</control>
 		<control type="radiobutton" id="90055">
 			<description>Hide Studio Flags (Games)</description>
-			<label>90948</label>
+			<label>31206</label>
 			<include>ButtonCommonValues</include>
 			<enable>!Skin.HasSetting(Arcade.Games.BigInfo) + !Skin.HasSetting(Arcade.Games.Mini)</enable>
 			<onclick>Skin.ToggleSetting(Arcade.Games.HideStudioFlags)</onclick>
@@ -1318,7 +1290,7 @@
 					<width>200</width>
 					<height>30</height>
 					<align>center</align>
-					<label>90951</label>
+					<label>31148</label>
 					<font>font12</font>
 				</control>
 			</control>
@@ -1341,7 +1313,7 @@
 					<width>200</width>
 					<height>30</height>
 					<align>center</align>
-					<label>90952</label>
+					<label>31147</label>
 					<font>font12</font>
 				</control>
 			</control>
@@ -1364,7 +1336,7 @@
 					<width>200</width>
 					<height>30</height>
 					<align>center</align>
-					<label>90953</label>
+					<label>31146</label>
 					<font>font12</font>
 				</control>
 			</control>
@@ -1387,7 +1359,7 @@
 					<width>200</width>
 					<height>30</height>
 					<align>center</align>
-					<label>90954</label>
+					<label>31145</label>
 					<font>font12</font>
 				</control>
 			</control>
@@ -1722,7 +1694,7 @@
 					<width>200</width>
 					<height>30</height>
 					<align>center</align>
-					<label>90951</label>
+					<label>31148</label>
 					<font>font12</font>
 				</control>
 			</control>
@@ -1745,7 +1717,7 @@
 					<width>200</width>
 					<height>30</height>
 					<align>center</align>
-					<label>90952</label>
+					<label>31147</label>
 					<font>font12</font>
 				</control>
 			</control>
@@ -1768,7 +1740,7 @@
 					<width>200</width>
 					<height>30</height>
 					<align>center</align>
-					<label>90953</label>
+					<label>31146</label>
 					<font>font12</font>
 				</control>
 			</control>
@@ -1791,7 +1763,7 @@
 					<width>200</width>
 					<height>30</height>
 					<align>center</align>
-					<label>90954</label>
+					<label>31145</label>
 					<font>font12</font>
 				</control>
 			</control>
@@ -2252,8 +2224,8 @@
 			<aligny>center</aligny>
 			<textcolor>NormalTextColor</textcolor>
 			<font>font12</font>
-			<label>[COLOR=LabelTextColor]$LOCALIZE[90955]:[/COLOR] [COLOR=TitleTextColor]$INFO[ListItem.Year][/COLOR] [COLOR=NormalTextColor]•[/COLOR] [COLOR=LabelTextColor]$LOCALIZE[90956]:[/COLOR] [COLOR=AltTextColor]$INFO[ListItem.Genre][/COLOR] [COLOR=NormalTextColor]•[/COLOR]
-				[COLOR=LabelTextColor]$LOCALIZE[90957]:[/COLOR] [COLOR=TitleTextColor]$INFO[ListItem.Rating][/COLOR]</label>
+			<label>[COLOR=LabelTextColor]$LOCALIZE[31128]:[/COLOR] [COLOR=TitleTextColor]$INFO[ListItem.Year][/COLOR] [COLOR=NormalTextColor]•[/COLOR] [COLOR=LabelTextColor]$LOCALIZE[31113]:[/COLOR] [COLOR=AltTextColor]$INFO[ListItem.Genre][/COLOR] [COLOR=NormalTextColor]•[/COLOR]
+				[COLOR=LabelTextColor]$LOCALIZE[31074]:[/COLOR] [COLOR=TitleTextColor]$INFO[ListItem.Rating][/COLOR]</label>
 			<scroll>false</scroll>
 		</control>
 		<control type="image">

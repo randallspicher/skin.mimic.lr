@@ -1,164 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="1120" type="dialog">
-	<defaultcontrol always="true">90200</defaultcontrol>
-	<coordinates>
-		<system>1</system>
-		<left>361</left>
-		<top>170</top>
-	</coordinates>
-	<include>Animation.Dialog</include>
-	<controls>
-		<include content="DialogBackgroundCommons">
-			<param name="DialogBackgroundWidth" value="1198" />
-			<param name="DialogBackgroundHeight" value="740" />
-			<param name="DialogHeaderLabel" value="$LOCALIZE[31048]" />
-			<param name="DialogHeaderId" value="2" />
-		</include>
-
-		<control type="grouplist" id="90200">
-			<description>control area</description>
-			<left>32</left>
-			<top>98</top>
-			<width>1074</width>
-			<height>540</height>
-			<itemgap>0</itemgap>
-			<pagecontrol>6</pagecontrol>
-			<onup>90200</onup>
-			<ondown>9001</ondown>
-			<onleft>9001</onleft>
-			<onright>9001</onright>
-			<onright>6</onright>
-			<control type="button" id="90201">
-				<description>Background Type</description>
-				<width>1074</width>
-				<label>$LOCALIZE[31102]</label>
-				<label2>$VAR[VizBackgroundLabelVar]</label2>
-
-				<onclick condition="
+   <defaultcontrol always="true">31305</defaultcontrol>
+   <coordinates>
+      <system>1</system>
+      <left>361</left>
+      <top>170</top>
+   </coordinates>
+   <include>Animation.Dialog</include>
+   <controls>
+      <include content="DialogBackgroundCommons">
+         <param name="DialogBackgroundWidth" value="1198"/>
+         <param name="DialogBackgroundHeight" value="740"/>
+         <param name="DialogHeaderLabel" value="$LOCALIZE[31048]"/>
+         <param name="DialogHeaderId" value="2"/>
+      </include>
+      <control type="grouplist" id="31305">
+         <description>control area</description>
+         <left>32</left>
+         <top>98</top>
+         <width>1074</width>
+         <height>540</height>
+         <itemgap>0</itemgap>
+         <pagecontrol>6</pagecontrol>
+         <onup>31305</onup>
+         <ondown>9001</ondown>
+         <onleft>9001</onleft>
+         <onright>9001</onright>
+         <onright>6</onright>
+         <control type="button" id="90201">
+            <description>Background Type</description>
+            <width>1074</width>
+            <label>$LOCALIZE[31102]</label>
+            <label2>$VAR[VizBackgroundLabelVar]</label2>
+            <onclick condition="
 				!String.IsEqual(Skin.String(musicvis.background),fanart)
 				+!String.IsEqual(Skin.String(musicvis.background),artistslideshow)
 				+!String.IsEqual(Skin.String(musicvis.background),albumwall)
-				">
-					Skin.SetString(musicvis.background,fanart)
-				</onclick>
-<!-- 				<onclick condition="String.IsEqual(Skin.String(musicvis.background),none)"> -->
-<!-- 					Skin.SetString(musicvis.background,fanart) -->
-<!-- 				</onclick> -->
-				<onclick condition="String.IsEqual(Skin.String(musicvis.background),fanart)">
-					Skin.SetString(musicvis.background,artistslideshow)
-				</onclick>
-				<onclick condition="String.IsEqual(Skin.String(musicvis.background),artistslideshow)">
-					Skin.SetString(musicvis.background,albumwall)
-				</onclick>
-				<onclick condition="String.IsEqual(Skin.String(musicvis.background),albumwall)">
-					Skin.SetString(musicvis.background,none)
-				</onclick>
-			</control>
-
-
-			<control type="button" id="90202">
-				<width>1074</width>
-				<visible>String.IsEqual(Skin.String(musicvis.background),artistslideshow)</visible>
-				<description>Settings button for ArtistSlideshow</description>
-				<include>ButtonCommonValues</include>
-				<label>1390</label>
-				<onclick>Addon.OpenSettings(script.artistslideshow)</onclick>
-			</control>
-
-
-			<control type="button" id="90203">
-				<description>Background Scaling</description>
-				<width>1074</width>
-				<label>90936</label>
-				<label2>$VAR[VizBackgroundAspectLabel]</label2>
-
-				<onclick condition="String.IsEmpty(Skin.String(musicvis.background_aspect))">
-					Skin.SetString(musicvis.background_aspect,keep)
-				</onclick>
-
-				<onclick condition="String.IsEqual(Skin.String(musicvis.background_aspect),keep)">
-					Skin.SetString(musicvis.background_aspect,scale)
-				</onclick>
-				<onclick condition="String.IsEqual(Skin.String(musicvis.background_aspect),scale)">
-					Skin.SetString(musicvis.background_aspect,keep)
-				</onclick>
-			</control>
-
-
-			<control type="radiobutton" id="90204">
-				<width>1074</width>
-				<label>31905</label>
-				<onclick>Skin.ToggleSetting(Disable.AnimateFanart)</onclick>
-				<selected>!Skin.HasSetting(Disable.AnimateFanart)</selected>
-				<enable>!String.IsEqual(Skin.String(musicvis.background),albumwall)</enable>
-			</control>
-			<control type="radiobutton" id="90205">
-				<description>Background Button</description>
-				<width>1074</width>
-				<label>$LOCALIZE[31129]</label>
-				<onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
-				<selected>Skin.HasSetting(HideVisualizationFanart)</selected>
-				<enable>Visualisation.Enabled + ![String.IsEqual(Visualisation.Name,waveform) | String.IsEqual(Visualisation.Name,opengl spectrum) 
-				| String.IsEqual(Visualisation.Name,directx	spectrum)]
-				</enable>
-			</control>
-			<control type="button" id="90206">
-				<width>1074</width>
-				<label>90914</label>
-				<label2>$INFO[Skin.String(VisBackgroundMask)]</label2>
-				<onclick>Skin.SetString(VisBackgroundMask)</onclick>
-			</control>
-
-			<control type="button" id="90207">
-				<description>View</description>
-				<width>1074</width>
-				<label>90915</label>
-				<label2>$INFO[Skin.String(musicvis.view)]</label2>
-				<onclick condition="String.IsEmpty(Skin.String(musicvis.view)) | String.IsEqual(Skin.String(musicvis.view),StandardView)">Skin.SetString(musicvis.view,CoverView)</onclick>
-				<onclick condition="!String.IsEmpty(Skin.String(musicvis.view)) + String.IsEqual(Skin.String(musicvis.view),CoverView)">Skin.SetString(musicvis.view,CoverView2)</onclick>
-				<onclick condition="!String.IsEmpty(Skin.String(musicvis.view)) + String.IsEqual(Skin.String(musicvis.view),CoverView2)">Skin.SetString(musicvis.view,StandardView)</onclick>
-			</control>
-
-			<control type="radiobutton" id="90208">
-				<description>Big Ass Label Button</description>
-				<width>1074</width>
-				<label>$LOCALIZE[31042]</label>
-				<onclick>Skin.ToggleSetting(BigAssLabel)</onclick>
-				<selected>Skin.HasSetting(BigAssLabel)</selected>
-			</control>
-			<control type="button" id="90209">
-				<description>Artist Info Button</description>
-				<width>1074</width>
-				<label>$LOCALIZE[31108]</label>
-				<label2>$VAR[VizArtistInfoVar]</label2>
-				<onclick condition="!Skin.HasSetting(Enable.VizInfo) + !Skin.HasSetting(Enable.VizPersistent)">Skin.SetBool(Enable.VizInfo)</onclick>
-				<onclick condition="Skin.HasSetting(Enable.VizInfo)">Skin.SetBool(Enable.VizPersistent)</onclick>
-				<onclick condition="Skin.HasSetting(Enable.VizInfo)">Skin.Reset(Enable.VizInfo)</onclick>
-				<onclick condition="Skin.HasSetting(Enable.VizPersistent)">Skin.Reset(Enable.VizPersistent)</onclick>
-				<visible>System.HasAddon(script.artistslideshow)</visible>
-			</control>
-		</control>
-        <!-- button group -->
-        <control type="grouplist" id="9001">
-            <left>31</left>
-            <top>648</top>
-            <height>60</height>
-            <width>1138</width>
-            <onup>90204</onup>
-            <onleft>9001</onleft>
-            <onright>9001</onright>
-            <ondown>90200</ondown>
-            <align>center</align>
-            <itemgap>14</itemgap>
-            <orientation>horizontal</orientation>
-            <control type="button" id="900">
-                <description>Close</description>
-                <width>379</width>
-                <label>31112</label>
-                <include>ButtonInfoDialogsCommonValues</include>
-                <onclick>Close</onclick>
-            </control>
-        </control>
-
-	</controls>
+				">Skin.SetString(musicvis.background,fanart)</onclick>
+            <!-- 				<onclick condition="String.IsEqual(Skin.String(musicvis.background),none)"> -->
+            <!-- 					Skin.SetString(musicvis.background,fanart) -->
+            <!-- 				</onclick> -->
+            <onclick condition="String.IsEqual(Skin.String(musicvis.background),fanart)">Skin.SetString(musicvis.background,artistslideshow)</onclick>
+            <onclick condition="String.IsEqual(Skin.String(musicvis.background),artistslideshow)">Skin.SetString(musicvis.background,albumwall)</onclick>
+            <onclick condition="String.IsEqual(Skin.String(musicvis.background),albumwall)">Skin.SetString(musicvis.background,none)</onclick>
+         </control>
+         <control type="button" id="90202">
+            <width>1074</width>
+            <visible>String.IsEqual(Skin.String(musicvis.background),artistslideshow)</visible>
+            <description>Settings button for ArtistSlideshow</description>
+            <include>ButtonCommonValues</include>
+            <label>1390</label>
+            <onclick>Addon.OpenSettings(script.artistslideshow)</onclick>
+         </control>
+         <control type="button" id="90203">
+            <description>Background Scaling</description>
+            <width>1074</width>
+            <label>31215</label>
+            <label2>$VAR[VizBackgroundAspectLabel]</label2>
+            <onclick condition="String.IsEmpty(Skin.String(musicvis.background_aspect))">Skin.SetString(musicvis.background_aspect,keep)</onclick>
+            <onclick condition="String.IsEqual(Skin.String(musicvis.background_aspect),keep)">Skin.SetString(musicvis.background_aspect,scale)</onclick>
+            <onclick condition="String.IsEqual(Skin.String(musicvis.background_aspect),scale)">Skin.SetString(musicvis.background_aspect,keep)</onclick>
+         </control>
+         <control type="radiobutton" id="90204">
+            <width>1074</width>
+            <label>31905</label>
+            <onclick>Skin.ToggleSetting(Disable.AnimateFanart)</onclick>
+            <selected>!Skin.HasSetting(Disable.AnimateFanart)</selected>
+            <enable>!String.IsEqual(Skin.String(musicvis.background),albumwall)</enable>
+         </control>
+         <control type="radiobutton" id="90205">
+            <description>Background Button</description>
+            <width>1074</width>
+            <label>$LOCALIZE[31129]</label>
+            <onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
+            <selected>Skin.HasSetting(HideVisualizationFanart)</selected>
+            <enable>Visualisation.Enabled + ![String.IsEqual(Visualisation.Name,waveform) | String.IsEqual(Visualisation.Name,opengl spectrum) 
+				| String.IsEqual(Visualisation.Name,directx	spectrum)]</enable>
+         </control>
+         <control type="button" id="90206">
+            <width>1074</width>
+            <label>31292</label>
+            <label2>$INFO[Skin.String(VisBackgroundMask)]</label2>
+            <onclick>Skin.SetString(VisBackgroundMask)</onclick>
+         </control>
+         <control type="button" id="90207">
+            <description>View</description>
+            <width>1074</width>
+            <label>31291</label>
+            <label2>$INFO[Skin.String(musicvis.view)]</label2>
+            <onclick condition="String.IsEmpty(Skin.String(musicvis.view)) | String.IsEqual(Skin.String(musicvis.view),StandardView)">Skin.SetString(musicvis.view,CoverView)</onclick>
+            <onclick condition="!String.IsEmpty(Skin.String(musicvis.view)) + String.IsEqual(Skin.String(musicvis.view),CoverView)">Skin.SetString(musicvis.view,CoverView2)</onclick>
+            <onclick condition="!String.IsEmpty(Skin.String(musicvis.view)) + String.IsEqual(Skin.String(musicvis.view),CoverView2)">Skin.SetString(musicvis.view,StandardView)</onclick>
+         </control>
+         <control type="radiobutton" id="90208">
+            <description>Big Ass Label Button</description>
+            <width>1074</width>
+            <label>$LOCALIZE[31042]</label>
+            <onclick>Skin.ToggleSetting(BigAssLabel)</onclick>
+            <selected>Skin.HasSetting(BigAssLabel)</selected>
+         </control>
+         <control type="button" id="90209">
+            <description>Artist Info Button</description>
+            <width>1074</width>
+            <label>$LOCALIZE[31108]</label>
+            <label2>$VAR[VizArtistInfoVar]</label2>
+            <onclick condition="!Skin.HasSetting(Enable.VizInfo) + !Skin.HasSetting(Enable.VizPersistent)">Skin.SetBool(Enable.VizInfo)</onclick>
+            <onclick condition="Skin.HasSetting(Enable.VizInfo)">Skin.SetBool(Enable.VizPersistent)</onclick>
+            <onclick condition="Skin.HasSetting(Enable.VizInfo)">Skin.Reset(Enable.VizInfo)</onclick>
+            <onclick condition="Skin.HasSetting(Enable.VizPersistent)">Skin.Reset(Enable.VizPersistent)</onclick>
+            <visible>System.HasAddon(script.artistslideshow)</visible>
+         </control>
+      </control>
+      <!-- button group -->
+      <control type="grouplist" id="9001">
+         <left>31</left>
+         <top>648</top>
+         <height>60</height>
+         <width>1138</width>
+         <onup>90204</onup>
+         <onleft>9001</onleft>
+         <onright>9001</onright>
+         <ondown>31305</ondown>
+         <align>center</align>
+         <itemgap>14</itemgap>
+         <orientation>horizontal</orientation>
+         <control type="button" id="900">
+            <description>Close</description>
+            <width>379</width>
+            <label>31112</label>
+            <include>ButtonInfoDialogsCommonValues</include>
+            <onclick>Close</onclick>
+         </control>
+      </control>
+   </controls>
 </window>

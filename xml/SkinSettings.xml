@@ -6,12 +6,15 @@
     <onload>ClearProperty(MediaMenu,Home)</onload>
     <onunload>ClearProperty(MediaMenu,Home)</onunload>
     <onunload>ClearProperty(Window.HasSettings,Home)</onunload>
-    <onunload>RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=9000&amp;group=mainmenu|quicknav)</onunload>
+    <onunload>
+        RunScript(script.skinshortcuts,type=buildxml&amp;mode=single&amp;options=clonewidgets&amp;mainmenuID=9000&amp;group=mainmenu|quicknav)</onunload>
     <controls>
         <include>CommonBackground</include>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <texture background="true" fallback="special://skin/backgrounds/default_bg.jpg">$INFO[Skin.String(CustomBackground)]</texture>
+            <texture background="true"
+                fallback="special://skin/backgrounds/default_bg.jpg">
+                $INFO[Skin.String(CustomBackground)]</texture>
             <fadetime>400</fadetime>
         </control>
         <control type="image">
@@ -50,7 +53,11 @@
                 </itemlayout>
                 <focusedlayout height="90" width="356">
                     <control type="image">
-                        <animation effect="fade" time="50" start="100" end="50" condition="!Control.HasFocus(9000)">Conditional</animation>
+                        <animation effect="fade"
+                            time="50"
+                            start="100"
+                            end="50"
+                            condition="!Control.HasFocus(9000)">Conditional</animation>
                         <width>356</width>
                         <height>90</height>
                         <texture border="5">listselect_fo.png</texture>
@@ -106,10 +113,19 @@
                 <font>font15_textbox</font>
                 <textcolor>NormalTextColor</textcolor>
                 <label>$VAR[SkinSettingsDescriptionVar]</label>
-                    <include content="AutoscrollDefault">
-                    </include>
-                <animation effect="fade" start="0" end="100" time="300" tween="sine" easing="inout">Visible</animation>
-                <animation effect="fade" start="100" end="0" time="0" tween="sine" easing="inout">Hidden</animation>
+                <include content="AutoscrollDefault"></include>
+                <animation effect="fade"
+                    start="0"
+                    end="100"
+                    time="300"
+                    tween="sine"
+                    easing="inout">Visible</animation>
+                <animation effect="fade"
+                    start="100"
+                    end="0"
+                    time="0"
+                    tween="sine"
+                    easing="inout">Hidden</animation>
                 <visible>!Window.IsActive(script-skinshortcuts.xml)</visible>
             </control>
             <control type="group" id="9010">
@@ -130,26 +146,26 @@
                     <control type="button" id="101">
                         <include>SkinSettingsButtonDefaults</include>
                         <label>31911</label>
-                        <onclick>RunScript(script.skinshortcuts,type=manage&amp;group=mainmenu)</onclick>
+                        <onclick>RunScript(script.skinshortcuts,type=manage&amp;menu=mainmenu)</onclick>
                     </control>
                     <control type="button" id="102">
                         <include>SkinSettingsButtonDefaults</include>
                         <label>31096</label>
                         <onclick>RunScript(script.skinshortcuts,type=resetall)</onclick>
-                    </control>
+                    </control><!---->
                     <control type="button" id="103">
                         <include>SkinSettingsButtonDefaults</include>
                         <label>31018</label>
                         <label2>$VAR[MenuOrientationVar]</label2>
                         <onclick>Skin.ToggleSetting(Enable.HorizontalMenu)</onclick>
                     </control>
-                    <control type="radiobutton" id="104">
-                        <include>SkinSettingsButtonDefaults</include>
-                        <label>31231</label>
-                        <onclick>Skin.ToggleSetting(Enable.CombineMenus)</onclick>
-                        <selected>Skin.HasSetting(Enable.CombineMenus)</selected>
-                        <enable>!Skin.HasSetting(Enable.HorizontalMenu)</enable>
-                    </control>
+                    <!-- 	<control type="radiobutton" id="104"> -->
+                    <!-- 		<include>SkinSettingsButtonDefaults</include> -->
+                    <!-- 		<label>31231</label> -->
+                    <!-- 		<onclick>Skin.ToggleSetting(Enable.CombineMenus)</onclick> -->
+                    <!-- 		<selected>Skin.HasSetting(Enable.CombineMenus)</selected> -->
+                    <!-- 		<enable>!Skin.HasSetting(Enable.HorizontalMenu)</enable> -->
+                    <!-- 	</control> -->
                 </control>
                 <control type="list" id="9007">
                     <visible>Container(9000).HasFocus(2)</visible>
@@ -172,7 +188,9 @@
                             <width>70</width>
                             <height>70</height>
                             <aspectratio scalediffuse="false">keep</aspectratio>
-                            <texture background="true" fallback="DefaultAddon.png" diffuse="diffuse/list-icon.png">$INFO[ListItem.Icon]</texture>
+                            <texture background="true"
+                                fallback="DefaultAddon.png"
+                                diffuse="diffuse/list-icon.png">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="label">
                             <textoffsetx>100</textoffsetx>
@@ -196,7 +214,8 @@
                         <control type="image">
                             <width>1316</width>
                             <height>90</height>
-                            <texture border="5" colordiffuse="FocusColor">listselect_fo.png</texture>
+                            <texture border="5"
+                                colordiffuse="FocusColor">listselect_fo.png</texture>
                             <visible>Control.HasFocus(9007)</visible>
                         </control>
                         <control type="image">
@@ -205,7 +224,9 @@
                             <width>70</width>
                             <height>70</height>
                             <aspectratio scalediffuse="false">keep</aspectratio>
-                            <texture background="true" fallback="DefaultAddon.png" diffuse="diffuse/list-icon.png">$INFO[ListItem.Icon]</texture>
+                            <texture background="true"
+                                fallback="DefaultAddon.png"
+                                diffuse="diffuse/list-icon.png">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="label">
                             <textoffsetx>100</textoffsetx>
@@ -230,142 +251,188 @@
                             <icon>$INFO[System.AddonIcon(script.artistslideshow)]</icon>
                             <label>31170</label>
                             <label2>$INFO[System.AddonVersion(script.artistslideshow)]</label2>
-                            <onclick condition="System.HasAddon(script.artistslideshow)">Addon.OpenSettings(script.artistslideshow)</onclick>
-                            <onclick condition="!System.HasAddon(script.artistslideshow)">InstallAddon(script.artistslideshow)</onclick>
+                            <onclick condition="System.HasAddon(script.artistslideshow)">
+                                Addon.OpenSettings(script.artistslideshow)</onclick>
+                            <onclick condition="!System.HasAddon(script.artistslideshow)">
+                                InstallAddon(script.artistslideshow)</onclick>
                         </item>
-<!--                         <item id="2"> -->
-<!--                             <icon>$INFO[System.AddonIcon(script.artwork.downloader)]</icon> -->
-<!--                             <label>31225</label> -->
-<!--                             <label2>$INFO[System.AddonVersion(script.artwork.downloader)]</label2> -->
-<!--                             <onclick condition="System.HasAddon(script.artwork.downloader)">Addon.OpenSettings(script.artwork.downloader)</onclick> -->
-<!--                             <onclick condition="!System.HasAddon(script.artwork.downloader)">InstallAddon(script.artwork.downloader)</onclick> -->
-<!--                         </item> -->
+                        <!--                         <item id="2"> -->
+                        <!--                             <icon>$INFO[System.AddonIcon(script.artwork.downloader)]</icon> -->
+                        <!--                             <label>31225</label> -->
+                        <!--                             <label2>$INFO[System.AddonVersion(script.artwork.downloader)]</label2> -->
+                        <!--                             <onclick
+                        condition="System.HasAddon(script.artwork.downloader)">Addon.OpenSettings(script.artwork.downloader)</onclick> -->
+                        <!--                             <onclick
+                        condition="!System.HasAddon(script.artwork.downloader)">InstallAddon(script.artwork.downloader)</onclick> -->
+                        <!--                         </item> -->
                         <item id="3">
                             <icon>$INFO[System.AddonIcon(plugin.program.autocompletion)]</icon>
                             <label>31144</label>
                             <label2>$INFO[System.AddonVersion(plugin.program.autocompletion)]</label2>
-                            <onclick condition="System.HasAddon(plugin.program.autocompletion)">Addon.OpenSettings(plugin.program.autocompletion)</onclick>
-                            <onclick condition="!System.HasAddon(plugin.program.autocompletion)">InstallAddon(plugin.program.autocompletion)</onclick>
+                            <onclick condition="System.HasAddon(plugin.program.autocompletion)">
+                                Addon.OpenSettings(plugin.program.autocompletion)</onclick>
+                            <onclick condition="!System.HasAddon(plugin.program.autocompletion)">
+                                InstallAddon(plugin.program.autocompletion)</onclick>
                         </item>
                         <item id="4">
                             <icon>$INFO[System.AddonIcon(resource.images.moviecountryicons.maps)]</icon>
                             <label>31278</label>
-                            <label2>$INFO[System.AddonVersion(resource.images.moviecountryicons.maps)]</label2>
-                            <onclick condition="System.HasAddon(resource.images.moviecountryicons.maps)">Addon.OpenSettings(resource.images.moviecountryicons.maps)</onclick>
-                            <onclick condition="!System.HasAddon(resource.images.moviecountryicons.maps)">InstallAddon(resource.images.moviecountryicons.maps)</onclick>
+                            <label2>
+                                $INFO[System.AddonVersion(resource.images.moviecountryicons.maps)]</label2>
+                            <onclick
+                                condition="System.HasAddon(resource.images.moviecountryicons.maps)">
+                                Addon.OpenSettings(resource.images.moviecountryicons.maps)</onclick>
+                            <onclick
+                                condition="!System.HasAddon(resource.images.moviecountryicons.maps)">
+                                InstallAddon(resource.images.moviecountryicons.maps)</onclick>
                         </item>
                         <item id="5">
                             <icon>$INFO[System.AddonIcon(script.cu.lrclyrics)]</icon>
                             <label>31060</label>
                             <label2>$INFO[System.AddonVersion(script.cu.lrclyrics)]</label2>
-                            <onclick condition="System.HasAddon(script.cu.lrclyrics)">Addon.OpenSettings(script.cu.lrclyrics)</onclick>
-                            <onclick condition="!System.HasAddon(script.cu.lrclyrics)">InstallAddon(script.cu.lrclyrics)</onclick>
+                            <onclick condition="System.HasAddon(script.cu.lrclyrics)">
+                                Addon.OpenSettings(script.cu.lrclyrics)</onclick>
+                            <onclick condition="!System.HasAddon(script.cu.lrclyrics)">
+                                InstallAddon(script.cu.lrclyrics)</onclick>
                         </item>
                         <item id="6">
                             <icon>$INFO[System.AddonIcon(script.extendedinfo)]</icon>
                             <label>31172</label>
                             <label2>$INFO[System.AddonVersion(script.extendedinfo)]</label2>
-                            <onclick condition="System.HasAddon(script.extendedinfo)">Addon.OpenSettings(script.extendedinfo)</onclick>
-                            <onclick condition="!System.HasAddon(script.extendedinfo)">InstallAddon(script.extendedinfo)</onclick>
+                            <onclick condition="System.HasAddon(script.extendedinfo)">
+                                Addon.OpenSettings(script.extendedinfo)</onclick>
+                            <onclick condition="!System.HasAddon(script.extendedinfo)">
+                                InstallAddon(script.extendedinfo)</onclick>
                         </item>
                         <item id="7">
                             <icon>$INFO[System.AddonIcon(script.embuary.info)]</icon>
                             <label>31169</label>
                             <label2>$INFO[System.AddonVersion(script.embuary.info)]</label2>
-                            <onclick condition="System.HasAddon(script.embuary.info)">Addon.OpenSettings(script.embuary.info)</onclick>
-                            <onclick condition="!System.HasAddon(script.embuary.info)">InstallAddon(script.embuary.info)</onclick>
+                            <onclick condition="System.HasAddon(script.embuary.info)">
+                                Addon.OpenSettings(script.embuary.info)</onclick>
+                            <onclick condition="!System.HasAddon(script.embuary.info)">
+                                InstallAddon(script.embuary.info)</onclick>
                         </item>
-<!--                         <item id="8"> -->
-<!--                             <icon>$INFO[System.AddonIcon(plugin.video.themoviedb.helper)]</icon> -->
-<!--                             <label>31111</label> -->
-<!--                             <label2>$INFO[System.AddonVersion(plugin.video.themoviedb.helper)]</label2> -->
-<!--                             <onclick condition="System.HasAddon(plugin.video.themoviedb.helper)">Addon.OpenSettings(plugin.video.themoviedb.helper)</onclick> -->
-<!--                             <onclick condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick> -->
-<!--                         </item> -->
+                        <!--                         <item id="8"> -->
+                        <!--                             <icon>$INFO[System.AddonIcon(plugin.video.themoviedb.helper)]</icon> -->
+                        <!--                             <label>31111</label> -->
+                        <!--
+                        <label2>$INFO[System.AddonVersion(plugin.video.themoviedb.helper)]</label2> -->
+                        <!--                             <onclick
+                        condition="System.HasAddon(plugin.video.themoviedb.helper)">Addon.OpenSettings(plugin.video.themoviedb.helper)</onclick> -->
+                        <!--                             <onclick
+                        condition="!System.HasAddon(plugin.video.themoviedb.helper)">InstallAddon(plugin.video.themoviedb.helper)</onclick> -->
+                        <!--                         </item> -->
                         <item id="9">
                             <icon>$INFO[System.AddonIcon(script.globalsearch)]</icon>
                             <label>31173</label>
                             <label2>$INFO[System.AddonVersion(script.globalsearch)]</label2>
-                            <onclick condition="System.HasAddon(script.globalsearch)">Addon.OpenSettings(script.globalsearch)</onclick>
-                            <onclick condition="!System.HasAddon(script.globalsearch)">InstallAddon(script.globalsearch)</onclick>
+                            <onclick condition="System.HasAddon(script.globalsearch)">
+                                Addon.OpenSettings(script.globalsearch)</onclick>
+                            <onclick condition="!System.HasAddon(script.globalsearch)">
+                                InstallAddon(script.globalsearch)</onclick>
                         </item>
                         <item id="10">
                             <icon>$INFO[System.AddonIcon(script.image.resource.select)]</icon>
                             <label>31175</label>
                             <label2>$INFO[System.AddonVersion(script.image.resource.select)]</label2>
-                            <onclick condition="System.HasAddon(script.image.resource.select)">Addon.OpenSettings(script.image.resource.select)</onclick>
-                            <onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
+                            <onclick condition="System.HasAddon(script.image.resource.select)">
+                                Addon.OpenSettings(script.image.resource.select)</onclick>
+                            <onclick condition="!System.HasAddon(script.image.resource.select)">
+                                InstallAddon(script.image.resource.select)</onclick>
                         </item>
                         <item id="11">
                             <icon>$INFO[System.AddonIcon(script.lazytv)]</icon>
                             <label>31224</label>
                             <label2>$INFO[System.AddonVersion(script.lazytv)]</label2>
-                            <onclick condition="System.HasAddon(script.lazytv)">Addon.OpenSettings(script.lazytv)</onclick>
-                            <onclick condition="!System.HasAddon(script.lazytv)">InstallAddon(script.lazytv)</onclick>
+                            <onclick condition="System.HasAddon(script.lazytv)">
+                                Addon.OpenSettings(script.lazytv)</onclick>
+                            <onclick condition="!System.HasAddon(script.lazytv)">
+                                InstallAddon(script.lazytv)</onclick>
                         </item>
                         <item id="12">
                             <icon>$INFO[System.AddonIcon(service.library.data.provider)]</icon>
                             <label>31176</label>
                             <label2>$INFO[System.AddonVersion(service.library.data.provider)]</label2>
-                            <onclick condition="System.HasAddon(service.library.data.provider)">Addon.OpenSettings(service.library.data.provider)</onclick>
-                            <onclick condition="!System.HasAddon(service.library.data.provider)">InstallAddon(service.library.data.provider)</onclick>
+                            <onclick condition="System.HasAddon(service.library.data.provider)">
+                                Addon.OpenSettings(service.library.data.provider)</onclick>
+                            <onclick condition="!System.HasAddon(service.library.data.provider)">
+                                InstallAddon(service.library.data.provider)</onclick>
                         </item>
-<!--                         <item id="13"> -->
-<!--                             <icon>$INFO[System.AddonIcon(service.nextup.notification)]</icon> -->
-<!--                             <label>31177</label> -->
-<!--                             <label2>$INFO[System.AddonVersion(service.nextup.notification)]</label2> -->
-<!--                             <onclick condition="System.HasAddon(service.nextup.notification)">Addon.OpenSettings(service.nextup.notification)</onclick> -->
-<!--                             <onclick condition="!System.HasAddon(service.nextup.notification)">InstallAddon(service.nextup.notification)</onclick> -->
-<!--                         </item> -->
+                        <!--                         <item id="13"> -->
+                        <!--                             <icon>$INFO[System.AddonIcon(service.nextup.notification)]</icon> -->
+                        <!--                             <label>31177</label> -->
+                        <!--
+                        <label2>$INFO[System.AddonVersion(service.nextup.notification)]</label2> -->
+                        <!--                             <onclick
+                        condition="System.HasAddon(service.nextup.notification)">Addon.OpenSettings(service.nextup.notification)</onclick> -->
+                        <!--                             <onclick
+                        condition="!System.HasAddon(service.nextup.notification)">InstallAddon(service.nextup.notification)</onclick> -->
+                        <!--                         </item> -->
                         <item id="14">
                             <icon>$INFO[System.AddonIcon(script.playalbum)]</icon>
                             <label>31192</label>
                             <label2>$INFO[System.AddonVersion(script.playalbum)]</label2>
-                            <onclick condition="System.HasAddon(script.playalbum)">Addon.OpenSettings(script.playalbum)</onclick>
-                            <onclick condition="!System.HasAddon(script.playalbum)">InstallAddon(script.playalbum)</onclick>
+                            <onclick condition="System.HasAddon(script.playalbum)">
+                                Addon.OpenSettings(script.playalbum)</onclick>
+                            <onclick condition="!System.HasAddon(script.playalbum)">
+                                InstallAddon(script.playalbum)</onclick>
                         </item>
-<!--                         <item id="15"> -->
-<!--                             <icon>$INFO[System.AddonIcon(script.ratingupdate)]</icon> -->
-<!--                             <label>31226</label> -->
-<!--                             <label2>$INFO[System.AddonVersion(script.ratingupdate)]</label2> -->
-<!--                             <onclick condition="System.HasAddon(script.ratingupdate)">Addon.OpenSettings(script.ratingupdate)</onclick> -->
-<!--                             <onclick condition="!System.HasAddon(script.ratingupdate)">InstallAddon(script.ratingupdate)</onclick> -->
-<!--                         </item> -->
+                        <!--                         <item id="15"> -->
+                        <!--                             <icon>$INFO[System.AddonIcon(script.ratingupdate)]</icon> -->
+                        <!--                             <label>31226</label> -->
+                        <!--                             <label2>$INFO[System.AddonVersion(script.ratingupdate)]</label2> -->
+                        <!--                             <onclick
+                        condition="System.HasAddon(script.ratingupdate)">Addon.OpenSettings(script.ratingupdate)</onclick> -->
+                        <!--                             <onclick
+                        condition="!System.HasAddon(script.ratingupdate)">InstallAddon(script.ratingupdate)</onclick> -->
+                        <!--                         </item> -->
                         <item id="16">
                             <icon>$INFO[System.AddonIcon(script.skinshortcuts)]</icon>
                             <label>31180</label>
                             <label2>$INFO[System.AddonVersion(script.skinshortcuts)]</label2>
-                            <onclick condition="System.HasAddon(script.skinshortcuts)">Addon.OpenSettings(script.skinshortcuts)</onclick>
-                            <onclick condition="!System.HasAddon(script.skinshortcuts)">InstallAddon(script.skinshortcuts)</onclick>
+                            <onclick condition="System.HasAddon(script.skinshortcuts)">
+                                Addon.OpenSettings(script.skinshortcuts)</onclick>
+                            <onclick condition="!System.HasAddon(script.skinshortcuts)">
+                                InstallAddon(script.skinshortcuts)</onclick>
                         </item>
-<!--                         <item id="17"> -->
-<!--                             <icon>$INFO[System.AddonIcon(resource.images.studios.squarehd)]</icon> -->
-<!--                             <label>31240</label> -->
-<!--                             <label2>$INFO[System.AddonVersion(resource.images.studios.squarehd)]</label2> -->
-<!--                             <onclick condition="System.HasAddon(resource.images.studios.squarehd)">Addon.OpenSettings(resource.images.studios.squarehd)</onclick> -->
-<!--                             <onclick condition="!System.HasAddon(resource.images.studios.squarehd)">InstallAddon(resource.images.studios.squarehd)</onclick> -->
-<!--                         </item> -->
+                        <!--                         <item id="17"> -->
+                        <!--                             <icon>$INFO[System.AddonIcon(resource.images.studios.squarehd)]</icon> -->
+                        <!--                             <label>31240</label> -->
+                        <!--
+                        <label2>$INFO[System.AddonVersion(resource.images.studios.squarehd)]</label2> -->
+                        <!--                             <onclick
+                        condition="System.HasAddon(resource.images.studios.squarehd)">Addon.OpenSettings(resource.images.studios.squarehd)</onclick> -->
+                        <!--                             <onclick
+                        condition="!System.HasAddon(resource.images.studios.squarehd)">InstallAddon(resource.images.studios.squarehd)</onclick> -->
+                        <!--                         </item> -->
                         <item id="18">
                             <icon>$INFO[System.AddonIcon(resource.images.studios.white)]</icon>
                             <label>31181</label>
                             <label2>$INFO[System.AddonVersion(resource.images.studios.white)]</label2>
-                            <onclick condition="System.HasAddon(resource.images.studios.white)">Addon.OpenSettings(resource.images.studios.white)</onclick>
-                            <onclick condition="!System.HasAddon(resource.images.studios.white)">InstallAddon(resource.images.studios.white)</onclick>
+                            <onclick condition="System.HasAddon(resource.images.studios.white)">
+                                Addon.OpenSettings(resource.images.studios.white)</onclick>
+                            <onclick condition="!System.HasAddon(resource.images.studios.white)">
+                                InstallAddon(resource.images.studios.white)</onclick>
                         </item>
                         <item id="19">
                             <icon>$INFO[System.AddonIcon(script.toolbox)]</icon>
                             <label>31182</label>
                             <label2>$INFO[System.AddonVersion(script.toolbox)]</label2>
-                            <onclick condition="System.HasAddon(script.toolbox)">Addon.OpenSettings(script.toolbox)</onclick>
-                            <onclick condition="!System.HasAddon(script.toolbox)">InstallAddon(script.toolbox)</onclick>
+                            <onclick condition="System.HasAddon(script.toolbox)">
+                                Addon.OpenSettings(script.toolbox)</onclick>
+                            <onclick condition="!System.HasAddon(script.toolbox)">
+                                InstallAddon(script.toolbox)</onclick>
                         </item>
-<!--                         <item id="20"> -->
-<!--                             <icon>$INFO[System.AddonIcon(context.youtube.browser)]</icon> -->
-<!--                             <label>31132</label> -->
-<!--                             <label2>$INFO[System.AddonVersion(context.youtube.browser)]</label2> -->
-<!--                             <onclick condition="System.HasAddon(context.youtube.browser)">Addon.OpenSettings(context.youtube.browser)</onclick> -->
-<!--                             <onclick condition="!System.HasAddon(context.youtube.browser)">InstallAddon(context.youtube.browser)</onclick> -->
-<!--                         </item> -->
+                        <!--                         <item id="20"> -->
+                        <!--                             <icon>$INFO[System.AddonIcon(context.youtube.browser)]</icon> -->
+                        <!--                             <label>31132</label> -->
+                        <!--                             <label2>$INFO[System.AddonVersion(context.youtube.browser)]</label2> -->
+                        <!--                             <onclick
+                        condition="System.HasAddon(context.youtube.browser)">Addon.OpenSettings(context.youtube.browser)</onclick> -->
+                        <!--                             <onclick
+                        condition="!System.HasAddon(context.youtube.browser)">InstallAddon(context.youtube.browser)</onclick> -->
+                        <!--                         </item> -->
                     </content>
                 </control>
                 <control type="grouplist" id="9006">
@@ -430,13 +497,11 @@
                     </control>
                     <control type="button" id="209">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90914</label>
+                        <label>31292</label>
                         <label2>$INFO[Skin.String(VisBackgroundMask)]</label2>
                         <onclick>Skin.SetString(VisBackgroundMask)</onclick>
                     </control>
-                
                 </control>
-                
                 <control type="grouplist" id="9002">
                     <description>General control area</description>
                     <left>522</left>
@@ -501,16 +566,16 @@
                     </control>
                     <control type="radiobutton" id="308">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90917</label>
+                        <label>31289</label>
                         <onclick>Skin.ToggleSetting(Enable.TouchScreen)</onclick>
                         <selected>Skin.HasSetting(Enable.TouchScreen)</selected>
                     </control>
-					<control type="radiobutton" id="309">
+                    <control type="radiobutton" id="309">
                         <include>SkinSettingsButtonDefaults</include>
-						<label>90945</label>
-						<onclick>Skin.ToggleSetting(Enable.HighlightFocused)</onclick>
-						<selected>Skin.HasSetting(Enable.HighlightFocused)</selected>
-					</control>
+                        <label>31209</label>
+                        <onclick>Skin.ToggleSetting(Enable.HighlightFocused)</onclick>
+                        <selected>Skin.HasSetting(Enable.HighlightFocused)</selected>
+                    </control>
                 </control>
                 <control type="grouplist" id="9003">
                     <description>Extras control area</description>
@@ -544,139 +609,144 @@
                         <label>31083</label>
                         <onclick>Skin.ToggleSetting(Disable.NextAired)</onclick>
                         <selected>!Skin.HasSetting(Disable.NextAired)</selected>
-                        <onclick condition="!System.HasAddon(script.tv.show.next.aired)">InstallAddon(script.tv.show.next.aired)</onclick>
+                        <onclick condition="!System.HasAddon(script.tv.show.next.aired)">
+                            InstallAddon(script.tv.show.next.aired)</onclick>
                     </control>
                     <control type="radiobutton" id="404">
                         <include>SkinSettingsButtonDefaults</include>
                         <label>31135</label>
                         <onclick>Skin.ToggleSetting(Disable.AutoComplete)</onclick>
-                        <onclick condition="!System.HasAddon(plugin.program.autocompletion)">InstallAddon(plugin.program.autocompletion)</onclick>
+                        <onclick condition="!System.HasAddon(plugin.program.autocompletion)">
+                            InstallAddon(plugin.program.autocompletion)</onclick>
                         <selected>!Skin.HasSetting(Disable.AutoComplete)</selected>
                     </control>
-<!--                     <control type="button" id="405"> -->
-<!--                         <include>SkinSettingsButtonDefaults</include> -->
-<!--                         <label>31119</label> -->
-<!--                         <onclick condition="System.HasAddon(script.toolbox)">RunScript(script.toolbox)</onclick> -->
-<!--                         <onclick condition="!System.HasAddon(script.toolbox)">InstallAddon(script.toolbox)</onclick> -->
-<!--                     </control> -->
-                    <!--<control type="button" id="406">
+                    <!--                     <control type="button" id="405"> -->
+                    <!--                         <include>SkinSettingsButtonDefaults</include> -->
+                    <!--                         <label>31119</label> -->
+                    <!--                         <onclick
+                    condition="System.HasAddon(script.toolbox)">RunScript(script.toolbox)</onclick> -->
+                    <!--                         <onclick
+                    condition="!System.HasAddon(script.toolbox)">InstallAddon(script.toolbox)</onclick> -->
+                    <!--                     </control> -->
+                    <!--<control
+                    type="button" id="406">
                         <include>SkinSettingsButtonDefaults</include>
                         <label>31119</label>
-                        <onclick condition="System.HasAddon(script.toolbox)">RunScript(script.toolbox,info=extrafanartmovie)</onclick>
+                        <onclick
+                    condition="System.HasAddon(script.toolbox)">RunScript(script.toolbox,info=extrafanartmovie)</onclick>
                         <onclick condition="!System.HasAddon(script.toolbox)">InstallAddon(script.toolbox)</onclick>
                     </control>
                     <control type="button" id="407">
                         <include>SkinSettingsButtonDefaults</include>
                         <label>31120</label>
-                        <onclick condition="System.HasAddon(script.toolbox)">RunScript(script.toolbox,info=extrafanarttvshow)</onclick>
+                        <onclick
+                    condition="System.HasAddon(script.toolbox)">RunScript(script.toolbox,info=extrafanarttvshow)</onclick>
                         <onclick condition="!System.HasAddon(script.toolbox)">InstallAddon(script.toolbox)</onclick>
                     </control>-->
-                    
                     <control type="radiobutton" id="408">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90912</label>
+                        <label>31294</label>
                         <onclick>Skin.ToggleSetting(Enable.RemoteWeatherIcons)</onclick>
                         <selected>Skin.HasSetting(Enable.RemoteWeatherIcons)</selected>
                     </control>
-					<control type="button" id="421">
-						<description>Select weather fanart</description>
-						<include>SkinSettingsButtonDefaults</include>
-						<label>31171</label>
+                    <control type="button" id="421">
+                        <description>Select weather fanart</description>
+                        <include>SkinSettingsButtonDefaults</include>
+                        <label>31171</label>
                         <label2>$INFO[Skin.String(weatherfanart.path)]</label2>
-						<onclick condition="System.HasAddon(script.image.resource.select)">RunScript(script.image.resource.select,property=weatherfanart&amp;type=resource.images.weatherfanart)</onclick>
-						<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
-					</control>
+                        <onclick condition="System.HasAddon(script.image.resource.select)">
+                            RunScript(script.image.resource.select,property=weatherfanart&amp;type=resource.images.weatherfanart)</onclick>
+                        <onclick condition="!System.HasAddon(script.image.resource.select)">
+                            InstallAddon(script.image.resource.select)</onclick>
+                    </control>
                     <control type="radiobutton" id="420">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90913</label>
+                        <label>31293</label>
                         <onclick>Skin.ToggleSetting(Enable.ZoomRadar)</onclick>
                         <selected>Skin.HasSetting(Enable.ZoomRadar)</selected>
                     </control>
                     <control type="radiobutton" id="422">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90933</label>
+                        <label>31218</label>
                         <onclick>Skin.ToggleSetting(Enable.ActorLocalImages)</onclick>
                         <selected>Skin.HasSetting(Enable.ActorLocalImages)</selected>
                     </control>
                     <control type="radiobutton" id="409">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90918</label>
+                        <label>31288</label>
                         <onclick>Skin.ToggleSetting(Enable.ActorRoleImages)</onclick>
                         <selected>Skin.HasSetting(Enable.ActorRoleImages)</selected>
                     </control>
                     <control type="button" id="410">
- 						<visible>Skin.HasSetting(Enable.ActorRoleImages)</visible>
+                        <visible>Skin.HasSetting(Enable.ActorRoleImages)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90919</label>
+                        <label>31287</label>
                         <label2>$INFO[Skin.String(CustomActorRoleImages.path)]</label2>
                         <onclick>Skin.SetPath(CustomActorRoleImages.path,special://profile)</onclick>
                     </control>
-                    
                     <control type="radiobutton" id="411">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90920</label>
+                        <label>31286</label>
                         <onclick>Skin.ToggleSetting(Enable.ExternalMovieGenreIcons)</onclick>
                         <selected>Skin.HasSetting(Enable.ExternalMovieGenreIcons)</selected>
                     </control>
                     <control type="button" id="412">
- 						<visible>Skin.HasSetting(Enable.ExternalMovieGenreIcons)</visible>
+                        <visible>Skin.HasSetting(Enable.ExternalMovieGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90921</label>
+                        <label>31285</label>
                         <label2>$INFO[Skin.String(CustomMovieGenreIcons.path)]</label2>
                         <onclick>Skin.SetPath(CustomMovieGenreIcons.path,special://profile)</onclick>
                     </control>
                     <control type="button" id="413">
- 						<visible>!Skin.HasSetting(Enable.ExternalMovieGenreIcons)</visible>
+                        <visible>!Skin.HasSetting(Enable.ExternalMovieGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90922</label>
+                        <label>31284</label>
                         <label2>$INFO[Skin.String(MovieGenreIcons.name)]</label2>
-                        <onclick>RunScript(script.image.resource.select,property=MovieGenreIcons&amp;type=resource.images.moviegenreicons)</onclick>
+                        <onclick>
+                            RunScript(script.image.resource.select,property=MovieGenreIcons&amp;type=resource.images.moviegenreicons)</onclick>
                     </control>
-
-
                     <control type="radiobutton" id="414">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90923</label>
+                        <label>31283</label>
                         <onclick>Skin.ToggleSetting(Enable.ExternalTVGenreIcons)</onclick>
                         <selected>Skin.HasSetting(Enable.ExternalTVGenreIcons)</selected>
                     </control>
                     <control type="button" id="415">
- 						<visible>Skin.HasSetting(Enable.ExternalTVGenreIcons)</visible>
+                        <visible>Skin.HasSetting(Enable.ExternalTVGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90924</label>
+                        <label>31282</label>
                         <label2>$INFO[Skin.String(CustomTVGenreIcons.path)]</label2>
                         <onclick>Skin.SetPath(CustomTVGenreIcons.path,special://profile)</onclick>
                     </control>
                     <control type="button" id="416">
- 						<visible>!Skin.HasSetting(Enable.ExternalTVGenreIcons)</visible>
+                        <visible>!Skin.HasSetting(Enable.ExternalTVGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90925</label>
+                        <label>31281</label>
                         <label2>$INFO[Skin.String(TVGenreIcons.name)]</label2>
-                        <onclick>RunScript(script.image.resource.select,property=TVGenreIcons&amp;type=resource.images.moviegenreicons)</onclick>
+                        <onclick>
+                            RunScript(script.image.resource.select,property=TVGenreIcons&amp;type=resource.images.moviegenreicons)</onclick>
                     </control>
-
                     <control type="radiobutton" id="417">
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90926</label>
+                        <label>31280</label>
                         <onclick>Skin.ToggleSetting(Enable.ExternalMusicGenreIcons)</onclick>
                         <selected>Skin.HasSetting(Enable.ExternalMusicGenreIcons)</selected>
                     </control>
                     <control type="button" id="418">
- 						<visible>Skin.HasSetting(Enable.ExternalMusicGenreIcons)</visible>
+                        <visible>Skin.HasSetting(Enable.ExternalMusicGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90927</label>
+                        <label>31256</label>
                         <label2>$INFO[Skin.String(CustomMusicGenreIcons.path)]</label2>
                         <onclick>Skin.SetPath(CustomMusicGenreIcons.path,special://profile)</onclick>
                     </control>
                     <control type="button" id="419">
- 						<visible>!Skin.HasSetting(Enable.ExternalMusicGenreIcons)</visible>
+                        <visible>!Skin.HasSetting(Enable.ExternalMusicGenreIcons)</visible>
                         <include>SkinSettingsButtonDefaults</include>
-                        <label>90928</label>
+                        <label>31255</label>
                         <label2>$INFO[Skin.String(MusicGenreIcons.name)]</label2>
-                        <onclick>RunScript(script.image.resource.select,property=MusicGenreIcons&amp;type=resource.images.musicgenreicons)</onclick>
+                        <onclick>
+                            RunScript(script.image.resource.select,property=MusicGenreIcons&amp;type=resource.images.musicgenreicons)</onclick>
                     </control>
-                    
-                    
                 </control>
                 <control type="grouplist" id="9004">
                     <description>Advanced control area</description>
@@ -703,8 +773,6 @@
                         <onclick>Skin.ToggleDebug</onclick>
                         <selected>Skin.HasSetting(Skin.ToggleDebug)</selected>
                     </control>
-
-					
                 </control>
                 <control type="grouplist" id="9008">
                     <description>About control area</description>
@@ -758,8 +826,14 @@
             </control>
         </control>
         <control type="scrollbar" id="60">
-            <visible allowhiddenfocus="true">Control.HasFocus(60) | Container.Scrolling | Control.HasFocus(9007)</visible>
-            <animation effect="fade" time="300" tween="sine" easing="inout" start="0" end="100">Visible</animation>
+            <visible allowhiddenfocus="true">Control.HasFocus(60) | Container.Scrolling |
+                Control.HasFocus(9007)</visible>
+            <animation effect="fade"
+                time="300"
+                tween="sine"
+                easing="inout"
+                start="0"
+                end="100">Visible</animation>
             <left>1910</left>
             <top>120</top>
             <width>10</width>

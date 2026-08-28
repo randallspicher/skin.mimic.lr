@@ -51,7 +51,7 @@
 				<focusposition>1</focusposition>
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="sine" easing="out">400</scrolltime>
-				<viewtype label="$LOCALIZE[90200]">list</viewtype>
+				<viewtype label="$LOCALIZE[31305]">list</viewtype>
 				<include>KeibertzPlus_Square_Includes</include>
 <!-- 				<include>KeibertzPlus_Fanart_Includes</include> -->
 				<include>KeibertzPlus_Bluray_Includes</include>
@@ -71,115 +71,94 @@
 	<include name="KeibertzOptions">
 		<control type="button" id="90210">
 			<description>Art Selector</description>
-			<label>89000</label>
+			<label>31325</label>
 			<label2>$VAR[ImageLabelVar]</label2>
 			<include>ButtonCommonValues</include>
-			<onclick>Skin.SelectBool(89000, 20445|, 89003|Movies_902_Landscape)</onclick>
+			<onclick>Skin.SelectBool(31325, 20445|, 31322|Movies_902_Landscape)</onclick>
 			<visible>Control.IsVisible(902) + [Container.Content(Movies)| Container.Content(sets)]</visible>
 		</control>
-<!-- 		<control type="radiobutton" id="90211"> -->
-<!-- 			<description>Bright Icons</description> -->
-<!-- 			<label>90945</label> -->
-<!-- 			<include>ButtonCommonValues</include> -->
-<!-- 			<onclick>Skin.ToggleSetting(Movies_902_BrightIcons)</onclick> -->
-<!-- 			<visible>Control.IsVisible(902) + [Container.Content(Movies)| Container.Content(sets)]</visible> -->
-<!-- 		</control> -->
 		<control type="radiobutton" id="90212">
 			<description>Disable Icon Zoom</description>
-			<label>90946</label>
+			<label>31208</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(Movies_902_StaticIcons)</onclick>
 			<visible>Control.IsVisible(902) + [Container.Content(Movies)| Container.Content(sets)]</visible>
 		</control>
 		<control type="radiobutton" id="90213">
 			<description>Hide Reflections</description>
-			<label>90960</label>
+			<label>31064</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(Movies_902_HideReflections)</onclick>
 			<visible>Control.IsVisible(902) + [Container.Content(Movies)| Container.Content(sets)]</visible>
 		</control>
 		<control type="radiobutton" id="90214">
 			<description>Hide Labels</description>
-			<label>90950</label>
+			<label>31151</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(Movies_902_HideLabels)</onclick>
 			<visible>Control.IsVisible(902) + [Container.Content(Movies)| Container.Content(sets)]</visible>
 		</control>
 		<control type="button" id="90220">
 			<description>Art Selector</description>
-			<label>89000</label>
+			<label>31325</label>
 			<label2>$VAR[ImageLabelVar]</label2>
 			<include>ButtonCommonValues</include>
-			<onclick>Skin.SelectBool(89000, 20445|, 89003|TVShows_902_Landscape)</onclick>
+			<onclick>Skin.SelectBool(31325, 20445|, 31322|TVShows_902_Landscape)</onclick>
 			<visible>Control.IsVisible(902) + [Container.Content(TVShows)| Container.Content(seasons)]</visible>
 		</control>
-<!-- 		<control type="radiobutton" id="90221"> -->
-<!-- 			<description>Bright Icons</description> -->
-<!-- 			<label>90945</label> -->
-<!-- 			<include>ButtonCommonValues</include> -->
-<!-- 			<onclick>Skin.ToggleSetting(TVShows_902_BrightIcons)</onclick> -->
-<!-- 			<visible>Control.IsVisible(902) + [Container.Content(TVShows)| Container.Content(seasons)]</visible> -->
-<!-- 		</control> -->
 		<control type="radiobutton" id="90222">
 			<description>Disable Icon Zoom</description>
-			<label>90946</label>
+			<label>31208</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(TVShows_902_StaticIcons)</onclick>
 			<visible>Control.IsVisible(902) + [Container.Content(TVShows)| Container.Content(seasons)]</visible>
 		</control>
 		<control type="radiobutton" id="90223">
 			<description>Hide Reflections</description>
-			<label>90960</label>
+			<label>31064</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(TVShows_902_HideReflections)</onclick>
 			<visible>Control.IsVisible(902) + [Container.Content(TVShows)| Container.Content(seasons)]</visible>
 		</control>
 		<control type="radiobutton" id="90224">
 			<description>Hide Labels</description>
-			<label>90950</label>
+			<label>31151</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(TVShows_902_HideLabels)</onclick>
 			<visible>Control.IsVisible(902) + [Container.Content(TVShows)| Container.Content(seasons)]</visible>
 		</control>
 		<control type="button" id="90231">
 			<description>Art Selector</description>
-			<label>89000</label>
+			<label>31325</label>
 			<label2>$VAR[ImageLabelVar]</label2>
 			<include>ButtonCommonValues</include>
-			<onclick>Skin.SelectBool(89000, 20445|, 89001|KeibertzPlusSnaps, 89002|KeibertzPlusTitles)</onclick>
+			<onclick>Skin.SelectBool(31325, 20445|, 31324|KeibertzPlusSnaps, 31323|KeibertzPlusTitles)</onclick>
 			<visible>Control.IsVisible(902) + $EXP[GameSupport]</visible>
 		</control>
-<!-- 		<control type="radiobutton" id="90232"> -->
-<!-- 			<description>Bright Icons</description> -->
-<!-- 			<label>90945</label> -->
-<!-- 			<include>ButtonCommonValues</include> -->
-<!-- 			<onclick>Skin.ToggleSetting(Games_902_BrightIcons)</onclick> -->
-<!-- 			<visible>Control.IsVisible(902) + $EXP[GameSupport]</visible> -->
-<!-- 		</control> -->
 		<control type="radiobutton" id="90233">
 			<description>Disable Icon Zoom</description>
-			<label>90946</label>
+			<label>31208</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(Games_902_StaticIcons)</onclick>
 			<visible>Control.IsVisible(902) + $EXP[GameSupport]</visible>
 		</control>
 		<control type="radiobutton" id="90234">
 			<description>Hide Reflections</description>
-			<label>90960</label>
+			<label>31064</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(Games_902_HideReflections)</onclick>
 			<visible>Control.IsVisible(902) + $EXP[GameSupport]</visible>
 		</control>
 		<control type="radiobutton" id="90235">
 			<description>Hide Labels</description>
-			<label>90950</label>
+			<label>31151</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(Games_902_HideLabels)</onclick>
 			<visible>Control.IsVisible(902) + $EXP[GameSupport]</visible>
 		</control>
 		<control type="radiobutton" id="90236">
 			<description>Autoplay Trailers</description>
-			<label>90949</label>
+			<label>31179</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(KeibertzPlusTrailers)</onclick>
 			<onclick condition="Player.HasVideo">PlayerControl(stop)</onclick>

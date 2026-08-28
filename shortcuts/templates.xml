@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+   <template include="GenericWidgetVertical" build="true" menu="mainmenu">
+      <condition>widgetPath</condition>
+      <controls>
+         <control type="panel" id="700">
+            <skinshortcuts>visibility</skinshortcuts>
+            <!-- <visible>!String.IsEmpty(Container(9000).ListItem.Property(widgetPath)) + !String.IsEqual(Container(9000).ListItem.Property(widget),weather-forecast) +
+			!String.IsEqual(Container(9000).ListItem.Property(widget),settings)</visible> -->
+            <left>494</left>
+            <height>780</height>
+            <width>1400</width>
+            <onleft>9000</onleft>
+            <onback>9000</onback>
+            <include content="WidgetItemLayout">
+               <param name="id">700</param>
+               <!-- <param name="orientation">vertical</param> -->
+            </include>
+            <content limit="$INFO[Container(9000).ListItem.Property(widgetLimit)]"
+               sortby="$INFO[Container(9000).ListItem.Property(widgetSortBy)]"
+               sortorder="$INFO[Container(9000).ListItem.Property(widgetSort)]"
+               target="$INFO[Container(9000).ListItem.Property(widgetTarget)]">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
+         </control>
+      </controls>
+   </template>
+   <template include="GenericWidgetHorizontal" build="true" menu="mainmenu">
+      <condition>widgetPath</condition>
+      <controls>
+         <control type="panel" id="701">
+            <skinshortcuts>visibility</skinshortcuts>
+            <left>85</left>
+            <width>1750</width>
+            <height>780</height>
+            <ondown>9000</ondown>
+            <onback>9000</onback>
+            <include content="WidgetItemLayout">
+               <param name="id">701</param>
+               <!-- <param name="orientation">horizontal</param> -->
+            </include>
+            <content limit="$INFO[Container(9000).ListItem.Property(widgetLimit)]"
+               sortby="$INFO[Container(9000).ListItem.Property(widgetSortBy)]"
+               sortorder="$INFO[Container(9000).ListItem.Property(widgetSort)]"
+               target="$INFO[Container(9000).ListItem.Property(widgetTarget)]">$INFO[Container(9000).ListItem.Property(widgetPath)]</content>
+         </control>
+      </controls>
+   </template>
+   <template include="SettingsWidgetVertical" build="true" menu="mainmenu">
+      <condition>widget=settings</condition>
+      <controls>
+         <control type="panel" id="702">
+            <skinshortcuts>visibility</skinshortcuts>
+            <!-- <visible>String.IsEqual(Container(9000).ListItem.Property(widget),settings)</visible> -->
+            <left>494</left>
+            <height>780</height>
+            <width>1400</width>
+            <onleft>9000</onleft>
+            <onback>9000</onback>
+            <preloaditems>2</preloaditems>
+            <viewtype label="21371">list</viewtype>
+            <scrolltime tween="quadratic" easing="out">300</scrolltime>
+            <itemlayout height="260"
+               width="350"
+               condition="!Skin.HasSetting(Enable.HorizontalMenu)">
+               <include content="ItemBorder"></include>
+               <control type="label">
+                  <left>20</left>
+                  <right>20</right>
+                  <top>197</top>
+                  <height>50</height>
+                  <label>$VAR[WidgetThumbnailLabel]</label>
+               </control>
+               <control type="image">
+                  <left>20</left>
+                  <top>20</top>
+                  <right>20</right>
+                  <height>180</height>
+                  <aspectratio scalediffuse="false"
+                     align="center"
+                     aligny="center">keep</aspectratio>
+                  <texture background="true"
+                     fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+               </control>
+               <control type="image">
+                  <top>20</top>
+                  <left>20</left>
+                  <right>20</right>
+                  <height>180</height>
+                  <texture border="5">overlays/diffuse-overlay.png</texture>
+                  <visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
+               </control>
+            </itemlayout>
+            <focusedlayout height="260"
+               width="350"
+               condition="!Skin.HasSetting(Enable.HorizontalMenu)">
+               <include content="ItemFocusBorder"></include>
+               <control type="label">
+                  <left>20</left>
+                  <right>20</right>
+                  <top>197</top>
+                  <height>50</height>
+                  <label>$VAR[WidgetThumbnailLabel]</label>
+               </control>
+               <control type="image">
+                  <left>20</left>
+                  <top>20</top>
+                  <right>20</right>
+                  <height>180</height>
+                  <aspectratio scalediffuse="false"
+                     align="center"
+                     aligny="center">keep</aspectratio>
+                  <texture background="true"
+                     fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+               </control>
+            </focusedlayout>
+            <itemlayout height="390"
+               width="350"
+               condition="Skin.HasSetting(Enable.HorizontalMenu)">
+               <include content="ItemBorder"></include>
+               <control type="label">
+                  <left>20</left>
+                  <right>20</right>
+                  <top>327</top>
+                  <height>50</height>
+                  <label>$VAR[WidgetThumbnailLabel]</label>
+               </control>
+               <control type="image">
+                  <left>20</left>
+                  <top>20</top>
+                  <right>20</right>
+                  <height>310</height>
+                  <aspectratio scalediffuse="false"
+                     align="center"
+                     aligny="center">keep</aspectratio>
+                  <texture background="true"
+                     fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+               </control>
+               <control type="image">
+                  <top>20</top>
+                  <left>20</left>
+                  <right>20</right>
+                  <height>310</height>
+                  <texture border="5">overlays/diffuse-overlay.png</texture>
+                  <visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
+               </control>
+            </itemlayout>
+            <focusedlayout height="390"
+               width="350"
+               condition="Skin.HasSetting(Enable.HorizontalMenu)">
+               <include content="ItemFocusBorder"></include>
+               <control type="label">
+                  <left>20</left>
+                  <right>20</right>
+                  <top>327</top>
+                  <height>50</height>
+                  <label>$VAR[WidgetThumbnailLabel]</label>
+               </control>
+               <control type="image">
+                  <left>20</left>
+                  <top>20</top>
+                  <right>20</right>
+                  <height>310</height>
+                  <aspectratio scalediffuse="false"
+                     align="center"
+                     aligny="center">keep</aspectratio>
+                  <texture background="true"
+                     fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+               </control>
+            </focusedlayout>
+            <include>SettingsListContents</include>
+         </control>
+      </controls>
+   </template>
+   <template include="SettingsWidgetHorizontal" build="true" menu="mainmenu">
+      <condition>widget=settings</condition>
+      <controls>
+         <control type="panel" id="703">
+            <skinshortcuts>visibility</skinshortcuts>
+            <!-- <visible>String.IsEqual(Container(9000).ListItem.Property(widget),settings)</visible> -->
+            <left>85</left>
+            <width>1750</width>
+            <height>780</height>
+            <ondown>9000</ondown>
+            <onback>9000</onback>
+            <preloaditems>2</preloaditems>
+            <viewtype label="21371">list</viewtype>
+            <scrolltime tween="quadratic" easing="out">300</scrolltime>
+            <itemlayout height="260"
+               width="350"
+               condition="!Skin.HasSetting(Enable.HorizontalMenu)">
+               <include content="ItemBorder"></include>
+               <control type="label">
+                  <left>20</left>
+                  <right>20</right>
+                  <top>197</top>
+                  <height>50</height>
+                  <label>$VAR[WidgetThumbnailLabel]</label>
+               </control>
+               <control type="image">
+                  <left>20</left>
+                  <top>20</top>
+                  <right>20</right>
+                  <height>180</height>
+                  <aspectratio scalediffuse="false"
+                     align="center"
+                     aligny="center">keep</aspectratio>
+                  <texture background="true"
+                     fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+               </control>
+               <control type="image">
+                  <top>20</top>
+                  <left>20</left>
+                  <right>20</right>
+                  <height>180</height>
+                  <texture border="5">overlays/diffuse-overlay.png</texture>
+                  <visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
+               </control>
+            </itemlayout>
+            <focusedlayout height="260"
+               width="350"
+               condition="!Skin.HasSetting(Enable.HorizontalMenu)">
+               <include content="ItemFocusBorder"></include>
+               <control type="label">
+                  <left>20</left>
+                  <right>20</right>
+                  <top>197</top>
+                  <height>50</height>
+                  <label>$VAR[WidgetThumbnailLabel]</label>
+               </control>
+               <control type="image">
+                  <left>20</left>
+                  <top>20</top>
+                  <right>20</right>
+                  <height>180</height>
+                  <aspectratio scalediffuse="false"
+                     align="center"
+                     aligny="center">keep</aspectratio>
+                  <texture background="true"
+                     fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+               </control>
+            </focusedlayout>
+            <itemlayout height="390"
+               width="350"
+               condition="Skin.HasSetting(Enable.HorizontalMenu)">
+               <include content="ItemBorder"></include>
+               <control type="label">
+                  <left>20</left>
+                  <right>20</right>
+                  <top>327</top>
+                  <height>50</height>
+                  <label>$VAR[WidgetThumbnailLabel]</label>
+               </control>
+               <control type="image">
+                  <left>20</left>
+                  <top>20</top>
+                  <right>20</right>
+                  <height>310</height>
+                  <aspectratio scalediffuse="false"
+                     align="center"
+                     aligny="center">keep</aspectratio>
+                  <texture background="true"
+                     fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+               </control>
+               <control type="image">
+                  <top>20</top>
+                  <left>20</left>
+                  <right>20</right>
+                  <height>310</height>
+                  <texture border="5">overlays/diffuse-overlay.png</texture>
+                  <visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
+               </control>
+            </itemlayout>
+            <focusedlayout height="390"
+               width="350"
+               condition="Skin.HasSetting(Enable.HorizontalMenu)">
+               <include content="ItemFocusBorder"></include>
+               <control type="label">
+                  <left>20</left>
+                  <right>20</right>
+                  <top>327</top>
+                  <height>50</height>
+                  <label>$VAR[WidgetThumbnailLabel]</label>
+               </control>
+               <control type="image">
+                  <left>20</left>
+                  <top>20</top>
+                  <right>20</right>
+                  <height>310</height>
+                  <aspectratio scalediffuse="false"
+                     align="center"
+                     aligny="center">keep</aspectratio>
+                  <texture background="true"
+                     fallback="DefaultFolder.png">$INFO[ListItem.Icon]</texture>
+               </control>
+            </focusedlayout>
+            <include>SettingsListContents</include>
+         </control>
+      </controls>
+   </template>
+   <!-- VERTICAL WEATHER WIDGET -->
+   <template include="WeatherWidgetVertical" build="true" menu="mainmenu">
+      <condition>widget=weather-forecast</condition>
+      <controls>
+         <control type="group">
+            <skinshortcuts>visibility</skinshortcuts>
+            <control type="panel" id="704">
+               <include content="WeatherWidgetContents">
+                  <param name="id">701</param>
+                  <param name="left">494</param>
+                  <param name="width">1400</param>
+               </include>
+            </control>
+            <control type="group">
+               <visible>String.IsEqual(Container(9000).ListItem.Property(widget),weather-forecast)</visible>
+               <description>Weather Widget</description>
+               <top>0</top>
+               <left>493</left>
+               <width>1400</width>
+               <height>390</height>
+               <top>370</top>
+               <include content="ItemBorder"></include>
+               <control type="image">
+                  <top>20</top>
+                  <left>20</left>
+                  <right>20</right>
+                  <height>310</height>
+                  <texture border="5">overlays/diffuse-overlay.png</texture>
+                  <visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
+               </control>
+               <control type="grouplist">
+                  <left>20</left>
+                  <right>20</right>
+                  <top>327</top>
+                  <height>50</height>
+                  <orientation>horizontal</orientation>
+                  <control type="label">
+                     <width>auto</width>
+                     <font>font13</font>
+                     <label>$LOCALIZE[31204]</label>
+                  </control>
+                  <control type="label">
+                     <width>auto</width>
+                     <font>font13</font>
+                     <label>$LOCALIZE[19107]</label>
+                     <visible>!String.IsEmpty(Window(weather).Property(Location))</visible>
+                  </control>
+                  <control type="label">
+                     <width>auto</width>
+                     <font>font13</font>
+                     <label>$INFO[Window(weather).Property(Location)]</label>
+                  </control>
+               </control>
+               <control type="image">
+                  <left>40</left>
+                  <top>40</top>
+                  <height>270</height>
+                  <aspectratio scalediffuse="false"
+                     align="left"
+                     aligny="center">keep</aspectratio>
+                  <texture background="true">$INFO[Window(weather).Property(Current.RemoteIcon)]</texture>
+                  <visible>Skin.HasSetting(Enable.RemoteWeatherIcons)</visible>
+               </control>
+               <control type="multiimage">
+                  <left>40</left>
+                  <top>40</top>
+                  <height>270</height>
+                  <aspectratio scalediffuse="false"
+                     align="left"
+                     aligny="center">keep</aspectratio>
+                  <imagepath>$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode)]$VAR[WeatherIconExtVar]</imagepath>
+                  <timeperimage>70</timeperimage>
+                  <fadetime>1</fadetime>
+                  <randomize>false</randomize>
+                  <visible>!Skin.HasSetting(Enable.RemoteWeatherIcons)</visible>
+               </control>
+               <control type="grouplist">
+                  <top>0</top>
+                  <left>350</left>
+                  <orientation>horizontal</orientation>
+                  <control type="label">
+                     <description>current temp Value</description>
+                     <width>auto</width>
+                     <height>270</height>
+                     <font>WeatherTempFont</font>
+                     <label>$INFO[Window(weather).Property(Current.Temperature)]</label>
+                  </control>
+                  <control type="label">
+                     <description>current temp Value Units</description>
+                     <left>270</left>
+                     <width>auto</width>
+                     <height>216</height>
+                     <font>font16</font>
+                     <label>$INFO[System.TemperatureUnits]</label>
+                  </control>
+                  <control type="label">
+                     <description>weather alerts</description>
+                     <width>auto</width>
+                     <left>270</left>
+                     <height>216</height>
+                     <font>font16</font>
+                     <label>[COLOR=Alert]$LOCALIZE[31290][/COLOR]</label>
+                     <visible>!String.IsEmpty(Window(weather).Property(Alerts.IsFetched))</visible>
+                  </control>
+               </control>
+               <control type="label">
+                  <description>current condition label</description>
+                  <top>210</top>
+                  <left>350</left>
+                  <width>800</width>
+                  <height>60</height>
+                  <label>$VAR[WeatherCurrentConditions]</label>
+                  <scroll>true</scroll>
+                  <font>font30</font>
+               </control>
+               <control type="grouplist">
+                  <left>900</left>
+                  <top>40</top>
+                  <width>438</width>
+                  <itemgap>5</itemgap>
+                  <control type="label">
+                     <label>[COLOR=LabelTextColor]$LOCALIZE[405]: [/COLOR]$INFO[Window(weather).Property(Current.Dewpoint)]$INFO[System.TemperatureUnits]</label>
+                     <width>438</width>
+                     <height>35</height>
+                     <align>right</align>
+                     <font>font14</font>
+                  </control>
+                  <control type="label">
+                     <label>[COLOR=LabelTextColor]$LOCALIZE[406]: [/COLOR]$INFO[Window(weather).Property(Current.Humidity)]</label>
+                     <width>438</width>
+                     <height>35</height>
+                     <align>right</align>
+                     <font>font14</font>
+                  </control>
+                  <control type="label">
+                     <label>[COLOR=LabelTextColor]$LOCALIZE[404]:[/COLOR] $INFO[Window(weather).Property(Current.Wind)]</label>
+                     <width>438</width>
+                     <height>35</height>
+                     <align>right</align>
+                     <font>font14</font>
+                  </control>
+                  <control type="label">
+                     <visible>!String.IsEmpty(Window(weather).Property(Today.Sunrise))</visible>
+                     <label>[COLOR=LabelTextColor]$LOCALIZE[33027]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunrise)][/LOWERCASE]</label>
+                     <width>438</width>
+                     <height>35</height>
+                     <align>right</align>
+                     <font>font14</font>
+                  </control>
+                  <control type="label">
+                     <visible>!String.IsEmpty(Window(weather).Property(Today.Sunset))</visible>
+                     <label>[COLOR=LabelTextColor]$LOCALIZE[33028]:[/COLOR] [LOWERCASE]$INFO[Window(weather).Property(Today.Sunset)][/LOWERCASE]</label>
+                     <width>438</width>
+                     <height>35</height>
+                     <align>right</align>
+                     <font>font14</font>
+                  </control>
+               </control>
+            </control>
+         </control>
+      </controls>
+   </template>
+   <template include="WeatherWidgetHorizontal" build="true" menu="mainmenu">
+      <condition>widget=weather-forecast</condition>
+      <controls>
+         <control type="group">
+            <skinshortcuts>visibility</skinshortcuts>
+            <control type="panel" id="705">
+               <skinshortcuts>visibility</skinshortcuts>
+               <include content="WeatherWidgetContents">
+                  <param name="id">705</param>
+                  <param name="left">85</param>
+                  <param name="width">1750</param>
+               </include>
+            </control>
+            <control type="group">
+               <description>Weather Widget</description>
+               <visible>String.IsEqual(Container(9000).ListItem.Property(widget),weather-forecast)</visible>
+               <top>0</top>
+               <left>85</left>
+               <width>1750</width>
+               <height>390</height>
+               <top>370</top>
+               <include content="ItemBorder"></include>
+               <control type="image">
+                  <left>10</left>
+                  <top>10</top>
+                  <right>10</right>
+                  <bottom>10</bottom>
+                  <texture colordiffuse="BackgroundDiffuse"
+                     border="5">listselect_fo.png</texture>
+               </control>
+               <control type="image">
+                  <left>20</left>
+                  <top>20</top>
+                  <right>20</right>
+                  <height>310</height>
+                  <texture colordiffuse="BorderColor"
+                     border="5">thumbnail_bg.png</texture>
+               </control>
+               <control type="image">
+                  <top>20</top>
+                  <left>20</left>
+                  <right>20</right>
+                  <height>310</height>
+                  <texture border="5">overlays/diffuse-overlay.png</texture>
+                  <visible>Skin.HasSetting(Enable.HighlightFocused)</visible>
+               </control>
+               <control type="grouplist">
+                  <left>20</left>
+                  <right>20</right>
+                  <top>327</top>
+                  <height>50</height>
+                  <orientation>horizontal</orientation>
+                  <control type="label">
+                     <width>auto</width>
+                     <font>font13</font>
+                     <label>$LOCALIZE[31204]</label>
+                  </control>
+                  <control type="label">
+                     <width>auto</width>
+                     <font>font13</font>
+                     <label>$LOCALIZE[19107]</label>
+                     <visible>!String.IsEmpty(Window(weather).Property(Location))</visible>
+                  </control>
+                  <control type="label">
+                     <width>auto</width>
+                     <font>font13</font>
+                     <label>$INFO[Window(weather).Property(Location)]</label>
+                  </control>
+               </control>
+               <control type="image">
+                  <left>40</left>
+                  <top>40</top>
+                  <height>270</height>
+                  <aspectratio scalediffuse="false"
+                     align="left"
+                     aligny="center">keep</aspectratio>
+                  <texture background="true">$INFO[Window(weather).Property(Current.RemoteIcon)]</texture>
+                  <visible>Skin.HasSetting(Enable.RemoteWeatherIcons)</visible>
+               </control>
+               <control type="image">
+                  <left>40</left>
+                  <top>40</top>
+                  <height>270</height>
+                  <aspectratio scalediffuse="false"
+                     align="left"
+                     aligny="center">keep</aspectratio>
+                  <texture background="true">$VAR[WeatherIconVar]$INFO[Window(weather).Property(Current.FanartCode)]$VAR[WeatherIconExtVar]</texture>
+                  <visible>!Skin.HasSetting(Enable.RemoteWeatherIcons)</visible>
+               </control>
+               <control type="grouplist">
+                  <top>0</top>
+                  <left>350</left>
+                  <orientation>horizontal</orientation>
+                  <control type="label">
+                     <description>current temp Value</description>
+                     <width>auto</width>
+                     <height>270</height>
+                     <font>WeatherTempFont</font>
+                     <label>$INFO[Window(weather).Property(Current.Temperature)]</label>
+                  </control>
+                  <control type="label">
+                     <description>current temp Value Units</description>
+                     <left>270</left>
+                     <width>auto</width>
+                     <height>216</height>
+                     <font>font16</font>
+                     <label>$INFO[System.TemperatureUnits]</label>
+                  </control>
+               </control>
+               <control type="label">
+                  <description>current condition label</description>
+                  <top>210</top>
+                  <left>350</left>
+                  <width>800</width>
+                  <height>60</height>
+                  <label>$VAR[WeatherCurrentConditions]</label>
+                  <scroll>true</scroll>
+                  <font>font30</font>
+               </control>
+               <control type="grouplist">
+                  <left>1250</left>
+                  <top>60</top>
+                  <width>438</width>
+                  <itemgap>20</itemgap>
+                  <control type="label">
+                     <label>[COLOR=LabelTextColor]$LOCALIZE[406]: [/COLOR]$INFO[Window(weather).Property(Current.Humidity)]</label>
+                     <width>438</width>
+                     <height>40</height>
+                     <align>right</align>
+                     <font>font14</font>
+                  </control>
+                  <control type="label">
+                     <label>[COLOR=LabelTextColor]$LOCALIZE[404]:[/COLOR] $INFO[Window(weather).Property(Current.Wind)]</label>
+                     <width>438</width>
+                     <height>40</height>
+                     <align>right</align>
+                     <font>font14</font>
+                  </control>
+                  <control type="label">
+                     <visible>!String.IsEmpty(Window(weather).Property(Today.Sunrise))</visible>
+                     <label>[COLOR=LabelTextColor]$LOCALIZE[33027]:[/COLOR] $INFO[Window(weather).Property(Today.Sunrise)]</label>
+                     <width>438</width>
+                     <height>40</height>
+                     <align>right</align>
+                     <font>font14</font>
+                  </control>
+                  <control type="label">
+                     <visible>!String.IsEmpty(Window(weather).Property(Today.Sunset))</visible>
+                     <label>[COLOR=LabelTextColor]$LOCALIZE[33028]:[/COLOR] $INFO[Window(weather).Property(Today.Sunset)]</label>
+                     <width>438</width>
+                     <height>40</height>
+                     <align>right</align>
+                     <font>font14</font>
+                  </control>
+               </control>
+            </control>
+         </control>
+      </controls>
+   </template>
+   <template include="testwidget"
+      build="true"
+      menu="mainmenu"
+      templateonly="false">
+      <controls>
+         <control type="grouplist">
+            <skinshortcuts>visibility</skinshortcuts>
+            <left>500</left>
+            <top>100</top>
+            <!-- <visible>String.IsEqual(Container(9000).ListItem.Property(widget),$PROPERTY[widget])</visible> -->
+            <!-- for $PROPERTY[widgetLabel] -->
+            <control type="label">
+               <left>85</left>
+               <width>1500</width>
+               <height>40</height>
+               <label>REAL: $INFO[Container(9000).ListItem.Property(widgetArt)]</label>
+               <font>font12</font>
+               <textcolor>NormalTextColor</textcolor>
+            </control>
+            <control type="label">
+               <left>85</left>
+               <width>1500</width>
+               <height>40</height>
+               <label>VAR: $VAR[WidgetTest]</label>
+               <font>font12</font>
+               <textcolor>NormalTextColor</textcolor>
+            </control>
+            <control type="label">
+               <left>85</left>
+               <width>1500</width>
+               <height>40</height>
+               <label>widget: $INFO[Container(9000).ListItem.Property(widget)]</label>
+               <font>font12</font>
+               <textcolor>NormalTextColor</textcolor>
+            </control>
+            <control type="label">
+               <left>85</left>
+               <width>1500</width>
+               <height>40</height>
+               <label>widgetLabel: $INFO[Container(9000).ListItem.Property(widgetLabel)]</label>
+               <font>font12</font>
+               <textcolor>NormalTextColor</textcolor>
+            </control>
+            <control type="label">
+               <left>85</left>
+               <width>1500</width>
+               <height>40</height>
+               <label>widgetPath: "$INFO[Container(9000).ListItem.Property(widgetPath)]"</label>
+               <font>font12</font>
+               <textcolor>NormalTextColor</textcolor>
+            </control>
+            <control type="label">
+               <left>85</left>
+               <width>1500</width>
+               <height>40</height>
+               <label>widgetLayout: $INFO[Container(9000).ListItem.Property(widgetLayout)]</label>
+               <font>font12</font>
+               <textcolor>NormalTextColor</textcolor>
+            </control>
+            <control type="label">
+               <left>85</left>
+               <width>1500</width>
+               <height>40</height>
+               <label>widgetType: $INFO[Container(9000).ListItem.Property(widgetType)]</label>
+               <font>font12</font>
+               <textcolor>NormalTextColor</textcolor>
+            </control>
+            <control type="label">
+               <left>85</left>
+               <width>1500</width>
+               <height>40</height>
+               <label>widgetSource: $INFO[Container(9000).ListItem.Property(widgetSource)]</label>
+               <font>font12</font>
+               <textcolor>NormalTextColor</textcolor>
+            </control>
+            <control type="label">
+               <left>85</left>
+               <width>1500</width>
+               <height>40</height>
+               <label>widgetArt: $INFO[Container(9000).ListItem.Property(widgetArt)]</label>
+               <font>font12</font>
+               <textcolor>NormalTextColor</textcolor>
+            </control>
+            <control type="label">
+               <left>85</left>
+               <width>1500</width>
+               <height>40</height>
+               <label>widgetLimit: $INFO[Container(9000).ListItem.Property(widgetLimit)]</label>
+               <font>font12</font>
+               <textcolor>NormalTextColor</textcolor>
+            </control>
+            <control type="label">
+               <left>85</left>
+               <width>1500</width>
+               <height>40</height>
+               <label>Infoline: $INFO[Container(9000).ListItem.Property(infoLine)]</label>
+               <font>font12</font>
+               <textcolor>NormalTextColor</textcolor>
+            </control>
+         </control>
+      </controls>
+   </template>
+</templates>

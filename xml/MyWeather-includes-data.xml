@@ -248,7 +248,7 @@
 	</include>
 
 	<include name="WeatherWidgetContents">
-		<visible>String.IsEqual(Container(9000).ListItem.Property(widget),weather) + !IsEmpty(Weather.Plugin)</visible>
+		<!-- <visible>String.IsEqual(Container(9000).ListItem.Property(widget),weather) + !IsEmpty(Weather.Plugin)</visible> -->
 		<top>390</top>
 		<left>$PARAM[left]</left>
 		<width>$PARAM[width]</width>
@@ -424,5 +424,3 @@
 
 
 </includes>
-
-

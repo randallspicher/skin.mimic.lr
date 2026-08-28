@@ -1,0 +1,47 @@
+<backgrounds>
+  <!-- Property-based (info label) -->
+  <background name="movie-fanart" label="Movie Fanart" type="property" visible="Library.HasContent(movies)">
+    <path>$INFO[Window(Home).Property(MovieFanart)]</path>
+    <icon>DefaultMovies.png</icon>
+  </background>
+
+  <!-- Static image -->
+  <background name="default" label="Default" type="static">
+    <path>special://skin/backgrounds/default.jpg</path>
+    <icon>DefaultPicture.png</icon>
+  </background>
+
+  <!-- Browse for single image -->
+  <background name="custom" label="Custom Image" type="browse">
+    <source label="Skin Backgrounds">special://skin/backgrounds/</source>
+    <source label="Browse...">browse</source>
+  </background>
+
+  <!-- Browse for folder (slideshow) -->
+  <background name="folder" label="Image Folder" type="multi">
+    <source label="My Backgrounds">special://profile/backgrounds/</source>
+    <source label="Browse...">browse</source>
+  </background>
+
+  <!-- Playlist-based -->
+  <background name="playlist" label="Playlist Images" type="playlist">
+    <source label="Video Playlists">special://profile/playlists/video/</source>
+  </background>
+
+  <!-- Live (dynamic library content) -->
+  <background name="live-movies" label="Random Movies" type="live" visible="Library.HasContent(movies)">
+    <path>random movies</path>
+  </background>
+
+  <!-- Live playlist -->
+  <background name="live-playlist" label="Live Playlist" type="live-playlist">
+    <source label="Video Playlists">special://profile/playlists/video/</source>
+  </background>
+
+  <!-- Group -->
+  <group name="library" label="Library Fanart" icon="DefaultVideo.png" visible="Library.HasContent(movies)">
+    <background name="movie-fanart" label="Movie Fanart" type="property">
+      <path>$INFO[Window(Home).Property(MovieFanart)]</path>
+    </background>
+  </group>
+</backgrounds>

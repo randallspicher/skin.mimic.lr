@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+   <includes>
+      <!-- Widget Art Fallback Rules -->
+      <include name="ArtFallbackRules">
+         <when condition="widgetType=musicvideos | songs | albums | artists | favourite | addon | weather | system | custom | pvr">Square Poster</when>
+         <default>Poster</default>
+      </include>
+   </includes>
+   <!-- PROPERTY DEFINITIONS -->
+   <!-- Widget -->
+   <property name="widget" type="widget" templateonly="false"/>
+   <property name="widgetTarget" templateonly="false"/>
+   <property name="widgetSource" templateonly="false"/>
+   <!-- Widget Layout -->
+   <property name="widgetLayout" requires="widgetPath">
+      <options>
+         <option value="4x2" label="$LOCALIZE[31389]"/>
+         <option value="2x2Plot" label="$LOCALIZE[207]"/>
+         <option value="4x3" label="$LOCALIZE[31393]"/>
+      </options>
+   </property>
+   <!-- Widget Art -->
+   <property name="widgetArt" templateonly="false" requires="widgetLayout">
+      <options>
+         <option value="poster" label="$LOCALIZE[20021]"/>
+         <option value="fanart" label="$LOCALIZE[20445]"/>
+         <!-- <option value="Guess" label="$LOCALIZE[31387]"/> -->
+         <option value="landscape"
+            label="$LOCALIZE[31100]"
+            condition="[widgetSource=library | playlist | addon] + [widgetType=movies | episodes | tvshows | mixed]"/>
+         <option value="thumb"
+            label="$LOCALIZE[31386]"
+            condition="[widgetSource=library | playlist | addon] + widgetType=episodes"/>
+         <!-- <option value="ClearArt" label="$LOCALIZE[31385]" condition="[widgetSource=library | playlist | addon] + [widgetType=movies | episodes | tvshows | mixed]" /> -->
+         <option value="logo"
+            label="$LOCALIZE[31384]"
+            condition="[widgetSource=library | playlist | addon] + [widgetType=movies | episodes | tvshows | mixed]"/>
+         <!-- <option value="DiscArt" label="$LOCALIZE[31383]" condition="[widgetSource=library | playlist | addon] + widgetType=movies + !widgetType=episodes + !widgetType=tvshows" /> -->
+         <!-- <option value="CharacterArt" label="$LOCALIZE[31382]" condition="widgetType=episodes + [widgetSource=library | playlist | addon]" /> -->
+         <option value="banner"
+            label="$LOCALIZE[20020]"
+            condition="[widgetSource=library | playlist | addon] + [widgetType=movies | episodes | tvshows | mixed]"/>
+      </options>
+   </property>
+   <!-- Widget Limit -->
+   <property name="widgetLimit" templateonly="false" requires="widgetLayout">
+      <options>
+         <option value="$NUMBER[4]" label="$NUMBER[4]"/>
+         <option value="$NUMBER[8]" label="$NUMBER[8]"/>
+         <option value="$NUMBER[12]" label="$NUMBER[15]"/>
+         <option value="$NUMBER[24]" label="$NUMBER[24]"/>
+         <option value="$NUMBER[32]" label="$NUMBER[32]"/>
+         <option value="$NUMBER[64]" label="$NUMBER[64]"/>
+         <option value="$NUMBER[128]" label="$NUMBER[128]"/>
+      </options>
+   </property>
+   <!-- Widget Sort By -->
+   <property name="widgetSortby" templateonly="false" requires="widgetLayout">
+      <options>
+         <option value="lastplayed" label="$LOCALIZE[568]"/>
+         <option value="title" label="$LOCALIZE[369]"/>
+         <option value="name" label="$LOCALIZE[551]"/>
+         <option value="playlistorder" label="$LOCALIZE[559]"/>
+         <option value="tvshowtitle"
+            label="$LOCALIZE[36902]"
+            condition="widgetType=episodes"/>
+         <option value="episodenumber"
+            label="$LOCALIZE[20359]"
+            condition="widgetType=episodes"/>
+         <option value="date"
+            label="$LOCALIZE[552]"
+            condition="widgetType=episodes|pvr"/>
+         <option value="artist"
+            label="$LOCALIZE[557]"
+            condition="widgetType=musicvideos|artists|albums|songs"/>
+         <option value="album"
+            label="$LOCALIZE[558]"
+            condition="widgetType=musicvideos|albums|songs"/>
+         <option value="tracknumber"
+            label="$LOCALIZE[554]"
+            condition="widgetType=songs"/>
+         <option value="channelnumber"
+            label="$LOCALIZE[19029]"
+            condition="widgetType=pvr"/>
+         <option value="year"
+            label="$LOCALIZE[345]"
+            condition="widgetType=movies|tvshows|musicvideos|albums"/>
+         <option value="dateadded"
+            label="$LOCALIZE[570]"
+            condition="!widgetType=pvr"/>
+         <option value="random" label="$LOCALIZE[590]"/>
+         <option value="lastused" label="$LOCALIZE[12012]"/>
+         <option value="lastupdated" label="$LOCALIZE[12014]"/>
+         <option value="playcount" label="$LOCALIZE[567]"/>
+         <option value="year" label="$LOCALIZE[562]"/>
+         <option value="season"
+            label="$LOCALIZE[20373]"
+            condition="widgetType=tvshows|episodes"/>
+      </options>
+   </property>
+   <!-- Widget Sort Order -->
+   <property name="widgetSort" templateonly="false" requires="widgetLayout">
+      <options>
+         <option value="ascending" label="$LOCALIZE[584]"/>
+         <option value="descending" label="$LOCALIZE[585]"/>
+      </options>
+   </property>
+   <!-- InfoLine -->
+   <property name="InfoLine">
+      <options>
+         <option value="movie_library_stats" label="$LOCALIZE[31052]"/>
+         <option value="tvshow_library_stats" label="$LOCALIZE[31053]"/>
+         <option value="musicvideo_library_stats" label="$LOCALIZE[31085]"/>
+         <option value="music_library_stats" label="$LOCALIZE[31054]"/>
+         <option value="pvr_stats" label="$LOCALIZE[31058]"/>
+         <option value="weather" label="$LOCALIZE[20088]"/>
+         <option value="system_info" label="$LOCALIZE[130]"/>
+         <option value="path_stats_movies" label="$LOCALIZE[31097]"/>
+         <option value="path_stats_tvshows" label="$LOCALIZE[31098]"/>
+         <option value="path_stats_musicvideos" label="$LOCALIZE[31099]"/>
+      </options>
+   </property>
+   <!-- FALLBACKS -->
+   <fallbacks>
+      <fallback property="widgetArt">
+         <include content="ArtFallbackRules"/>
+      </fallback>
+   </fallbacks>
+   <!-- BUTTONS -->
+   <buttons>
+      <group suffix="true">
+         <!-- Widget picker -->
+         <button id="309"
+            property="widget"
+            rename="true"
+            title="$LOCALIZE[31361]"/>
+         <!-- Widget style options -->
+         <button id="501"
+            property="widgetLayout"
+            title="$LOCALIZE[31364]"
+            xxshowNone="false"/>
+         <button id="502"
+            property="widgetArt"
+            title="$LOCALIZE[39123]"
+            xxshowNone="false"/>
+         <button id="503" property="widgetSortby" title="$LOCALIZE[31155]"/>
+         <button id="504" property="widgetSort" title="$LOCALIZE[580]"/>
+         <button id="505" property="widgetLimit" title="$LOCALIZE[31061]"/>
+         <!-- <button id="1002" property="widgetBack" title="$LOCALIZE[31702]" showNone="false" /> -->
+         <!-- <button id="1003" property="widgetTitle" title="$LOCALIZE[31703]" /> -->
+         <!-- <button id="1008" property="widgetCase" title="$LOCALIZE[31707]" /> -->
+         <!-- <button id="1020" property="widgetList" title="$LOCALIZE[31704]" showNone="false" /> -->
+         <!-- Widget toggles -->
+         <!-- <button id="1021" property="widgetPanelInfo" type="toggle" requires="widgetStyle" title="$LOCALIZE[31705]" />
+			<button id="1022" property="widgetHide" type="toggle" requires="widgetStyle" title="$LOCALIZE[31289]" />
+			<button id="1023" property="widgetDisableFanart" type="toggle" requires="widgetStyle" title="$LOCALIZE[31444]" /> -->
+      </group>
+      <!-- Non-widget buttons -->
+      <!-- <button id="310" property="background" type="background" title="$LOCALIZE[31053]" /> -->
+      <button id="510"
+         property="InfoLine"
+         title="$LOCALIZE[31053]"
+         showIcons="false"/>
+      <!-- <button id="519" property="widgetLiveTV" type="toggle" title="$LOCALIZE[31273]" />  -->
+   </buttons>
+</properties>

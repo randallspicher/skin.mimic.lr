@@ -48,7 +48,7 @@
 				<height>420</height>
 				<include condition="!Skin.HasSetting(SaunaVertical)">SaunaHorizontalControls</include>
 				<include condition="Skin.HasSetting(SaunaVertical)">SaunaVerticalControls</include>
-				<viewtype label="$LOCALIZE[90900]">list</viewtype>
+				<viewtype label="$LOCALIZE[31302]">list</viewtype>
 				<scrolltime tween="quadratic">400</scrolltime>
 				<itemlayout width="305" height="140">
 					<control type="image">
@@ -228,14 +228,14 @@
 			<top>290</top>
 			<right>70</right>
 			<bottom>510</bottom>
-			<texture colordiffuse="99000000" border="5">listselect_fo.png</texture>
+			<texture colordiffuse="93132000" border="5">listselect_fo.png</texture>
 		</control>	
 		<control type="image">
 			<left>950</left>
 			<top>290</top>
 			<right>75</right>
 			<bottom>510</bottom>
-			<texture colordiffuse="99000000" border="5">listselect_fo.png</texture>
+			<texture colordiffuse="93132000" border="5">listselect_fo.png</texture>
 		</control>
 		<control type="image">
 			<left>50</left>
@@ -506,47 +506,40 @@
 	</include>
 	<!-- options -->
 	<include name="SaunaOptions">
-		<control type="button" id="90901">
+		<control type="button" id="31299">
 			<description>Layout Selector</description>
-			<label>89010</label>
+			<label>31321</label>
 			<label2>$VAR[LayoutLabelVar]</label2>
 			<include>ButtonCommonValues</include>
-			<onclick>Skin.SelectBool(89010, 90901|, 90902|SaunaBoxshot, 90903|SaunaDouble)</onclick>
+			<onclick>Skin.SelectBool(31321, 31299|, 31298|SaunaBoxshot, 31297|SaunaDouble)</onclick>
 			<visible>Control.IsVisible(909)</visible>
 		</control>
-		<control type="button" id="90902">
+		<control type="button" id="31298">
 			<description>Art Selector</description>
-			<label>89000</label>
+			<label>31325</label>
 			<label2>$VAR[ImageLabelVar]</label2>
 			<include>ButtonCommonValues</include>
-			<onclick>Skin.SelectBool(89000, 20445|, 89001|SaunaSnaps, 89002|SaunaTitles)</onclick>
+			<onclick>Skin.SelectBool(31325, 20445|, 31324|SaunaSnaps, 31323|SaunaTitles)</onclick>
 			<visible>Control.IsVisible(909)</visible>
 		</control>
-		<control type="button" id="90903">
+		<control type="button" id="31297">
 			<description>Art Selector</description>
-			<label> - $LOCALIZE[90959]</label>
+			<label> - $LOCALIZE[31065]</label>
 			<label2>$VAR[2ndImageLabelVar]</label2>
 			<include>ButtonCommonValues</include>
-			<onclick>Skin.SelectBool(89000, 20445|, 89001|Sauna2ndSnaps, 89002|Sauna2ndTitles)</onclick>
+			<onclick>Skin.SelectBool(31325, 20445|, 31324|Sauna2ndSnaps, 31323|Sauna2ndTitles)</onclick>
 			<visible>Control.IsVisible(909) + Skin.HasSetting(SaunaDouble)</visible>
 		</control>
-<!-- 		<control type="radiobutton" id="90904"> -->
-<!-- 			<description>Bright Icons</description> -->
-<!-- 			<label>90945</label> -->
-<!-- 			<include>ButtonCommonValues</include> -->
-<!-- 			<onclick>Skin.ToggleSetting(Enable.HighlightFocused)</onclick> -->
-<!-- 			<visible>Control.IsVisible(909)</visible> -->
-<!-- 		</control> -->
 		<control type="radiobutton" id="90905">
 			<description>Disable Icon Zoom</description>
-			<label>90946</label>
+			<label>31208</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(SaunaDisableZoom)</onclick>
 			<visible>Control.IsVisible(909)</visible>
 		</control>
 		<control type="radiobutton" id="90906">
 			<description>Autoplay Trailers</description>
-			<label>90949</label>
+			<label>31179</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(SaunaTrailers)</onclick>
 			<onclick condition="Player.HasVideo">PlayerControl(stop)</onclick>
@@ -554,7 +547,7 @@
 		</control>
 		<control type="radiobutton" id="90907">
 			<description>Autoplay Trailers</description>
-			<label> - $LOCALIZE[90958]</label>
+			<label> - $LOCALIZE[31066]</label>
 			<include>ButtonCommonValues</include>
 			<onclick>Skin.ToggleSetting(SaunaSwitchVideo)</onclick>
 			<onclick condition="Player.HasVideo">PlayerControl(stop)</onclick>

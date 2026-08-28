@@ -297,7 +297,7 @@
 				<aligny>center</aligny>
 			</control>
 			<control type="label">
-				<label>$INFO[ListItem.Year]$INFO[ListItem.Duration, - ]$INFO[ListItem.Rating, - [COLOR=AltTextColor]$LOCALIZE[90957]:[/COLOR] ]</label>
+				<label>$INFO[ListItem.Year]$INFO[ListItem.Duration, - ]$INFO[ListItem.Rating, - [COLOR=AltTextColor]$LOCALIZE[31074]:[/COLOR] ]</label>
 				<width>680</width>
 				<height>38</height>
 				<font>font14</font>
