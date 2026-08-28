@@ -1,3 +1,6 @@
+10.0.1
+* integrate new V3 version of skin.shortcuts
+
 8.2.2
 * fix weather maps when the weather provider uses layers
 
