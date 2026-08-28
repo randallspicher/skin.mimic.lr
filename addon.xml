@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.mimic.lr" name="Mimic-LR" version="9.0.1" provider-name="Randall">
+<addon id="skin.mimic.lr" name="Mimic-LR" version="10.0.1-beta" provider-name="Randall">
 	<requires>
 		<import addon="xbmc.gui" version="5.18.0" />
 		<import addon="script.skinshortcuts" version="3.0.1" />
@@ -17,7 +17,7 @@
 		<forum>http://forum.kodi.tv/forumdisplay.php?fid=218</forum>
 		<website></website>
 		<email></email>
-		<source>https://github.com/randallspicher/skin.mimic.lr/tree/Omega</source>
+		<source>https://github.com/randallspicher/skin.mimic.lr/tree/Piers</source>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.png</fanart>
